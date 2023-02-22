@@ -16723,6 +16723,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             onError: null,
             _onUploadUrlAvailable: null,
             overridePatchMethod: !1,
+            overrideDeleteMethod: !1,
             headers: {},
             addRequestId: !1,
             onBeforeRequest: null,
@@ -17016,17 +17017,23 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 value: n(function() {
                     var t = this;
                     if (!this._aborted) {
-                        var r;
-                        this.options.overridePatchMethod ? (r = this._openRequest("POST", this.url), r.setHeader("X-HTTP-Method-Override", "PATCH")) : r = this._openRequest("PATCH", this.url), r.setHeader("Upload-Offset", this._offset);
-                        var s = this._addChunkToRequest(r);
-                        s.then(function(o) {
+                        var req;
+                        if (this.options.overridePatchMethod) {
+                            req = this._openRequest("POST", this.url);
+                            req.setHeader("X-HTTP-Method-Override", "PATCH");
+                        } else {
+                            req = this._openRequest("PATCH", this.url);
+                        }
+                        req.setHeader("Upload-Offset", this._offset);
+                        var promise = this._addChunkToRequest(req);
+                        promise.then(function(o) {
                             if (!ao(o.getStatus(), 200)) {
-                                t._emitHttpError(r, o, "tus: unexpected response while uploading chunk");
+                                t._emitHttpError(req, o, "tus: unexpected response while uploading chunk");
                                 return
                             }
-                            t._handleUploadResponse(r, o)
+                            t._handleUploadResponse(req, o)
                         }).catch(function(o) {
-                            t._aborted || t._emitHttpError(r, null, "tus: failed to upload chunk at offset ".concat(t._offset), o)
+                            t._aborted || t._emitHttpError(req, null, "tus: failed to upload chunk at offset ".concat(t._offset), o)
                         })
                     }
                 }, "_performUpload")
@@ -17061,7 +17068,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }, {
                 key: "_openRequest",
                 value: n(function(t, r) {
-                    var s = ny(t, r, this.options);
+                    var s = openRequest(t, r, this.options);
                     return this._req = s, s
                 }, "_openRequest")
             }, {
@@ -17090,26 +17097,32 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 key: "_sendRequest",
                 value: n(function(t) {
                     var r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : null;
-                    return ay(t, r, this.options)
+                    return sendRequest(t, r, this.options)
                 }, "_sendRequest")
             }], [{
                 key: "terminate",
-                value: n(function(t) {
-                    var r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {},
-                        s = ny("DELETE", t, r);
-                    return ay(s, null, r).then(function(o) {
-                        if (o.getStatus() !== 204) throw new oo("tus: unexpected response while terminating upload", null, s, o)
-                    }).catch(function(o) {
-                        if (o instanceof oo || (o = new oo("tus: failed to terminate upload", o, s, null)), !ly(o, 0, r)) throw o;
-                        var a = r.retryDelays[0],
-                            l = r.retryDelays.slice(1),
-                            h = no(no({}, r), {}, {
+                value: n(function(url) {
+                    var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+                    var req;
+                    if (options.overrideDeleteMethod) {
+                        req = openRequest("POST", url, options);
+                        req.setHeader("X-HTTP-Method-Override", "DELETE");
+                    } else {
+                        req = openRequest("DELETE", url, options);
+                    }
+                    return sendRequest(req, null, options).then(function(o) {
+                        if (o.getStatus() !== 204) throw new oo("tus: unexpected response while terminating upload", null, req, o)
+                    }).catch(function(err) {
+                        if (err instanceof oo || (err = new oo("tus: failed to terminate upload", err, req, null)), !ly(err, 0, options)) throw err;
+                        var a = options.retryDelays[0],
+                            l = options.retryDelays.slice(1),
+                            h = no(no({}, options), {}, {
                                 retryDelays: l
                             });
                         return new Promise(function(c) {
                             return setTimeout(c, a)
                         }).then(function() {
-                            return i.terminate(t, h)
+                            return i.terminate(url, h)
                         })
                     })
                 }, "terminate")
@@ -17131,7 +17144,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(ao, "inStatusCategory");
 
-    function ny(i, e, t) {
+    function openRequest(i, e, t) {
         var r = t.httpStack.createRequest(i, e);
         r.setHeader("Tus-Resumable", "1.0.0");
         var s = t.headers || {};
@@ -17146,9 +17159,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         return r
     }
-    n(ny, "openRequest");
+    n(openRequest, "openRequest");
 
-    function ay(i, e, t) {
+    function sendRequest(i, e, t) {
         var r = typeof t.onBeforeRequest == "function" ? Promise.resolve(t.onBeforeRequest(i)) : Promise.resolve();
         return r.then(function() {
             return i.send(e).then(function(s) {
@@ -17159,7 +17172,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             })
         })
     }
-    n(ay, "sendRequest");
+    n(sendRequest, "sendRequest");
 
     function l_() {
         var i = !0;
@@ -17854,6 +17867,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             onSuccess: null,
             onError: null,
             overridePatchMethod: !1,
+            overrideDeleteMethod: !1,
             headers: {},
             addRequestId: !1,
             chunkSize: 1 / 0,
