@@ -1,16 +1,16 @@
 "use strict";
 (() => {
-    var P0 = Object.create;
+    var x0 = Object.create;
     var Fa = Object.defineProperty;
-    var x0 = Object.getOwnPropertyDescriptor;
-    var F0 = Object.getOwnPropertyNames;
-    var E0 = Object.getPrototypeOf,
-        O0 = Object.prototype.hasOwnProperty;
+    var F0 = Object.getOwnPropertyDescriptor;
+    var E0 = Object.getOwnPropertyNames;
+    var O0 = Object.getPrototypeOf,
+        R0 = Object.prototype.hasOwnProperty;
     var n = (i, e) => Fa(i, "name", {
         value: e,
         configurable: !0
     });
-    var je = (i, e) => () => (e || i((e = {
+    var He = (i, e) => () => (e || i((e = {
             exports: {}
         }).exports, e), e.exports),
         yo = (i, e) => {
@@ -19,25 +19,25 @@
                 enumerable: !0
             })
         },
-        R0 = (i, e, t, r) => {
+        C0 = (i, e, t, r) => {
             if (e && typeof e == "object" || typeof e == "function")
-                for (let s of F0(e)) !O0.call(i, s) && s !== t && Fa(i, s, {
+                for (let s of E0(e)) !R0.call(i, s) && s !== t && Fa(i, s, {
                     get: () => e[s],
-                    enumerable: !(r = x0(e, s)) || r.enumerable
+                    enumerable: !(r = F0(e, s)) || r.enumerable
                 });
             return i
         };
-    var oe = (i, e, t) => (t = i != null ? P0(E0(i)) : {}, R0(e || !i || !i.__esModule ? Fa(t, "default", {
+    var oe = (i, e, t) => (t = i != null ? x0(O0(i)) : {}, C0(e || !i || !i.__esModule ? Fa(t, "default", {
         value: i,
         enumerable: !0
     }) : t, i));
-    var hu = je((Bx, Jd) => {
-        Jd.exports = n(function() {
+    var hu = He((Bx, Qd) => {
+        Qd.exports = n(function() {
             var e = {},
                 t = e._fns = {};
             e.emit = n(function(a, l, h, c, d, f, y) {
-                var S = r(a);
-                S.length && s(a, S, [l, h, c, d, f, y])
+                var w = r(a);
+                w.length && s(a, w, [l, h, c, d, f, y])
             }, "emit"), e.on = n(function(a, l) {
                 t[a] || (t[a] = []), t[a].push(l)
             }, "on"), e.once = n(function(a, l) {
@@ -82,107 +82,107 @@
             return n(s, "emitAll"), e
         }, "createNamespaceEmitter")
     });
-    var bo = je((zx, tp) => {
-        var ep = "Expected a function",
-            Qd = NaN,
-            D0 = "[object Symbol]",
-            N0 = /^\s+|\s+$/g,
-            B0 = /^[-+]0x[0-9a-f]+$/i,
-            I0 = /^0b[01]+$/i,
-            L0 = /^0o[0-7]+$/i,
-            M0 = parseInt,
-            z0 = typeof global == "object" && global && global.Object === Object && global,
-            j0 = typeof self == "object" && self && self.Object === Object && self,
-            H0 = z0 || j0 || Function("return this")(),
-            $0 = Object.prototype,
-            q0 = $0.toString,
-            V0 = Math.max,
-            W0 = Math.min,
+    var bo = He((zx, ip) => {
+        var tp = "Expected a function",
+            Zd = NaN,
+            N0 = "[object Symbol]",
+            B0 = /^\s+|\s+$/g,
+            I0 = /^[-+]0x[0-9a-f]+$/i,
+            L0 = /^0b[01]+$/i,
+            M0 = /^0o[0-7]+$/i,
+            z0 = parseInt,
+            j0 = typeof global == "object" && global && global.Object === Object && global,
+            H0 = typeof self == "object" && self && self.Object === Object && self,
+            $0 = j0 || H0 || Function("return this")(),
+            q0 = Object.prototype,
+            V0 = q0.toString,
+            W0 = Math.max,
+            K0 = Math.min,
             cu = n(function() {
-                return H0.Date.now()
+                return $0.Date.now()
             }, "now");
 
-        function K0(i, e, t) {
+        function G0(i, e, t) {
             var r, s, o, a, l, h, c = 0,
                 d = !1,
                 f = !1,
                 y = !0;
-            if (typeof i != "function") throw new TypeError(ep);
-            e = Zd(e) || 0, Ea(t) && (d = !!t.leading, f = "maxWait" in t, o = f ? V0(Zd(t.maxWait) || 0, e) : o, y = "trailing" in t ? !!t.trailing : y);
+            if (typeof i != "function") throw new TypeError(tp);
+            e = ep(e) || 0, Ea(t) && (d = !!t.leading, f = "maxWait" in t, o = f ? W0(ep(t.maxWait) || 0, e) : o, y = "trailing" in t ? !!t.trailing : y);
 
-            function S(U) {
+            function w(k) {
                 var B = r,
                     z = s;
-                return r = s = void 0, c = U, a = i.apply(z, B), a
+                return r = s = void 0, c = k, a = i.apply(z, B), a
             }
-            n(S, "invokeFunc");
+            n(w, "invokeFunc");
 
-            function w(U) {
-                return c = U, l = setTimeout(E, e), d ? S(U) : a
+            function S(k) {
+                return c = k, l = setTimeout(F, e), d ? w(k) : a
             }
-            n(w, "leadingEdge");
+            n(S, "leadingEdge");
 
-            function R(U) {
-                var B = U - h,
-                    z = U - c,
+            function R(k) {
+                var B = k - h,
+                    z = k - c,
                     G = e - B;
-                return f ? W0(G, o - z) : G
+                return f ? K0(G, o - z) : G
             }
             n(R, "remainingWait");
 
-            function x(U) {
-                var B = U - h,
-                    z = U - c;
+            function x(k) {
+                var B = k - h,
+                    z = k - c;
                 return h === void 0 || B >= e || B < 0 || f && z >= o
             }
             n(x, "shouldInvoke");
 
-            function E() {
-                var U = cu();
-                if (x(U)) return N(U);
-                l = setTimeout(E, R(U))
+            function F() {
+                var k = cu();
+                if (x(k)) return N(k);
+                l = setTimeout(F, R(k))
             }
-            n(E, "timerExpired");
+            n(F, "timerExpired");
 
-            function N(U) {
-                return l = void 0, y && r ? S(U) : (r = s = void 0, a)
+            function N(k) {
+                return l = void 0, y && r ? w(k) : (r = s = void 0, a)
             }
             n(N, "trailingEdge");
 
-            function V() {
+            function H() {
                 l !== void 0 && clearTimeout(l), c = 0, r = h = s = l = void 0
             }
-            n(V, "cancel");
+            n(H, "cancel");
 
-            function $() {
+            function q() {
                 return l === void 0 ? a : N(cu())
             }
-            n($, "flush");
+            n(q, "flush");
 
             function K() {
-                var U = cu(),
-                    B = x(U);
-                if (r = arguments, s = this, h = U, B) {
-                    if (l === void 0) return w(h);
-                    if (f) return l = setTimeout(E, e), S(h)
+                var k = cu(),
+                    B = x(k);
+                if (r = arguments, s = this, h = k, B) {
+                    if (l === void 0) return S(h);
+                    if (f) return l = setTimeout(F, e), w(h)
                 }
-                return l === void 0 && (l = setTimeout(E, e)), a
+                return l === void 0 && (l = setTimeout(F, e)), a
             }
-            return n(K, "debounced"), K.cancel = V, K.flush = $, K
+            return n(K, "debounced"), K.cancel = H, K.flush = q, K
         }
-        n(K0, "debounce");
+        n(G0, "debounce");
 
-        function G0(i, e, t) {
+        function X0(i, e, t) {
             var r = !0,
                 s = !0;
-            if (typeof i != "function") throw new TypeError(ep);
-            return Ea(t) && (r = "leading" in t ? !!t.leading : r, s = "trailing" in t ? !!t.trailing : s), K0(i, e, {
+            if (typeof i != "function") throw new TypeError(tp);
+            return Ea(t) && (r = "leading" in t ? !!t.leading : r, s = "trailing" in t ? !!t.trailing : s), G0(i, e, {
                 leading: r,
                 maxWait: e,
                 trailing: s
             })
         }
-        n(G0, "throttle");
+        n(X0, "throttle");
 
         function Ea(i) {
             var e = typeof i;
@@ -190,33 +190,33 @@
         }
         n(Ea, "isObject");
 
-        function X0(i) {
+        function Y0(i) {
             return !!i && typeof i == "object"
         }
-        n(X0, "isObjectLike");
+        n(Y0, "isObjectLike");
 
-        function Y0(i) {
-            return typeof i == "symbol" || X0(i) && q0.call(i) == D0
+        function J0(i) {
+            return typeof i == "symbol" || Y0(i) && V0.call(i) == N0
         }
-        n(Y0, "isSymbol");
+        n(J0, "isSymbol");
 
-        function Zd(i) {
+        function ep(i) {
             if (typeof i == "number") return i;
-            if (Y0(i)) return Qd;
+            if (J0(i)) return Zd;
             if (Ea(i)) {
                 var e = typeof i.valueOf == "function" ? i.valueOf() : i;
                 i = Ea(e) ? e + "" : e
             }
             if (typeof i != "string") return i === 0 ? i : +i;
-            i = i.replace(N0, "");
-            var t = I0.test(i);
-            return t || L0.test(i) ? M0(i.slice(2), t ? 2 : 8) : B0.test(i) ? Qd : +i
+            i = i.replace(B0, "");
+            var t = L0.test(i);
+            return t || M0.test(i) ? z0(i.slice(2), t ? 2 : 8) : I0.test(i) ? Zd : +i
         }
-        n(Zd, "toNumber");
-        tp.exports = G0
+        n(ep, "toNumber");
+        ip.exports = X0
     });
-    var Ca = je((a3, op) => {
-        op.exports = n(function(e) {
+    var Ca = He((a3, np) => {
+        np.exports = n(function(e) {
             if (typeof e != "number" || isNaN(e)) throw new TypeError(`Expected a number, got ${typeof e}`);
             let t = e < 0,
                 r = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
@@ -227,14 +227,14 @@
             return e >= 10 || e % 1 === 0 ? `${(t?"-":"")+e.toFixed(0)} ${o}` : `${(t?"-":"")+e.toFixed(1)} ${o}`
         }, "prettierBytes")
     });
-    var lp = je((u3, ap) => {
+    var up = He((u3, lp) => {
         "use strict";
 
-        function np(i, e) {
+        function ap(i, e) {
             this.text = i = i || "", this.hasWild = ~i.indexOf("*"), this.separator = e, this.parts = i.split(e)
         }
-        n(np, "WildcardMatcher");
-        np.prototype.match = function(i) {
+        n(ap, "WildcardMatcher");
+        ap.prototype.match = function(i) {
             var e = !0,
                 t = this.parts,
                 r, s = t.length,
@@ -253,23 +253,23 @@
             }
             return e
         };
-        ap.exports = function(i, e, t) {
-            var r = new np(i, t || /[\/\.]/);
+        lp.exports = function(i, e, t) {
+            var r = new ap(i, t || /[\/\.]/);
             return typeof e < "u" ? r.match(e) : r
         }
     });
-    var hp = je((c3, up) => {
-        var tb = lp(),
-            ib = /[\/\+\.]/;
-        up.exports = function(i, e) {
+    var cp = He((c3, hp) => {
+        var ib = up(),
+            rb = /[\/\+\.]/;
+        hp.exports = function(i, e) {
             function t(r) {
-                var s = tb(r, i, ib);
+                var s = ib(r, i, rb);
                 return s && s.length >= 2
             }
             return n(t, "test"), e ? t(e.split(";")[0]) : t
         }
     });
-    var Ct = je((z5, za) => {
+    var Tt = He((z5, za) => {
         (function() {
             "use strict";
             var i = {}.hasOwnProperty;
@@ -298,95 +298,95 @@
             }) : window.classNames = e
         })()
     });
-    var Vf = je((tR, qf) => {
-        var V1 = "Expected a function",
-            Hf = NaN,
-            W1 = "[object Symbol]",
-            K1 = /^\s+|\s+$/g,
-            G1 = /^[-+]0x[0-9a-f]+$/i,
-            X1 = /^0b[01]+$/i,
-            Y1 = /^0o[0-7]+$/i,
-            J1 = parseInt,
-            Q1 = typeof global == "object" && global && global.Object === Object && global,
-            Z1 = typeof self == "object" && self && self.Object === Object && self,
-            ew = Q1 || Z1 || Function("return this")(),
-            tw = Object.prototype,
-            iw = tw.toString,
-            rw = Math.max,
-            sw = Math.min,
+    var Wf = He((tR, Vf) => {
+        var W1 = "Expected a function",
+            $f = NaN,
+            K1 = "[object Symbol]",
+            G1 = /^\s+|\s+$/g,
+            X1 = /^[-+]0x[0-9a-f]+$/i,
+            Y1 = /^0b[01]+$/i,
+            J1 = /^0o[0-7]+$/i,
+            Q1 = parseInt,
+            Z1 = typeof global == "object" && global && global.Object === Object && global,
+            ew = typeof self == "object" && self && self.Object === Object && self,
+            tw = Z1 || ew || Function("return this")(),
+            iw = Object.prototype,
+            rw = iw.toString,
+            sw = Math.max,
+            ow = Math.min,
             Zu = n(function() {
-                return ew.Date.now()
+                return tw.Date.now()
             }, "now");
 
-        function ow(i, e, t) {
+        function nw(i, e, t) {
             var r, s, o, a, l, h, c = 0,
                 d = !1,
                 f = !1,
                 y = !0;
-            if (typeof i != "function") throw new TypeError(V1);
-            e = $f(e) || 0, eh(t) && (d = !!t.leading, f = "maxWait" in t, o = f ? rw($f(t.maxWait) || 0, e) : o, y = "trailing" in t ? !!t.trailing : y);
+            if (typeof i != "function") throw new TypeError(W1);
+            e = qf(e) || 0, eh(t) && (d = !!t.leading, f = "maxWait" in t, o = f ? sw(qf(t.maxWait) || 0, e) : o, y = "trailing" in t ? !!t.trailing : y);
 
-            function S(U) {
+            function w(k) {
                 var B = r,
                     z = s;
-                return r = s = void 0, c = U, a = i.apply(z, B), a
+                return r = s = void 0, c = k, a = i.apply(z, B), a
             }
-            n(S, "invokeFunc");
+            n(w, "invokeFunc");
 
-            function w(U) {
-                return c = U, l = setTimeout(E, e), d ? S(U) : a
+            function S(k) {
+                return c = k, l = setTimeout(F, e), d ? w(k) : a
             }
-            n(w, "leadingEdge");
+            n(S, "leadingEdge");
 
-            function R(U) {
-                var B = U - h,
-                    z = U - c,
+            function R(k) {
+                var B = k - h,
+                    z = k - c,
                     G = e - B;
-                return f ? sw(G, o - z) : G
+                return f ? ow(G, o - z) : G
             }
             n(R, "remainingWait");
 
-            function x(U) {
-                var B = U - h,
-                    z = U - c;
+            function x(k) {
+                var B = k - h,
+                    z = k - c;
                 return h === void 0 || B >= e || B < 0 || f && z >= o
             }
             n(x, "shouldInvoke");
 
-            function E() {
-                var U = Zu();
-                if (x(U)) return N(U);
-                l = setTimeout(E, R(U))
+            function F() {
+                var k = Zu();
+                if (x(k)) return N(k);
+                l = setTimeout(F, R(k))
             }
-            n(E, "timerExpired");
+            n(F, "timerExpired");
 
-            function N(U) {
-                return l = void 0, y && r ? S(U) : (r = s = void 0, a)
+            function N(k) {
+                return l = void 0, y && r ? w(k) : (r = s = void 0, a)
             }
             n(N, "trailingEdge");
 
-            function V() {
+            function H() {
                 l !== void 0 && clearTimeout(l), c = 0, r = h = s = l = void 0
             }
-            n(V, "cancel");
+            n(H, "cancel");
 
-            function $() {
+            function q() {
                 return l === void 0 ? a : N(Zu())
             }
-            n($, "flush");
+            n(q, "flush");
 
             function K() {
-                var U = Zu(),
-                    B = x(U);
-                if (r = arguments, s = this, h = U, B) {
-                    if (l === void 0) return w(h);
-                    if (f) return l = setTimeout(E, e), S(h)
+                var k = Zu(),
+                    B = x(k);
+                if (r = arguments, s = this, h = k, B) {
+                    if (l === void 0) return S(h);
+                    if (f) return l = setTimeout(F, e), w(h)
                 }
-                return l === void 0 && (l = setTimeout(E, e)), a
+                return l === void 0 && (l = setTimeout(F, e)), a
             }
-            return n(K, "debounced"), K.cancel = V, K.flush = $, K
+            return n(K, "debounced"), K.cancel = H, K.flush = q, K
         }
-        n(ow, "debounce");
+        n(nw, "debounce");
 
         function eh(i) {
             var e = typeof i;
@@ -394,33 +394,33 @@
         }
         n(eh, "isObject");
 
-        function nw(i) {
+        function aw(i) {
             return !!i && typeof i == "object"
         }
-        n(nw, "isObjectLike");
+        n(aw, "isObjectLike");
 
-        function aw(i) {
-            return typeof i == "symbol" || nw(i) && iw.call(i) == W1
+        function lw(i) {
+            return typeof i == "symbol" || aw(i) && rw.call(i) == K1
         }
-        n(aw, "isSymbol");
+        n(lw, "isSymbol");
 
-        function $f(i) {
+        function qf(i) {
             if (typeof i == "number") return i;
-            if (aw(i)) return Hf;
+            if (lw(i)) return $f;
             if (eh(i)) {
                 var e = typeof i.valueOf == "function" ? i.valueOf() : i;
                 i = eh(e) ? e + "" : e
             }
             if (typeof i != "string") return i === 0 ? i : +i;
-            i = i.replace(K1, "");
-            var t = X1.test(i);
-            return t || Y1.test(i) ? J1(i.slice(2), t ? 2 : 8) : G1.test(i) ? Hf : +i
+            i = i.replace(G1, "");
+            var t = Y1.test(i);
+            return t || J1.test(i) ? Q1(i.slice(2), t ? 2 : 8) : X1.test(i) ? $f : +i
         }
-        n($f, "toNumber");
-        qf.exports = ow
+        n(qf, "toNumber");
+        Vf.exports = nw
     });
-    var Gf = je((uR, Kf) => {
-        Kf.exports = n(function(e, t) {
+    var Xf = He((uR, Gf) => {
+        Gf.exports = n(function(e, t) {
             if (e === t) return !0;
             for (var r in e)
                 if (!(r in t)) return !1;
@@ -429,8 +429,8 @@
             return !0
         }, "isShallowEqual")
     });
-    var Jf = je((TR, Yf) => {
-        Yf.exports = n(function(e) {
+    var Qf = He((TR, Jf) => {
+        Jf.exports = n(function(e) {
             if (typeof e != "number" || isNaN(e)) throw new TypeError("Expected a number, got " + typeof e);
             var t = e < 0,
                 r = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
@@ -441,7 +441,7 @@
             return e >= 10 || e % 1 === 0 ? (t ? "-" : "") + e.toFixed(0) + " " + o : (t ? "-" : "") + e.toFixed(1) + " " + o
         }, "prettierBytes")
     });
-    var Pm = je((bh, wh) => {
+    var xm = He((bh, wh) => {
         (function(i, e) {
             typeof bh == "object" && typeof wh < "u" ? wh.exports = e() : typeof define == "function" && define.amd ? define(e) : (i = i || self, i.Cropper = e())
         })(bh, function() {
@@ -546,56 +546,56 @@
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)
             }
             n(y, "_nonIterableSpread");
-            var S = typeof window < "u" && typeof window.document < "u",
-                w = S ? window : {},
-                R = S && w.document.documentElement ? "ontouchstart" in w.document.documentElement : !1,
-                x = S ? "PointerEvent" in w : !1,
-                E = "cropper",
+            var w = typeof window < "u" && typeof window.document < "u",
+                S = w ? window : {},
+                R = w && S.document.documentElement ? "ontouchstart" in S.document.documentElement : !1,
+                x = w ? "PointerEvent" in S : !1,
+                F = "cropper",
                 N = "all",
-                V = "crop",
-                $ = "move",
+                H = "crop",
+                q = "move",
                 K = "zoom",
-                U = "e",
+                k = "e",
                 B = "w",
                 z = "s",
                 G = "n",
-                Dt = "ne",
-                Wt = "nw",
-                Kt = "se",
-                Gt = "sw",
-                ir = "".concat(E, "-crop"),
-                xr = "".concat(E, "-disabled"),
-                xe = "".concat(E, "-hidden"),
-                Si = "".concat(E, "-hide"),
-                Ts = "".concat(E, "-invisible"),
-                Xt = "".concat(E, "-modal"),
-                Fr = "".concat(E, "-move"),
-                _i = "".concat(E, "Action"),
-                rr = "".concat(E, "Preview"),
+                Nt = "ne",
+                Kt = "nw",
+                Gt = "se",
+                Xt = "sw",
+                ir = "".concat(F, "-crop"),
+                Fr = "".concat(F, "-disabled"),
+                xe = "".concat(F, "-hidden"),
+                Si = "".concat(F, "-hide"),
+                ks = "".concat(F, "-invisible"),
+                Yt = "".concat(F, "-modal"),
+                Er = "".concat(F, "-move"),
+                _i = "".concat(F, "Action"),
+                rr = "".concat(F, "Preview"),
                 Pi = "crop",
-                Er = "move",
-                Or = "none",
+                Or = "move",
+                Rr = "none",
                 xi = "crop",
                 xt = "cropend",
-                ks = "cropmove",
-                As = "cropstart",
+                As = "cropmove",
+                Us = "cropstart",
                 fo = "dblclick",
                 _a = R ? "touchstart" : "mousedown",
-                Od = R ? "touchmove" : "mousemove",
+                Rd = R ? "touchmove" : "mousemove",
                 iu = R ? "touchend touchcancel" : "mouseup",
-                Rd = x ? "pointerdown" : _a,
-                Cd = x ? "pointermove" : Od,
-                Td = x ? "pointerup pointercancel" : iu,
-                kd = "ready",
-                Ad = "resize",
-                Ud = "wheel",
+                Cd = x ? "pointerdown" : _a,
+                Td = x ? "pointermove" : Rd,
+                kd = x ? "pointerup pointercancel" : iu,
+                Ad = "ready",
+                Ud = "resize",
+                Dd = "wheel",
                 ru = "zoom",
-                Dd = "image/jpeg",
-                qv = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/,
-                Vv = /^data:/,
-                Wv = /^data:image\/jpeg;base64,/,
-                Kv = /^img|canvas$/i,
-                Nd = {
+                Nd = "image/jpeg",
+                Vv = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/,
+                Wv = /^data:/,
+                Kv = /^data:image\/jpeg;base64,/,
+                Gv = /^img|canvas$/i,
+                Bd = {
                     viewMode: 0,
                     dragMode: Pi,
                     initialAspectRatio: NaN,
@@ -636,14 +636,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     crop: null,
                     zoom: null
                 },
-                Gv = '<div class="cropper-container" touch-action="none"><div class="cropper-wrap-box"><div class="cropper-canvas"></div></div><div class="cropper-drag-box"></div><div class="cropper-crop-box"><span class="cropper-view-box"></span><span class="cropper-dashed dashed-h"></span><span class="cropper-dashed dashed-v"></span><span class="cropper-center"></span><span class="cropper-face"></span><span class="cropper-line line-e" data-cropper-action="e"></span><span class="cropper-line line-n" data-cropper-action="n"></span><span class="cropper-line line-w" data-cropper-action="w"></span><span class="cropper-line line-s" data-cropper-action="s"></span><span class="cropper-point point-e" data-cropper-action="e"></span><span class="cropper-point point-n" data-cropper-action="n"></span><span class="cropper-point point-w" data-cropper-action="w"></span><span class="cropper-point point-s" data-cropper-action="s"></span><span class="cropper-point point-ne" data-cropper-action="ne"></span><span class="cropper-point point-nw" data-cropper-action="nw"></span><span class="cropper-point point-sw" data-cropper-action="sw"></span><span class="cropper-point point-se" data-cropper-action="se"></span></div></div>',
-                Xv = Number.isNaN || w.isNaN;
+                Xv = '<div class="cropper-container" touch-action="none"><div class="cropper-wrap-box"><div class="cropper-canvas"></div></div><div class="cropper-drag-box"></div><div class="cropper-crop-box"><span class="cropper-view-box"></span><span class="cropper-dashed dashed-h"></span><span class="cropper-dashed dashed-v"></span><span class="cropper-center"></span><span class="cropper-face"></span><span class="cropper-line line-e" data-cropper-action="e"></span><span class="cropper-line line-n" data-cropper-action="n"></span><span class="cropper-line line-w" data-cropper-action="w"></span><span class="cropper-line line-s" data-cropper-action="s"></span><span class="cropper-point point-e" data-cropper-action="e"></span><span class="cropper-point point-n" data-cropper-action="n"></span><span class="cropper-point point-w" data-cropper-action="w"></span><span class="cropper-point point-s" data-cropper-action="s"></span><span class="cropper-point point-ne" data-cropper-action="ne"></span><span class="cropper-point point-nw" data-cropper-action="nw"></span><span class="cropper-point point-sw" data-cropper-action="sw"></span><span class="cropper-point point-se" data-cropper-action="se"></span></div></div>',
+                Yv = Number.isNaN || S.isNaN;
 
             function Q(v) {
-                return typeof v == "number" && !Xv(v)
+                return typeof v == "number" && !Yv(v)
             }
             n(Q, "isNumber");
-            var Bd = n(function(p) {
+            var Id = n(function(p) {
                 return p > 0 && p < 1 / 0
             }, "isPositiveNumber");
 
@@ -652,78 +652,78 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }
             n(su, "isUndefined");
 
-            function Rr(v) {
+            function Cr(v) {
                 return i(v) === "object" && v !== null
             }
-            n(Rr, "isObject");
-            var Yv = Object.prototype.hasOwnProperty;
+            n(Cr, "isObject");
+            var Jv = Object.prototype.hasOwnProperty;
 
-            function Us(v) {
-                if (!Rr(v)) return !1;
+            function Ds(v) {
+                if (!Cr(v)) return !1;
                 try {
                     var p = v.constructor,
                         g = p.prototype;
-                    return p && g && Yv.call(g, "isPrototypeOf")
+                    return p && g && Jv.call(g, "isPrototypeOf")
                 } catch {
                     return !1
                 }
             }
-            n(Us, "isPlainObject");
+            n(Ds, "isPlainObject");
 
             function rt(v) {
                 return typeof v == "function"
             }
             n(rt, "isFunction");
-            var Jv = Array.prototype.slice;
+            var Qv = Array.prototype.slice;
 
-            function Id(v) {
-                return Array.from ? Array.from(v) : Jv.call(v)
+            function Ld(v) {
+                return Array.from ? Array.from(v) : Qv.call(v)
             }
-            n(Id, "toArray");
+            n(Ld, "toArray");
 
             function ve(v, p) {
-                return v && rt(p) && (Array.isArray(v) || Q(v.length) ? Id(v).forEach(function(g, m) {
+                return v && rt(p) && (Array.isArray(v) || Q(v.length) ? Ld(v).forEach(function(g, m) {
                     p.call(v, g, m, v)
-                }) : Rr(v) && Object.keys(v).forEach(function(g) {
+                }) : Cr(v) && Object.keys(v).forEach(function(g) {
                     p.call(v, v[g], g, v)
                 })), v
             }
             n(ve, "forEach");
             var ce = Object.assign || n(function(p) {
                     for (var g = arguments.length, m = new Array(g > 1 ? g - 1 : 0), _ = 1; _ < g; _++) m[_ - 1] = arguments[_];
-                    return Rr(p) && m.length > 0 && m.forEach(function(b) {
-                        Rr(b) && Object.keys(b).forEach(function(P) {
+                    return Cr(p) && m.length > 0 && m.forEach(function(b) {
+                        Cr(b) && Object.keys(b).forEach(function(P) {
                             p[P] = b[P]
                         })
                     }), p
                 }, "assign"),
-                Qv = /\.\d*(?:0|9){12}\d*$/;
+                Zv = /\.\d*(?:0|9){12}\d*$/;
 
-            function Ds(v) {
+            function Ns(v) {
                 var p = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 1e11;
-                return Qv.test(v) ? Math.round(v * p) / p : v
+                return Zv.test(v) ? Math.round(v * p) / p : v
             }
-            n(Ds, "normalizeDecimalNumber");
-            var Zv = /^width|height|left|top|marginLeft|marginTop$/;
+            n(Ns, "normalizeDecimalNumber");
+            var e0 = /^width|height|left|top|marginLeft|marginTop$/;
 
             function sr(v, p) {
                 var g = v.style;
                 ve(p, function(m, _) {
-                    Zv.test(_) && Q(m) && (m = "".concat(m, "px")), g[_] = m
+                    e0.test(_) && Q(m) && (m = "".concat(m, "px")), g[_] = m
                 })
             }
             n(sr, "setStyle");
 
-            function e0(v, p) {
+            function t0(v, p) {
                 return v.classList ? v.classList.contains(p) : v.className.indexOf(p) > -1
             }
-            n(e0, "hasClass");
+            n(t0, "hasClass");
 
-            function Ce(v, p) {
+            function Te(v, p) {
                 if (!!p) {
                     if (Q(v.length)) {
                         ve(v, function(m) {
-                            Ce(m, p)
+                            Te(m, p)
                         });
                         return
                     }
@@ -735,13 +735,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     g ? g.indexOf(p) < 0 && (v.className = "".concat(g, " ").concat(p)) : v.className = p
                 }
             }
-            n(Ce, "addClass");
+            n(Te, "addClass");
 
-            function Yt(v, p) {
+            function Jt(v, p) {
                 if (!!p) {
                     if (Q(v.length)) {
                         ve(v, function(g) {
-                            Yt(g, p)
+                            Jt(g, p)
                         });
                         return
                     }
@@ -752,39 +752,39 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     v.className.indexOf(p) >= 0 && (v.className = v.className.replace(p, ""))
                 }
             }
-            n(Yt, "removeClass");
+            n(Jt, "removeClass");
 
-            function Ns(v, p, g) {
+            function Bs(v, p, g) {
                 if (!!p) {
                     if (Q(v.length)) {
                         ve(v, function(m) {
-                            Ns(m, p, g)
+                            Bs(m, p, g)
                         });
                         return
                     }
-                    g ? Ce(v, p) : Yt(v, p)
+                    g ? Te(v, p) : Jt(v, p)
                 }
             }
-            n(Ns, "toggleClass");
-            var t0 = /([a-z\d])([A-Z])/g;
+            n(Bs, "toggleClass");
+            var i0 = /([a-z\d])([A-Z])/g;
 
             function ou(v) {
-                return v.replace(t0, "$1-$2").toLowerCase()
+                return v.replace(i0, "$1-$2").toLowerCase()
             }
             n(ou, "toParamCase");
 
             function nu(v, p) {
-                return Rr(v[p]) ? v[p] : v.dataset ? v.dataset[p] : v.getAttribute("data-".concat(ou(p)))
+                return Cr(v[p]) ? v[p] : v.dataset ? v.dataset[p] : v.getAttribute("data-".concat(ou(p)))
             }
             n(nu, "getData");
 
             function mo(v, p, g) {
-                Rr(g) ? v[p] = g : v.dataset ? v.dataset[p] = g : v.setAttribute("data-".concat(ou(p)), g)
+                Cr(g) ? v[p] = g : v.dataset ? v.dataset[p] = g : v.setAttribute("data-".concat(ou(p)), g)
             }
             n(mo, "setData");
 
-            function i0(v, p) {
-                if (Rr(v[p])) try {
+            function r0(v, p) {
+                if (Cr(v[p])) try {
                     delete v[p]
                 } catch {
                     v[p] = void 0
@@ -794,11 +794,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     v.dataset[p] = void 0
                 } else v.removeAttribute("data-".concat(ou(p)))
             }
-            n(i0, "removeData");
-            var Ld = /\s\s*/,
-                Md = function() {
+            n(r0, "removeData");
+            var Md = /\s\s*/,
+                zd = function() {
                     var v = !1;
-                    if (S) {
+                    if (w) {
                         var p = !1,
                             g = n(function() {}, "listener"),
                             m = Object.defineProperty({}, "once", {
@@ -809,43 +809,43 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                     p = b
                                 }, "set")
                             });
-                        w.addEventListener("test", g, m), w.removeEventListener("test", g, m)
+                        S.addEventListener("test", g, m), S.removeEventListener("test", g, m)
                     }
                     return v
                 }();
 
-            function Nt(v, p, g) {
+            function Bt(v, p, g) {
                 var m = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {},
                     _ = g;
-                p.trim().split(Ld).forEach(function(b) {
-                    if (!Md) {
+                p.trim().split(Md).forEach(function(b) {
+                    if (!zd) {
                         var P = v.listeners;
                         P && P[b] && P[b][g] && (_ = P[b][g], delete P[b][g], Object.keys(P[b]).length === 0 && delete P[b], Object.keys(P).length === 0 && delete v.listeners)
                     }
                     v.removeEventListener(b, _, m)
                 })
             }
-            n(Nt, "removeListener");
+            n(Bt, "removeListener");
 
             function Ft(v, p, g) {
                 var m = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {},
                     _ = g;
-                p.trim().split(Ld).forEach(function(b) {
-                    if (m.once && !Md) {
+                p.trim().split(Md).forEach(function(b) {
+                    if (m.once && !zd) {
                         var P = v.listeners,
-                            F = P === void 0 ? {} : P;
+                            E = P === void 0 ? {} : P;
                         _ = n(function() {
-                            delete F[b][g], v.removeEventListener(b, _, m);
+                            delete E[b][g], v.removeEventListener(b, _, m);
                             for (var T = arguments.length, C = new Array(T), O = 0; O < T; O++) C[O] = arguments[O];
                             g.apply(v, C)
-                        }, "handler"), F[b] || (F[b] = {}), F[b][g] && v.removeEventListener(b, F[b][g], m), F[b][g] = _, v.listeners = F
+                        }, "handler"), E[b] || (E[b] = {}), E[b][g] && v.removeEventListener(b, E[b][g], m), E[b][g] = _, v.listeners = E
                     }
                     v.addEventListener(b, _, m)
                 })
             }
             n(Ft, "addListener");
 
-            function Bs(v, p, g) {
+            function Is(v, p, g) {
                 var m;
                 return rt(Event) && rt(CustomEvent) ? m = new CustomEvent(p, {
                     detail: g,
@@ -853,30 +853,30 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     cancelable: !0
                 }) : (m = document.createEvent("CustomEvent"), m.initCustomEvent(p, !0, !0, g)), v.dispatchEvent(m)
             }
-            n(Bs, "dispatchEvent");
+            n(Is, "dispatchEvent");
 
-            function zd(v) {
+            function jd(v) {
                 var p = v.getBoundingClientRect();
                 return {
                     left: p.left + (window.pageXOffset - document.documentElement.clientLeft),
                     top: p.top + (window.pageYOffset - document.documentElement.clientTop)
                 }
             }
-            n(zd, "getOffset");
-            var au = w.location,
-                r0 = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
-
-            function jd(v) {
-                var p = v.match(r0);
-                return p !== null && (p[1] !== au.protocol || p[2] !== au.hostname || p[3] !== au.port)
-            }
-            n(jd, "isCrossOriginURL");
+            n(jd, "getOffset");
+            var au = S.location,
+                s0 = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
 
             function Hd(v) {
+                var p = v.match(s0);
+                return p !== null && (p[1] !== au.protocol || p[2] !== au.hostname || p[3] !== au.port)
+            }
+            n(Hd, "isCrossOriginURL");
+
+            function $d(v) {
                 var p = "timestamp=".concat(new Date().getTime());
                 return v + (v.indexOf("?") === -1 ? "?" : "&") + p
             }
-            n(Hd, "addTimestamp");
+            n($d, "addTimestamp");
 
             function go(v) {
                 var p = v.rotate,
@@ -886,34 +886,34 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     b = v.translateY,
                     P = [];
                 Q(_) && _ !== 0 && P.push("translateX(".concat(_, "px)")), Q(b) && b !== 0 && P.push("translateY(".concat(b, "px)")), Q(p) && p !== 0 && P.push("rotate(".concat(p, "deg)")), Q(g) && g !== 1 && P.push("scaleX(".concat(g, ")")), Q(m) && m !== 1 && P.push("scaleY(".concat(m, ")"));
-                var F = P.length ? P.join(" ") : "none";
+                var E = P.length ? P.join(" ") : "none";
                 return {
-                    WebkitTransform: F,
-                    msTransform: F,
-                    transform: F
+                    WebkitTransform: E,
+                    msTransform: E,
+                    transform: E
                 }
             }
             n(go, "getTransforms");
 
-            function s0(v) {
+            function o0(v) {
                 var p = a({}, v),
                     g = [];
                 return ve(v, function(m, _) {
                     delete p[_], ve(p, function(b) {
                         var P = Math.abs(m.startX - b.startX),
-                            F = Math.abs(m.startY - b.startY),
-                            A = Math.abs(m.endX - b.endX),
+                            E = Math.abs(m.startY - b.startY),
+                            U = Math.abs(m.endX - b.endX),
                             T = Math.abs(m.endY - b.endY),
-                            C = Math.sqrt(P * P + F * F),
-                            O = Math.sqrt(A * A + T * T),
-                            k = (O - C) / C;
-                        g.push(k)
+                            C = Math.sqrt(P * P + E * E),
+                            O = Math.sqrt(U * U + T * T),
+                            A = (O - C) / C;
+                        g.push(A)
                     })
                 }), g.sort(function(m, _) {
                     return Math.abs(m) < Math.abs(_)
                 }), g[0]
             }
-            n(s0, "getMaxZoomRatio");
+            n(o0, "getMaxZoomRatio");
 
             function Pa(v, p) {
                 var g = v.pageX,
@@ -929,7 +929,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }
             n(Pa, "getPointer");
 
-            function o0(v) {
+            function n0(v) {
                 var p = 0,
                     g = 0,
                     m = 0;
@@ -942,18 +942,18 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     pageY: g
                 }
             }
-            n(o0, "getPointersCenter");
+            n(n0, "getPointersCenter");
 
             function or(v) {
                 var p = v.aspectRatio,
                     g = v.height,
                     m = v.width,
                     _ = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "contain",
-                    b = Bd(m),
-                    P = Bd(g);
+                    b = Id(m),
+                    P = Id(g);
                 if (b && P) {
-                    var F = g * p;
-                    _ === "contain" && F > m || _ === "cover" && F < m ? g = m / p : m = g * p
+                    var E = g * p;
+                    _ === "contain" && E > m || _ === "cover" && E < m ? g = m / p : m = g * p
                 } else b ? g = m / p : P && (m = g * p);
                 return {
                     width: m,
@@ -962,7 +962,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }
             n(or, "getAdjustedSizes");
 
-            function n0(v) {
+            function a0(v) {
                 var p = v.width,
                     g = v.height,
                     m = v.degree;
@@ -973,35 +973,35 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 var _ = m % 90 * Math.PI / 180,
                     b = Math.sin(_),
                     P = Math.cos(_),
-                    F = p * P + g * b,
-                    A = p * b + g * P;
+                    E = p * P + g * b,
+                    U = p * b + g * P;
                 return m > 90 ? {
-                    width: A,
-                    height: F
+                    width: U,
+                    height: E
                 } : {
-                    width: F,
-                    height: A
+                    width: E,
+                    height: U
                 }
             }
-            n(n0, "getRotatedSizes");
+            n(a0, "getRotatedSizes");
 
-            function a0(v, p, g, m) {
+            function l0(v, p, g, m) {
                 var _ = p.aspectRatio,
                     b = p.naturalWidth,
                     P = p.naturalHeight,
-                    F = p.rotate,
-                    A = F === void 0 ? 0 : F,
+                    E = p.rotate,
+                    U = E === void 0 ? 0 : E,
                     T = p.scaleX,
                     C = T === void 0 ? 1 : T,
                     O = p.scaleY,
-                    k = O === void 0 ? 1 : O,
+                    A = O === void 0 ? 1 : O,
                     te = g.aspectRatio,
                     Z = g.naturalWidth,
                     de = g.naturalHeight,
                     re = m.fillColor,
                     Fe = re === void 0 ? "transparent" : re,
-                    Te = m.imageSmoothingEnabled,
-                    be = Te === void 0 ? !0 : Te,
+                    ke = m.imageSmoothingEnabled,
+                    be = ke === void 0 ? !0 : ke,
                     Fi = m.imageSmoothingQuality,
                     dt = Fi === void 0 ? "low" : Fi,
                     D = m.maxWidth,
@@ -1009,54 +1009,54 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     Ee = m.maxHeight,
                     Et = Ee === void 0 ? 1 / 0 : Ee,
                     Ei = m.minWidth,
-                    Cr = Ei === void 0 ? 0 : Ei,
-                    Tr = m.minHeight,
-                    nr = Tr === void 0 ? 0 : Tr,
-                    Jt = document.createElement("canvas"),
-                    st = Jt.getContext("2d"),
-                    kr = or({
+                    Tr = Ei === void 0 ? 0 : Ei,
+                    kr = m.minHeight,
+                    nr = kr === void 0 ? 0 : kr,
+                    Qt = document.createElement("canvas"),
+                    st = Qt.getContext("2d"),
+                    Ar = or({
                         aspectRatio: te,
                         width: se,
                         height: Et
                     }),
                     xa = or({
                         aspectRatio: te,
-                        width: Cr,
+                        width: Tr,
                         height: nr
                     }, "cover"),
-                    lu = Math.min(kr.width, Math.max(xa.width, Z)),
-                    uu = Math.min(kr.height, Math.max(xa.height, de)),
-                    Vd = or({
+                    lu = Math.min(Ar.width, Math.max(xa.width, Z)),
+                    uu = Math.min(Ar.height, Math.max(xa.height, de)),
+                    Wd = or({
                         aspectRatio: _,
                         width: se,
                         height: Et
                     }),
-                    Wd = or({
+                    Kd = or({
                         aspectRatio: _,
-                        width: Cr,
+                        width: Tr,
                         height: nr
                     }, "cover"),
-                    Kd = Math.min(Vd.width, Math.max(Wd.width, b)),
-                    Gd = Math.min(Vd.height, Math.max(Wd.height, P)),
-                    S0 = [-Kd / 2, -Gd / 2, Kd, Gd];
-                return Jt.width = Ds(lu), Jt.height = Ds(uu), st.fillStyle = Fe, st.fillRect(0, 0, lu, uu), st.save(), st.translate(lu / 2, uu / 2), st.rotate(A * Math.PI / 180), st.scale(C, k), st.imageSmoothingEnabled = be, st.imageSmoothingQuality = dt, st.drawImage.apply(st, [v].concat(l(S0.map(function(_0) {
-                    return Math.floor(Ds(_0))
-                })))), st.restore(), Jt
+                    Gd = Math.min(Wd.width, Math.max(Kd.width, b)),
+                    Xd = Math.min(Wd.height, Math.max(Kd.height, P)),
+                    _0 = [-Gd / 2, -Xd / 2, Gd, Xd];
+                return Qt.width = Ns(lu), Qt.height = Ns(uu), st.fillStyle = Fe, st.fillRect(0, 0, lu, uu), st.save(), st.translate(lu / 2, uu / 2), st.rotate(U * Math.PI / 180), st.scale(C, A), st.imageSmoothingEnabled = be, st.imageSmoothingQuality = dt, st.drawImage.apply(st, [v].concat(l(_0.map(function(P0) {
+                    return Math.floor(Ns(P0))
+                })))), st.restore(), Qt
             }
-            n(a0, "getSourceCanvas");
-            var $d = String.fromCharCode;
+            n(l0, "getSourceCanvas");
+            var qd = String.fromCharCode;
 
-            function l0(v, p, g) {
+            function u0(v, p, g) {
                 var m = "";
                 g += p;
-                for (var _ = p; _ < g; _ += 1) m += $d(v.getUint8(_));
+                for (var _ = p; _ < g; _ += 1) m += qd(v.getUint8(_));
                 return m
             }
-            n(l0, "getStringFromCharCode");
-            var u0 = /^data:.*,/;
+            n(u0, "getStringFromCharCode");
+            var h0 = /^data:.*,/;
 
-            function h0(v) {
-                var p = v.replace(u0, ""),
+            function c0(v) {
+                var p = v.replace(h0, ""),
                     g = atob(p),
                     m = new ArrayBuffer(g.length),
                     _ = new Uint8Array(m);
@@ -1064,31 +1064,31 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     _[P] = g.charCodeAt(P)
                 }), m
             }
-            n(h0, "dataURLToArrayBuffer");
+            n(c0, "dataURLToArrayBuffer");
 
-            function c0(v, p) {
-                for (var g = [], m = 8192, _ = new Uint8Array(v); _.length > 0;) g.push($d.apply(null, Id(_.subarray(0, m)))), _ = _.subarray(m);
+            function d0(v, p) {
+                for (var g = [], m = 8192, _ = new Uint8Array(v); _.length > 0;) g.push(qd.apply(null, Ld(_.subarray(0, m)))), _ = _.subarray(m);
                 return "data:".concat(p, ";base64,").concat(btoa(g.join("")))
             }
-            n(c0, "arrayBufferToDataURL");
+            n(d0, "arrayBufferToDataURL");
 
-            function d0(v) {
+            function p0(v) {
                 var p = new DataView(v),
                     g;
                 try {
                     var m, _, b;
                     if (p.getUint8(0) === 255 && p.getUint8(1) === 216)
-                        for (var P = p.byteLength, F = 2; F + 1 < P;) {
-                            if (p.getUint8(F) === 255 && p.getUint8(F + 1) === 225) {
-                                _ = F;
+                        for (var P = p.byteLength, E = 2; E + 1 < P;) {
+                            if (p.getUint8(E) === 255 && p.getUint8(E + 1) === 225) {
+                                _ = E;
                                 break
                             }
-                            F += 1
+                            E += 1
                         }
                     if (_) {
-                        var A = _ + 4,
+                        var U = _ + 4,
                             T = _ + 10;
-                        if (l0(p, A, 4) === "Exif") {
+                        if (u0(p, U, 4) === "Exif") {
                             var C = p.getUint16(T);
                             if (m = C === 18761, (m || C === 19789) && p.getUint16(T + 2, m) === 42) {
                                 var O = p.getUint32(T + 4, m);
@@ -1097,9 +1097,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         }
                     }
                     if (b) {
-                        var k = p.getUint16(b, m),
+                        var A = p.getUint16(b, m),
                             te, Z;
-                        for (Z = 0; Z < k; Z += 1)
+                        for (Z = 0; Z < A; Z += 1)
                             if (te = b + Z * 12 + 2, p.getUint16(te, m) === 274) {
                                 te += 8, g = p.getUint16(te, m), p.setUint16(te, 1, m);
                                 break
@@ -1110,9 +1110,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 }
                 return g
             }
-            n(d0, "resetAndGetOrientation");
+            n(p0, "resetAndGetOrientation");
 
-            function p0(v) {
+            function f0(v) {
                 var p = 0,
                     g = 1,
                     m = 1;
@@ -1145,8 +1145,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     scaleY: m
                 }
             }
-            n(p0, "parseOrientation");
-            var f0 = {
+            n(f0, "parseOrientation");
+            var m0 = {
                     render: n(function() {
                         this.initContainer(), this.initCanvas(), this.initCropBox(), this.renderCanvas(), this.cropped && this.renderCropBox()
                     }, "render"),
@@ -1155,7 +1155,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             g = this.options,
                             m = this.container,
                             _ = this.cropper;
-                        Ce(_, xe), Yt(p, xe);
+                        Te(_, xe), Jt(p, xe);
                         var b = {
                             width: Math.max(m.offsetWidth, Number(g.minContainerWidth) || 200),
                             height: Math.max(m.offsetHeight, Number(g.minContainerHeight) || 100)
@@ -1163,7 +1163,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         this.containerData = b, sr(_, {
                             width: b.width,
                             height: b.height
-                        }), Ce(p, xe), Yt(_, xe)
+                        }), Te(p, xe), Jt(_, xe)
                     }, "initContainer"),
                     initCanvas: n(function() {
                         var p = this.containerData,
@@ -1172,59 +1172,59 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             _ = Math.abs(g.rotate) % 180 === 90,
                             b = _ ? g.naturalHeight : g.naturalWidth,
                             P = _ ? g.naturalWidth : g.naturalHeight,
-                            F = b / P,
-                            A = p.width,
+                            E = b / P,
+                            U = p.width,
                             T = p.height;
-                        p.height * F > p.width ? m === 3 ? A = p.height * F : T = p.width / F : m === 3 ? T = p.width / F : A = p.height * F;
+                        p.height * E > p.width ? m === 3 ? U = p.height * E : T = p.width / E : m === 3 ? T = p.width / E : U = p.height * E;
                         var C = {
-                            aspectRatio: F,
+                            aspectRatio: E,
                             naturalWidth: b,
                             naturalHeight: P,
-                            width: A,
+                            width: U,
                             height: T
                         };
-                        C.left = (p.width - A) / 2, C.top = (p.height - T) / 2, C.oldLeft = C.left, C.oldTop = C.top, this.canvasData = C, this.limited = m === 1 || m === 2, this.limitCanvas(!0, !0), this.initialImageData = ce({}, g), this.initialCanvasData = ce({}, C)
+                        C.left = (p.width - U) / 2, C.top = (p.height - T) / 2, C.oldLeft = C.left, C.oldTop = C.top, this.canvasData = C, this.limited = m === 1 || m === 2, this.limitCanvas(!0, !0), this.initialImageData = ce({}, g), this.initialCanvasData = ce({}, C)
                     }, "initCanvas"),
                     limitCanvas: n(function(p, g) {
                         var m = this.options,
                             _ = this.containerData,
                             b = this.canvasData,
                             P = this.cropBoxData,
-                            F = m.viewMode,
-                            A = b.aspectRatio,
+                            E = m.viewMode,
+                            U = b.aspectRatio,
                             T = this.cropped && P;
                         if (p) {
                             var C = Number(m.minCanvasWidth) || 0,
                                 O = Number(m.minCanvasHeight) || 0;
-                            F > 1 ? (C = Math.max(C, _.width), O = Math.max(O, _.height), F === 3 && (O * A > C ? C = O * A : O = C / A)) : F > 0 && (C ? C = Math.max(C, T ? P.width : 0) : O ? O = Math.max(O, T ? P.height : 0) : T && (C = P.width, O = P.height, O * A > C ? C = O * A : O = C / A));
-                            var k = or({
-                                aspectRatio: A,
+                            E > 1 ? (C = Math.max(C, _.width), O = Math.max(O, _.height), E === 3 && (O * U > C ? C = O * U : O = C / U)) : E > 0 && (C ? C = Math.max(C, T ? P.width : 0) : O ? O = Math.max(O, T ? P.height : 0) : T && (C = P.width, O = P.height, O * U > C ? C = O * U : O = C / U));
+                            var A = or({
+                                aspectRatio: U,
                                 width: C,
                                 height: O
                             });
-                            C = k.width, O = k.height, b.minWidth = C, b.minHeight = O, b.maxWidth = 1 / 0, b.maxHeight = 1 / 0
+                            C = A.width, O = A.height, b.minWidth = C, b.minHeight = O, b.maxWidth = 1 / 0, b.maxHeight = 1 / 0
                         }
                         if (g)
-                            if (F > (T ? 0 : 1)) {
+                            if (E > (T ? 0 : 1)) {
                                 var te = _.width - b.width,
                                     Z = _.height - b.height;
-                                b.minLeft = Math.min(0, te), b.minTop = Math.min(0, Z), b.maxLeft = Math.max(0, te), b.maxTop = Math.max(0, Z), T && this.limited && (b.minLeft = Math.min(P.left, P.left + (P.width - b.width)), b.minTop = Math.min(P.top, P.top + (P.height - b.height)), b.maxLeft = P.left, b.maxTop = P.top, F === 2 && (b.width >= _.width && (b.minLeft = Math.min(0, te), b.maxLeft = Math.max(0, te)), b.height >= _.height && (b.minTop = Math.min(0, Z), b.maxTop = Math.max(0, Z))))
+                                b.minLeft = Math.min(0, te), b.minTop = Math.min(0, Z), b.maxLeft = Math.max(0, te), b.maxTop = Math.max(0, Z), T && this.limited && (b.minLeft = Math.min(P.left, P.left + (P.width - b.width)), b.minTop = Math.min(P.top, P.top + (P.height - b.height)), b.maxLeft = P.left, b.maxTop = P.top, E === 2 && (b.width >= _.width && (b.minLeft = Math.min(0, te), b.maxLeft = Math.max(0, te)), b.height >= _.height && (b.minTop = Math.min(0, Z), b.maxTop = Math.max(0, Z))))
                             } else b.minLeft = -b.width, b.minTop = -b.height, b.maxLeft = _.width, b.maxTop = _.height
                     }, "limitCanvas"),
                     renderCanvas: n(function(p, g) {
                         var m = this.canvasData,
                             _ = this.imageData;
                         if (g) {
-                            var b = n0({
+                            var b = a0({
                                     width: _.naturalWidth * Math.abs(_.scaleX || 1),
                                     height: _.naturalHeight * Math.abs(_.scaleY || 1),
                                     degree: _.rotate || 0
                                 }),
                                 P = b.width,
-                                F = b.height,
-                                A = m.width * (P / m.naturalWidth),
-                                T = m.height * (F / m.naturalHeight);
-                            m.left -= (A - m.width) / 2, m.top -= (T - m.height) / 2, m.width = A, m.height = T, m.aspectRatio = P / F, m.naturalWidth = P, m.naturalHeight = F, this.limitCanvas(!0, !1)
+                                E = b.height,
+                                U = m.width * (P / m.naturalWidth),
+                                T = m.height * (E / m.naturalHeight);
+                            m.left -= (U - m.width) / 2, m.top -= (T - m.height) / 2, m.width = U, m.height = T, m.aspectRatio = P / E, m.naturalWidth = P, m.naturalHeight = E, this.limitCanvas(!0, !1)
                         }(m.width > m.maxWidth || m.width < m.minWidth) && (m.left = m.oldLeft), (m.height > m.maxHeight || m.height < m.minHeight) && (m.top = m.oldTop), m.width = Math.min(Math.max(m.width, m.minWidth), m.maxWidth), m.height = Math.min(Math.max(m.height, m.minHeight), m.maxHeight), this.limitCanvas(!1, !0), m.left = Math.min(Math.max(m.left, m.minLeft), m.maxLeft), m.top = Math.min(Math.max(m.top, m.minTop), m.maxTop), m.oldLeft = m.left, m.oldTop = m.top, sr(this.canvas, ce({
                             width: m.width,
                             height: m.height
@@ -1267,22 +1267,22 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             _ = this.containerData,
                             b = this.canvasData,
                             P = this.cropBoxData,
-                            F = this.limited,
-                            A = m.aspectRatio;
+                            E = this.limited,
+                            U = m.aspectRatio;
                         if (p) {
                             var T = Number(m.minCropBoxWidth) || 0,
                                 C = Number(m.minCropBoxHeight) || 0,
-                                O = F ? Math.min(_.width, b.width, b.width + b.left, _.width - b.left) : _.width,
-                                k = F ? Math.min(_.height, b.height, b.height + b.top, _.height - b.top) : _.height;
-                            T = Math.min(T, _.width), C = Math.min(C, _.height), A && (T && C ? C * A > T ? C = T / A : T = C * A : T ? C = T / A : C && (T = C * A), k * A > O ? k = O / A : O = k * A), P.minWidth = Math.min(T, O), P.minHeight = Math.min(C, k), P.maxWidth = O, P.maxHeight = k
+                                O = E ? Math.min(_.width, b.width, b.width + b.left, _.width - b.left) : _.width,
+                                A = E ? Math.min(_.height, b.height, b.height + b.top, _.height - b.top) : _.height;
+                            T = Math.min(T, _.width), C = Math.min(C, _.height), U && (T && C ? C * U > T ? C = T / U : T = C * U : T ? C = T / U : C && (T = C * U), A * U > O ? A = O / U : O = A * U), P.minWidth = Math.min(T, O), P.minHeight = Math.min(C, A), P.maxWidth = O, P.maxHeight = A
                         }
-                        g && (F ? (P.minLeft = Math.max(0, b.left), P.minTop = Math.max(0, b.top), P.maxLeft = Math.min(_.width, b.left + b.width) - P.width, P.maxTop = Math.min(_.height, b.top + b.height) - P.height) : (P.minLeft = 0, P.minTop = 0, P.maxLeft = _.width - P.width, P.maxTop = _.height - P.height))
+                        g && (E ? (P.minLeft = Math.max(0, b.left), P.minTop = Math.max(0, b.top), P.maxLeft = Math.min(_.width, b.left + b.width) - P.width, P.maxTop = Math.min(_.height, b.top + b.height) - P.height) : (P.minLeft = 0, P.minTop = 0, P.maxLeft = _.width - P.width, P.maxTop = _.height - P.height))
                     }, "limitCropBox"),
                     renderCropBox: n(function() {
                         var p = this.options,
                             g = this.containerData,
                             m = this.cropBoxData;
-                        (m.width > m.maxWidth || m.width < m.minWidth) && (m.left = m.oldLeft), (m.height > m.maxHeight || m.height < m.minHeight) && (m.top = m.oldTop), m.width = Math.min(Math.max(m.width, m.minWidth), m.maxWidth), m.height = Math.min(Math.max(m.height, m.minHeight), m.maxHeight), this.limitCropBox(!1, !0), m.left = Math.min(Math.max(m.left, m.minLeft), m.maxLeft), m.top = Math.min(Math.max(m.top, m.minTop), m.maxTop), m.oldLeft = m.left, m.oldTop = m.top, p.movable && p.cropBoxMovable && mo(this.face, _i, m.width >= g.width && m.height >= g.height ? $ : N), sr(this.cropBox, ce({
+                        (m.width > m.maxWidth || m.width < m.minWidth) && (m.left = m.oldLeft), (m.height > m.maxHeight || m.height < m.minHeight) && (m.top = m.oldTop), m.width = Math.min(Math.max(m.width, m.minWidth), m.maxWidth), m.height = Math.min(Math.max(m.height, m.minHeight), m.maxHeight), this.limitCropBox(!1, !0), m.left = Math.min(Math.max(m.left, m.minLeft), m.maxLeft), m.top = Math.min(Math.max(m.top, m.minTop), m.maxTop), m.oldLeft = m.left, m.oldTop = m.top, p.movable && p.cropBoxMovable && mo(this.face, _i, m.width >= g.width && m.height >= g.height ? q : N), sr(this.cropBox, ce({
                             width: m.width,
                             height: m.height
                         }, go({
@@ -1291,10 +1291,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         }))), this.cropped && this.limited && this.limitCanvas(!0, !0), this.disabled || this.output()
                     }, "renderCropBox"),
                     output: n(function() {
-                        this.preview(), Bs(this.element, xi, this.getData())
+                        this.preview(), Is(this.element, xi, this.getData())
                     }, "output")
                 },
-                m0 = {
+                g0 = {
                     initPreview: n(function() {
                         var p = this.element,
                             g = this.crossOrigin,
@@ -1303,14 +1303,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             b = p.alt || "The image to preview",
                             P = document.createElement("img");
                         if (g && (P.crossOrigin = g), P.src = _, P.alt = b, this.viewBox.appendChild(P), this.viewBoxImage = P, !!m) {
-                            var F = m;
-                            typeof m == "string" ? F = p.ownerDocument.querySelectorAll(m) : m.querySelector && (F = [m]), this.previews = F, ve(F, function(A) {
+                            var E = m;
+                            typeof m == "string" ? E = p.ownerDocument.querySelectorAll(m) : m.querySelector && (E = [m]), this.previews = E, ve(E, function(U) {
                                 var T = document.createElement("img");
-                                mo(A, rr, {
-                                    width: A.offsetWidth,
-                                    height: A.offsetHeight,
-                                    html: A.innerHTML
-                                }), g && (T.crossOrigin = g), T.src = _, T.alt = b, T.style.cssText = 'display:block;width:100%;height:auto;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;image-orientation:0deg!important;"', A.innerHTML = "", A.appendChild(T)
+                                mo(U, rr, {
+                                    width: U.offsetWidth,
+                                    height: U.offsetHeight,
+                                    html: U.innerHTML
+                                }), g && (T.crossOrigin = g), T.src = _, T.alt = b, T.style.cssText = 'display:block;width:100%;height:auto;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;image-orientation:0deg!important;"', U.innerHTML = "", U.appendChild(T)
                             })
                         }
                     }, "initPreview"),
@@ -1320,7 +1320,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             sr(p, {
                                 width: g.width,
                                 height: g.height
-                            }), p.innerHTML = g.html, i0(p, rr)
+                            }), p.innerHTML = g.html, r0(p, rr)
                         })
                     }, "resetPreview"),
                     preview: n(function() {
@@ -1330,56 +1330,56 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             _ = m.width,
                             b = m.height,
                             P = p.width,
-                            F = p.height,
-                            A = m.left - g.left - p.left,
+                            E = p.height,
+                            U = m.left - g.left - p.left,
                             T = m.top - g.top - p.top;
                         !this.cropped || this.disabled || (sr(this.viewBoxImage, ce({
                             width: P,
-                            height: F
+                            height: E
                         }, go(ce({
-                            translateX: -A,
+                            translateX: -U,
                             translateY: -T
                         }, p)))), ve(this.previews, function(C) {
                             var O = nu(C, rr),
-                                k = O.width,
+                                A = O.width,
                                 te = O.height,
-                                Z = k,
+                                Z = A,
                                 de = te,
                                 re = 1;
-                            _ && (re = k / _, de = b * re), b && de > te && (re = te / b, Z = _ * re, de = te), sr(C, {
+                            _ && (re = A / _, de = b * re), b && de > te && (re = te / b, Z = _ * re, de = te), sr(C, {
                                 width: Z,
                                 height: de
                             }), sr(C.getElementsByTagName("img")[0], ce({
                                 width: P * re,
-                                height: F * re
+                                height: E * re
                             }, go(ce({
-                                translateX: -A * re,
+                                translateX: -U * re,
                                 translateY: -T * re
                             }, p))))
                         }))
                     }, "preview")
                 },
-                g0 = {
+                y0 = {
                     bind: n(function() {
                         var p = this.element,
                             g = this.options,
                             m = this.cropper;
-                        rt(g.cropstart) && Ft(p, As, g.cropstart), rt(g.cropmove) && Ft(p, ks, g.cropmove), rt(g.cropend) && Ft(p, xt, g.cropend), rt(g.crop) && Ft(p, xi, g.crop), rt(g.zoom) && Ft(p, ru, g.zoom), Ft(m, Rd, this.onCropStart = this.cropStart.bind(this)), g.zoomable && g.zoomOnWheel && Ft(m, Ud, this.onWheel = this.wheel.bind(this), {
+                        rt(g.cropstart) && Ft(p, Us, g.cropstart), rt(g.cropmove) && Ft(p, As, g.cropmove), rt(g.cropend) && Ft(p, xt, g.cropend), rt(g.crop) && Ft(p, xi, g.crop), rt(g.zoom) && Ft(p, ru, g.zoom), Ft(m, Cd, this.onCropStart = this.cropStart.bind(this)), g.zoomable && g.zoomOnWheel && Ft(m, Dd, this.onWheel = this.wheel.bind(this), {
                             passive: !1,
                             capture: !0
-                        }), g.toggleDragModeOnDblclick && Ft(m, fo, this.onDblclick = this.dblclick.bind(this)), Ft(p.ownerDocument, Cd, this.onCropMove = this.cropMove.bind(this)), Ft(p.ownerDocument, Td, this.onCropEnd = this.cropEnd.bind(this)), g.responsive && Ft(window, Ad, this.onResize = this.resize.bind(this))
+                        }), g.toggleDragModeOnDblclick && Ft(m, fo, this.onDblclick = this.dblclick.bind(this)), Ft(p.ownerDocument, Td, this.onCropMove = this.cropMove.bind(this)), Ft(p.ownerDocument, kd, this.onCropEnd = this.cropEnd.bind(this)), g.responsive && Ft(window, Ud, this.onResize = this.resize.bind(this))
                     }, "bind"),
                     unbind: n(function() {
                         var p = this.element,
                             g = this.options,
                             m = this.cropper;
-                        rt(g.cropstart) && Nt(p, As, g.cropstart), rt(g.cropmove) && Nt(p, ks, g.cropmove), rt(g.cropend) && Nt(p, xt, g.cropend), rt(g.crop) && Nt(p, xi, g.crop), rt(g.zoom) && Nt(p, ru, g.zoom), Nt(m, Rd, this.onCropStart), g.zoomable && g.zoomOnWheel && Nt(m, Ud, this.onWheel, {
+                        rt(g.cropstart) && Bt(p, Us, g.cropstart), rt(g.cropmove) && Bt(p, As, g.cropmove), rt(g.cropend) && Bt(p, xt, g.cropend), rt(g.crop) && Bt(p, xi, g.crop), rt(g.zoom) && Bt(p, ru, g.zoom), Bt(m, Cd, this.onCropStart), g.zoomable && g.zoomOnWheel && Bt(m, Dd, this.onWheel, {
                             passive: !1,
                             capture: !0
-                        }), g.toggleDragModeOnDblclick && Nt(m, fo, this.onDblclick), Nt(p.ownerDocument, Cd, this.onCropMove), Nt(p.ownerDocument, Td, this.onCropEnd), g.responsive && Nt(window, Ad, this.onResize)
+                        }), g.toggleDragModeOnDblclick && Bt(m, fo, this.onDblclick), Bt(p.ownerDocument, Td, this.onCropMove), Bt(p.ownerDocument, kd, this.onCropEnd), g.responsive && Bt(window, Ud, this.onResize)
                     }, "unbind")
                 },
-                y0 = {
+                v0 = {
                     resize: n(function() {
                         if (!this.disabled) {
                             var p = this.options,
@@ -1388,16 +1388,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                 _ = g.offsetWidth / m.width;
                             if (_ !== 1 || g.offsetHeight !== m.height) {
                                 var b, P;
-                                p.restore && (b = this.getCanvasData(), P = this.getCropBoxData()), this.render(), p.restore && (this.setCanvasData(ve(b, function(F, A) {
-                                    b[A] = F * _
-                                })), this.setCropBoxData(ve(P, function(F, A) {
-                                    P[A] = F * _
+                                p.restore && (b = this.getCanvasData(), P = this.getCropBoxData()), this.render(), p.restore && (this.setCanvasData(ve(b, function(E, U) {
+                                    b[U] = E * _
+                                })), this.setCropBoxData(ve(P, function(E, U) {
+                                    P[U] = E * _
                                 })))
                             }
                         }
                     }, "resize"),
                     dblclick: n(function() {
-                        this.disabled || this.options.dragMode === Or || this.setDragMode(e0(this.dragBox, ir) ? Er : Pi)
+                        this.disabled || this.options.dragMode === Rr || this.setDragMode(t0(this.dragBox, ir) ? Or : Pi)
                     }, "dblclick"),
                     wheel: n(function(p) {
                         var g = this,
@@ -1414,19 +1414,19 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             var _ = this.options,
                                 b = this.pointers,
                                 P;
-                            p.changedTouches ? ve(p.changedTouches, function(F) {
-                                b[F.identifier] = Pa(F)
-                            }) : b[p.pointerId || 0] = Pa(p), Object.keys(b).length > 1 && _.zoomable && _.zoomOnTouch ? P = K : P = nu(p.target, _i), !!qv.test(P) && Bs(this.element, As, {
+                            p.changedTouches ? ve(p.changedTouches, function(E) {
+                                b[E.identifier] = Pa(E)
+                            }) : b[p.pointerId || 0] = Pa(p), Object.keys(b).length > 1 && _.zoomable && _.zoomOnTouch ? P = K : P = nu(p.target, _i), !!Vv.test(P) && Is(this.element, Us, {
                                 originalEvent: p,
                                 action: P
-                            }) !== !1 && (p.preventDefault(), this.action = P, this.cropping = !1, P === V && (this.cropping = !0, Ce(this.dragBox, Xt)))
+                            }) !== !1 && (p.preventDefault(), this.action = P, this.cropping = !1, P === H && (this.cropping = !0, Te(this.dragBox, Yt)))
                         }
                     }, "cropStart"),
                     cropMove: n(function(p) {
                         var g = this.action;
                         if (!(this.disabled || !g)) {
                             var m = this.pointers;
-                            p.preventDefault(), Bs(this.element, ks, {
+                            p.preventDefault(), Is(this.element, As, {
                                 originalEvent: p,
                                 action: g
                             }) !== !1 && (p.changedTouches ? ve(p.changedTouches, function(_) {
@@ -1440,35 +1440,35 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                 m = this.pointers;
                             p.changedTouches ? ve(p.changedTouches, function(_) {
                                 delete m[_.identifier]
-                            }) : delete m[p.pointerId || 0], g && (p.preventDefault(), Object.keys(m).length || (this.action = ""), this.cropping && (this.cropping = !1, Ns(this.dragBox, Xt, this.cropped && this.options.modal)), Bs(this.element, xt, {
+                            }) : delete m[p.pointerId || 0], g && (p.preventDefault(), Object.keys(m).length || (this.action = ""), this.cropping && (this.cropping = !1, Bs(this.dragBox, Yt, this.cropped && this.options.modal)), Is(this.element, xt, {
                                 originalEvent: p,
                                 action: g
                             }))
                         }
                     }, "cropEnd")
                 },
-                v0 = {
+                b0 = {
                     change: n(function(p) {
                         var g = this.options,
                             m = this.canvasData,
                             _ = this.containerData,
                             b = this.cropBoxData,
                             P = this.pointers,
-                            F = this.action,
-                            A = g.aspectRatio,
+                            E = this.action,
+                            U = g.aspectRatio,
                             T = b.left,
                             C = b.top,
                             O = b.width,
-                            k = b.height,
+                            A = b.height,
                             te = T + O,
-                            Z = C + k,
+                            Z = C + A,
                             de = 0,
                             re = 0,
                             Fe = _.width,
-                            Te = _.height,
+                            ke = _.height,
                             be = !0,
                             Fi;
-                        !A && p.shiftKey && (A = O && k ? O / k : 1), this.limited && (de = b.minLeft, re = b.minTop, Fe = de + Math.min(_.width, m.width, m.left + m.width), Te = re + Math.min(_.height, m.height, m.top + m.height));
+                        !U && p.shiftKey && (U = O && A ? O / A : 1), this.limited && (de = b.minLeft, re = b.minTop, Fe = de + Math.min(_.width, m.width, m.left + m.width), ke = re + Math.min(_.height, m.height, m.top + m.height));
                         var dt = P[Object.keys(P)[0]],
                             D = {
                                 x: dt.endX - dt.startX,
@@ -1476,7 +1476,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             },
                             se = n(function(Et) {
                                 switch (Et) {
-                                    case U:
+                                    case k:
                                         te + D.x > Fe && (D.x = Fe - te);
                                         break;
                                     case B:
@@ -1486,104 +1486,104 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                         C + D.y < re && (D.y = re - C);
                                         break;
                                     case z:
-                                        Z + D.y > Te && (D.y = Te - Z);
+                                        Z + D.y > ke && (D.y = ke - Z);
                                         break
                                 }
                             }, "check");
-                        switch (F) {
+                        switch (E) {
                             case N:
                                 T += D.x, C += D.y;
                                 break;
-                            case U:
-                                if (D.x >= 0 && (te >= Fe || A && (C <= re || Z >= Te))) {
+                            case k:
+                                if (D.x >= 0 && (te >= Fe || U && (C <= re || Z >= ke))) {
                                     be = !1;
                                     break
                                 }
-                                se(U), O += D.x, O < 0 && (F = B, O = -O, T -= O), A && (k = O / A, C += (b.height - k) / 2);
+                                se(k), O += D.x, O < 0 && (E = B, O = -O, T -= O), U && (A = O / U, C += (b.height - A) / 2);
                                 break;
                             case G:
-                                if (D.y <= 0 && (C <= re || A && (T <= de || te >= Fe))) {
+                                if (D.y <= 0 && (C <= re || U && (T <= de || te >= Fe))) {
                                     be = !1;
                                     break
                                 }
-                                se(G), k -= D.y, C += D.y, k < 0 && (F = z, k = -k, C -= k), A && (O = k * A, T += (b.width - O) / 2);
+                                se(G), A -= D.y, C += D.y, A < 0 && (E = z, A = -A, C -= A), U && (O = A * U, T += (b.width - O) / 2);
                                 break;
                             case B:
-                                if (D.x <= 0 && (T <= de || A && (C <= re || Z >= Te))) {
+                                if (D.x <= 0 && (T <= de || U && (C <= re || Z >= ke))) {
                                     be = !1;
                                     break
                                 }
-                                se(B), O -= D.x, T += D.x, O < 0 && (F = U, O = -O, T -= O), A && (k = O / A, C += (b.height - k) / 2);
+                                se(B), O -= D.x, T += D.x, O < 0 && (E = k, O = -O, T -= O), U && (A = O / U, C += (b.height - A) / 2);
                                 break;
                             case z:
-                                if (D.y >= 0 && (Z >= Te || A && (T <= de || te >= Fe))) {
+                                if (D.y >= 0 && (Z >= ke || U && (T <= de || te >= Fe))) {
                                     be = !1;
                                     break
                                 }
-                                se(z), k += D.y, k < 0 && (F = G, k = -k, C -= k), A && (O = k * A, T += (b.width - O) / 2);
+                                se(z), A += D.y, A < 0 && (E = G, A = -A, C -= A), U && (O = A * U, T += (b.width - O) / 2);
                                 break;
-                            case Dt:
-                                if (A) {
+                            case Nt:
+                                if (U) {
                                     if (D.y <= 0 && (C <= re || te >= Fe)) {
                                         be = !1;
                                         break
                                     }
-                                    se(G), k -= D.y, C += D.y, O = k * A
-                                } else se(G), se(U), D.x >= 0 ? te < Fe ? O += D.x : D.y <= 0 && C <= re && (be = !1) : O += D.x, D.y <= 0 ? C > re && (k -= D.y, C += D.y) : (k -= D.y, C += D.y);
-                                O < 0 && k < 0 ? (F = Gt, k = -k, O = -O, C -= k, T -= O) : O < 0 ? (F = Wt, O = -O, T -= O) : k < 0 && (F = Kt, k = -k, C -= k);
+                                    se(G), A -= D.y, C += D.y, O = A * U
+                                } else se(G), se(k), D.x >= 0 ? te < Fe ? O += D.x : D.y <= 0 && C <= re && (be = !1) : O += D.x, D.y <= 0 ? C > re && (A -= D.y, C += D.y) : (A -= D.y, C += D.y);
+                                O < 0 && A < 0 ? (E = Xt, A = -A, O = -O, C -= A, T -= O) : O < 0 ? (E = Kt, O = -O, T -= O) : A < 0 && (E = Gt, A = -A, C -= A);
                                 break;
-                            case Wt:
-                                if (A) {
+                            case Kt:
+                                if (U) {
                                     if (D.y <= 0 && (C <= re || T <= de)) {
                                         be = !1;
                                         break
                                     }
-                                    se(G), k -= D.y, C += D.y, O = k * A, T += b.width - O
-                                } else se(G), se(B), D.x <= 0 ? T > de ? (O -= D.x, T += D.x) : D.y <= 0 && C <= re && (be = !1) : (O -= D.x, T += D.x), D.y <= 0 ? C > re && (k -= D.y, C += D.y) : (k -= D.y, C += D.y);
-                                O < 0 && k < 0 ? (F = Kt, k = -k, O = -O, C -= k, T -= O) : O < 0 ? (F = Dt, O = -O, T -= O) : k < 0 && (F = Gt, k = -k, C -= k);
+                                    se(G), A -= D.y, C += D.y, O = A * U, T += b.width - O
+                                } else se(G), se(B), D.x <= 0 ? T > de ? (O -= D.x, T += D.x) : D.y <= 0 && C <= re && (be = !1) : (O -= D.x, T += D.x), D.y <= 0 ? C > re && (A -= D.y, C += D.y) : (A -= D.y, C += D.y);
+                                O < 0 && A < 0 ? (E = Gt, A = -A, O = -O, C -= A, T -= O) : O < 0 ? (E = Nt, O = -O, T -= O) : A < 0 && (E = Xt, A = -A, C -= A);
+                                break;
+                            case Xt:
+                                if (U) {
+                                    if (D.x <= 0 && (T <= de || Z >= ke)) {
+                                        be = !1;
+                                        break
+                                    }
+                                    se(B), O -= D.x, T += D.x, A = O / U
+                                } else se(z), se(B), D.x <= 0 ? T > de ? (O -= D.x, T += D.x) : D.y >= 0 && Z >= ke && (be = !1) : (O -= D.x, T += D.x), D.y >= 0 ? Z < ke && (A += D.y) : A += D.y;
+                                O < 0 && A < 0 ? (E = Nt, A = -A, O = -O, C -= A, T -= O) : O < 0 ? (E = Gt, O = -O, T -= O) : A < 0 && (E = Kt, A = -A, C -= A);
                                 break;
                             case Gt:
-                                if (A) {
-                                    if (D.x <= 0 && (T <= de || Z >= Te)) {
+                                if (U) {
+                                    if (D.x >= 0 && (te >= Fe || Z >= ke)) {
                                         be = !1;
                                         break
                                     }
-                                    se(B), O -= D.x, T += D.x, k = O / A
-                                } else se(z), se(B), D.x <= 0 ? T > de ? (O -= D.x, T += D.x) : D.y >= 0 && Z >= Te && (be = !1) : (O -= D.x, T += D.x), D.y >= 0 ? Z < Te && (k += D.y) : k += D.y;
-                                O < 0 && k < 0 ? (F = Dt, k = -k, O = -O, C -= k, T -= O) : O < 0 ? (F = Kt, O = -O, T -= O) : k < 0 && (F = Wt, k = -k, C -= k);
+                                    se(k), O += D.x, A = O / U
+                                } else se(z), se(k), D.x >= 0 ? te < Fe ? O += D.x : D.y >= 0 && Z >= ke && (be = !1) : O += D.x, D.y >= 0 ? Z < ke && (A += D.y) : A += D.y;
+                                O < 0 && A < 0 ? (E = Kt, A = -A, O = -O, C -= A, T -= O) : O < 0 ? (E = Xt, O = -O, T -= O) : A < 0 && (E = Nt, A = -A, C -= A);
                                 break;
-                            case Kt:
-                                if (A) {
-                                    if (D.x >= 0 && (te >= Fe || Z >= Te)) {
-                                        be = !1;
-                                        break
-                                    }
-                                    se(U), O += D.x, k = O / A
-                                } else se(z), se(U), D.x >= 0 ? te < Fe ? O += D.x : D.y >= 0 && Z >= Te && (be = !1) : O += D.x, D.y >= 0 ? Z < Te && (k += D.y) : k += D.y;
-                                O < 0 && k < 0 ? (F = Wt, k = -k, O = -O, C -= k, T -= O) : O < 0 ? (F = Gt, O = -O, T -= O) : k < 0 && (F = Dt, k = -k, C -= k);
-                                break;
-                            case $:
+                            case q:
                                 this.move(D.x, D.y), be = !1;
                                 break;
                             case K:
-                                this.zoom(s0(P), p), be = !1;
+                                this.zoom(o0(P), p), be = !1;
                                 break;
-                            case V:
+                            case H:
                                 if (!D.x || !D.y) {
                                     be = !1;
                                     break
                                 }
-                                Fi = zd(this.cropper), T = dt.startX - Fi.left, C = dt.startY - Fi.top, O = b.minWidth, k = b.minHeight, D.x > 0 ? F = D.y > 0 ? Kt : Dt : D.x < 0 && (T -= O, F = D.y > 0 ? Gt : Wt), D.y < 0 && (C -= k), this.cropped || (Yt(this.cropBox, xe), this.cropped = !0, this.limited && this.limitCropBox(!0, !0));
+                                Fi = jd(this.cropper), T = dt.startX - Fi.left, C = dt.startY - Fi.top, O = b.minWidth, A = b.minHeight, D.x > 0 ? E = D.y > 0 ? Gt : Nt : D.x < 0 && (T -= O, E = D.y > 0 ? Xt : Kt), D.y < 0 && (C -= A), this.cropped || (Jt(this.cropBox, xe), this.cropped = !0, this.limited && this.limitCropBox(!0, !0));
                                 break
                         }
-                        be && (b.width = O, b.height = k, b.left = T, b.top = C, this.action = F, this.renderCropBox()), ve(P, function(Ee) {
+                        be && (b.width = O, b.height = A, b.left = T, b.top = C, this.action = E, this.renderCropBox()), ve(P, function(Ee) {
                             Ee.startX = Ee.endX, Ee.startY = Ee.endY
                         })
                     }, "change")
                 },
-                b0 = {
+                w0 = {
                     crop: n(function() {
-                        return this.ready && !this.cropped && !this.disabled && (this.cropped = !0, this.limitCropBox(!0, !0), this.options.modal && Ce(this.dragBox, Xt), Yt(this.cropBox, xe), this.setCropBoxData(this.initialCropBoxData)), this
+                        return this.ready && !this.cropped && !this.disabled && (this.cropped = !0, this.limitCropBox(!0, !0), this.options.modal && Te(this.dragBox, Yt), Jt(this.cropBox, xe), this.setCropBoxData(this.initialCropBoxData)), this
                     }, "crop"),
                     reset: n(function() {
                         return this.ready && !this.disabled && (this.imageData = ce({}, this.initialImageData), this.canvasData = ce({}, this.initialCanvasData), this.cropBoxData = ce({}, this.initialCropBoxData), this.renderCanvas(), this.cropped && this.renderCropBox()), this
@@ -1594,7 +1594,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             top: 0,
                             width: 0,
                             height: 0
-                        }), this.cropped = !1, this.renderCropBox(), this.limitCanvas(!0, !0), this.renderCanvas(), Yt(this.dragBox, Xt), Ce(this.cropBox, xe)), this
+                        }), this.cropped = !1, this.renderCropBox(), this.limitCanvas(!0, !0), this.renderCanvas(), Jt(this.dragBox, Yt), Te(this.cropBox, xe)), this
                     }, "clear"),
                     replace: n(function(p) {
                         var g = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1;
@@ -1603,14 +1603,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         }))) : (this.isImg && (this.replaced = !0), this.options.data = null, this.uncreate(), this.load(p))), this
                     }, "replace"),
                     enable: n(function() {
-                        return this.ready && this.disabled && (this.disabled = !1, Yt(this.cropper, xr)), this
+                        return this.ready && this.disabled && (this.disabled = !1, Jt(this.cropper, Fr)), this
                     }, "enable"),
                     disable: n(function() {
-                        return this.ready && !this.disabled && (this.disabled = !0, Ce(this.cropper, xr)), this
+                        return this.ready && !this.disabled && (this.disabled = !0, Te(this.cropper, Fr)), this
                     }, "disable"),
                     destroy: n(function() {
                         var p = this.element;
-                        return p[E] ? (p[E] = void 0, this.isImg && this.replaced && (p.src = this.originalUrl), this.uncreate(), this) : this
+                        return p[F] ? (p[F] = void 0, this.isImg && this.replaced && (p.src = this.originalUrl), this.uncreate(), this) : this
                     }, "destroy"),
                     move: n(function(p) {
                         var g = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : p,
@@ -1633,26 +1633,26 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         var _ = this.options,
                             b = this.canvasData,
                             P = b.width,
-                            F = b.height,
-                            A = b.naturalWidth,
+                            E = b.height,
+                            U = b.naturalWidth,
                             T = b.naturalHeight;
                         if (p = Number(p), p >= 0 && this.ready && !this.disabled && _.zoomable) {
-                            var C = A * p,
+                            var C = U * p,
                                 O = T * p;
-                            if (Bs(this.element, ru, {
+                            if (Is(this.element, ru, {
                                 ratio: p,
-                                oldRatio: P / A,
+                                oldRatio: P / U,
                                 originalEvent: m
                             }) === !1) return this;
                             if (m) {
-                                var k = this.pointers,
-                                    te = zd(this.cropper),
-                                    Z = k && Object.keys(k).length ? o0(k) : {
+                                var A = this.pointers,
+                                    te = jd(this.cropper),
+                                    Z = A && Object.keys(A).length ? n0(A) : {
                                         pageX: m.pageX,
                                         pageY: m.pageY
                                     };
-                                b.left -= (C - P) * ((Z.pageX - te.left - b.left) / P), b.top -= (O - F) * ((Z.pageY - te.top - b.top) / F)
-                            } else Us(g) && Q(g.x) && Q(g.y) ? (b.left -= (C - P) * ((g.x - b.left) / P), b.top -= (O - F) * ((g.y - b.top) / F)) : (b.left -= (C - P) / 2, b.top -= (O - F) / 2);
+                                b.left -= (C - P) * ((Z.pageX - te.left - b.left) / P), b.top -= (O - E) * ((Z.pageY - te.top - b.top) / E)
+                            } else Ds(g) && Q(g.x) && Q(g.y) ? (b.left -= (C - P) * ((g.x - b.left) / P), b.top -= (O - E) * ((g.y - b.top) / E)) : (b.left -= (C - P) / 2, b.top -= (O - E) / 2);
                             b.width = C, b.height = O, this.renderCanvas(!0)
                         }
                         return this
@@ -1691,13 +1691,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                 width: b.width,
                                 height: b.height
                             };
-                            var F = m.width / m.naturalWidth;
+                            var E = m.width / m.naturalWidth;
                             if (ve(P, function(C, O) {
-                                P[O] = C / F
+                                P[O] = C / E
                             }), p) {
-                                var A = Math.round(P.y + P.height),
+                                var U = Math.round(P.y + P.height),
                                     T = Math.round(P.x + P.width);
-                                P.x = Math.round(P.x), P.y = Math.round(P.y), P.width = T - P.x, P.height = A - P.y
+                                P.x = Math.round(P.x), P.y = Math.round(P.y), P.width = T - P.x, P.height = U - P.y
                             }
                         } else P = {
                             x: 0,
@@ -1712,11 +1712,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             m = this.imageData,
                             _ = this.canvasData,
                             b = {};
-                        if (this.ready && !this.disabled && Us(p)) {
+                        if (this.ready && !this.disabled && Ds(p)) {
                             var P = !1;
                             g.rotatable && Q(p.rotate) && p.rotate !== m.rotate && (m.rotate = p.rotate, P = !0), g.scalable && (Q(p.scaleX) && p.scaleX !== m.scaleX && (m.scaleX = p.scaleX, P = !0), Q(p.scaleY) && p.scaleY !== m.scaleY && (m.scaleY = p.scaleY, P = !0)), P && this.renderCanvas(!0, !0);
-                            var F = m.width / m.naturalWidth;
-                            Q(p.x) && (b.left = p.x * F + _.left), Q(p.y) && (b.top = p.y * F + _.top), Q(p.width) && (b.width = p.width * F), Q(p.height) && (b.height = p.height * F), this.setCropBoxData(b)
+                            var E = m.width / m.naturalWidth;
+                            Q(p.x) && (b.left = p.x * E + _.left), Q(p.y) && (b.top = p.y * E + _.top), Q(p.width) && (b.width = p.width * E), Q(p.height) && (b.height = p.height * E), this.setCropBoxData(b)
                         }
                         return this
                     }, "setData"),
@@ -1736,7 +1736,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     setCanvasData: n(function(p) {
                         var g = this.canvasData,
                             m = g.aspectRatio;
-                        return this.ready && !this.disabled && Us(p) && (Q(p.left) && (g.left = p.left), Q(p.top) && (g.top = p.top), Q(p.width) ? (g.width = p.width, g.height = p.width / m) : Q(p.height) && (g.height = p.height, g.width = p.height * m), this.renderCanvas(!0)), this
+                        return this.ready && !this.disabled && Ds(p) && (Q(p.left) && (g.left = p.left), Q(p.top) && (g.top = p.top), Q(p.width) ? (g.width = p.width, g.height = p.width / m) : Q(p.height) && (g.height = p.height, g.width = p.height * m), this.renderCanvas(!0)), this
                     }, "setCanvasData"),
                     getCropBoxData: n(function() {
                         var p = this.cropBoxData,
@@ -1752,60 +1752,60 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         var g = this.cropBoxData,
                             m = this.options.aspectRatio,
                             _, b;
-                        return this.ready && this.cropped && !this.disabled && Us(p) && (Q(p.left) && (g.left = p.left), Q(p.top) && (g.top = p.top), Q(p.width) && p.width !== g.width && (_ = !0, g.width = p.width), Q(p.height) && p.height !== g.height && (b = !0, g.height = p.height), m && (_ ? g.height = g.width / m : b && (g.width = g.height * m)), this.renderCropBox()), this
+                        return this.ready && this.cropped && !this.disabled && Ds(p) && (Q(p.left) && (g.left = p.left), Q(p.top) && (g.top = p.top), Q(p.width) && p.width !== g.width && (_ = !0, g.width = p.width), Q(p.height) && p.height !== g.height && (b = !0, g.height = p.height), m && (_ ? g.height = g.width / m : b && (g.width = g.height * m)), this.renderCropBox()), this
                     }, "setCropBoxData"),
                     getCroppedCanvas: n(function() {
                         var p = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
                         if (!this.ready || !window.HTMLCanvasElement) return null;
                         var g = this.canvasData,
-                            m = a0(this.image, this.imageData, g, p);
+                            m = l0(this.image, this.imageData, g, p);
                         if (!this.cropped) return m;
                         var _ = this.getData(),
                             b = _.x,
                             P = _.y,
-                            F = _.width,
-                            A = _.height,
+                            E = _.width,
+                            U = _.height,
                             T = m.width / Math.floor(g.naturalWidth);
-                        T !== 1 && (b *= T, P *= T, F *= T, A *= T);
-                        var C = F / A,
+                        T !== 1 && (b *= T, P *= T, E *= T, U *= T);
+                        var C = E / U,
                             O = or({
                                 aspectRatio: C,
                                 width: p.maxWidth || 1 / 0,
                                 height: p.maxHeight || 1 / 0
                             }),
-                            k = or({
+                            A = or({
                                 aspectRatio: C,
                                 width: p.minWidth || 0,
                                 height: p.minHeight || 0
                             }, "cover"),
                             te = or({
                                 aspectRatio: C,
-                                width: p.width || (T !== 1 ? m.width : F),
-                                height: p.height || (T !== 1 ? m.height : A)
+                                width: p.width || (T !== 1 ? m.width : E),
+                                height: p.height || (T !== 1 ? m.height : U)
                             }),
                             Z = te.width,
                             de = te.height;
-                        Z = Math.min(O.width, Math.max(k.width, Z)), de = Math.min(O.height, Math.max(k.height, de));
+                        Z = Math.min(O.width, Math.max(A.width, Z)), de = Math.min(O.height, Math.max(A.height, de));
                         var re = document.createElement("canvas"),
                             Fe = re.getContext("2d");
-                        re.width = Ds(Z), re.height = Ds(de), Fe.fillStyle = p.fillColor || "transparent", Fe.fillRect(0, 0, Z, de);
-                        var Te = p.imageSmoothingEnabled,
-                            be = Te === void 0 ? !0 : Te,
+                        re.width = Ns(Z), re.height = Ns(de), Fe.fillStyle = p.fillColor || "transparent", Fe.fillRect(0, 0, Z, de);
+                        var ke = p.imageSmoothingEnabled,
+                            be = ke === void 0 ? !0 : ke,
                             Fi = p.imageSmoothingQuality;
                         Fe.imageSmoothingEnabled = be, Fi && (Fe.imageSmoothingQuality = Fi);
                         var dt = m.width,
                             D = m.height,
                             se = b,
                             Ee = P,
-                            Et, Ei, Cr, Tr, nr, Jt;
-                        se <= -F || se > dt ? (se = 0, Et = 0, Cr = 0, nr = 0) : se <= 0 ? (Cr = -se, se = 0, Et = Math.min(dt, F + se), nr = Et) : se <= dt && (Cr = 0, Et = Math.min(F, dt - se), nr = Et), Et <= 0 || Ee <= -A || Ee > D ? (Ee = 0, Ei = 0, Tr = 0, Jt = 0) : Ee <= 0 ? (Tr = -Ee, Ee = 0, Ei = Math.min(D, A + Ee), Jt = Ei) : Ee <= D && (Tr = 0, Ei = Math.min(A, D - Ee), Jt = Ei);
+                            Et, Ei, Tr, kr, nr, Qt;
+                        se <= -E || se > dt ? (se = 0, Et = 0, Tr = 0, nr = 0) : se <= 0 ? (Tr = -se, se = 0, Et = Math.min(dt, E + se), nr = Et) : se <= dt && (Tr = 0, Et = Math.min(E, dt - se), nr = Et), Et <= 0 || Ee <= -U || Ee > D ? (Ee = 0, Ei = 0, kr = 0, Qt = 0) : Ee <= 0 ? (kr = -Ee, Ee = 0, Ei = Math.min(D, U + Ee), Qt = Ei) : Ee <= D && (kr = 0, Ei = Math.min(U, D - Ee), Qt = Ei);
                         var st = [se, Ee, Et, Ei];
-                        if (nr > 0 && Jt > 0) {
-                            var kr = Z / F;
-                            st.push(Cr * kr, Tr * kr, nr * kr, Jt * kr)
+                        if (nr > 0 && Qt > 0) {
+                            var Ar = Z / E;
+                            st.push(Tr * Ar, kr * Ar, nr * Ar, Qt * Ar)
                         }
                         return Fe.drawImage.apply(Fe, [m].concat(l(st.map(function(xa) {
-                            return Math.floor(Ds(xa))
+                            return Math.floor(Ns(xa))
                         })))), re
                     }, "getCroppedCanvas"),
                     setAspectRatio: n(function(p) {
@@ -1818,18 +1818,18 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             _ = this.face;
                         if (this.ready && !this.disabled) {
                             var b = p === Pi,
-                                P = g.movable && p === Er;
-                            p = b || P ? p : Or, g.dragMode = p, mo(m, _i, p), Ns(m, ir, b), Ns(m, Fr, P), g.cropBoxMovable || (mo(_, _i, p), Ns(_, ir, b), Ns(_, Fr, P))
+                                P = g.movable && p === Or;
+                            p = b || P ? p : Rr, g.dragMode = p, mo(m, _i, p), Bs(m, ir, b), Bs(m, Er, P), g.cropBoxMovable || (mo(_, _i, p), Bs(_, ir, b), Bs(_, Er, P))
                         }
                         return this
                     }, "setDragMode")
                 },
-                w0 = w.Cropper,
-                qd = function() {
+                S0 = S.Cropper,
+                Vd = function() {
                     function v(p) {
                         var g = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                        if (e(this, v), !p || !Kv.test(p.tagName)) throw new Error("The first argument is required and must be an <img> or <canvas> element.");
-                        this.element = p, this.options = ce({}, Nd, Us(g) && g), this.cropped = !1, this.disabled = !1, this.pointers = {}, this.ready = !1, this.reloading = !1, this.replaced = !1, this.sized = !1, this.sizing = !1, this.init()
+                        if (e(this, v), !p || !Gv.test(p.tagName)) throw new Error("The first argument is required and must be an <img> or <canvas> element.");
+                        this.element = p, this.options = ce({}, Bd, Ds(g) && g), this.cropped = !1, this.disabled = !1, this.pointers = {}, this.ready = !1, this.reloading = !1, this.replaced = !1, this.sized = !1, this.sizing = !1, this.init()
                     }
                     return n(v, "Cropper"), r(v, [{
                         key: "init",
@@ -1837,8 +1837,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             var g = this.element,
                                 m = g.tagName.toLowerCase(),
                                 _;
-                            if (!g[E]) {
-                                if (g[E] = this, m === "img") {
+                            if (!g[F]) {
+                                if (g[F] = this, m === "img") {
                                     if (this.isImg = !0, _ = g.getAttribute("src") || "", this.originalUrl = _, !_) return;
                                     _ = g.src
                                 } else m === "canvas" && window.HTMLCanvasElement && (_ = g.toDataURL());
@@ -1857,19 +1857,19 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                     this.clone();
                                     return
                                 }
-                                if (Vv.test(g)) {
-                                    Wv.test(g) ? this.read(h0(g)) : this.clone();
+                                if (Wv.test(g)) {
+                                    Kv.test(g) ? this.read(c0(g)) : this.clone();
                                     return
                                 }
                                 var P = new XMLHttpRequest,
-                                    F = this.clone.bind(this);
-                                this.reloading = !0, this.xhr = P, P.onabort = F, P.onerror = F, P.ontimeout = F, P.onprogress = function() {
-                                    P.getResponseHeader("content-type") !== Dd && P.abort()
+                                    E = this.clone.bind(this);
+                                this.reloading = !0, this.xhr = P, P.onabort = E, P.onerror = E, P.ontimeout = E, P.onprogress = function() {
+                                    P.getResponseHeader("content-type") !== Nd && P.abort()
                                 }, P.onload = function() {
                                     m.read(P.response)
                                 }, P.onloadend = function() {
                                     m.reloading = !1, m.xhr = null
-                                }, b.checkCrossOrigin && jd(g) && _.crossOrigin && (g = Hd(g)), P.open("GET", g), P.responseType = "arraybuffer", P.withCredentials = _.crossOrigin === "use-credentials", P.send()
+                                }, b.checkCrossOrigin && Hd(g) && _.crossOrigin && (g = $d(g)), P.open("GET", g), P.responseType = "arraybuffer", P.withCredentials = _.crossOrigin === "use-credentials", P.send()
                             }
                         }, "load")
                     }, {
@@ -1877,16 +1877,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         value: n(function(g) {
                             var m = this.options,
                                 _ = this.imageData,
-                                b = d0(g),
+                                b = p0(g),
                                 P = 0,
-                                F = 1,
-                                A = 1;
+                                E = 1,
+                                U = 1;
                             if (b > 1) {
-                                this.url = c0(g, Dd);
-                                var T = p0(b);
-                                P = T.rotate, F = T.scaleX, A = T.scaleY
+                                this.url = d0(g, Nd);
+                                var T = f0(b);
+                                P = T.rotate, E = T.scaleX, U = T.scaleY
                             }
-                            m.rotatable && (_.rotate = P), m.scalable && (_.scaleX = F, _.scaleY = A), this.clone()
+                            m.rotatable && (_.rotate = P), m.scalable && (_.scaleX = E, _.scaleY = U), this.clone()
                         }, "read")
                     }, {
                         key: "clone",
@@ -1895,9 +1895,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                 m = this.url,
                                 _ = g.crossOrigin,
                                 b = m;
-                            this.options.checkCrossOrigin && jd(m) && (_ || (_ = "anonymous"), b = Hd(m)), this.crossOrigin = _, this.crossOriginUrl = b;
+                            this.options.checkCrossOrigin && Hd(m) && (_ || (_ = "anonymous"), b = $d(m)), this.crossOrigin = _, this.crossOriginUrl = b;
                             var P = document.createElement("img");
-                            _ && (P.crossOrigin = _), P.src = b || m, P.alt = g.alt || "The image to crop", this.image = P, P.onload = this.start.bind(this), P.onerror = this.stop.bind(this), Ce(P, Si), g.parentNode.insertBefore(P, g.nextSibling)
+                            _ && (P.crossOrigin = _), P.src = b || m, P.alt = g.alt || "The image to crop", this.image = P, P.onload = this.start.bind(this), P.onerror = this.stop.bind(this), Te(P, Si), g.parentNode.insertBefore(P, g.nextSibling)
                         }, "clone")
                     }, {
                         key: "start",
@@ -1905,7 +1905,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             var g = this,
                                 m = this.image;
                             m.onload = null, m.onerror = null, this.sizing = !0;
-                            var _ = w.navigator && /(?:iPad|iPhone|iPod).*?AppleWebKit/i.test(w.navigator.userAgent),
+                            var _ = S.navigator && /(?:iPad|iPhone|iPod).*?AppleWebKit/i.test(S.navigator.userAgent),
                                 b = n(function(T, C) {
                                     ce(g.imageData, {
                                         naturalWidth: T,
@@ -1918,10 +1918,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                 return
                             }
                             var P = document.createElement("img"),
-                                F = document.body || document.documentElement;
+                                E = document.body || document.documentElement;
                             this.sizingImage = P, P.onload = function() {
-                                b(P.width, P.height), _ || F.removeChild(P)
-                            }, P.src = m.src, _ || (P.style.cssText = "left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;", F.appendChild(P))
+                                b(P.width, P.height), _ || E.removeChild(P)
+                            }, P.src = m.src, _ || (P.style.cssText = "left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;", E.appendChild(P))
                         }, "start")
                     }, {
                         key: "stop",
@@ -1938,21 +1938,21 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                     _ = this.image,
                                     b = g.parentNode,
                                     P = document.createElement("div");
-                                P.innerHTML = Gv;
-                                var F = P.querySelector(".".concat(E, "-container")),
-                                    A = F.querySelector(".".concat(E, "-canvas")),
-                                    T = F.querySelector(".".concat(E, "-drag-box")),
-                                    C = F.querySelector(".".concat(E, "-crop-box")),
-                                    O = C.querySelector(".".concat(E, "-face"));
-                                this.container = b, this.cropper = F, this.canvas = A, this.dragBox = T, this.cropBox = C, this.viewBox = F.querySelector(".".concat(E, "-view-box")), this.face = O, A.appendChild(_), Ce(g, xe), b.insertBefore(F, g.nextSibling), this.isImg || Yt(_, Si), this.initPreview(), this.bind(), m.initialAspectRatio = Math.max(0, m.initialAspectRatio) || NaN, m.aspectRatio = Math.max(0, m.aspectRatio) || NaN, m.viewMode = Math.max(0, Math.min(3, Math.round(m.viewMode))) || 0, Ce(C, xe), m.guides || Ce(C.getElementsByClassName("".concat(E, "-dashed")), xe), m.center || Ce(C.getElementsByClassName("".concat(E, "-center")), xe), m.background && Ce(F, "".concat(E, "-bg")), m.highlight || Ce(O, Ts), m.cropBoxMovable && (Ce(O, Fr), mo(O, _i, N)), m.cropBoxResizable || (Ce(C.getElementsByClassName("".concat(E, "-line")), xe), Ce(C.getElementsByClassName("".concat(E, "-point")), xe)), this.render(), this.ready = !0, this.setDragMode(m.dragMode), m.autoCrop && this.crop(), this.setData(m.data), rt(m.ready) && Ft(g, kd, m.ready, {
+                                P.innerHTML = Xv;
+                                var E = P.querySelector(".".concat(F, "-container")),
+                                    U = E.querySelector(".".concat(F, "-canvas")),
+                                    T = E.querySelector(".".concat(F, "-drag-box")),
+                                    C = E.querySelector(".".concat(F, "-crop-box")),
+                                    O = C.querySelector(".".concat(F, "-face"));
+                                this.container = b, this.cropper = E, this.canvas = U, this.dragBox = T, this.cropBox = C, this.viewBox = E.querySelector(".".concat(F, "-view-box")), this.face = O, U.appendChild(_), Te(g, xe), b.insertBefore(E, g.nextSibling), this.isImg || Jt(_, Si), this.initPreview(), this.bind(), m.initialAspectRatio = Math.max(0, m.initialAspectRatio) || NaN, m.aspectRatio = Math.max(0, m.aspectRatio) || NaN, m.viewMode = Math.max(0, Math.min(3, Math.round(m.viewMode))) || 0, Te(C, xe), m.guides || Te(C.getElementsByClassName("".concat(F, "-dashed")), xe), m.center || Te(C.getElementsByClassName("".concat(F, "-center")), xe), m.background && Te(E, "".concat(F, "-bg")), m.highlight || Te(O, ks), m.cropBoxMovable && (Te(O, Er), mo(O, _i, N)), m.cropBoxResizable || (Te(C.getElementsByClassName("".concat(F, "-line")), xe), Te(C.getElementsByClassName("".concat(F, "-point")), xe)), this.render(), this.ready = !0, this.setDragMode(m.dragMode), m.autoCrop && this.crop(), this.setData(m.data), rt(m.ready) && Ft(g, Ad, m.ready, {
                                     once: !0
-                                }), Bs(g, kd)
+                                }), Is(g, Ad)
                             }
                         }, "build")
                     }, {
                         key: "unbuild",
                         value: n(function() {
-                            !this.ready || (this.ready = !1, this.unbind(), this.resetPreview(), this.cropper.parentNode.removeChild(this.cropper), Yt(this.element, xe))
+                            !this.ready || (this.ready = !1, this.unbind(), this.resetPreview(), this.cropper.parentNode.removeChild(this.cropper), Jt(this.element, xe))
                         }, "unbuild")
                     }, {
                         key: "uncreate",
@@ -1962,39 +1962,39 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     }], [{
                         key: "noConflict",
                         value: n(function() {
-                            return window.Cropper = w0, v
+                            return window.Cropper = S0, v
                         }, "noConflict")
                     }, {
                         key: "setDefaults",
                         value: n(function(g) {
-                            ce(Nd, Us(g) && g)
+                            ce(Bd, Ds(g) && g)
                         }, "setDefaults")
                     }]), v
                 }();
-            return ce(qd.prototype, f0, m0, g0, y0, v0, b0), qd
+            return ce(Vd.prototype, m0, g0, y0, v0, b0, w0), Vd
         })
     });
-    var rg = je((I8, yl) => {
+    var sg = He((BA, vl) => {
         "use strict";
-        yl.exports = Gh;
-        yl.exports.isMobile = Gh;
-        yl.exports.default = Gh;
-        var F2 = /(android|bb\d+|meego).+mobile|armv7l|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series[46]0|samsungbrowser|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i,
-            E2 = /CrOS/,
-            O2 = /android|ipad|playbook|silk/i;
+        vl.exports = Gh;
+        vl.exports.isMobile = Gh;
+        vl.exports.default = Gh;
+        var E2 = /(android|bb\d+|meego).+mobile|armv7l|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series[46]0|samsungbrowser|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i,
+            O2 = /CrOS/,
+            R2 = /android|ipad|playbook|silk/i;
 
         function Gh(i) {
             i || (i = {});
             let e = i.ua;
             if (!e && typeof navigator < "u" && (e = navigator.userAgent), e && e.headers && typeof e.headers["user-agent"] == "string" && (e = e.headers["user-agent"]), typeof e != "string") return !1;
-            let t = F2.test(e) && !E2.test(e) || !!i.tablet && O2.test(e);
+            let t = E2.test(e) && !O2.test(e) || !!i.tablet && R2.test(e);
             return !t && i.tablet && i.featureDetect && navigator && navigator.maxTouchPoints > 1 && e.indexOf("Macintosh") !== -1 && e.indexOf("Safari") !== -1 && (t = !0), t
         }
         n(Gh, "isMobile")
     });
-    var Hg = je((jU, jg) => {
+    var $g = He((zU, Hg) => {
         "use strict";
-        jg.exports = n(function(e, t) {
+        Hg.exports = n(function(e, t) {
             if (t = t.split(":")[0], e = +e, !e) return !1;
             switch (t) {
                 case "http":
@@ -2013,68 +2013,68 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             return e !== 0
         }, "required")
     });
-    var Vg = je(xc => {
+    var Wg = He(xc => {
         "use strict";
-        var DS = Object.prototype.hasOwnProperty,
-            NS;
+        var NS = Object.prototype.hasOwnProperty,
+            BS;
 
-        function $g(i) {
+        function qg(i) {
             try {
                 return decodeURIComponent(i.replace(/\+/g, " "))
             } catch {
                 return null
             }
         }
-        n($g, "decode");
+        n(qg, "decode");
 
-        function qg(i) {
+        function Vg(i) {
             try {
                 return encodeURIComponent(i)
             } catch {
                 return null
             }
         }
-        n(qg, "encode");
+        n(Vg, "encode");
 
-        function BS(i) {
+        function IS(i) {
             for (var e = /([^=?#&]+)=?([^&]*)/g, t = {}, r; r = e.exec(i);) {
-                var s = $g(r[1]),
-                    o = $g(r[2]);
+                var s = qg(r[1]),
+                    o = qg(r[2]);
                 s === null || o === null || s in t || (t[s] = o)
             }
             return t
         }
-        n(BS, "querystring");
+        n(IS, "querystring");
 
-        function IS(i, e) {
+        function LS(i, e) {
             e = e || "";
             var t = [],
                 r, s;
             typeof e != "string" && (e = "?");
             for (s in i)
-                if (DS.call(i, s)) {
-                    if (r = i[s], !r && (r === null || r === NS || isNaN(r)) && (r = ""), s = qg(s), r = qg(r), s === null || r === null) continue;
+                if (NS.call(i, s)) {
+                    if (r = i[s], !r && (r === null || r === BS || isNaN(r)) && (r = ""), s = Vg(s), r = Vg(r), s === null || r === null) continue;
                     t.push(s + "=" + r)
                 }
             return t.length ? e + t.join("&") : ""
         }
-        n(IS, "querystringify");
-        xc.stringify = IS;
-        xc.parse = BS
+        n(LS, "querystringify");
+        xc.stringify = LS;
+        xc.parse = IS
     });
-    var Zg = je((VU, Qg) => {
+    var ey = He((qU, Zg) => {
         "use strict";
-        var Kg = Hg(),
-            Rl = Vg(),
-            LS = /^[\x00-\x20\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/,
-            Gg = /[\n\r\t]/g,
-            MS = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//,
-            Xg = /:\d+$/,
-            zS = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i,
-            jS = /^[a-zA-Z]:/;
+        var Gg = $g(),
+            Cl = Wg(),
+            MS = /^[\x00-\x20\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/,
+            Xg = /[\n\r\t]/g,
+            zS = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//,
+            Yg = /:\d+$/,
+            jS = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i,
+            HS = /^[a-zA-Z]:/;
 
         function Ec(i) {
-            return (i || "").toString().replace(LS, "")
+            return (i || "").toString().replace(MS, "")
         }
         n(Ec, "trimLeft");
         var Fc = [
@@ -2087,12 +2087,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 [/:(\d*)$/, "port", void 0, 1],
                 [NaN, "hostname", void 0, 1, 1]
             ],
-            Wg = {
+            Kg = {
                 hash: 1,
                 query: 1
             };
 
-        function Yg(i) {
+        function Jg(i) {
             var e;
             typeof window < "u" ? e = window : typeof global < "u" ? e = global : typeof self < "u" ? e = self : e = {};
             var t = e.location || {};
@@ -2103,23 +2103,23 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             if (i.protocol === "blob:") r = new bi(unescape(i.pathname), {});
             else if (s === "string") {
                 r = new bi(i, {});
-                for (o in Wg) delete r[o]
+                for (o in Kg) delete r[o]
             } else if (s === "object") {
-                for (o in i) o in Wg || (r[o] = i[o]);
-                r.slashes === void 0 && (r.slashes = MS.test(i.href))
+                for (o in i) o in Kg || (r[o] = i[o]);
+                r.slashes === void 0 && (r.slashes = zS.test(i.href))
             }
             return r
         }
-        n(Yg, "lolcation");
+        n(Jg, "lolcation");
 
         function vi(i) {
             return i === "file:" || i === "ftp:" || i === "http:" || i === "https:" || i === "ws:" || i === "wss:"
         }
         n(vi, "isSpecial");
 
-        function Jg(i, e) {
-            i = Ec(i), i = i.replace(Gg, ""), e = e || {};
-            var t = zS.exec(i),
+        function Qg(i, e) {
+            i = Ec(i), i = i.replace(Xg, ""), e = e || {};
+            var t = jS.exec(i),
                 r = t[1] ? t[1].toLowerCase() : "",
                 s = !!t[2],
                 o = !!t[3],
@@ -2132,46 +2132,46 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 rest: l
             }
         }
-        n(Jg, "extractProtocol");
+        n(Qg, "extractProtocol");
 
-        function HS(i, e) {
+        function $S(i, e) {
             if (i === "") return e;
             for (var t = (e || "/").split("/").slice(0, -1).concat(i.split("/")), r = t.length, s = t[r - 1], o = !1, a = 0; r--;) t[r] === "." ? t.splice(r, 1) : t[r] === ".." ? (t.splice(r, 1), a++) : a && (r === 0 && (o = !0), t.splice(r, 1), a--);
             return o && t.unshift(""), (s === "." || s === "..") && t.push(""), t.join("/")
         }
-        n(HS, "resolve");
+        n($S, "resolve");
 
         function bi(i, e, t) {
-            if (i = Ec(i), i = i.replace(Gg, ""), !(this instanceof bi)) return new bi(i, e, t);
+            if (i = Ec(i), i = i.replace(Xg, ""), !(this instanceof bi)) return new bi(i, e, t);
             var r, s, o, a, l, h, c = Fc.slice(),
                 d = typeof e,
                 f = this,
                 y = 0;
-            for (d !== "object" && d !== "string" && (t = e, e = null), t && typeof t != "function" && (t = Rl.parse), e = Yg(e), s = Jg(i || "", e), r = !s.protocol && !s.slashes, f.slashes = s.slashes || r && e.slashes, f.protocol = s.protocol || e.protocol || "", i = s.rest, (s.protocol === "file:" && (s.slashesCount !== 2 || jS.test(i)) || !s.slashes && (s.protocol || s.slashesCount < 2 || !vi(f.protocol))) && (c[3] = [/(.*)/, "pathname"]); y < c.length; y++) {
+            for (d !== "object" && d !== "string" && (t = e, e = null), t && typeof t != "function" && (t = Cl.parse), e = Jg(e), s = Qg(i || "", e), r = !s.protocol && !s.slashes, f.slashes = s.slashes || r && e.slashes, f.protocol = s.protocol || e.protocol || "", i = s.rest, (s.protocol === "file:" && (s.slashesCount !== 2 || HS.test(i)) || !s.slashes && (s.protocol || s.slashesCount < 2 || !vi(f.protocol))) && (c[3] = [/(.*)/, "pathname"]); y < c.length; y++) {
                 if (a = c[y], typeof a == "function") {
                     i = a(i, f);
                     continue
                 }
                 o = a[0], h = a[1], o !== o ? f[h] = i : typeof o == "string" ? (l = o === "@" ? i.lastIndexOf(o) : i.indexOf(o), ~l && (typeof a[2] == "number" ? (f[h] = i.slice(0, l), i = i.slice(l + a[2])) : (f[h] = i.slice(l), i = i.slice(0, l)))) : (l = o.exec(i)) && (f[h] = l[1], i = i.slice(0, l.index)), f[h] = f[h] || r && a[3] && e[h] || "", a[4] && (f[h] = f[h].toLowerCase())
             }
-            t && (f.query = t(f.query)), r && e.slashes && f.pathname.charAt(0) !== "/" && (f.pathname !== "" || e.pathname !== "") && (f.pathname = HS(f.pathname, e.pathname)), f.pathname.charAt(0) !== "/" && vi(f.protocol) && (f.pathname = "/" + f.pathname), Kg(f.port, f.protocol) || (f.host = f.hostname, f.port = ""), f.username = f.password = "", f.auth && (l = f.auth.indexOf(":"), ~l ? (f.username = f.auth.slice(0, l), f.username = encodeURIComponent(decodeURIComponent(f.username)), f.password = f.auth.slice(l + 1), f.password = encodeURIComponent(decodeURIComponent(f.password))) : f.username = encodeURIComponent(decodeURIComponent(f.auth)), f.auth = f.password ? f.username + ":" + f.password : f.username), f.origin = f.protocol !== "file:" && vi(f.protocol) && f.host ? f.protocol + "//" + f.host : "null", f.href = f.toString()
+            t && (f.query = t(f.query)), r && e.slashes && f.pathname.charAt(0) !== "/" && (f.pathname !== "" || e.pathname !== "") && (f.pathname = $S(f.pathname, e.pathname)), f.pathname.charAt(0) !== "/" && vi(f.protocol) && (f.pathname = "/" + f.pathname), Gg(f.port, f.protocol) || (f.host = f.hostname, f.port = ""), f.username = f.password = "", f.auth && (l = f.auth.indexOf(":"), ~l ? (f.username = f.auth.slice(0, l), f.username = encodeURIComponent(decodeURIComponent(f.username)), f.password = f.auth.slice(l + 1), f.password = encodeURIComponent(decodeURIComponent(f.password))) : f.username = encodeURIComponent(decodeURIComponent(f.auth)), f.auth = f.password ? f.username + ":" + f.password : f.username), f.origin = f.protocol !== "file:" && vi(f.protocol) && f.host ? f.protocol + "//" + f.host : "null", f.href = f.toString()
         }
         n(bi, "Url");
 
-        function $S(i, e, t) {
+        function qS(i, e, t) {
             var r = this;
             switch (i) {
                 case "query":
-                    typeof e == "string" && e.length && (e = (t || Rl.parse)(e)), r[i] = e;
+                    typeof e == "string" && e.length && (e = (t || Cl.parse)(e)), r[i] = e;
                     break;
                 case "port":
-                    r[i] = e, Kg(e, r.protocol) ? e && (r.host = r.hostname + ":" + e) : (r.host = r.hostname, r[i] = "");
+                    r[i] = e, Gg(e, r.protocol) ? e && (r.host = r.hostname + ":" + e) : (r.host = r.hostname, r[i] = "");
                     break;
                 case "hostname":
                     r[i] = e, r.port && (e += ":" + r.port), r.host = e;
                     break;
                 case "host":
-                    r[i] = e, Xg.test(e) ? (e = e.split(":"), r.port = e.pop(), r.hostname = e.join(":")) : (r.hostname = e, r.port = "");
+                    r[i] = e, Yg.test(e) ? (e = e.split(":"), r.port = e.pop(), r.hostname = e.join(":")) : (r.hostname = e, r.port = "");
                     break;
                 case "protocol":
                     r.protocol = e.toLowerCase(), r.slashes = !t;
@@ -2197,41 +2197,41 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }
             return r.auth = r.password ? r.username + ":" + r.password : r.username, r.origin = r.protocol !== "file:" && vi(r.protocol) && r.host ? r.protocol + "//" + r.host : "null", r.href = r.toString(), r
         }
-        n($S, "set");
+        n(qS, "set");
 
-        function qS(i) {
-            (!i || typeof i != "function") && (i = Rl.stringify);
+        function VS(i) {
+            (!i || typeof i != "function") && (i = Cl.stringify);
             var e, t = this,
                 r = t.host,
                 s = t.protocol;
             s && s.charAt(s.length - 1) !== ":" && (s += ":");
             var o = s + (t.protocol && t.slashes || vi(t.protocol) ? "//" : "");
-            return t.username ? (o += t.username, t.password && (o += ":" + t.password), o += "@") : t.password ? (o += ":" + t.password, o += "@") : t.protocol !== "file:" && vi(t.protocol) && !r && t.pathname !== "/" && (o += "@"), (r[r.length - 1] === ":" || Xg.test(t.hostname) && !t.port) && (r += ":"), o += r + t.pathname, e = typeof t.query == "object" ? i(t.query) : t.query, e && (o += e.charAt(0) !== "?" ? "?" + e : e), t.hash && (o += t.hash), o
+            return t.username ? (o += t.username, t.password && (o += ":" + t.password), o += "@") : t.password ? (o += ":" + t.password, o += "@") : t.protocol !== "file:" && vi(t.protocol) && !r && t.pathname !== "/" && (o += "@"), (r[r.length - 1] === ":" || Yg.test(t.hostname) && !t.port) && (r += ":"), o += r + t.pathname, e = typeof t.query == "object" ? i(t.query) : t.query, e && (o += e.charAt(0) !== "?" ? "?" + e : e), t.hash && (o += t.hash), o
         }
-        n(qS, "toString");
+        n(VS, "toString");
         bi.prototype = {
-            set: $S,
-            toString: qS
+            set: qS,
+            toString: VS
         };
-        bi.extractProtocol = Jg;
-        bi.location = Yg;
+        bi.extractProtocol = Qg;
+        bi.location = Jg;
         bi.trimLeft = Ec;
-        bi.qs = Rl;
-        Qg.exports = bi
+        bi.qs = Cl;
+        Zg.exports = bi
     });
-    var qc = je((l9, $c) => {
+    var qc = He((a9, $c) => {
         typeof $c < "u" && ($c.exports = bt);
 
         function bt(i) {
-            if (i) return z_(i)
+            if (i) return j_(i)
         }
         n(bt, "Emitter");
 
-        function z_(i) {
+        function j_(i) {
             for (var e in bt.prototype) i[e] = bt.prototype[e];
             return i
         }
-        n(z_, "mixin");
+        n(j_, "mixin");
         bt.prototype.on = bt.prototype.addEventListener = function(i, e) {
             return this._callbacks = this._callbacks || {}, (this._callbacks["$" + i] = this._callbacks["$" + i] || []).push(e), this
         };
@@ -2269,10 +2269,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             return !!this.listeners(i).length
         }
     });
-    var Ev = je((t7, Fv) => {
+    var Ov = He((eI, Ev) => {
         "use strict";
 
-        function vv(i, e) {
+        function bv(i, e) {
             var t = Object.keys(i);
             if (Object.getOwnPropertySymbols) {
                 var r = Object.getOwnPropertySymbols(i);
@@ -2282,14 +2282,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }
             return t
         }
-        n(vv, "ownKeys");
+        n(bv, "ownKeys");
 
         function Yl(i) {
             for (var e = 1; e < arguments.length; e++) {
                 var t = arguments[e] != null ? arguments[e] : {};
-                e % 2 ? vv(Object(t), !0).forEach(function(r) {
+                e % 2 ? bv(Object(t), !0).forEach(function(r) {
                     GP(i, r, t[r])
-                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(i, Object.getOwnPropertyDescriptors(t)) : vv(Object(t)).forEach(function(r) {
+                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(i, Object.getOwnPropertyDescriptors(t)) : bv(Object(t)).forEach(function(r) {
                     Object.defineProperty(i, r, Object.getOwnPropertyDescriptor(t, r))
                 })
             }
@@ -2302,16 +2302,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         n(WP, "_classCallCheck");
 
-        function bv(i, e) {
+        function wv(i, e) {
             for (var t = 0; t < e.length; t++) {
                 var r = e[t];
                 r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(i, r.key, r)
             }
         }
-        n(bv, "_defineProperties");
+        n(wv, "_defineProperties");
 
         function KP(i, e, t) {
-            return e && bv(i.prototype, e), t && bv(i, t), i
+            return e && wv(i.prototype, e), t && wv(i, t), i
         }
         n(KP, "_createClass");
 
@@ -2335,7 +2335,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }, Jl.apply(this, arguments)
         }
         n(Jl, "_extends");
-        var Pv = {
+        var xv = {
             exports: {}
         };
         (function(i) {
@@ -2358,12 +2358,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     o = e.BlobBuilder || e.WebKitBlobBuilder || e.MozBlobBuilder || e.MSBlobBuilder,
                     a = /^data:((.*?)(;charset=.*?)?)(;base64)?,/,
                     l = (r || o) && e.atob && e.ArrayBuffer && e.Uint8Array && function(h) {
-                        var c, d, f, y, S, w, R, x, E;
+                        var c, d, f, y, w, S, R, x, F;
                         if (c = h.match(a), !c) throw new Error("invalid data URI");
-                        for (d = c[2] ? c[1] : "text/plain" + (c[3] || ";charset=US-ASCII"), f = !!c[4], y = h.slice(c[0].length), f ? S = atob(y) : S = decodeURIComponent(y), w = new ArrayBuffer(S.length), R = new Uint8Array(w), x = 0; x < S.length; x += 1) R[x] = S.charCodeAt(x);
-                        return r ? new Blob([s ? R : w], {
+                        for (d = c[2] ? c[1] : "text/plain" + (c[3] || ";charset=US-ASCII"), f = !!c[4], y = h.slice(c[0].length), f ? w = atob(y) : w = decodeURIComponent(y), S = new ArrayBuffer(w.length), R = new Uint8Array(S), x = 0; x < w.length; x += 1) R[x] = w.charCodeAt(x);
+                        return r ? new Blob([s ? R : S], {
                             type: d
-                        }) : (E = new o, E.append(w), E.getBlob(d))
+                        }) : (F = new o, F.append(S), F.getBlob(d))
                     };
                 e.HTMLCanvasElement && !t.toBlob && (t.mozGetAsFile ? t.toBlob = function(h, c, d) {
                     var f = this;
@@ -2382,12 +2382,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     })
                 })), i.exports ? i.exports = l : e.dataURLtoBlob = l
             }(window)
-        })(Pv);
-        var XP = Pv.exports,
+        })(xv);
+        var XP = xv.exports,
             YP = n(function(e) {
                 return typeof Blob > "u" ? !1 : e instanceof Blob || Object.prototype.toString.call(e) === "[object Blob]"
             }, "isBlob"),
-            wv = {
+            Sv = {
                 strict: !0,
                 checkOrientation: !0,
                 maxWidth: 1 / 0,
@@ -2407,7 +2407,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 error: null
             },
             JP = typeof window < "u" && typeof window.document < "u",
-            Pr = JP ? window : {},
+            xr = JP ? window : {},
             Ql = n(function(e) {
                 return e > 0 && e < 1 / 0
             }, "isPositiveNumber"),
@@ -2419,29 +2419,29 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         n(ZP, "toArray");
         var ex = /^image\/.+$/;
 
-        function xd(i) {
+        function Fd(i) {
             return ex.test(i)
         }
-        n(xd, "isImageType");
+        n(Fd, "isImageType");
 
         function tx(i) {
-            var e = xd(i) ? i.substr(6) : "";
+            var e = Fd(i) ? i.substr(6) : "";
             return e === "jpeg" && (e = "jpg"), ".".concat(e)
         }
         n(tx, "imageTypeToExtension");
-        var xv = String.fromCharCode;
+        var Fv = String.fromCharCode;
 
         function ix(i, e, t) {
             var r = "",
                 s;
-            for (t += e, s = e; s < t; s += 1) r += xv(i.getUint8(s));
+            for (t += e, s = e; s < t; s += 1) r += Fv(i.getUint8(s));
             return r
         }
         n(ix, "getStringFromCharCode");
-        var rx = Pr.btoa;
+        var rx = xr.btoa;
 
         function sx(i, e) {
-            for (var t = [], r = 8192, s = new Uint8Array(i); s.length > 0;) t.push(xv.apply(null, ZP(s.subarray(0, r)))), s = s.subarray(r);
+            for (var t = [], r = 8192, s = new Uint8Array(i); s.length > 0;) t.push(Fv.apply(null, ZP(s.subarray(0, r)))), s = s.subarray(r);
             return "data:".concat(e, ";base64,").concat(rx(t.join("")))
         }
         n(sx, "arrayBufferToDataURL");
@@ -2472,10 +2472,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 }
                 if (o) {
                     var y = e.getUint16(o, r),
-                        S, w;
-                    for (w = 0; w < y; w += 1)
-                        if (S = o + w * 12 + 2, e.getUint16(S, r) === 274) {
-                            S += 8, t = e.getUint16(S, r), e.setUint16(S, 1, r);
+                        w, S;
+                    for (S = 0; S < y; S += 1)
+                        if (w = o + S * 12 + 2, e.getUint16(w, r) === 274) {
+                            w += 8, t = e.getUint16(w, r), e.setUint16(w, 1, r);
                             break
                         }
                 }
@@ -2522,11 +2522,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         n(nx, "parseOrientation");
         var ax = /\.\d*(?:0|9){12}\d*$/;
 
-        function Sv(i) {
+        function _v(i) {
             var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 1e11;
             return ax.test(i) ? Math.round(i * e) / e : i
         }
-        n(Sv, "normalizeDecimalNumber");
+        n(_v, "normalizeDecimalNumber");
 
         function ba(i) {
             var e = i.aspectRatio,
@@ -2545,14 +2545,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }
         }
         n(ba, "getAdjustedSizes");
-        var lx = Pr.ArrayBuffer,
-            _v = Pr.FileReader,
-            Fs = Pr.URL || Pr.webkitURL,
+        var lx = xr.ArrayBuffer,
+            Pv = xr.FileReader,
+            Es = xr.URL || xr.webkitURL,
             ux = /\.\w+$/,
-            hx = Pr.Compressor,
+            hx = xr.Compressor,
             cx = function() {
                 function i(e, t) {
-                    WP(this, i), this.file = e, this.image = new Image, this.options = Yl(Yl({}, wv), t), this.aborted = !1, this.result = null, this.init()
+                    WP(this, i), this.file = e, this.image = new Image, this.options = Yl(Yl({}, Sv), t), this.aborted = !1, this.result = null, this.init()
                 }
                 return n(i, "Compressor"), KP(i, [{
                     key: "init",
@@ -2565,19 +2565,19 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             return
                         }
                         var o = r.type;
-                        if (!xd(o)) {
+                        if (!Fd(o)) {
                             this.fail(new Error("The first argument must be an image File or Blob object."));
                             return
                         }
-                        if (!Fs || !_v) {
+                        if (!Es || !Pv) {
                             this.fail(new Error("The current browser does not support image compression."));
                             return
                         }
-                        if (lx || (s.checkOrientation = !1), Fs && !s.checkOrientation) this.load({
-                            url: Fs.createObjectURL(r)
+                        if (lx || (s.checkOrientation = !1), Es && !s.checkOrientation) this.load({
+                            url: Es.createObjectURL(r)
                         });
                         else {
-                            var a = new _v,
+                            var a = new Pv,
                                 l = s.checkOrientation && o === "image/jpeg";
                             this.reader = a, a.onload = function(h) {
                                 var c = h.target,
@@ -2585,7 +2585,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                     f = {};
                                 if (l) {
                                     var y = ox(d);
-                                    y > 1 || !Fs ? (f.url = sx(d, o), y > 1 && Jl(f, nx(y))) : f.url = Fs.createObjectURL(r)
+                                    y > 1 || !Es ? (f.url = sx(d, o), y > 1 && Jl(f, nx(y))) : f.url = Es.createObjectURL(r)
                                 } else f.url = d;
                                 t.load(f)
                             }, a.onabort = function() {
@@ -2612,7 +2612,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             r.fail(new Error("Aborted to load the image."))
                         }, o.onerror = function() {
                             r.fail(new Error("Failed to load the image."))
-                        }, Pr.navigator && /(?:iPad|iPhone|iPod).*?AppleWebKit/i.test(Pr.navigator.userAgent) && (o.crossOrigin = "anonymous"), o.alt = s.name, o.src = t.url
+                        }, xr.navigator && /(?:iPad|iPhone|iPod).*?AppleWebKit/i.test(xr.navigator.userAgent) && (o.crossOrigin = "anonymous"), o.alt = s.name, o.src = t.url
                     }, "load")
                 }, {
                     key: "draw",
@@ -2627,46 +2627,46 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             d = t.scaleY,
                             f = d === void 0 ? 1 : d,
                             y = this.file,
-                            S = this.image,
-                            w = this.options,
+                            w = this.image,
+                            S = this.options,
                             R = document.createElement("canvas"),
                             x = R.getContext("2d"),
-                            E = Math.abs(l) % 180 === 90,
-                            N = (w.resize === "contain" || w.resize === "cover") && Ql(w.width) && Ql(w.height),
-                            V = Math.max(w.maxWidth, 0) || 1 / 0,
-                            $ = Math.max(w.maxHeight, 0) || 1 / 0,
-                            K = Math.max(w.minWidth, 0) || 0,
-                            U = Math.max(w.minHeight, 0) || 0,
+                            F = Math.abs(l) % 180 === 90,
+                            N = (S.resize === "contain" || S.resize === "cover") && Ql(S.width) && Ql(S.height),
+                            H = Math.max(S.maxWidth, 0) || 1 / 0,
+                            q = Math.max(S.maxHeight, 0) || 1 / 0,
+                            K = Math.max(S.minWidth, 0) || 0,
+                            k = Math.max(S.minHeight, 0) || 0,
                             B = s / o,
-                            z = w.width,
-                            G = w.height;
-                        if (E) {
-                            var Dt = [$, V];
-                            V = Dt[0], $ = Dt[1];
-                            var Wt = [U, K];
-                            K = Wt[0], U = Wt[1];
-                            var Kt = [G, z];
-                            z = Kt[0], G = Kt[1]
+                            z = S.width,
+                            G = S.height;
+                        if (F) {
+                            var Nt = [q, H];
+                            H = Nt[0], q = Nt[1];
+                            var Kt = [k, K];
+                            K = Kt[0], k = Kt[1];
+                            var Gt = [G, z];
+                            z = Gt[0], G = Gt[1]
                         }
                         N && (B = z / G);
-                        var Gt = ba({
+                        var Xt = ba({
                             aspectRatio: B,
-                            width: V,
-                            height: $
+                            width: H,
+                            height: q
                         }, "contain");
-                        V = Gt.width, $ = Gt.height;
+                        H = Xt.width, q = Xt.height;
                         var ir = ba({
                             aspectRatio: B,
                             width: K,
-                            height: U
+                            height: k
                         }, "cover");
-                        if (K = ir.width, U = ir.height, N) {
-                            var xr = ba({
+                        if (K = ir.width, k = ir.height, N) {
+                            var Fr = ba({
                                 aspectRatio: B,
                                 width: z,
                                 height: G
-                            }, w.resize);
-                            z = xr.width, G = xr.height
+                            }, S.resize);
+                            z = Fr.width, G = Fr.height
                         } else {
                             var xe = ba({
                                     aspectRatio: B,
@@ -2675,37 +2675,37 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                 }),
                                 Si = xe.width;
                             z = Si === void 0 ? s : Si;
-                            var Ts = xe.height;
-                            G = Ts === void 0 ? o : Ts
+                            var ks = xe.height;
+                            G = ks === void 0 ? o : ks
                         }
-                        z = Math.floor(Sv(Math.min(Math.max(z, K), V))), G = Math.floor(Sv(Math.min(Math.max(G, U), $)));
-                        var Xt = -z / 2,
-                            Fr = -G / 2,
+                        z = Math.floor(_v(Math.min(Math.max(z, K), H))), G = Math.floor(_v(Math.min(Math.max(G, k), q)));
+                        var Yt = -z / 2,
+                            Er = -G / 2,
                             _i = z,
                             rr = G,
                             Pi = [];
                         if (N) {
-                            var Er = 0,
-                                Or = 0,
+                            var Or = 0,
+                                Rr = 0,
                                 xi = s,
                                 xt = o,
-                                ks = ba({
+                                As = ba({
                                     aspectRatio: B,
                                     width: s,
                                     height: o
                                 }, {
                                     contain: "cover",
                                     cover: "contain"
-                                }[w.resize]);
-                            xi = ks.width, xt = ks.height, Er = (s - xi) / 2, Or = (o - xt) / 2, Pi.push(Er, Or, xi, xt)
+                                }[S.resize]);
+                            xi = As.width, xt = As.height, Or = (s - xi) / 2, Rr = (o - xt) / 2, Pi.push(Or, Rr, xi, xt)
                         }
-                        if (Pi.push(Xt, Fr, _i, rr), E) {
-                            var As = [G, z];
-                            z = As[0], G = As[1]
+                        if (Pi.push(Yt, Er, _i, rr), F) {
+                            var Us = [G, z];
+                            z = Us[0], G = Us[1]
                         }
-                        R.width = z, R.height = G, xd(w.mimeType) || (w.mimeType = y.type);
+                        R.width = z, R.height = G, Fd(S.mimeType) || (S.mimeType = y.type);
                         var fo = "transparent";
-                        if (y.size > w.convertSize && w.convertTypes.indexOf(w.mimeType) >= 0 && (w.mimeType = "image/jpeg"), w.mimeType === "image/jpeg" && (fo = "#fff"), x.fillStyle = fo, x.fillRect(0, 0, z, G), w.beforeDraw && w.beforeDraw.call(this, x, R), !this.aborted && (x.save(), x.translate(z / 2, G / 2), x.rotate(l * Math.PI / 180), x.scale(c, f), x.drawImage.apply(x, [S].concat(Pi)), x.restore(), w.drew && w.drew.call(this, x, R), !this.aborted)) {
+                        if (y.size > S.convertSize && S.convertTypes.indexOf(S.mimeType) >= 0 && (S.mimeType = "image/jpeg"), S.mimeType === "image/jpeg" && (fo = "#fff"), x.fillStyle = fo, x.fillRect(0, 0, z, G), S.beforeDraw && S.beforeDraw.call(this, x, R), !this.aborted && (x.save(), x.translate(z / 2, G / 2), x.rotate(l * Math.PI / 180), x.scale(c, f), x.drawImage.apply(x, [w].concat(Pi)), x.restore(), S.drew && S.drew.call(this, x, R), !this.aborted)) {
                             var _a = n(function(iu) {
                                 r.aborted || r.done({
                                     naturalWidth: s,
@@ -2713,7 +2713,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                     result: iu
                                 })
                             }, "done");
-                            R.toBlob ? R.toBlob(_a, w.mimeType, w.quality) : _a(XP(R.toDataURL(w.mimeType, w.quality)))
+                            R.toBlob ? R.toBlob(_a, S.mimeType, S.quality) : _a(XP(R.toDataURL(S.mimeType, S.quality)))
                         }
                     }, "draw")
                 }, {
@@ -2725,7 +2725,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             a = this.file,
                             l = this.image,
                             h = this.options;
-                        if (Fs && !h.checkOrientation && Fs.revokeObjectURL(l.src), o)
+                        if (Es && !h.checkOrientation && Es.revokeObjectURL(l.src), o)
                             if (h.strict && o.size > a.size && h.mimeType === a.type && !(h.width > r || h.height > s || h.minWidth > r || h.minHeight > s || h.maxWidth < r || h.maxHeight < s)) o = a;
                             else {
                                 var c = new Date;
@@ -2754,16 +2754,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 }, {
                     key: "setDefaults",
                     value: n(function(t) {
-                        Jl(wv, t)
+                        Jl(Sv, t)
                     }, "setDefaults")
                 }]), i
             }();
-        Fv.exports = cx
+        Ev.exports = cx
     });
-    var Ed = {};
-    yo(Ed, {
-        Audio: () => gr,
-        AwsS3: () => ls,
+    var Od = {};
+    yo(Od, {
+        Audio: () => yr,
+        AwsS3: () => us,
         AwsS3Multipart: () => Yi,
         Box: () => hi,
         Compressor: () => po,
@@ -2771,31 +2771,31 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         Dashboard: () => ai,
         DefaultStore: () => Ra,
         DragDrop: () => li,
-        DropTarget: () => Vr,
+        DropTarget: () => Wr,
         Dropbox: () => ci,
         Facebook: () => di,
-        FileInput: () => pr,
-        Form: () => Es,
-        GoldenRetriever: () => Rs,
+        FileInput: () => fr,
+        Form: () => Os,
+        GoldenRetriever: () => Cs,
         GoogleDrive: () => pi,
-        ImageEditor: () => fr,
+        ImageEditor: () => mr,
         Informer: () => si,
         Instagram: () => fi,
         OneDrive: () => mi,
-        ProgressBar: () => mr,
-        ReduxDevTools: () => Cs,
-        ReduxStore: () => ef,
-        RemoteSources: () => Xr,
-        ScreenCapture: () => yr,
+        ProgressBar: () => gr,
+        ReduxDevTools: () => Ts,
+        ReduxStore: () => tf,
+        RemoteSources: () => Yr,
+        ScreenCapture: () => vr,
         StatusBar: () => ri,
         ThumbnailGenerator: () => Li,
-        Transloadit: () => Ut,
+        Transloadit: () => Dt,
         Tus: () => wi,
         Unsplash: () => gi,
         Uppy: () => ka,
-        Url: () => zt,
-        Webcam: () => vr,
-        XHRUpload: () => xs,
+        Url: () => jt,
+        Webcam: () => br,
+        XHRUpload: () => Fs,
         Zoom: () => yi,
         debugLogger: () => xo,
         locales: () => Cx,
@@ -2808,27 +2808,27 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(qe, "has");
 
-    function Xd(i, e) {
+    function Yd(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
-    n(Xd, "_classPrivateFieldLooseBase");
-    var C0 = 0;
+    n(Yd, "_classPrivateFieldLooseBase");
+    var T0 = 0;
 
-    function T0(i) {
-        return "__private_" + C0++ + "_" + i
+    function k0(i) {
+        return "__private_" + T0++ + "_" + i
     }
-    n(T0, "_classPrivateFieldLooseKey");
+    n(k0, "_classPrivateFieldLooseKey");
 
-    function k0(i, e, t) {
+    function A0(i, e, t) {
         let r = [];
         return i.forEach(s => typeof s != "string" ? r.push(s) : e[Symbol.split](s).forEach((o, a, l) => {
             o !== "" && r.push(o), a < l.length - 1 && r.push(t)
         })), r
     }
-    n(k0, "insertReplacement");
+    n(A0, "insertReplacement");
 
-    function Yd(i, e) {
+    function Jd(i, e) {
         let t = /\$/g,
             r = "$$$$",
             s = [i];
@@ -2836,22 +2836,22 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         for (let o of Object.keys(e))
             if (o !== "_") {
                 let a = e[o];
-                typeof a == "string" && (a = t[Symbol.replace](a, r)), s = k0(s, new RegExp(`%\\{${o}\\}`, "g"), a)
+                typeof a == "string" && (a = t[Symbol.replace](a, r)), s = A0(s, new RegExp(`%\\{${o}\\}`, "g"), a)
             }
         return s
     }
-    n(Yd, "interpolate");
-    var vo = T0("apply"),
+    n(Jd, "interpolate");
+    var vo = k0("apply"),
         ar = class {
             constructor(e) {
                 Object.defineProperty(this, vo, {
-                    value: A0
+                    value: U0
                 }), this.locale = {
                     strings: {},
                     pluralize(t) {
                         return t === 1 ? 0 : 1
                     }
-                }, Array.isArray(e) ? e.forEach(Xd(this, vo)[vo], this) : Xd(this, vo)[vo](e)
+                }, Array.isArray(e) ? e.forEach(Yd(this, vo)[vo], this) : Yd(this, vo)[vo](e)
             }
             translate(e, t) {
                 return this.translateArray(e, t).join("")
@@ -2862,16 +2862,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 if (typeof r == "object") {
                     if (t && typeof t.smart_count < "u") {
                         let o = this.locale.pluralize(t.smart_count);
-                        return Yd(r[o], t)
+                        return Jd(r[o], t)
                     }
                     throw new Error("Attempted to use a string with plural forms, but no value was given for %{smart_count}")
                 }
-                return Yd(r, t)
+                return Jd(r, t)
             }
         };
     n(ar, "Translator");
 
-    function A0(i) {
+    function U0(i) {
         if (!(i != null && i.strings)) return;
         let e = this.locale;
         this.locale = { ...e,
@@ -2880,38 +2880,38 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }
         }, this.locale.pluralize = i.pluralize || e.pluralize
     }
-    n(A0, "_apply2");
-    var gp = oe(hu(), 1);
-    var U0 = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
+    n(U0, "_apply2");
+    var yp = oe(hu(), 1);
+    var D0 = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
     var Ot = n((i = 21) => {
         let e = "",
             t = i;
-        for (; t--;) e += U0[Math.random() * 64 | 0];
+        for (; t--;) e += D0[Math.random() * 64 | 0];
         return e
     }, "nanoid");
-    var yp = oe(bo(), 1);
+    var vp = oe(bo(), 1);
 
     function Oa(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
     n(Oa, "_classPrivateFieldLooseBase");
-    var J0 = 0;
+    var Q0 = 0;
 
-    function ip(i) {
-        return "__private_" + J0++ + "_" + i
+    function rp(i) {
+        return "__private_" + Q0++ + "_" + i
     }
-    n(ip, "_classPrivateFieldLooseKey");
-    var Q0 = {
+    n(rp, "_classPrivateFieldLooseKey");
+    var Z0 = {
             version: "3.0.2"
         },
-        Ar = ip("callbacks"),
-        du = ip("publish"),
+        Ur = rp("callbacks"),
+        du = rp("publish"),
         wo = class {
             constructor() {
                 Object.defineProperty(this, du, {
-                    value: Z0
-                }), Object.defineProperty(this, Ar, {
+                    value: eb
+                }), Object.defineProperty(this, Ur, {
                     writable: !0,
                     value: new Set
                 }), this.state = {}
@@ -2928,21 +2928,21 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 this.state = r, Oa(this, du)[du](t, r, e)
             }
             subscribe(e) {
-                return Oa(this, Ar)[Ar].add(e), () => {
-                    Oa(this, Ar)[Ar].delete(e)
+                return Oa(this, Ur)[Ur].add(e), () => {
+                    Oa(this, Ur)[Ur].delete(e)
                 }
             }
         };
     n(wo, "DefaultStore");
 
-    function Z0() {
+    function eb() {
         for (var i = arguments.length, e = new Array(i), t = 0; t < i; t++) e[t] = arguments[t];
-        Oa(this, Ar)[Ar].forEach(r => {
+        Oa(this, Ur)[Ur].forEach(r => {
             r(...e)
         })
     }
-    n(Z0, "_publish2");
-    wo.VERSION = Q0.version;
+    n(eb, "_publish2");
+    wo.VERSION = Z0.version;
     var Ra = wo;
 
     function Oi(i) {
@@ -3018,20 +3018,20 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(_o, "getFileType");
 
-    function eb(i) {
+    function tb(i) {
         return i.charCodeAt(0).toString(32)
     }
-    n(eb, "encodeCharacter");
+    n(tb, "encodeCharacter");
 
-    function rp(i) {
+    function sp(i) {
         let e = "";
-        return i.replace(/[^A-Z0-9]/ig, t => (e += `-${eb(t)}`, "/")) + e
+        return i.replace(/[^A-Z0-9]/ig, t => (e += `-${tb(t)}`, "/")) + e
     }
-    n(rp, "encodeFilename");
+    n(sp, "encodeFilename");
 
     function Po(i) {
         let e = "uppy";
-        return typeof i.name == "string" && (e += `-${rp(i.name.toLowerCase())}`), i.type !== void 0 && (e += `-${i.type}`), i.meta && typeof i.meta.relativePath == "string" && (e += `-${rp(i.meta.relativePath.toLowerCase())}`), i.data.size !== void 0 && (e += `-${i.data.size}`), i.data.lastModified !== void 0 && (e += `-${i.data.lastModified}`), e
+        return typeof i.name == "string" && (e += `-${sp(i.name.toLowerCase())}`), i.type !== void 0 && (e += `-${i.type}`), i.meta && typeof i.meta.relativePath == "string" && (e += `-${sp(i.meta.relativePath.toLowerCase())}`), i.data.size !== void 0 && (e += `-${i.data.size}`), i.data.lastModified !== void 0 && (e += `-${i.data.lastModified}`), e
     }
     n(Po, "generateFileID");
 
@@ -3055,39 +3055,39 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(mu, "pad");
 
-    function Is() {
+    function Ls() {
         let i = new Date,
             e = mu(i.getHours()),
             t = mu(i.getMinutes()),
             r = mu(i.getSeconds());
         return `${e}:${t}:${r}`
     }
-    n(Is, "getTimeStamp");
-    var sp = {
+    n(Ls, "getTimeStamp");
+    var op = {
             debug: () => {},
             warn: () => {},
             error: function() {
                 for (var i = arguments.length, e = new Array(i), t = 0; t < i; t++) e[t] = arguments[t];
-                return console.error(`[Uppy] [${Is()}]`, ...e)
+                return console.error(`[Uppy] [${Ls()}]`, ...e)
             }
         },
         xo = {
             debug: function() {
                 for (var i = arguments.length, e = new Array(i), t = 0; t < i; t++) e[t] = arguments[t];
-                return console.debug(`[Uppy] [${Is()}]`, ...e)
+                return console.debug(`[Uppy] [${Ls()}]`, ...e)
             },
             warn: function() {
                 for (var i = arguments.length, e = new Array(i), t = 0; t < i; t++) e[t] = arguments[t];
-                return console.warn(`[Uppy] [${Is()}]`, ...e)
+                return console.warn(`[Uppy] [${Ls()}]`, ...e)
             },
             error: function() {
                 for (var i = arguments.length, e = new Array(i), t = 0; t < i; t++) e[t] = arguments[t];
-                return console.error(`[Uppy] [${Is()}]`, ...e)
+                return console.error(`[Uppy] [${Ls()}]`, ...e)
             }
         };
     var Ta = oe(Ca(), 1),
-        cp = oe(hp(), 1);
-    var dp = {
+        dp = oe(cp(), 1);
+    var pp = {
             maxFileSize: null,
             minFileSize: null,
             maxTotalFileSize: null,
@@ -3119,7 +3119,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 allowedFileTypes: l
             } = this.getOpts().restrictions;
             if (a && t.filter(c => !c.isGhost).length + 1 > a) throw new Ve(`${this.i18n("youCanOnlyUploadX",{smart_count:a})}`);
-            if (l && !l.some(c => c.includes("/") ? e.type ? (0, cp.default)(e.type.replace(/;.*?$/, ""), c) : !1 : c[0] === "." && e.extension ? e.extension.toLowerCase() === c.slice(1).toLowerCase() : !1)) {
+            if (l && !l.some(c => c.includes("/") ? e.type ? (0, dp.default)(e.type.replace(/;.*?$/, ""), c) : !1 : c[0] === "." && e.extension ? e.extension.toLowerCase() === c.slice(1).toLowerCase() : !1)) {
                 let c = l.join(", ");
                 throw new Ve(this.i18n("youCanOnlyUploadFileTypes", {
                     types: c
@@ -3161,7 +3161,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
     };
     n(Fo, "Restricter");
-    var pp = {
+    var fp = {
         strings: {
             addBulkFilesFailed: {
                 0: "Failed to add %{smart_count} file due to an internal error",
@@ -3214,28 +3214,28 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }
         }
     };
-    var fp, mp;
+    var mp, gp;
 
     function L(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
     n(L, "_classPrivateFieldLooseBase");
-    var rb = 0;
+    var sb = 0;
 
     function Oe(i) {
-        return "__private_" + rb++ + "_" + i
+        return "__private_" + sb++ + "_" + i
     }
     n(Oe, "_classPrivateFieldLooseKey");
-    var sb = {
-            version: "3.0.5"
+    var ob = {
+            version: "3.0.6"
         },
-        Ue = Oe("plugins"),
-        Bt = Oe("restricter"),
+        De = Oe("plugins"),
+        It = Oe("restricter"),
         Eo = Oe("storeUnsubscribe"),
         Ri = Oe("emitter"),
-        Ur = Oe("preProcessors"),
-        Dr = Oe("uploaders"),
+        Dr = Oe("preProcessors"),
+        Nr = Oe("uploaders"),
         ki = Oe("postProcessors"),
         pt = Oe("informAndEmit"),
         ko = Oe("checkRequiredMetaFieldsOnFile"),
@@ -3244,41 +3244,41 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         Ro = Oe("checkAndCreateFileStateObject"),
         Co = Oe("startIfAutoProceed"),
         yu = Oe("addListeners"),
-        It = Oe("updateOnlineStatus"),
+        Lt = Oe("updateOnlineStatus"),
         Ci = Oe("createUpload"),
         vu = Oe("getUpload"),
-        Nr = Oe("removeUpload"),
+        Br = Oe("removeUpload"),
         Ti = Oe("runUpload");
-    fp = Symbol.for("uppy test: getPlugins");
-    mp = Symbol.for("uppy test: createUpload");
+    mp = Symbol.for("uppy test: getPlugins");
+    gp = Symbol.for("uppy test: createUpload");
     var To = class {
         constructor(e) {
             Object.defineProperty(this, Ti, {
+                value: gb
+            }), Object.defineProperty(this, Br, {
                 value: mb
-            }), Object.defineProperty(this, Nr, {
-                value: fb
             }), Object.defineProperty(this, vu, {
-                value: pb
+                value: fb
             }), Object.defineProperty(this, Ci, {
-                value: db
+                value: pb
             }), Object.defineProperty(this, yu, {
-                value: cb
+                value: db
             }), Object.defineProperty(this, Co, {
-                value: hb
+                value: cb
             }), Object.defineProperty(this, Ro, {
-                value: ub
+                value: hb
             }), Object.defineProperty(this, Oo, {
-                value: lb
+                value: ub
             }), Object.defineProperty(this, gu, {
-                value: ab
+                value: lb
             }), Object.defineProperty(this, ko, {
-                value: nb
+                value: ab
             }), Object.defineProperty(this, pt, {
-                value: ob
-            }), Object.defineProperty(this, Ue, {
+                value: nb
+            }), Object.defineProperty(this, De, {
                 writable: !0,
                 value: Object.create(null)
-            }), Object.defineProperty(this, Bt, {
+            }), Object.defineProperty(this, It, {
                 writable: !0,
                 value: void 0
             }), Object.defineProperty(this, Eo, {
@@ -3286,31 +3286,31 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 value: void 0
             }), Object.defineProperty(this, Ri, {
                 writable: !0,
-                value: (0, gp.default)()
-            }), Object.defineProperty(this, Ur, {
+                value: (0, yp.default)()
+            }), Object.defineProperty(this, Dr, {
                 writable: !0,
                 value: new Set
-            }), Object.defineProperty(this, Dr, {
+            }), Object.defineProperty(this, Nr, {
                 writable: !0,
                 value: new Set
             }), Object.defineProperty(this, ki, {
                 writable: !0,
                 value: new Set
-            }), Object.defineProperty(this, It, {
+            }), Object.defineProperty(this, Lt, {
                 writable: !0,
                 value: this.updateOnlineStatus.bind(this)
-            }), this.defaultLocale = pp;
+            }), this.defaultLocale = fp;
             let t = {
                 id: "uppy",
                 autoProceed: !1,
                 allowMultipleUploadBatches: !0,
                 debug: !1,
-                restrictions: dp,
+                restrictions: pp,
                 meta: {},
                 onBeforeFileAdded: r => r,
                 onBeforeUpload: r => r,
                 store: new Ra,
-                logger: sp,
+                logger: op,
                 infoTimeout: 5e3
             };
             this.opts = { ...t,
@@ -3318,7 +3318,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 restrictions: { ...t.restrictions,
                     ...e && e.restrictions
                 }
-            }, e && e.logger && e.debug ? this.log("You are using a custom `logger`, but also set `debug: true`, which uses built-in logger to output logs to console. Ignoring `debug: true` and using your custom `logger`.", "warning") : e && e.debug && (this.opts.logger = xo), this.log(`Using Core v${this.constructor.VERSION}`), this.i18nInit(), this.calculateProgress = (0, yp.default)(this.calculateProgress.bind(this), 500, {
+            }, e && e.logger && e.debug ? this.log("You are using a custom `logger`, but also set `debug: true`, which uses built-in logger to output logs to console. Ignoring `debug: true` and using your custom `logger`.", "warning") : e && e.debug && (this.opts.logger = xo), this.log(`Using Core v${this.constructor.VERSION}`), this.i18nInit(), this.calculateProgress = (0, vp.default)(this.calculateProgress.bind(this), 500, {
                 leading: !0,
                 trailing: !0
             }), this.store = this.opts.store, this.setState({
@@ -3336,7 +3336,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 },
                 info: [],
                 recoveredState: null
-            }), L(this, Bt)[Bt] = new Fo(() => this.opts, this.i18n), L(this, Eo)[Eo] = this.store.subscribe((r, s, o) => {
+            }), L(this, It)[It] = new Fo(() => this.opts, this.i18n), L(this, Eo)[Eo] = this.store.subscribe((r, s, o) => {
                 this.emit("state-update", r, s, o), this.updateAll(s)
             }), this.opts.debug && typeof window < "u" && (window[this.opts.id] = this), L(this, yu)[yu]()
         }
@@ -3410,10 +3410,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }), this.emit("reset-progress")
         }
         addPreProcessor(e) {
-            L(this, Ur)[Ur].add(e)
+            L(this, Dr)[Dr].add(e)
         }
         removePreProcessor(e) {
-            return L(this, Ur)[Ur].delete(e)
+            return L(this, Dr)[Dr].delete(e)
         }
         addPostProcessor(e) {
             L(this, ki)[ki].add(e)
@@ -3422,10 +3422,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             return L(this, ki)[ki].delete(e)
         }
         addUploader(e) {
-            L(this, Dr)[Dr].add(e)
+            L(this, Nr)[Nr].add(e)
         }
         removeUploader(e) {
-            return L(this, Dr)[Dr].delete(e)
+            return L(this, Nr)[Nr].delete(e)
         }
         setMeta(e) {
             let t = { ...this.getState().meta,
@@ -3474,12 +3474,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 files: e,
                 totalProgress: t,
                 error: r
-            } = this.getState(), s = Object.values(e), o = s.filter(w => {
+            } = this.getState(), s = Object.values(e), o = s.filter(S => {
                 let {
                     progress: R
-                } = w;
+                } = S;
                 return !R.uploadComplete && R.uploadStarted
-            }), a = s.filter(w => !w.progress.uploadStarted), l = s.filter(w => w.progress.uploadStarted || w.progress.preprocess || w.progress.postprocess), h = s.filter(w => w.progress.uploadStarted), c = s.filter(w => w.isPaused), d = s.filter(w => w.progress.uploadComplete), f = s.filter(w => w.error), y = o.filter(w => !w.isPaused), S = s.filter(w => w.progress.preprocess || w.progress.postprocess);
+            }), a = s.filter(S => !S.progress.uploadStarted), l = s.filter(S => S.progress.uploadStarted || S.progress.preprocess || S.progress.postprocess), h = s.filter(S => S.progress.uploadStarted), c = s.filter(S => S.isPaused), d = s.filter(S => S.progress.uploadComplete), f = s.filter(S => S.error), y = o.filter(S => !S.isPaused), w = s.filter(S => S.progress.preprocess || S.progress.postprocess);
             return {
                 newFiles: a,
                 startedFiles: l,
@@ -3489,19 +3489,19 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 erroredFiles: f,
                 inProgressFiles: o,
                 inProgressNotPausedFiles: y,
-                processingFiles: S,
+                processingFiles: w,
                 isUploadStarted: h.length > 0,
-                isAllComplete: t === 100 && d.length === s.length && S.length === 0,
+                isAllComplete: t === 100 && d.length === s.length && w.length === 0,
                 isAllErrored: !!r && f.length === s.length,
                 isAllPaused: o.length !== 0 && c.length === o.length,
                 isUploadInProgress: o.length > 0,
-                isSomeGhost: s.some(w => w.isGhost)
+                isSomeGhost: s.some(S => S.isGhost)
             }
         }
         validateRestrictions(e, t) {
             t === void 0 && (t = this.getFiles());
             try {
-                L(this, Bt)[Bt].validate(e, t)
+                L(this, It)[It].validate(e, t)
             } catch (r) {
                 return r
             }
@@ -3588,9 +3588,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     return
                 }
                 let {
-                    capabilities: S
+                    capabilities: w
                 } = this.getState();
-                if (y.length !== s[f].fileIDs.length && !S.individualCancellation) throw new Error("individualCancellation is disabled");
+                if (y.length !== s[f].fileIDs.length && !w.individualCancellation) throw new Error("individualCancellation is disabled");
                 a[f] = { ...s[f],
                     fileIDs: y
                 }
@@ -3720,7 +3720,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 s = t.filter(c => c.progress.bytesTotal == null);
             if (r.length === 0) {
                 let c = t.length * 100,
-                    d = s.reduce((y, S) => y + S.progress.percentage, 0),
+                    d = s.reduce((y, w) => y + w.progress.percentage, 0),
                     f = Math.round(d / c * 100);
                 this.setState({
                     totalProgress: f
@@ -3762,22 +3762,22 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#id.`;
                 throw new Error(a)
             }
-            return e.VERSION && this.log(`Using ${s} v${e.VERSION}`), r.type in L(this, Ue)[Ue] ? L(this, Ue)[Ue][r.type].push(r) : L(this, Ue)[Ue][r.type] = [r], r.install(), this
+            return e.VERSION && this.log(`Using ${s} v${e.VERSION}`), r.type in L(this, De)[De] ? L(this, De)[De][r.type].push(r) : L(this, De)[De][r.type] = [r], r.install(), this
         }
         getPlugin(e) {
-            for (let t of Object.values(L(this, Ue)[Ue])) {
+            for (let t of Object.values(L(this, De)[De])) {
                 let r = t.find(s => s.id === e);
                 if (r != null) return r
             }
-        }[fp](e) {
-            return L(this, Ue)[Ue][e]
+        }[mp](e) {
+            return L(this, De)[De][e]
         }
         iteratePlugins(e) {
-            Object.values(L(this, Ue)[Ue]).flat(1).forEach(e)
+            Object.values(L(this, De)[De]).flat(1).forEach(e)
         }
         removePlugin(e) {
             this.log(`Removing plugin ${e.id}`), this.emit("plugin-remove", e), e.uninstall && e.uninstall();
-            let t = L(this, Ue)[Ue][e.type],
+            let t = L(this, De)[De][e.type],
                 r = t.findIndex(a => a.id === e.id);
             r !== -1 && t.splice(r, 1);
             let o = {
@@ -3795,7 +3795,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 reason: t
             }), L(this, Eo)[Eo](), this.iteratePlugins(r => {
                 this.removePlugin(r)
-            }), typeof window < "u" && window.removeEventListener && (window.removeEventListener("online", L(this, It)[It]), window.removeEventListener("offline", L(this, It)[It]))
+            }), typeof window < "u" && window.removeEventListener && (window.removeEventListener("online", L(this, Lt)[Lt]), window.removeEventListener("offline", L(this, Lt)[Lt]))
         }
         hideInfo() {
             let {
@@ -3833,8 +3833,8 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             }
         }
         restore(e) {
-            return this.log(`Core: attempting to restore upload "${e}"`), this.getState().currentUploads[e] ? L(this, Ti)[Ti](e) : (L(this, Nr)[Nr](e), Promise.reject(new Error("Nonexistent upload")))
-        }[mp]() {
+            return this.log(`Core: attempting to restore upload "${e}"`), this.getState().currentUploads[e] ? L(this, Ti)[Ti](e) : (L(this, Br)[Br](e), Promise.reject(new Error("Nonexistent upload")))
+        }[gp]() {
             return L(this, Ci)[Ci](...arguments)
         }
         addResultData(e, t) {
@@ -3857,13 +3857,13 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         }
         upload() {
             var e;
-            (e = L(this, Ue)[Ue].uploader) != null && e.length || this.log("No uploader type plugins are used", "warning");
+            (e = L(this, De)[De].uploader) != null && e.length || this.log("No uploader type plugins are used", "warning");
             let {
                 files: t
             } = this.getState(), r = this.opts.onBeforeUpload(t);
             return r === !1 ? Promise.reject(new Error("Not starting the upload because onBeforeUpload returned false")) : (r && typeof r == "object" && (t = r, this.setState({
                 files: t
-            })), Promise.resolve().then(() => L(this, Bt)[Bt].validateMinNumberOfFiles(t)).catch(s => {
+            })), Promise.resolve().then(() => L(this, It)[It].validateMinNumberOfFiles(t)).catch(s => {
                 throw L(this, pt)[pt](s), s
             }).then(() => {
                 if (!L(this, gu)[gu](t)) throw new Ve(this.i18n("missingRequiredMetaField"))
@@ -3886,7 +3886,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
     };
     n(To, "Uppy");
 
-    function ob(i, e) {
+    function nb(i, e) {
         let {
             message: t,
             details: r = ""
@@ -3894,29 +3894,29 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         i.isRestriction ? this.emit("restriction-failed", e, i) : this.emit("error", i), this.info({
             message: t,
             details: r
-        }, "error", this.opts.infoTimeout), this.log(`${t} ${r}`.trim(), "error")
+        }, "error", this.opts.infoTimeout), this.log(i, "warning")
     }
-    n(ob, "_informAndEmit2");
+    n(nb, "_informAndEmit2");
 
-    function nb(i) {
+    function ab(i) {
         let {
             missingFields: e,
             error: t
-        } = L(this, Bt)[Bt].getMissingRequiredMetaFields(i);
+        } = L(this, It)[It].getMissingRequiredMetaFields(i);
         return e.length > 0 ? (this.setFileState(i.id, {
             missingRequiredMetaFields: e
         }), this.log(t.message), this.emit("restriction-failed", i, t), !1) : !0
     }
-    n(nb, "_checkRequiredMetaFieldsOnFile2");
+    n(ab, "_checkRequiredMetaFieldsOnFile2");
 
-    function ab(i) {
+    function lb(i) {
         let e = !0;
         for (let t of Object.values(i)) L(this, ko)[ko](t) || (e = !1);
         return e
     }
-    n(ab, "_checkRequiredMetaFields2");
+    n(lb, "_checkRequiredMetaFields2");
 
-    function lb(i) {
+    function ub(i) {
         let {
             allowNewUpload: e
         } = this.getState();
@@ -3925,9 +3925,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             throw L(this, pt)[pt](t, i), t
         }
     }
-    n(lb, "_assertNewUploadAllowed2");
+    n(ub, "_assertNewUploadAllowed2");
 
-    function ub(i, e) {
+    function hb(i, e) {
         e instanceof File && (e = {
             name: e.name,
             type: e.type,
@@ -3979,132 +3979,146 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         } else typeof d == "object" && d !== null && (c = d);
         try {
             let f = Object.keys(i).map(y => i[y]);
-            L(this, Bt)[Bt].validate(c, f)
+            L(this, It)[It].validate(c, f)
         } catch (f) {
             throw L(this, pt)[pt](f, c), f
         }
         return c
     }
-    n(ub, "_checkAndCreateFileStateObject2");
+    n(hb, "_checkAndCreateFileStateObject2");
 
-    function hb() {
+    function cb() {
         this.opts.autoProceed && !this.scheduledAutoProceed && (this.scheduledAutoProceed = setTimeout(() => {
             this.scheduledAutoProceed = null, this.upload().catch(i => {
                 i.isRestriction || this.log(i.stack || i.message || i)
             })
         }, 4))
     }
-    n(hb, "_startIfAutoProceed2");
+    n(cb, "_startIfAutoProceed2");
 
-    function cb() {
-        let i = n((e, t, r) => {
-            let s = e.message || "Unknown error";
-            e.details && (s += ` ${e.details}`), this.setState({
-                error: s
-            }), t != null && t.id in this.getState().files && this.setFileState(t.id, {
-                error: s,
-                response: r
+    function db() {
+        let i = n((t, r, s) => {
+            let o = t.message || "Unknown error";
+            t.details && (o += ` ${t.details}`), this.setState({
+                error: o
+            }), r != null && r.id in this.getState().files && this.setFileState(r.id, {
+                error: o,
+                response: s
             })
         }, "errorHandler");
-        this.on("error", i), this.on("upload-error", (e, t, r) => {
-            if (i(t, e, r), typeof t == "object" && t.message) {
-                let s = new Error(t.message);
-                s.details = t.message, t.details && (s.details += ` ${t.details}`), s.message = this.i18n("failedToUpload", {file:e?.name}), L(this, pt)[pt](s)
-            } else L(this, pt)[pt](t)
+        this.on("error", i), this.on("upload-error", (t, r, s) => {
+            if (i(r, t, s), typeof r == "object" && r.message) {
+                let o = new Error(r.message);
+                o.details = r.message, r.details && (o.details += ` ${r.details}`), o.message = this.i18n("failedToUpload", {
+                    file: t ?.name
+                }), L(this, pt)[pt](o)
+            } else L(this, pt)[pt](r)
+        });
+        let e;
+        this.on("upload-stalled", (t, r) => {
+            let {
+                message: s
+            } = t, o = r.map(a => a.meta.name).join(", ");
+            e || (this.info({
+                message: s,
+                details: o
+            }, "warning", this.opts.infoTimeout), e = setTimeout(() => {
+                e = null
+            }, this.opts.infoTimeout)), this.log(`${s} ${o}`.trim(), "warning")
         }), this.on("upload", () => {
             this.setState({
                 error: null
             })
-        }), this.on("upload-started", e => {
-            if (e == null || !this.getFile(e.id)) {
-                this.log(`Not setting progress for a file that has been removed: ${e?.id}`);
+        }), this.on("upload-started", t => {
+            if (t == null || !this.getFile(t.id)) {
+                this.log(`Not setting progress for a file that has been removed: ${t?.id}`);
                 return
             }
-            this.setFileState(e.id, {
+            this.setFileState(t.id, {
                 progress: {
                     uploadStarted: Date.now(),
                     uploadComplete: !1,
                     percentage: 0,
                     bytesUploaded: 0,
-                    bytesTotal: e.size
+                    bytesTotal: t.size
                 }
             })
-        }), this.on("upload-progress", this.calculateProgress), this.on("upload-success", (e, t) => {
-            if (e == null || !this.getFile(e.id)) {
-                this.log(`Not setting progress for a file that has been removed: ${e?.id}`);
+        }), this.on("upload-progress", this.calculateProgress), this.on("upload-success", (t, r) => {
+            if (t == null || !this.getFile(t.id)) {
+                this.log(`Not setting progress for a file that has been removed: ${t?.id}`);
                 return
             }
-            let r = this.getFile(e.id).progress;
-            this.setFileState(e.id, {
-                progress: { ...r,
+            let s = this.getFile(t.id).progress;
+            this.setFileState(t.id, {
+                progress: { ...s,
                     postprocess: L(this, ki)[ki].size > 0 ? {
                         mode: "indeterminate"
                     } : null,
                     uploadComplete: !0,
                     percentage: 100,
-                    bytesUploaded: r.bytesTotal
+                    bytesUploaded: s.bytesTotal
                 },
-                response: t,
-                uploadURL: t.uploadURL,
+                response: r,
+                uploadURL: r.uploadURL,
                 isPaused: !1
-            }), e.size == null && this.setFileState(e.id, {
-                size: t.bytesUploaded || r.bytesTotal
+            }), t.size == null && this.setFileState(t.id, {
+                size: r.bytesUploaded || s.bytesTotal
             }), this.calculateTotalProgress()
-        }), this.on("preprocess-progress", (e, t) => {
-            if (e == null || !this.getFile(e.id)) {
-                this.log(`Not setting progress for a file that has been removed: ${e?.id}`);
+        }), this.on("preprocess-progress", (t, r) => {
+            if (t == null || !this.getFile(t.id)) {
+                this.log(`Not setting progress for a file that has been removed: ${t?.id}`);
                 return
             }
-            this.setFileState(e.id, {
-                progress: { ...this.getFile(e.id).progress,
-                    preprocess: t
+            this.setFileState(t.id, {
+                progress: { ...this.getFile(t.id).progress,
+                    preprocess: r
                 }
             })
-        }), this.on("preprocess-complete", e => {
-            if (e == null || !this.getFile(e.id)) {
-                this.log(`Not setting progress for a file that has been removed: ${e?.id}`);
+        }), this.on("preprocess-complete", t => {
+            if (t == null || !this.getFile(t.id)) {
+                this.log(`Not setting progress for a file that has been removed: ${t?.id}`);
                 return
             }
-            let t = { ...this.getState().files
+            let r = { ...this.getState().files
             };
-            t[e.id] = { ...t[e.id],
-                progress: { ...t[e.id].progress
+            r[t.id] = { ...r[t.id],
+                progress: { ...r[t.id].progress
                 }
-            }, delete t[e.id].progress.preprocess, this.setState({
-                files: t
+            }, delete r[t.id].progress.preprocess, this.setState({
+                files: r
             })
-        }), this.on("postprocess-progress", (e, t) => {
-            if (e == null || !this.getFile(e.id)) {
-                this.log(`Not setting progress for a file that has been removed: ${e?.id}`);
+        }), this.on("postprocess-progress", (t, r) => {
+            if (t == null || !this.getFile(t.id)) {
+                this.log(`Not setting progress for a file that has been removed: ${t?.id}`);
                 return
             }
-            this.setFileState(e.id, {
-                progress: { ...this.getState().files[e.id].progress,
-                    postprocess: t
+            this.setFileState(t.id, {
+                progress: { ...this.getState().files[t.id].progress,
+                    postprocess: r
                 }
             })
-        }), this.on("postprocess-complete", e => {
-            if (e == null || !this.getFile(e.id)) {
-                this.log(`Not setting progress for a file that has been removed: ${e?.id}`);
+        }), this.on("postprocess-complete", t => {
+            if (t == null || !this.getFile(t.id)) {
+                this.log(`Not setting progress for a file that has been removed: ${t?.id}`);
                 return
             }
-            let t = { ...this.getState().files
+            let r = { ...this.getState().files
             };
-            t[e.id] = { ...t[e.id],
-                progress: { ...t[e.id].progress
+            r[t.id] = { ...r[t.id],
+                progress: { ...r[t.id].progress
                 }
-            }, delete t[e.id].progress.postprocess, this.setState({
-                files: t
+            }, delete r[t.id].progress.postprocess, this.setState({
+                files: r
             })
         }), this.on("restored", () => {
             this.calculateTotalProgress()
-        }), this.on("dashboard:file-edit-complete", e => {
-            e && L(this, ko)[ko](e)
-        }), typeof window < "u" && window.addEventListener && (window.addEventListener("online", L(this, It)[It]), window.addEventListener("offline", L(this, It)[It]), setTimeout(L(this, It)[It], 3e3))
+        }), this.on("dashboard:file-edit-complete", t => {
+            t && L(this, ko)[ko](t)
+        }), typeof window < "u" && window.addEventListener && (window.addEventListener("online", L(this, Lt)[Lt]), window.addEventListener("offline", L(this, Lt)[Lt]), setTimeout(L(this, Lt)[Lt], 3e3))
     }
-    n(cb, "_addListeners2");
+    n(db, "_addListeners2");
 
-    function db(i, e) {
+    function pb(i, e) {
         e === void 0 && (e = {});
         let {
             forceAllowNewUpload: t = !1
@@ -4128,28 +4142,28 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             }
         }), o
     }
-    n(db, "_createUpload2");
+    n(pb, "_createUpload2");
 
-    function pb(i) {
+    function fb(i) {
         let {
             currentUploads: e
         } = this.getState();
         return e[i]
     }
-    n(pb, "_getUpload2");
+    n(fb, "_getUpload2");
 
-    function fb(i) {
+    function mb(i) {
         let e = { ...this.getState().currentUploads
         };
         delete e[i], this.setState({
             currentUploads: e
         })
     }
-    n(fb, "_removeUpload2");
-    async function mb(i) {
+    n(mb, "_removeUpload2");
+    async function gb(i) {
         let {
             currentUploads: e
-        } = this.getState(), t = e[i], r = t.step || 0, s = [...L(this, Ur)[Ur], ...L(this, Dr)[Dr], ...L(this, ki)[ki]];
+        } = this.getState(), t = e[i], r = t.step || 0, s = [...L(this, Dr)[Dr], ...L(this, Nr)[Nr], ...L(this, ki)[ki]];
         try {
             for (let a = r; a < s.length && t; a++) {
                 let l = s[a],
@@ -4163,7 +4177,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 }), await l(h.fileIDs, i), e = this.getState().currentUploads, t = e[i]
             }
         } catch (a) {
-            throw L(this, Nr)[Nr](i), a
+            throw L(this, Br)[Br](i), a
         }
         if (t) {
             t.fileIDs.forEach(c => {
@@ -4180,14 +4194,14 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             }), e = this.getState().currentUploads, t = e[i]
         }
         let o;
-        return t && (o = t.result, this.emit("complete", o), L(this, Nr)[Nr](i)), o == null && this.log(`Not setting result for an upload that has been removed: ${i}`), o
+        return t && (o = t.result, this.emit("complete", o), L(this, Br)[Br](i)), o == null && this.log(`Not setting result for an upload that has been removed: ${i}`), o
     }
-    n(mb, "_runUpload2");
-    To.VERSION = sb.version;
+    n(gb, "_runUpload2");
+    To.VERSION = ob.version;
     var ka = To;
-    var Do, W, Pp, gb, Ao, vp, yb, Aa = {},
-        xp = [],
-        vb = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
+    var Do, W, xp, yb, Ao, bp, vb, Aa = {},
+        Fp = [],
+        bb = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
 
     function Ai(i, e) {
         for (var t in e) i[t] = e[t];
@@ -4195,11 +4209,11 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
     }
     n(Ai, "s");
 
-    function Fp(i) {
+    function Ep(i) {
         var e = i.parentNode;
         e && e.removeChild(i)
     }
-    n(Fp, "a");
+    n(Ep, "a");
 
     function u(i, e, t) {
         var r, s, o, a = {};
@@ -4224,38 +4238,38 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             __c: null,
             __h: null,
             constructor: void 0,
-            __v: s??++Pp
+            __v: s ?? ++xp
         };
         return s == null && W.vnode != null && W.vnode(o), o
     }
     n(Uo, "v");
 
-    function Ep() {
+    function Op() {
         return {
             current: null
         }
     }
-    n(Ep, "y");
+    n(Op, "y");
 
-    function Qt(i) {
+    function Rt(i) {
         return i.children
     }
-    n(Qt, "p");
+    n(Rt, "p");
 
     function ie(i, e) {
         this.props = i, this.context = e
     }
     n(ie, "d");
 
-    function Ls(i, e) {
-        if (e == null) return i.__ ? Ls(i.__, i.__.__k.indexOf(i) + 1) : null;
+    function Ms(i, e) {
+        if (e == null) return i.__ ? Ms(i.__, i.__.__k.indexOf(i) + 1) : null;
         for (var t; e < i.__k.length; e++)
             if ((t = i.__k[e]) != null && t.__e != null) return t.__e;
-        return typeof i.type == "function" ? Ls(i) : null
+        return typeof i.type == "function" ? Ms(i) : null
     }
-    n(Ls, "_");
+    n(Ms, "_");
 
-    function Op(i) {
+    function Rp(i) {
         var e, t;
         if ((i = i.__) != null && i.__c != null) {
             for (i.__e = i.__c.base = null, e = 0; e < i.__k.length; e++)
@@ -4263,64 +4277,64 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                     i.__e = i.__c.base = t.__e;
                     break
                 }
-            return Op(i)
+            return Rp(i)
         }
     }
-    n(Op, "k");
+    n(Rp, "k");
 
-    function bp(i) {
-        (!i.__d && (i.__d = !0) && Ao.push(i) && !Ua.__r++ || vp !== W.debounceRendering) && ((vp = W.debounceRendering) || setTimeout)(Ua)
+    function wp(i) {
+        (!i.__d && (i.__d = !0) && Ao.push(i) && !Ua.__r++ || bp !== W.debounceRendering) && ((bp = W.debounceRendering) || setTimeout)(Ua)
     }
-    n(bp, "b");
+    n(wp, "b");
 
     function Ua() {
         for (var i; Ua.__r = Ao.length;) i = Ao.sort(function(e, t) {
             return e.__v.__b - t.__v.__b
         }), Ao = [], i.some(function(e) {
             var t, r, s, o, a, l;
-            e.__d && (a = (o = (t = e).__v).__e, (l = t.__P) && (r = [], (s = Ai({}, o)).__v = o.__v + 1, bu(l, o, s, t.__n, l.ownerSVGElement !== void 0, o.__h != null ? [a] : null, r, a ?? Ls(o), o.__h), kp(r, o), o.__e != a && Op(o)))
+            e.__d && (a = (o = (t = e).__v).__e, (l = t.__P) && (r = [], (s = Ai({}, o)).__v = o.__v + 1, bu(l, o, s, t.__n, l.ownerSVGElement !== void 0, o.__h != null ? [a] : null, r, a ?? Ms(o), o.__h), Ap(r, o), o.__e != a && Rp(o)))
         })
     }
     n(Ua, "g");
 
-    function Rp(i, e, t, r, s, o, a, l, h, c) {
-        var d, f, y, S, w, R, x, E = r && r.__k || xp,
-            N = E.length;
+    function Cp(i, e, t, r, s, o, a, l, h, c) {
+        var d, f, y, w, S, R, x, F = r && r.__k || Fp,
+            N = F.length;
         for (t.__k = [], d = 0; d < e.length; d++)
-            if ((S = t.__k[d] = (S = e[d]) == null || typeof S == "boolean" ? null : typeof S == "string" || typeof S == "number" || typeof S == "bigint" ? Uo(null, S, null, null, S) : Array.isArray(S) ? Uo(Qt, {
-                children: S
-            }, null, null, null) : S.__b > 0 ? Uo(S.type, S.props, S.key, null, S.__v) : S) != null) {
-                if (S.__ = t, S.__b = t.__b + 1, (y = E[d]) === null || y && S.key == y.key && S.type === y.type) E[d] = void 0;
+            if ((w = t.__k[d] = (w = e[d]) == null || typeof w == "boolean" ? null : typeof w == "string" || typeof w == "number" || typeof w == "bigint" ? Uo(null, w, null, null, w) : Array.isArray(w) ? Uo(Rt, {
+                children: w
+            }, null, null, null) : w.__b > 0 ? Uo(w.type, w.props, w.key, null, w.__v) : w) != null) {
+                if (w.__ = t, w.__b = t.__b + 1, (y = F[d]) === null || y && w.key == y.key && w.type === y.type) F[d] = void 0;
                 else
                     for (f = 0; f < N; f++) {
-                        if ((y = E[f]) && S.key == y.key && S.type === y.type) {
-                            E[f] = void 0;
+                        if ((y = F[f]) && w.key == y.key && w.type === y.type) {
+                            F[f] = void 0;
                             break
                         }
                         y = null
                     }
-                bu(i, S, y = y || Aa, s, o, a, l, h, c), w = S.__e, (f = S.ref) && y.ref != f && (x || (x = []), y.ref && x.push(y.ref, null, S), x.push(f, S.__c || w, S)), w != null ? (R == null && (R = w), typeof S.type == "function" && S.__k === y.__k ? S.__d = h = Cp(S, h, i) : h = Tp(i, S, y, E, w, h), typeof t.type == "function" && (t.__d = h)) : h && y.__e == h && h.parentNode != i && (h = Ls(y))
+                bu(i, w, y = y || Aa, s, o, a, l, h, c), S = w.__e, (f = w.ref) && y.ref != f && (x || (x = []), y.ref && x.push(y.ref, null, w), x.push(f, w.__c || S, w)), S != null ? (R == null && (R = S), typeof w.type == "function" && w.__k === y.__k ? w.__d = h = Tp(w, h, i) : h = kp(i, w, y, F, S, h), typeof t.type == "function" && (t.__d = h)) : h && y.__e == h && h.parentNode != i && (h = Ms(y))
             }
-        for (t.__e = R, d = N; d--;) E[d] != null && (typeof t.type == "function" && E[d].__e != null && E[d].__e == t.__d && (t.__d = Ls(r, d + 1)), Up(E[d], E[d]));
+        for (t.__e = R, d = N; d--;) F[d] != null && (typeof t.type == "function" && F[d].__e != null && F[d].__e == t.__d && (t.__d = Ms(r, d + 1)), Dp(F[d], F[d]));
         if (x)
-            for (d = 0; d < x.length; d++) Ap(x[d], x[++d], x[++d])
+            for (d = 0; d < x.length; d++) Up(x[d], x[++d], x[++d])
     }
-    n(Rp, "w");
+    n(Cp, "w");
 
-    function Cp(i, e, t) {
-        for (var r, s = i.__k, o = 0; s && o < s.length; o++)(r = s[o]) && (r.__ = i, e = typeof r.type == "function" ? Cp(r, e, t) : Tp(t, r, r, s, r.__e, e));
+    function Tp(i, e, t) {
+        for (var r, s = i.__k, o = 0; s && o < s.length; o++)(r = s[o]) && (r.__ = i, e = typeof r.type == "function" ? Tp(r, e, t) : kp(t, r, r, s, r.__e, e));
         return e
     }
-    n(Cp, "m");
+    n(Tp, "m");
 
-    function Rt(i, e) {
+    function Ct(i, e) {
         return e = e || [], i == null || typeof i == "boolean" || (Array.isArray(i) ? i.some(function(t) {
-            Rt(t, e)
+            Ct(t, e)
         }) : e.push(i)), e
     }
-    n(Rt, "x");
+    n(Ct, "x");
 
-    function Tp(i, e, t, r, s, o) {
+    function kp(i, e, t, r, s, o) {
         var a, l, h;
         if (e.__d !== void 0) a = e.__d, e.__d = void 0;
         else if (t == null || s != o || s.parentNode == null) e: if (o == null || o.parentNode !== i) i.appendChild(s), a = null;
@@ -4332,19 +4346,19 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         }
         return a !== void 0 ? a : s.nextSibling
     }
-    n(Tp, "A");
+    n(kp, "A");
 
-    function bb(i, e, t, r, s) {
+    function wb(i, e, t, r, s) {
         var o;
         for (o in t) o === "children" || o === "key" || o in e || Da(i, o, null, t[o], r);
         for (o in e) s && typeof e[o] != "function" || o === "children" || o === "key" || o === "value" || o === "checked" || t[o] === e[o] || Da(i, o, e[o], t[o], r)
     }
-    n(bb, "C");
+    n(wb, "C");
 
-    function wp(i, e, t) {
-        e[0] === "-" ? i.setProperty(e, t) : i[e] = t == null ? "" : typeof t != "number" || vb.test(e) ? t : t + "px"
+    function Sp(i, e, t) {
+        e[0] === "-" ? i.setProperty(e, t) : i[e] = t == null ? "" : typeof t != "number" || bb.test(e) ? t : t + "px"
     }
-    n(wp, "$");
+    n(Sp, "$");
 
     function Da(i, e, t, r, s) {
         var o;
@@ -4352,11 +4366,11 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             if (typeof t == "string") i.style.cssText = t;
             else {
                 if (typeof r == "string" && (i.style.cssText = r = ""), r)
-                    for (e in r) t && e in t || wp(i.style, e, "");
+                    for (e in r) t && e in t || Sp(i.style, e, "");
                 if (t)
-                    for (e in t) r && t[e] === r[e] || wp(i.style, e, t[e])
+                    for (e in t) r && t[e] === r[e] || Sp(i.style, e, t[e])
             }
-        else if (e[0] === "o" && e[1] === "n") o = e !== (e = e.replace(/Capture$/, "")), e = e.toLowerCase() in i ? e.toLowerCase().slice(2) : e.slice(2), i.l || (i.l = {}), i.l[e + o] = t, t ? r || i.addEventListener(e, o ? _p : Sp, o) : i.removeEventListener(e, o ? _p : Sp, o);
+        else if (e[0] === "o" && e[1] === "n") o = e !== (e = e.replace(/Capture$/, "")), e = e.toLowerCase() in i ? e.toLowerCase().slice(2) : e.slice(2), i.l || (i.l = {}), i.l[e + o] = t, t ? r || i.addEventListener(e, o ? Pp : _p, o) : i.removeEventListener(e, o ? Pp : _p, o);
         else if (e !== "dangerouslySetInnerHTML") {
             if (s) e = e.replace(/xlink(H|:h)/, "h").replace(/sName$/, "s");
             else if (e !== "href" && e !== "list" && e !== "form" && e !== "tabIndex" && e !== "download" && e in i) try {
@@ -4368,39 +4382,39 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
     }
     n(Da, "H");
 
-    function Sp(i) {
+    function _p(i) {
         this.l[i.type + !1](W.event ? W.event(i) : i)
     }
-    n(Sp, "I");
+    n(_p, "I");
 
-    function _p(i) {
+    function Pp(i) {
         this.l[i.type + !0](W.event ? W.event(i) : i)
     }
-    n(_p, "T");
+    n(Pp, "T");
 
     function bu(i, e, t, r, s, o, a, l, h) {
-        var c, d, f, y, S, w, R, x, E, N, V, $, K, U = e.type;
+        var c, d, f, y, w, S, R, x, F, N, H, q, K, k = e.type;
         if (e.constructor !== void 0) return null;
         t.__h != null && (h = t.__h, l = e.__e = t.__e, e.__h = null, o = [l]), (c = W.__b) && c(e);
         try {
-            e: if (typeof U == "function") {
-                if (x = e.props, E = (c = U.contextType) && r[c.__c], N = c ? E ? E.props.value : c.__ : r, t.__c ? R = (d = e.__c = t.__c).__ = d.__E : ("prototype" in U && U.prototype.render ? e.__c = d = new U(x, N) : (e.__c = d = new ie(x, N), d.constructor = U, d.render = Sb), E && E.sub(d), d.props = x, d.state || (d.state = {}), d.context = N, d.__n = r, f = d.__d = !0, d.__h = []), d.__s == null && (d.__s = d.state), U.getDerivedStateFromProps != null && (d.__s == d.state && (d.__s = Ai({}, d.__s)), Ai(d.__s, U.getDerivedStateFromProps(x, d.__s))), y = d.props, S = d.state, f) U.getDerivedStateFromProps == null && d.componentWillMount != null && d.componentWillMount(), d.componentDidMount != null && d.__h.push(d.componentDidMount);
+            e: if (typeof k == "function") {
+                if (x = e.props, F = (c = k.contextType) && r[c.__c], N = c ? F ? F.props.value : c.__ : r, t.__c ? R = (d = e.__c = t.__c).__ = d.__E : ("prototype" in k && k.prototype.render ? e.__c = d = new k(x, N) : (e.__c = d = new ie(x, N), d.constructor = k, d.render = _b), F && F.sub(d), d.props = x, d.state || (d.state = {}), d.context = N, d.__n = r, f = d.__d = !0, d.__h = []), d.__s == null && (d.__s = d.state), k.getDerivedStateFromProps != null && (d.__s == d.state && (d.__s = Ai({}, d.__s)), Ai(d.__s, k.getDerivedStateFromProps(x, d.__s))), y = d.props, w = d.state, f) k.getDerivedStateFromProps == null && d.componentWillMount != null && d.componentWillMount(), d.componentDidMount != null && d.__h.push(d.componentDidMount);
                 else {
-                    if (U.getDerivedStateFromProps == null && x !== y && d.componentWillReceiveProps != null && d.componentWillReceiveProps(x, N), !d.__e && d.shouldComponentUpdate != null && d.shouldComponentUpdate(x, d.__s, N) === !1 || e.__v === t.__v) {
+                    if (k.getDerivedStateFromProps == null && x !== y && d.componentWillReceiveProps != null && d.componentWillReceiveProps(x, N), !d.__e && d.shouldComponentUpdate != null && d.shouldComponentUpdate(x, d.__s, N) === !1 || e.__v === t.__v) {
                         d.props = x, d.state = d.__s, e.__v !== t.__v && (d.__d = !1), d.__v = e, e.__e = t.__e, e.__k = t.__k, e.__k.forEach(function(B) {
                             B && (B.__ = e)
                         }), d.__h.length && a.push(d);
                         break e
                     }
                     d.componentWillUpdate != null && d.componentWillUpdate(x, d.__s, N), d.componentDidUpdate != null && d.__h.push(function() {
-                        d.componentDidUpdate(y, S, w)
+                        d.componentDidUpdate(y, w, S)
                     })
                 }
-                if (d.context = N, d.props = x, d.__v = e, d.__P = i, V = W.__r, $ = 0, "prototype" in U && U.prototype.render) d.state = d.__s, d.__d = !1, V && V(e), c = d.render(d.props, d.state, d.context);
+                if (d.context = N, d.props = x, d.__v = e, d.__P = i, H = W.__r, q = 0, "prototype" in k && k.prototype.render) d.state = d.__s, d.__d = !1, H && H(e), c = d.render(d.props, d.state, d.context);
                 else
-                    do d.__d = !1, V && V(e), c = d.render(d.props, d.state, d.context), d.state = d.__s; while (d.__d && ++$ < 25);
-                d.state = d.__s, d.getChildContext != null && (r = Ai(Ai({}, r), d.getChildContext())), f || d.getSnapshotBeforeUpdate == null || (w = d.getSnapshotBeforeUpdate(y, S)), K = c != null && c.type === Qt && c.key == null ? c.props.children : c, Rp(i, Array.isArray(K) ? K : [K], e, t, r, s, o, a, l, h), d.base = e.__e, e.__h = null, d.__h.length && a.push(d), R && (d.__E = d.__ = null), d.__e = !1
-            } else o == null && e.__v === t.__v ? (e.__k = t.__k, e.__e = t.__e) : e.__e = wb(t.__e, e, t, r, s, o, a, h);
+                    do d.__d = !1, H && H(e), c = d.render(d.props, d.state, d.context), d.state = d.__s; while (d.__d && ++q < 25);
+                d.state = d.__s, d.getChildContext != null && (r = Ai(Ai({}, r), d.getChildContext())), f || d.getSnapshotBeforeUpdate == null || (S = d.getSnapshotBeforeUpdate(y, w)), K = c != null && c.type === Rt && c.key == null ? c.props.children : c, Cp(i, Array.isArray(K) ? K : [K], e, t, r, s, o, a, l, h), d.base = e.__e, e.__h = null, d.__h.length && a.push(d), R && (d.__E = d.__ = null), d.__e = !1
+            } else o == null && e.__v === t.__v ? (e.__k = t.__k, e.__e = t.__e) : e.__e = Sb(t.__e, e, t, r, s, o, a, h);
             (c = W.diffed) && c(e)
         }
         catch (B) {
@@ -4409,7 +4423,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
     }
     n(bu, "j");
 
-    function kp(i, e) {
+    function Ap(i, e) {
         W.__c && W.__c(e, i), i.some(function(t) {
             try {
                 i = t.__h, t.__h = [], i.some(function(r) {
@@ -4420,52 +4434,52 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             }
         })
     }
-    n(kp, "z");
+    n(Ap, "z");
 
-    function wb(i, e, t, r, s, o, a, l) {
+    function Sb(i, e, t, r, s, o, a, l) {
         var h, c, d, f = t.props,
             y = e.props,
-            S = e.type,
-            w = 0;
-        if (S === "svg" && (s = !0), o != null) {
-            for (; w < o.length; w++)
-                if ((h = o[w]) && "setAttribute" in h == !!S && (S ? h.localName === S : h.nodeType === 3)) {
-                    i = h, o[w] = null;
+            w = e.type,
+            S = 0;
+        if (w === "svg" && (s = !0), o != null) {
+            for (; S < o.length; S++)
+                if ((h = o[S]) && "setAttribute" in h == !!w && (w ? h.localName === w : h.nodeType === 3)) {
+                    i = h, o[S] = null;
                     break
                 }
         }
         if (i == null) {
-            if (S === null) return document.createTextNode(y);
-            i = s ? document.createElementNS("http://www.w3.org/2000/svg", S) : document.createElement(S, y.is && y), o = null, l = !1
+            if (w === null) return document.createTextNode(y);
+            i = s ? document.createElementNS("http://www.w3.org/2000/svg", w) : document.createElement(w, y.is && y), o = null, l = !1
         }
-        if (S === null) f === y || l && i.data === y || (i.data = y);
+        if (w === null) f === y || l && i.data === y || (i.data = y);
         else {
             if (o = o && Do.call(i.childNodes), c = (f = t.props || Aa).dangerouslySetInnerHTML, d = y.dangerouslySetInnerHTML, !l) {
                 if (o != null)
-                    for (f = {}, w = 0; w < i.attributes.length; w++) f[i.attributes[w].name] = i.attributes[w].value;
+                    for (f = {}, S = 0; S < i.attributes.length; S++) f[i.attributes[S].name] = i.attributes[S].value;
                 (d || c) && (d && (c && d.__html == c.__html || d.__html === i.innerHTML) || (i.innerHTML = d && d.__html || ""))
             }
-            if (bb(i, y, f, s, l), d) e.__k = [];
-            else if (w = e.props.children, Rp(i, Array.isArray(w) ? w : [w], e, t, r, s && S !== "foreignObject", o, a, o ? o[0] : t.__k && Ls(t, 0), l), o != null)
-                for (w = o.length; w--;) o[w] != null && Fp(o[w]);
-            l || ("value" in y && (w = y.value) !== void 0 && (w !== i.value || S === "progress" && !w || S === "option" && w !== f.value) && Da(i, "value", w, f.value, !1), "checked" in y && (w = y.checked) !== void 0 && w !== i.checked && Da(i, "checked", w, f.checked, !1))
+            if (wb(i, y, f, s, l), d) e.__k = [];
+            else if (S = e.props.children, Cp(i, Array.isArray(S) ? S : [S], e, t, r, s && w !== "foreignObject", o, a, o ? o[0] : t.__k && Ms(t, 0), l), o != null)
+                for (S = o.length; S--;) o[S] != null && Ep(o[S]);
+            l || ("value" in y && (S = y.value) !== void 0 && (S !== i.value || w === "progress" && !S || w === "option" && S !== f.value) && Da(i, "value", S, f.value, !1), "checked" in y && (S = y.checked) !== void 0 && S !== i.checked && Da(i, "checked", S, f.checked, !1))
         }
         return i
     }
-    n(wb, "L");
+    n(Sb, "L");
 
-    function Ap(i, e, t) {
+    function Up(i, e, t) {
         try {
             typeof i == "function" ? i(e) : i.current = e
         } catch (r) {
             W.__e(r, t)
         }
     }
-    n(Ap, "M");
+    n(Up, "M");
 
-    function Up(i, e, t) {
+    function Dp(i, e, t) {
         var r, s;
-        if (W.unmount && W.unmount(i), (r = i.ref) && (r.current && r.current !== i.__e || Ap(r, null, e)), (r = i.__c) != null) {
+        if (W.unmount && W.unmount(i), (r = i.ref) && (r.current && r.current !== i.__e || Up(r, null, e)), (r = i.__c) != null) {
             if (r.componentWillUnmount) try {
                 r.componentWillUnmount()
             } catch (o) {
@@ -4474,19 +4488,19 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             r.base = r.__P = null
         }
         if (r = i.__k)
-            for (s = 0; s < r.length; s++) r[s] && Up(r[s], e, typeof i.type != "function");
-        t || i.__e == null || Fp(i.__e), i.__e = i.__d = void 0
+            for (s = 0; s < r.length; s++) r[s] && Dp(r[s], e, typeof i.type != "function");
+        t || i.__e == null || Ep(i.__e), i.__e = i.__d = void 0
     }
-    n(Up, "N");
+    n(Dp, "N");
 
-    function Sb(i, e, t) {
+    function _b(i, e, t) {
         return this.constructor(i, t)
     }
-    n(Sb, "O");
+    n(_b, "O");
 
     function wu(i, e, t) {
         var r, s, o;
-        W.__ && W.__(i, e), s = (r = typeof t == "function") ? null : t && t.__k || e.__k, o = [], bu(e, i = (!r && t || e).__k = u(Qt, null, [i]), s || Aa, Aa, e.ownerSVGElement !== void 0, !r && t ? [t] : s ? null : e.firstChild ? Do.call(e.childNodes) : null, o, !r && t ? t : s ? s.__e : e.firstChild, r), kp(o, i)
+        W.__ && W.__(i, e), s = (r = typeof t == "function") ? null : t && t.__k || e.__k, o = [], bu(e, i = (!r && t || e).__k = u(Rt, null, [i]), s || Aa, Aa, e.ownerSVGElement !== void 0, !r && t ? [t] : s ? null : e.firstChild ? Do.call(e.childNodes) : null, o, !r && t ? t : s ? s.__e : e.firstChild, r), Ap(o, i)
     }
     n(wu, "P");
 
@@ -4496,7 +4510,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         return arguments.length > 2 && (a.children = arguments.length > 3 ? Do.call(arguments, 2) : t), Uo(i.type, a, r || i.key, s || i.ref, null)
     }
     n(Na, "q");
-    Do = xp.slice, W = {
+    Do = Fp.slice, W = {
         __e: function(i, e, t, r) {
             for (var s, o, a; e = e.__;)
                 if ((s = e.__c) && !s.__) try {
@@ -4506,17 +4520,17 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 }
             throw i
         }
-    }, Pp = 0, gb = n(function(i) {
+    }, xp = 0, yb = n(function(i) {
         return i != null && i.constructor === void 0
     }, "i"), ie.prototype.setState = function(i, e) {
         var t;
-        t = this.__s != null && this.__s !== this.state ? this.__s : this.__s = Ai({}, this.state), typeof i == "function" && (i = i(Ai({}, t), this.props)), i && Ai(t, i), i != null && this.__v && (e && this.__h.push(e), bp(this))
+        t = this.__s != null && this.__s !== this.state ? this.__s : this.__s = Ai({}, this.state), typeof i == "function" && (i = i(Ai({}, t), this.props)), i && Ai(t, i), i != null && this.__v && (e && this.__h.push(e), wp(this))
     }, ie.prototype.forceUpdate = function(i) {
-        this.__v && (this.__e = !0, i && this.__h.push(i), bp(this))
-    }, ie.prototype.render = Qt, Ao = [], Ua.__r = 0, yb = 0;
+        this.__v && (this.__e = !0, i && this.__h.push(i), wp(this))
+    }, ie.prototype.render = Rt, Ao = [], Ua.__r = 0, vb = 0;
 
     function No(i) {
-        return i?.nodeType === Node.ELEMENT_NODE
+        return i ?.nodeType === Node.ELEMENT_NODE
     }
     n(No, "isDOMElement");
 
@@ -4525,12 +4539,12 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
     }
     n(Bo, "findDOMElement");
 
-    function _b(i) {
+    function Pb(i) {
         for (var e; i && !i.dir;) i = i.parentNode;
         return (e = i) == null ? void 0 : e.dir
     }
-    n(_b, "getTextDirection");
-    var Ba = _b;
+    n(Pb, "getTextDirection");
+    var Ba = Pb;
     var ae = class {
         constructor(e, t) {
             t === void 0 && (t = {}), this.uppy = e, this.opts = t
@@ -4575,19 +4589,19 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
     };
     n(ae, "BasePlugin");
 
-    function Dp(i, e) {
+    function Np(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
-    n(Dp, "_classPrivateFieldLooseBase");
-    var Pb = 0;
-
-    function xb(i) {
-        return "__private_" + Pb++ + "_" + i
-    }
-    n(xb, "_classPrivateFieldLooseKey");
+    n(Np, "_classPrivateFieldLooseBase");
+    var xb = 0;
 
     function Fb(i) {
+        return "__private_" + xb++ + "_" + i
+    }
+    n(Fb, "_classPrivateFieldLooseKey");
+
+    function Eb(i) {
         let e = null,
             t = null;
         return function() {
@@ -4595,9 +4609,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             return t = s, e || (e = Promise.resolve().then(() => (e = null, i(...t)))), e
         }
     }
-    n(Fb, "debounce");
-    var Io = xb("updateUI"),
-        Ms = class extends ae {
+    n(Eb, "debounce");
+    var Io = Fb("updateUI"),
+        zs = class extends ae {
             constructor() {
                 super(...arguments), Object.defineProperty(this, Io, {
                     writable: !0,
@@ -4606,7 +4620,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             }
             getTargetPlugin(e) {
                 let t;
-                if (typeof e == "object" && e instanceof Ms) t = e;
+                if (typeof e == "object" && e instanceof zs) t = e;
                 else if (typeof e == "function") {
                     let r = e;
                     this.uppy.iteratePlugins(s => {
@@ -4621,7 +4635,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 if (s) {
                     this.isTargetDOMEl = !0;
                     let l = document.createElement("div");
-                    return l.classList.add("uppy-Root"), Dp(this, Io)[Io] = Fb(h => {
+                    return l.classList.add("uppy-Root"), Np(this, Io)[Io] = Eb(h => {
                         !this.uppy.getPlugin(this.id) || (wu(this.render(h), l), this.afterUpdate())
                     }), this.uppy.log(`Installing ${r} to a DOM element '${e}'`), this.opts.replaceTargetContent && (s.innerHTML = ""), wu(this.render(this.uppy.getState()), l), this.el = l, s.appendChild(l), l.dir = this.opts.direction || Ba(l) || "ltr", this.onMount(), this.el
                 }
@@ -4634,7 +4648,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             update(e) {
                 if (this.el != null) {
                     var t, r;
-                    (t = (r = Dp(this, Io))[Io]) == null || t.call(r, e)
+                    (t = (r = Np(this, Io))[Io]) == null || t.call(r, e)
                 }
             }
             unmount() {
@@ -4647,8 +4661,8 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             onMount() {}
             onUnmount() {}
         };
-    n(Ms, "UIPlugin");
-    var q = Ms;
+    n(zs, "UIPlugin");
+    var V = zs;
     var xu = {};
     yo(xu, {
         Provider: () => Y,
@@ -4662,14 +4676,14 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         }
     };
     n(Ia, "NetworkError");
-    var Lt = Ia;
+    var Mt = Ia;
 
-    function Br() {
+    function Ir() {
         return fetch(...arguments).catch(i => {
-            throw i.name === "AbortError" ? i : new Lt(i)
+            throw i.name === "AbortError" ? i : new Mt(i)
         })
     }
-    n(Br, "fetchWithNetworkError");
+    n(Ir, "fetchWithNetworkError");
     var La = class extends Error {
         constructor(e, t) {
             t === void 0 && (t = {}), super(e), this.cause = t.cause, this.cause && qe(this.cause, "isNetworkError") && (this.isNetworkError = this.cause.isNetworkError)
@@ -4683,30 +4697,30 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         }
     };
     n(Ma, "AuthError");
-    var Np = Ma;
-    var Bp;
+    var Bp = Ma;
+    var Ip;
 
     function ei(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
     n(ei, "_classPrivateFieldLooseBase");
-    var Eb = 0;
+    var Ob = 0;
 
     function Su(i) {
-        return "__private_" + Eb++ + "_" + i
+        return "__private_" + Ob++ + "_" + i
     }
     n(Su, "_classPrivateFieldLooseKey");
-    var Ob = {
+    var Rb = {
         version: "3.1.1"
     };
 
-    function Rb(i) {
+    function Cb(i) {
         return i.replace(/\/$/, "")
     }
-    n(Rb, "stripSlash");
-    async function Cb(i) {
-        if (i.status === 401) throw new Np;
+    n(Cb, "stripSlash");
+    async function Tb(i) {
+        if (i.status === 401) throw new Bp;
         let e = i.json();
         if (i.ok) return e;
         let t = `Failed request with status: ${i.status}. ${i.statusText}`;
@@ -4716,33 +4730,33 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         } catch {}
         throw new Error(t)
     }
-    n(Cb, "handleJSONResponse");
+    n(Tb, "handleJSONResponse");
     var Lo = new Map,
         Ui = Su("companionHeaders"),
-        Lr = Su("getUrl"),
-        Ir = Su("request");
-    Bp = Symbol.for("uppy test: getCompanionHeaders");
+        Mr = Su("getUrl"),
+        Lr = Su("request");
+    Ip = Symbol.for("uppy test: getCompanionHeaders");
     var le = class {
         constructor(e, t) {
-            Object.defineProperty(this, Ir, {
+            Object.defineProperty(this, Lr, {
+                value: Ab
+            }), Object.defineProperty(this, Mr, {
                 value: kb
-            }), Object.defineProperty(this, Lr, {
-                value: Tb
             }), Object.defineProperty(this, Ui, {
                 writable: !0,
                 value: void 0
-            }), this.uppy = e, this.opts = t, this.onReceiveResponse = this.onReceiveResponse.bind(this), ei(this, Ui)[Ui] = t?.companionHeaders
+            }), this.uppy = e, this.opts = t, this.onReceiveResponse = this.onReceiveResponse.bind(this), ei(this, Ui)[Ui] = t ?.companionHeaders
         }
         setCompanionHeaders(e) {
             ei(this, Ui)[Ui] = e
-        }[Bp]() {
+        }[Ip]() {
             return ei(this, Ui)[Ui]
         }
         get hostname() {
             let {
                 companion: e
             } = this.uppy.getState(), t = this.opts.companionUrl;
-            return Rb(e && e[t] ? e[t] : t)
+            return Cb(e && e[t] ? e[t] : t)
         }
         async headers() {
             return { ...{
@@ -4769,7 +4783,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             let r = ["accept", "content-type", "uppy-auth-token"],
                 s = (async () => {
                     try {
-                        let a = (await fetch(ei(this, Lr)[Lr](e), {
+                        let a = (await fetch(ei(this, Mr)[Mr](e), {
                             method: "OPTIONS"
                         })).headers.get("access-control-allow-headers");
                         if (a == null || a === "*") return Lo.set(this.hostname, r), r;
@@ -4792,14 +4806,14 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         async get(e, t) {
             return t === void 0 && (t = void 0), typeof t == "boolean" && (t = {
                 skipPostResponse: t
-            }), ei(this, Ir)[Ir]({ ...t,
+            }), ei(this, Lr)[Lr]({ ...t,
                 path: e
             })
         }
         async post(e, t, r) {
             return r === void 0 && (r = void 0), typeof r == "boolean" && (r = {
                 skipPostResponse: r
-            }), ei(this, Ir)[Ir]({ ...r,
+            }), ei(this, Lr)[Lr]({ ...r,
                 path: e,
                 method: "POST",
                 data: t
@@ -4808,7 +4822,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         async delete(e, t, r) {
             return t === void 0 && (t = void 0), typeof r == "boolean" && (r = {
                 skipPostResponse: r
-            }), ei(this, Ir)[Ir]({ ...r,
+            }), ei(this, Lr)[Lr]({ ...r,
                 path: e,
                 method: "DELETE",
                 data: t
@@ -4817,11 +4831,11 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
     };
     n(le, "RequestClient");
 
-    function Tb(i) {
+    function kb(i) {
         return /^(https?:|)\/\//.test(i) ? i : `${this.hostname}/${i}`
     }
-    n(Tb, "_getUrl2");
-    async function kb(i) {
+    n(kb, "_getUrl2");
+    async function Ab(i) {
         let {
             path: e,
             method: t = "GET",
@@ -4831,51 +4845,51 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         } = i;
         try {
             let a = await this.preflightAndHeaders(e),
-                l = await Br(ei(this, Lr)[Lr](e), {
+                l = await Ir(ei(this, Mr)[Mr](e), {
                     method: t,
                     signal: o,
                     headers: a,
                     credentials: this.opts.companionCookiesRule || "same-origin",
                     body: r ? JSON.stringify(r) : null
                 });
-            return s || this.onReceiveResponse(l), Cb(l)
+            return s || this.onReceiveResponse(l), Tb(l)
         } catch (a) {
-            throw a != null && a.isAuthError ? a : new Zt(`Could not ${t} ${ei(this,Lr)[Lr](e)}`, {
+            throw a != null && a.isAuthError ? a : new Zt(`Could not ${t} ${ei(this,Mr)[Mr](e)}`, {
                 cause: a
             })
         }
     }
-    n(kb, "_request2");
-    le.VERSION = Ob.version;
+    n(Ab, "_request2");
+    le.VERSION = Rb.version;
     var _u = {};
     yo(_u, {
-        getItem: () => Ub,
-        removeItem: () => Db,
-        setItem: () => Ab
+        getItem: () => Db,
+        removeItem: () => Nb,
+        setItem: () => Ub
     });
 
-    function Ab(i, e) {
+    function Ub(i, e) {
         return new Promise(t => {
             localStorage.setItem(i, e), t()
         })
     }
-    n(Ab, "setItem");
-
-    function Ub(i) {
-        return Promise.resolve(localStorage.getItem(i))
-    }
-    n(Ub, "getItem");
+    n(Ub, "setItem");
 
     function Db(i) {
+        return Promise.resolve(localStorage.getItem(i))
+    }
+    n(Db, "getItem");
+
+    function Nb(i) {
         return new Promise(e => {
             localStorage.removeItem(i), e()
         })
     }
-    n(Db, "removeItem");
-    var Nb = n(i => i.split("-").map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(" "), "getName"),
+    n(Nb, "removeItem");
+    var Bb = n(i => i.split("-").map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(" "), "getName"),
         Y = class extends le {
             constructor(e, t) {
-                super(e, t), this.provider = t.provider, this.id = this.provider, this.name = this.opts.name || Nb(this.id), this.pluginId = this.opts.pluginId, this.tokenKey = `companion-${this.pluginId}-auth-token`, this.companionKeysParams = this.opts.companionKeysParams, this.preAuthToken = null
+                super(e, t), this.provider = t.provider, this.id = this.provider, this.name = this.opts.name || Bb(this.id), this.pluginId = this.opts.pluginId, this.tokenKey = `companion-${this.pluginId}-auth-token`, this.companionKeysParams = this.opts.companionKeysParams, this.preAuthToken = null
             }
             async headers() {
                 let [e, t] = await Promise.all([super.headers(), this.getAuthToken()]), r = {};
@@ -4942,10 +4956,10 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             }
         };
     n(Y, "Provider");
-    var Bb = n(i => i.split("-").map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(" "), "getName"),
+    var Ib = n(i => i.split("-").map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(" "), "getName"),
         lr = class extends le {
             constructor(e, t) {
-                super(e, t), this.provider = t.provider, this.id = this.provider, this.name = this.opts.name || Bb(this.id), this.pluginId = this.opts.pluginId
+                super(e, t), this.provider = t.provider, this.id = this.provider, this.name = this.opts.name || Ib(this.id), this.pluginId = this.opts.pluginId
             }
             fileUrl(e) {
                 return `${this.hostname}/search/${this.id}/get/${e}`
@@ -4955,36 +4969,36 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             }
         };
     n(lr, "SearchProvider");
-    var Mp = oe(hu(), 1);
-    var Ip, Lp;
+    var zp = oe(hu(), 1);
+    var Lp, Mp;
 
     function we(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
     n(we, "_classPrivateFieldLooseBase");
-    var Ib = 0;
+    var Lb = 0;
 
     function Mo(i) {
-        return "__private_" + Ib++ + "_" + i
+        return "__private_" + Lb++ + "_" + i
     }
     n(Mo, "_classPrivateFieldLooseKey");
     var Di = Mo("queued"),
-        Mr = Mo("emitter"),
-        Mt = Mo("isOpen"),
+        zr = Mo("emitter"),
+        zt = Mo("isOpen"),
         We = Mo("socket"),
         Pu = Mo("handleMessage");
-    Ip = Symbol.for("uppy test: getSocket");
-    Lp = Symbol.for("uppy test: getQueued");
+    Lp = Symbol.for("uppy test: getSocket");
+    Mp = Symbol.for("uppy test: getQueued");
     var ot = class {
         constructor(e) {
             Object.defineProperty(this, Di, {
                 writable: !0,
                 value: []
-            }), Object.defineProperty(this, Mr, {
+            }), Object.defineProperty(this, zr, {
                 writable: !0,
-                value: (0, Mp.default)()
-            }), Object.defineProperty(this, Mt, {
+                value: (0, zp.default)()
+            }), Object.defineProperty(this, zt, {
                 writable: !0,
                 value: !1
             }), Object.defineProperty(this, We, {
@@ -5003,20 +5017,20 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             }), this.opts = e, (!e || e.autoOpen !== !1) && this.open()
         }
         get isOpen() {
-            return we(this, Mt)[Mt]
-        }[Ip]() {
-            return we(this, We)[We]
+            return we(this, zt)[zt]
         }[Lp]() {
+            return we(this, We)[We]
+        }[Mp]() {
             return we(this, Di)[Di]
         }
         open() {
             we(this, We)[We] = new WebSocket(this.opts.target), we(this, We)[We].onopen = () => {
-                for (we(this, Mt)[Mt] = !0; we(this, Di)[Di].length > 0 && we(this, Mt)[Mt];) {
+                for (we(this, zt)[zt] = !0; we(this, Di)[Di].length > 0 && we(this, zt)[zt];) {
                     let e = we(this, Di)[Di].shift();
                     this.send(e.action, e.payload)
                 }
             }, we(this, We)[We].onclose = () => {
-                we(this, Mt)[Mt] = !1
+                we(this, zt)[zt] = !1
             }, we(this, We)[We].onmessage = we(this, Pu)[Pu]
         }
         close() {
@@ -5024,7 +5038,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             (e = we(this, We)[We]) == null || e.close()
         }
         send(e, t) {
-            if (!we(this, Mt)[Mt]) {
+            if (!we(this, zt)[zt]) {
                 we(this, Di)[Di].push({
                     action: e,
                     payload: t
@@ -5037,13 +5051,13 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             }))
         }
         on(e, t) {
-            we(this, Mr)[Mr].on(e, t)
+            we(this, zr)[zr].on(e, t)
         }
         emit(e, t) {
-            we(this, Mr)[Mr].emit(e, t)
+            we(this, zr)[zr].emit(e, t)
         }
         once(e, t) {
-            we(this, Mr)[Mr].once(e, t)
+            we(this, zr)[zr].once(e, t)
         }
     };
     n(ot, "UppySocket");
@@ -5053,7 +5067,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         SearchProviderViews: () => ti
     });
 
-    function Lb() {
+    function Mb() {
         return u("svg", {
             width: "26",
             height: "26",
@@ -5087,9 +5101,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             d: "M4 4h18v18H4z"
         })))
     }
-    n(Lb, "GoogleIcon");
+    n(Mb, "GoogleIcon");
 
-    function Mb(i) {
+    function zb(i) {
         let {
             pluginName: e,
             pluginIcon: t,
@@ -5111,7 +5125,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             className: "uppy-u-reset uppy-c-btn uppy-c-btn-primary uppy-Provider-authBtn uppy-Provider-btn-google",
             onClick: s,
             "data-uppy-super-focusable": !0
-        }, u(Lb, null), r("signInWithGoogle")) : u("button", {
+        }, u(Mb, null), r("signInWithGoogle")) : u("button", {
             type: "button",
             className: "uppy-u-reset uppy-c-btn uppy-c-btn-primary uppy-Provider-authBtn",
             onClick: s,
@@ -5120,9 +5134,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             pluginName: e
         })))
     }
-    n(Mb, "AuthView");
-    var zp = Mb;
-    var jp = n(i => {
+    n(zb, "AuthView");
+    var jp = zb;
+    var Hp = n(i => {
         let {
             i18n: e,
             logout: t,
@@ -5138,19 +5152,19 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             key: "logout"
         }, e("logOut"))]
     }, "default");
-    var zb = n(i => {
+    var jb = n(i => {
             let {
                 getFolder: e,
                 title: t,
                 isLast: r
             } = i;
-            return u(Qt, null, u("button", {
+            return u(Rt, null, u("button", {
                 type: "button",
                 className: "uppy-u-reset uppy-c-btn",
                 onClick: e
             }, t), r ? "" : " / ")
         }, "Breadcrumb"),
-        Hp = n(i => {
+        $p = n(i => {
             let {
                 getFolder: e,
                 title: t,
@@ -5161,27 +5175,27 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 className: "uppy-Provider-breadcrumbs"
             }, u("div", {
                 className: "uppy-Provider-breadcrumbsIcon"
-            }, r), s.map((o, a) => u(zb, {
+            }, r), s.map((o, a) => u(jb, {
                 key: o.id,
                 getFolder: () => e(o.id),
                 title: a === 0 ? t : o.title,
                 isLast: a + 1 === s.length
             })))
         }, "default");
-    var $p = n(i => {
+    var qp = n(i => {
         let e = [];
-        return i.showBreadcrumbs && e.push(Hp({
+        return i.showBreadcrumbs && e.push($p({
             getFolder: i.getFolder,
             directories: i.directories,
             breadcrumbsIcon: i.pluginIcon && i.pluginIcon(),
             title: i.title
-        })), e.push(jp({
+        })), e.push(Hp({
             logout: i.logout,
             username: i.username,
             i18n: i.i18n
         })), e
     }, "default");
-    var Ou = oe(Ct(), 1);
+    var Ou = oe(Tt(), 1);
 
     function zo(i) {
         return { ...i,
@@ -5190,7 +5204,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         }
     }
     n(zo, "remoteFileObjToLocal");
-    var zs = class extends ie {
+    var js = class extends ie {
         constructor(e) {
             super(e), this.preventEnterPress = this.preventEnterPress.bind(this)
         }
@@ -5240,8 +5254,8 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             }))))
         }
     };
-    n(zs, "Filter");
-    var qp = n(i => {
+    n(js, "Filter");
+    var Vp = n(i => {
         let {
             cancel: e,
             done: t,
@@ -5262,9 +5276,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             type: "button"
         }, r("cancel")))
     }, "default");
-    var Kp = oe(Ct(), 1);
+    var Gp = oe(Tt(), 1);
 
-    function jb() {
+    function Hb() {
         return u("svg", {
             "aria-hidden": "true",
             focusable: "false",
@@ -5276,9 +5290,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             d: "M27.437.517a1 1 0 0 0-.094.03H4.25C2.037.548.217 2.368.217 4.58v48.405c0 2.212 1.82 4.03 4.03 4.03H39.03c2.21 0 4.03-1.818 4.03-4.03V15.61a1 1 0 0 0-.03-.28 1 1 0 0 0 0-.093 1 1 0 0 0-.03-.032 1 1 0 0 0 0-.03 1 1 0 0 0-.032-.063 1 1 0 0 0-.03-.063 1 1 0 0 0-.032 0 1 1 0 0 0-.03-.063 1 1 0 0 0-.032-.03 1 1 0 0 0-.03-.063 1 1 0 0 0-.063-.062l-14.593-14a1 1 0 0 0-.062-.062A1 1 0 0 0 28 .708a1 1 0 0 0-.374-.157 1 1 0 0 0-.156 0 1 1 0 0 0-.03-.03l-.003-.003zM4.25 2.547h22.218v9.97c0 2.21 1.82 4.03 4.03 4.03h10.564v36.438a2.02 2.02 0 0 1-2.032 2.032H4.25c-1.13 0-2.032-.9-2.032-2.032V4.58c0-1.13.902-2.032 2.03-2.032zm24.218 1.345l10.375 9.937.75.718H30.5c-1.13 0-2.032-.9-2.032-2.03V3.89z"
         }))
     }
-    n(jb, "FileIcon");
+    n(Hb, "FileIcon");
 
-    function Hb() {
+    function $b() {
         return u("svg", {
             "aria-hidden": "true",
             focusable: "false",
@@ -5292,9 +5306,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             d: "M273.08 101.378c-3.3-4.65-8.86-7.32-15.254-7.32h-24.34V67.59c0-10.2-8.3-18.5-18.5-18.5h-85.322c-3.63 0-9.295-2.875-11.436-5.805l-6.386-8.735c-4.982-6.814-15.104-11.954-23.546-11.954H58.73c-9.292 0-18.638 6.608-21.737 15.372l-2.033 5.752c-.958 2.71-4.72 5.37-7.596 5.37H18.5C8.3 49.09 0 57.39 0 67.59v167.07c0 .886.16 1.73.443 2.52.152 3.306 1.18 6.424 3.053 9.064 3.3 4.652 8.86 7.32 15.255 7.32h188.487c11.395 0 23.27-8.425 27.035-19.18l40.677-116.188c2.11-6.035 1.43-12.164-1.87-16.816zM18.5 64.088h8.864c9.295 0 18.64-6.607 21.738-15.37l2.032-5.75c.96-2.712 4.722-5.373 7.597-5.373h29.565c3.63 0 9.295 2.876 11.437 5.806l6.386 8.735c4.982 6.815 15.104 11.954 23.546 11.954h85.322c1.898 0 3.5 1.602 3.5 3.5v26.47H69.34c-11.395 0-23.27 8.423-27.035 19.178L15 191.23V67.59c0-1.898 1.603-3.5 3.5-3.5zm242.29 49.15l-40.676 116.188c-1.674 4.78-7.812 9.135-12.877 9.135H18.75c-1.447 0-2.576-.372-3.02-.997-.442-.625-.422-1.814.057-3.18l40.677-116.19c1.674-4.78 7.812-9.134 12.877-9.134h188.487c1.448 0 2.577.372 3.02.997.443.625.423 1.814-.056 3.18z"
         }))
     }
-    n(Hb, "FolderIcon");
+    n($b, "FolderIcon");
 
-    function $b() {
+    function qb() {
         return u("svg", {
             "aria-hidden": "true",
             focusable: "false",
@@ -5309,18 +5323,18 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             d: "M57 6H1a1 1 0 0 0-1 1v44a1 1 0 0 0 1 1h56a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1zM10 28H2v-9h8v9zm-8 2h8v9H2v-9zm10 10V8h34v42H12V40zm44-12h-8v-9h8v9zm-8 2h8v9h-8v-9zm8-22v9h-8V8h8zM2 8h8v9H2V8zm0 42v-9h8v9H2zm54 0h-8v-9h8v9z"
         }))
     }
-    n($b, "VideoIcon");
-    var Vp = n(i => {
+    n(qb, "VideoIcon");
+    var Wp = n(i => {
         let {
             itemIconString: e
         } = i;
         if (e !== null) switch (e) {
             case "file":
-                return u(jb, null);
-            case "folder":
                 return u(Hb, null);
-            case "video":
+            case "folder":
                 return u($b, null);
+            case "video":
+                return u(qb, null);
             default:
             {
                 let {
@@ -5334,7 +5348,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         }
     }, "default");
 
-    function qb(i) {
+    function Vb(i) {
         let {
             className: e,
             isDisabled: t,
@@ -5369,10 +5383,10 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             className: "uppy-ProviderBrowserItem-inner-relative"
         }, a, l && o, f)))
     }
-    n(qb, "GridListItem");
-    var Fu = qb;
+    n(Vb, "GridListItem");
+    var Fu = Vb;
 
-    function Vb(i) {
+    function Wb(i) {
         let {
             className: e,
             isDisabled: t,
@@ -5386,8 +5400,8 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             itemIconEl: d,
             title: f,
             handleFolderClick: y,
-            showTitles: S,
-            i18n: w
+            showTitles: w,
+            i18n: S
         } = i;
         return u("li", {
             className: e,
@@ -5400,7 +5414,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             name: "listitem",
             id: c,
             checked: o,
-            "aria-label": h === "file" ? null : w("allFilesFromFolderNamed", {
+            "aria-label": h === "file" ? null : S("allFilesFromFolderNamed", {
                 name: f
             }),
             disabled: t,
@@ -5410,19 +5424,19 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             className: "uppy-u-reset uppy-ProviderBrowserItem-inner"
         }, u("div", {
             className: "uppy-ProviderBrowserItem-iconWrap"
-        }, d), S && f) : u("button", {
+        }, d), w && f) : u("button", {
             type: "button",
             className: "uppy-u-reset uppy-c-btn uppy-ProviderBrowserItem-inner",
             onClick: y,
-            "aria-label": w("openFolderNamed", {
+            "aria-label": S("openFolderNamed", {
                 name: f
             })
         }, u("div", {
             className: "uppy-ProviderBrowserItem-iconWrap"
-        }, d), S && u("span", null, f)))
+        }, d), w && u("span", null, f)))
     }
-    n(Vb, "ListItem");
-    var Wp = Vb;
+    n(Wb, "ListItem");
+    var Kp = Wb;
 
     function jo() {
         return jo = Object.assign ? Object.assign.bind() : function(i) {
@@ -5441,13 +5455,13 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             isChecked: r,
             isDisabled: s,
             viewType: o
-        } = i, a = t(), l = (0, Kp.default)("uppy-ProviderBrowserItem", {
+        } = i, a = t(), l = (0, Gp.default)("uppy-ProviderBrowserItem", {
             "uppy-ProviderBrowserItem--selected": r
         }, {
             "uppy-ProviderBrowserItem--disabled": s
         }, {
             "uppy-ProviderBrowserItem--noPreview": a === "video"
-        }), h = u(Vp, {
+        }), h = u(Wp, {
             itemIconString: a
         });
         switch (o) {
@@ -5457,7 +5471,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                     itemIconEl: h
                 }));
             case "list":
-                return u(Wp, jo({}, i, {
+                return u(Kp, jo({}, i, {
                     className: l,
                     itemIconEl: h
                 }));
@@ -5475,9 +5489,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 throw new Error(`There is no such type ${o}`)
         }
     }, "default");
-    var Wb = "shared-with-me";
+    var Kb = "shared-with-me";
 
-    function Kb(i) {
+    function Gb(i) {
         let {
             currentSelection: e,
             folders: t,
@@ -5491,29 +5505,29 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             recordShiftKeyPress: d,
             handleScroll: f,
             showTitles: y,
-            i18n: S,
-            validateRestrictions: w,
+            i18n: w,
+            validateRestrictions: S,
             showFilter: R,
             filterQuery: x,
-            filterInput: E,
+            filterInput: F,
             getNextFolder: N,
-            cancel: V,
-            done: $,
+            cancel: H,
+            done: q,
             columns: K
-        } = i, U = e.length;
+        } = i, k = e.length;
         return u("div", {
             className: (0, Ou.default)("uppy-ProviderBrowser", `uppy-ProviderBrowser-viewType--${o}`)
         }, u("div", {
             className: "uppy-ProviderBrowser-header"
         }, u("div", {
             className: (0, Ou.default)("uppy-ProviderBrowser-headerBar", !l && "uppy-ProviderBrowser-headerBar--simple")
-        }, a)), R && u(zs, {
-            i18n: S,
+        }, a)), R && u(js, {
+            i18n: w,
             filterQuery: x,
-            filterInput: E
+            filterInput: F
         }), (() => !t.length && !r.length ? u("div", {
             className: "uppy-Provider-empty"
-        }, S("noFilesFound")) : u("div", {
+        }, w("noFilesFound")) : u("div", {
             className: "uppy-ProviderBrowser-body"
         }, u("ul", {
             className: "uppy-ProviderBrowser-list",
@@ -5526,7 +5540,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 columns: K,
                 showTitles: y,
                 viewType: o,
-                i18n: S,
+                i18n: w,
                 id: B.id,
                 title: B.name,
                 getItemIcon: () => B.icon,
@@ -5535,11 +5549,11 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 recordShiftKeyPress: d,
                 type: "folder",
                 isDisabled: (z = h(B)) == null ? void 0 : z.loading,
-                isCheckboxDisabled: B.id === Wb,
+                isCheckboxDisabled: B.id === Kb,
                 handleFolderClick: () => N(B)
             })
         }), r.map(B => {
-            let z = w(zo(B), [...s, ...e]);
+            let z = S(zo(B), [...s, ...e]);
             return Eu({
                 id: B.id,
                 title: B.name,
@@ -5551,20 +5565,20 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 columns: K,
                 showTitles: y,
                 viewType: o,
-                i18n: S,
+                i18n: w,
                 type: "file",
                 isDisabled: z && !h(B),
                 restrictionError: z
             })
-        }))))(), U > 0 && u(qp, {
-            selected: U,
-            done: $,
-            cancel: V,
-            i18n: S
+        }))))(), k > 0 && u(Vp, {
+            selected: k,
+            done: q,
+            cancel: H,
+            i18n: w
         }))
     }
-    n(Kb, "Browser");
-    var ja = Kb;
+    n(Gb, "Browser");
+    var ja = Gb;
     var Ha = n(i => {
         let {
             i18n: e
@@ -5573,7 +5587,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             className: "uppy-Provider-loading"
         }, u("span", null, e("loading")))
     }, "default");
-    var Tt = class extends ie {
+    var kt = class extends ie {
         componentWillUnmount() {
             let {
                 onUnmount: e
@@ -5584,16 +5598,16 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             let {
                 children: e
             } = this.props;
-            return Rt(e)[0]
+            return Ct(e)[0]
         }
     };
-    n(Tt, "CloseWrapper");
+    n(kt, "CloseWrapper");
 
-    function js(i) {
+    function Hs(i) {
         return i ? /^[^/]+\/(jpe?g|gif|png|svg|svg\+xml|bmp|webp|avif)$/.test(i) : !1
     }
-    n(js, "isPreviewSupported");
-    var Hs = class {
+    n(Hs, "isPreviewSupported");
+    var $s = class {
         constructor(e) {
             this.plugin = e, this.filterItems = this.filterItems.bind(this), this.toggleCheckbox = this.toggleCheckbox.bind(this), this.recordShiftKeyPress = this.recordShiftKeyPress.bind(this), this.isChecked = this.isChecked.bind(this), this.loaderWrapper = this.loaderWrapper.bind(this)
         }
@@ -5618,9 +5632,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 for (let f of c) {
                     let {
                         uppy: y
-                    } = this.plugin, S = y.validateRestrictions(zo(f), [...y.getFiles(), ...d]);
-                    S ? y.info({
-                        message: S.message
+                    } = this.plugin, w = y.validateRestrictions(zo(f), [...y.getFiles(), ...d]);
+                    w ? y.info({
+                        message: w.message
                     }, "error", y.opts.infoTimeout) : d.push(f)
                 }
                 this.plugin.setPluginState({
@@ -5658,10 +5672,10 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             })
         }
     };
-    n(Hs, "SharedHandler");
+    n($s, "SharedHandler");
     var ur = class {
         constructor(e, t) {
-            this.plugin = e, this.provider = t.provider, this.sharedHandler = new Hs(e), this.isHandlingScroll = !1, this.preFirstRender = this.preFirstRender.bind(this), this.handleError = this.handleError.bind(this), this.addFile = this.addFile.bind(this), this.clearSelection = this.clearSelection.bind(this), this.cancelPicking = this.cancelPicking.bind(this)
+            this.plugin = e, this.provider = t.provider, this.sharedHandler = new $s(e), this.isHandlingScroll = !1, this.preFirstRender = this.preFirstRender.bind(this), this.handleError = this.handleError.bind(this), this.addFile = this.addFile.bind(this), this.clearSelection = this.clearSelection.bind(this), this.cancelPicking = this.cancelPicking.bind(this)
         }
         providerFileToId(e) {
             return Po({
@@ -5726,7 +5740,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                     }
                 },
                 r = _o(t);
-            r && js(r) && (t.preview = e.thumbnail), e.author && (e.author.name != null && (t.meta.authorName = String(e.author.name)), e.author.url && (t.meta.authorUrl = e.author.url)), this.plugin.uppy.log("Adding remote file");
+            r && Hs(r) && (t.preview = e.thumbnail), e.author && (e.author.name != null && (t.meta.authorName = String(e.author.name)), e.author.url && (t.meta.authorUrl = e.author.url)), this.plugin.uppy.log("Adding remote file");
             try {
                 return this.plugin.uppy.addFile(t), !0
             } catch (s) {
@@ -5736,41 +5750,41 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
     };
     n(ur, "View");
 
-    function Gp(i, e) {
+    function Xp(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
-    n(Gp, "_classPrivateFieldLooseBase");
-    var Gb = 0;
+    n(Xp, "_classPrivateFieldLooseBase");
+    var Xb = 0;
 
-    function Xb(i) {
-        return "__private_" + Gb++ + "_" + i
+    function Yb(i) {
+        return "__private_" + Xb++ + "_" + i
     }
-    n(Xb, "_classPrivateFieldLooseKey");
-    var Yb = {
+    n(Yb, "_classPrivateFieldLooseKey");
+    var Jb = {
         version: "3.0.2"
     };
 
-    function Jb() {
+    function Qb() {
         return location.origin
     }
-    n(Jb, "getOrigin");
+    n(Qb, "getOrigin");
 
-    function Xp(i) {
+    function Yp(i) {
         if (typeof i == "string") return new RegExp(`^${i}$`);
         if (i instanceof RegExp) return i
     }
-    n(Xp, "getRegex");
+    n(Yp, "getRegex");
 
-    function Qb(i, e) {
-        return (Array.isArray(e) ? e.map(Xp) : [Xp(e)]).some(r => r ?.test(i) || r ?.test(`${i}/`))
+    function Zb(i, e) {
+        return (Array.isArray(e) ? e.map(Yp) : [Yp(e)]).some(r => r ?.test(i) || r ?.test(`${i}/`))
     }
-    n(Qb, "isOriginAllowed");
-    var Ho = Xb("updateFilesAndFolders"),
+    n(Zb, "isOriginAllowed");
+    var Ho = Yb("updateFilesAndFolders"),
         pe = class extends ur {
             constructor(e, t) {
                 super(e, t), Object.defineProperty(this, Ho, {
-                    value: Zb
+                    value: e1
                 });
                 let r = {
                     viewType: "list",
@@ -5800,7 +5814,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                     h !== -1 ? a = l.directories.slice(0, h + 1) : a = l.directories.concat([{
                         id: e,
                         title: t
-                    }]), this.username = r.username || this.username, Gp(this, Ho)[Ho](r, o, s), this.plugin.setPluginState({
+                    }]), this.username = r.username || this.username, Xp(this, Ho)[Ho](r, o, s), this.plugin.setPluginState({
                         directories: a,
                         filterInput: ""
                     })
@@ -5878,7 +5892,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             async handleAuth() {
                 await this.provider.ensurePreAuth();
                 let e = btoa(JSON.stringify({
-                        origin: Jb()
+                        origin: Qb()
                     })),
                     t = `@uppy/provider-views=${pe.VERSION}`,
                     r = this.provider.authUrl({
@@ -5890,7 +5904,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                         if (a.source !== s) {
                             this.plugin.uppy.log("rejecting event from unknown source");
                             return
-                        }(!Qb(a.origin, this.plugin.opts.companionAllowedHosts) || a.source !== s) && this.plugin.uppy.log(`rejecting event from ${a.origin} vs allowed pattern ${this.plugin.opts.companionAllowedHosts}`);
+                        }(!Zb(a.origin, this.plugin.opts.companionAllowedHosts) || a.source !== s) && this.plugin.uppy.log(`rejecting event from ${a.origin} vs allowed pattern ${this.plugin.opts.companionAllowedHosts}`);
                         let l = typeof a.data == "string" ? JSON.parse(a.data) : a.data;
                         if (l.error) {
                             this.plugin.uppy.log("auth aborted", "warning");
@@ -5920,7 +5934,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                                 files: s,
                                 folders: o
                             } = this.plugin.getPluginState();
-                        Gp(this, Ho)[Ho](r, s, o)
+                        Xp(this, Ho)[Ho](r, s, o)
                     } catch (r) {
                         this.handleError(r)
                     } finally {
@@ -5965,12 +5979,12 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                     } = this.plugin.getPluginState(),
                     {
                         isChecked: y,
-                        toggleCheckbox: S,
-                        recordShiftKeyPress: w,
+                        toggleCheckbox: w,
+                        recordShiftKeyPress: S,
                         filterItems: R
                     } = this.sharedHandler,
                     x = c !== "",
-                    E = {
+                    F = {
                         showBreadcrumbs: a.showBreadcrumbs,
                         getFolder: this.getFolder,
                         directories: this.plugin.getPluginState().directories,
@@ -5982,8 +5996,8 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                     },
                     N = {
                         isChecked: y,
-                        toggleCheckbox: S,
-                        recordShiftKeyPress: w,
+                        toggleCheckbox: w,
+                        recordShiftKeyPress: S,
                         currentSelection: f,
                         files: x ? R(l) : l,
                         folders: x ? R(h) : h,
@@ -5997,7 +6011,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                         listAllFiles: this.listAllFiles,
                         done: this.donePicking,
                         cancel: this.cancelPicking,
-                        headerComponent: $p(E),
+                        headerComponent: qp(F),
                         title: this.plugin.title,
                         viewType: a.viewType,
                         showTitles: a.showTitles,
@@ -6010,15 +6024,15 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                             return r.plugin.uppy.validateRestrictions(...arguments)
                         }
                     };
-                return d ? u(Tt, {
+                return d ? u(kt, {
                     onUnmount: this.clearSelection
                 }, u(Ha, {
                     i18n: this.plugin.uppy.i18n
-                })) : s ? u(Tt, {
+                })) : s ? u(kt, {
                     onUnmount: this.clearSelection
-                }, u(ja, N)) : u(Tt, {
+                }, u(ja, N)) : u(kt, {
                     onUnmount: this.clearSelection
-                }, u(zp, {
+                }, u(jp, {
                     pluginName: this.plugin.title,
                     pluginIcon: this.plugin.icon,
                     handleAuth: this.handleAuth,
@@ -6029,7 +6043,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         };
     n(pe, "ProviderView");
 
-    function Zb(i, e, t) {
+    function e1(i, e, t) {
         this.nextPagePath = i.nextPagePath, i.items.forEach(r => {
             r.isFolder ? t.push(r) : e.push(r)
         }), this.plugin.setPluginState({
@@ -6037,9 +6051,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             files: e
         })
     }
-    n(Zb, "_updateFilesAndFolders2");
-    pe.VERSION = Yb.version;
-    var Yp = n(i => {
+    n(e1, "_updateFilesAndFolders2");
+    pe.VERSION = Jb.version;
+    var Jp = n(i => {
         let {
             i18n: e,
             search: t
@@ -6066,14 +6080,14 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             onClick: s
         }, e("searchImages")))
     }, "default");
-    var e1 = 13,
-        Jp = n(i => {
+    var t1 = 13,
+        Qp = n(i => {
             let {
                 searchTerm: e,
                 i18n: t,
                 search: r
             } = i, s = n(o => {
-                o.keyCode === e1 && (o.stopPropagation(), o.preventDefault(), r(o.target.value))
+                o.keyCode === t1 && (o.stopPropagation(), o.preventDefault(), r(o.target.value))
             }, "handleKeyPress");
             return u("div", {
                 class: "uppy-ProviderBrowser-search"
@@ -6097,25 +6111,25 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             })))
         }, "default");
 
-    function Qp(i, e) {
+    function Zp(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
-    n(Qp, "_classPrivateFieldLooseBase");
-    var t1 = 0;
+    n(Zp, "_classPrivateFieldLooseBase");
+    var i1 = 0;
 
-    function i1(i) {
-        return "__private_" + t1++ + "_" + i
+    function r1(i) {
+        return "__private_" + i1++ + "_" + i
     }
-    n(i1, "_classPrivateFieldLooseKey");
-    var r1 = {
+    n(r1, "_classPrivateFieldLooseKey");
+    var s1 = {
             version: "3.0.2"
         },
-        $o = i1("updateFilesAndInputMode"),
+        $o = r1("updateFilesAndInputMode"),
         ti = class extends ur {
             constructor(e, t) {
                 super(e, t), Object.defineProperty(this, $o, {
-                    value: s1
+                    value: o1
                 });
                 let r = {
                     viewType: "grid",
@@ -6149,7 +6163,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                     searchTerm: t
                 } = this.plugin.getPluginState();
                 if (!(e && e === t)) return this.sharedHandler.loaderWrapper(this.provider.search(e), r => {
-                    Qp(this, $o)[$o](r, [])
+                    Zp(this, $o)[$o](r, [])
                 }, this.handleError)
             }
             triggerSearchInput() {
@@ -6166,7 +6180,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                             files: r,
                             searchTerm: s
                         } = this.plugin.getPluginState(), o = await this.provider.search(s, t);
-                        Qp(this, $o)[$o](o, r)
+                        Zp(this, $o)[$o](o, r)
                     } catch (r) {
                         this.handleError(r)
                     } finally {
@@ -6202,21 +6216,21 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                         currentSelection: y
                     } = this.plugin.getPluginState(),
                     {
-                        isChecked: S,
-                        toggleCheckbox: w,
+                        isChecked: w,
+                        toggleCheckbox: S,
                         filterItems: R
                     } = this.sharedHandler,
                     x = d !== "",
-                    E = {
-                        isChecked: S,
-                        toggleCheckbox: w,
+                    F = {
+                        isChecked: w,
+                        toggleCheckbox: S,
                         currentSelection: y,
                         files: x ? R(h) : h,
                         folders: x ? R(c) : c,
                         handleScroll: this.handleScroll,
                         done: this.donePicking,
                         cancel: this.cancelPicking,
-                        headerComponent: Jp({
+                        headerComponent: Qp({
                             search: this.search,
                             i18n: this.plugin.uppy.i18n,
                             searchTerm: a
@@ -6233,23 +6247,23 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                             return r.plugin.uppy.validateRestrictions(...arguments)
                         }
                     };
-                return f ? u(Tt, {
+                return f ? u(kt, {
                     onUnmount: this.clearSelection
                 }, u(Ha, {
                     i18n: this.plugin.uppy.i18n
-                })) : o ? u(Tt, {
+                })) : o ? u(kt, {
                     onUnmount: this.clearSelection
-                }, u(Yp, {
+                }, u(Jp, {
                     search: this.search,
                     i18n: this.plugin.uppy.i18n
-                })) : u(Tt, {
+                })) : u(kt, {
                     onUnmount: this.clearSelection
-                }, u(ja, E))
+                }, u(ja, F))
             }
         };
     n(ti, "SearchProviderView");
 
-    function s1(i, e) {
+    function o1(i, e) {
         this.nextPageQuery = i.nextPageQuery, i.items.forEach(t => {
             e.push(t)
         }), this.plugin.setPluginState({
@@ -6258,39 +6272,39 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             searchTerm: i.searchedFor
         })
     }
-    n(s1, "_updateFilesAndInputMode2");
-    ti.VERSION = r1.version;
-    var Zp;
+    n(o1, "_updateFilesAndInputMode2");
+    ti.VERSION = s1.version;
+    var ef;
 
     function ii(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
     n(ii, "_classPrivateFieldLooseBase");
-    var o1 = 0;
+    var n1 = 0;
 
     function Cu(i) {
-        return "__private_" + o1++ + "_" + i
+        return "__private_" + n1++ + "_" + i
     }
     n(Cu, "_classPrivateFieldLooseKey");
-    var n1 = {
+    var a1 = {
             version: "3.0.2"
         },
-        a1 = "uppy/STATE_UPDATE",
-        l1 = n(i => e => e.uppy[i], "defaultSelector");
+        l1 = "uppy/STATE_UPDATE",
+        u1 = n(i => e => e.uppy[i], "defaultSelector");
 
-    function u1(i, e) {
+    function h1(i, e) {
         let t = Object.keys(e),
             r = {};
         return t.forEach(s => {
             i[s] !== e[s] && (r[s] = e[s])
         }), r
     }
-    n(u1, "getPatch");
+    n(h1, "getPatch");
     var Ni = Cu("id"),
         qo = Cu("selector"),
         Bi = Cu("store");
-    Zp = Symbol.for("uppy test: get id");
+    ef = Symbol.for("uppy test: get id");
     var Vo = class {
         constructor(e) {
             Object.defineProperty(this, Ni, {
@@ -6302,11 +6316,11 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             }), Object.defineProperty(this, Bi, {
                 writable: !0,
                 value: void 0
-            }), ii(this, Bi)[Bi] = e.store, ii(this, Ni)[Ni] = e.id || Ot(), ii(this, qo)[qo] = e.selector || l1(ii(this, Ni)[Ni]), this.setState({})
+            }), ii(this, Bi)[Bi] = e.store, ii(this, Ni)[Ni] = e.id || Ot(), ii(this, qo)[qo] = e.selector || u1(ii(this, Ni)[Ni]), this.setState({})
         }
         setState(e) {
             ii(this, Bi)[Bi].dispatch({
-                type: a1,
+                type: l1,
                 id: ii(this, Ni)[Ni],
                 payload: e
             })
@@ -6319,17 +6333,17 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             return ii(this, Bi)[Bi].subscribe(() => {
                 let r = this.getState();
                 if (t !== r) {
-                    let s = u1(t, r);
+                    let s = h1(t, r);
                     e(t, r, s), t = r
                 }
             })
-        }[Zp]() {
+        }[ef]() {
             return ii(this, Ni)[Ni]
         }
     };
     n(Vo, "ReduxStore");
-    Vo.VERSION = n1.version;
-    var ef = Vo;
+    Vo.VERSION = a1.version;
+    var tf = Vo;
 
     function Tu(i) {
         if (!i.bytesUploaded) return 0;
@@ -6350,7 +6364,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         STATE_POSTPROCESSING: "postprocessing",
         STATE_COMPLETE: "complete"
     };
-    var Lu = oe(Ct(), 1);
+    var Lu = oe(Tt(), 1);
 
     function Wo(i) {
         let e = [],
@@ -6375,8 +6389,8 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         }
     }
     n(Wo, "calculateProcessingProgress");
-    var Nu = oe(Ct(), 1),
-        rf = oe(bo(), 1),
+    var Nu = oe(Tt(), 1),
+        sf = oe(bo(), 1),
         Du = oe(Ca(), 1);
 
     function Au(i) {
@@ -6399,10 +6413,10 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         return `${t}${r}${s}`
     }
     n(Uu, "prettyETA");
-    var h1 = "\xB7",
-        tf = n(() => ` ${h1} `, "renderDot");
+    var c1 = "\xB7",
+        rf = n(() => ` ${c1} `, "renderDot");
 
-    function sf(i) {
+    function of (i) {
         let {
             newFiles: e,
             isUploadStarted: t,
@@ -6431,9 +6445,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             "data-uppy-super-focusable": !0
         }, c)
     }
-    n(sf, "UploadBtn");
+    n( of , "UploadBtn");
 
-    function of (i) {
+    function nf(i) {
         let {
             i18n: e,
             uppy: t
@@ -6455,9 +6469,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             d: "M4 2.408a2.75 2.75 0 1 0 2.75 2.75.626.626 0 0 1 1.25.018v.023a4 4 0 1 1-4-4.041V.25a.25.25 0 0 1 .389-.208l2.299 1.533a.25.25 0 0 1 0 .416l-2.3 1.533A.25.25 0 0 1 4 3.316v-.908z"
         })), e("retry"))
     }
-    n( of , "RetryBtn");
+    n(nf, "RetryBtn");
 
-    function nf(i) {
+    function af(i) {
         let {
             i18n: e,
             uppy: t
@@ -6490,9 +6504,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             d: "M9.283 8l2.567 2.567-1.283 1.283L8 9.283 5.433 11.85 4.15 10.567 6.717 8 4.15 5.433 5.433 4.15 8 6.717l2.567-2.567 1.283 1.283z"
         }))))
     }
-    n(nf, "CancelBtn");
+    n(af, "CancelBtn");
 
-    function af(i) {
+    function lf(i) {
         let {
             isAllPaused: e,
             i18n: t,
@@ -6531,9 +6545,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             d: e ? "M6 4.25L11.5 8 6 11.75z" : "M5 4.5h2v7H5v-7zm4 0h2v7H9v-7z"
         }))))
     }
-    n(af, "PauseResumeButton");
+    n(lf, "PauseResumeButton");
 
-    function lf(i) {
+    function uf(i) {
         let {
             i18n: e,
             doneButtonHandler: t
@@ -6545,9 +6559,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             "data-uppy-super-focusable": !0
         }, e("done"))
     }
-    n(lf, "DoneBtn");
+    n(uf, "DoneBtn");
 
-    function uf() {
+    function hf() {
         return u("svg", {
             className: "uppy-StatusBar-spinner",
             "aria-hidden": "true",
@@ -6559,9 +6573,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             fillRule: "evenodd"
         }))
     }
-    n(uf, "LoadingSpinner");
+    n(hf, "LoadingSpinner");
 
-    function hf(i) {
+    function cf(i) {
         let {
             progress: e
         } = i, {
@@ -6571,11 +6585,11 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         } = e, o = Math.round(t * 100), a = "\xB7";
         return u("div", {
             className: "uppy-StatusBar-content"
-        }, u(uf, null), r === "determinate" ? `${o}% ${a} ` : "", s)
+        }, u(hf, null), r === "determinate" ? `${o}% ${a} ` : "", s)
     }
-    n(hf, "ProgressBarProcessing");
+    n(cf, "ProgressBarProcessing");
 
-    function c1(i) {
+    function d1(i) {
         let {
             numUploads: e,
             complete: t,
@@ -6591,16 +6605,16 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             smart_count: e
         }), u("span", {
             className: "uppy-StatusBar-additionalInfo"
-        }, l && tf(), a("dataUploadedOfTotal", {
+        }, l && rf(), a("dataUploadedOfTotal", {
             complete: (0, Du.default)(r),
             total: (0, Du.default)(s)
-        }), tf(), a("xTimeLeft", {
+        }), rf(), a("xTimeLeft", {
             time: Uu(o)
         })))
     }
-    n(c1, "ProgressDetails");
+    n(d1, "ProgressDetails");
 
-    function cf(i) {
+    function df(i) {
         let {
             i18n: e,
             complete: t,
@@ -6613,9 +6627,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             smart_count: r
         }))
     }
-    n(cf, "FileUploadCount");
+    n(df, "FileUploadCount");
 
-    function d1(i) {
+    function p1(i) {
         let {
             i18n: e,
             newFiles: t,
@@ -6636,13 +6650,13 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             onClick: r
         }, e("upload")))
     }
-    n(d1, "UploadNewlyAddedFiles");
-    var p1 = (0, rf.default)(c1, 500, {
+    n(p1, "UploadNewlyAddedFiles");
+    var f1 = (0, sf.default)(d1, 500, {
         leading: !0,
         trailing: !0
     });
 
-    function df(i) {
+    function pf(i) {
         let {
             i18n: e,
             supportsUploadProgress: t,
@@ -6656,43 +6670,43 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             complete: d,
             totalUploadedSize: f,
             totalSize: y,
-            totalETA: S,
-            startUpload: w
+            totalETA: w,
+            startUpload: S
         } = i, R = h && o;
         if (!o || a) return null;
         let x = e(l ? "paused" : "uploading");
 
-        function E() {
-            return !l && !R && s ? t ? u(p1, {
+        function F() {
+            return !l && !R && s ? t ? u(f1, {
                 numUploads: c,
                 complete: d,
                 totalUploadedSize: f,
                 totalSize: y,
-                totalETA: S,
+                totalETA: w,
                 i18n: e
-            }) : u(cf, {
+            }) : u(df, {
                 i18n: e,
                 complete: d,
                 numUploads: c
             }) : null
         }
-        return n(E, "renderProgressDetails"), u("div", {
+        return n(F, "renderProgressDetails"), u("div", {
             className: "uppy-StatusBar-content",
             "aria-label": x,
             title: x
-        }, l ? null : u(uf, null), u("div", {
+        }, l ? null : u(hf, null), u("div", {
             className: "uppy-StatusBar-status"
         }, u("div", {
             className: "uppy-StatusBar-statusPrimary"
-        }, t ? `${x}: ${r}%` : x), E(), R ? u(d1, {
+        }, t ? `${x}: ${r}%` : x), F(), R ? u(p1, {
             i18n: e,
             newFiles: h,
-            startUpload: w
+            startUpload: S
         }) : null))
     }
-    n(df, "ProgressBarUploading");
+    n(pf, "ProgressBarUploading");
 
-    function pf(i) {
+    function ff(i) {
         let {
             i18n: e
         } = i;
@@ -6715,9 +6729,9 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             d: "M.414 5.843L1.627 4.63l3.472 3.472L13.202 0l1.212 1.213L5.1 10.528z"
         })), e("complete"))))
     }
-    n(pf, "ProgressBarComplete");
+    n(ff, "ProgressBarComplete");
 
-    function ff(i) {
+    function mf(i) {
         let {
             error: e,
             i18n: t,
@@ -6754,16 +6768,16 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             "data-microtip-size": "medium",
             onClick: o,
             type: "button"
-        }, "?")), u(cf, {
+        }, "?")), u(df, {
             i18n: t,
             complete: r,
             numUploads: s
         })))
     }
-    n(ff, "ProgressBarError");
+    n(mf, "ProgressBarError");
     var {
-        STATE_ERROR: mf,
-        STATE_WAITING: gf,
+        STATE_ERROR: gf,
+        STATE_WAITING: yf,
         STATE_PREPROCESSING: Bu,
         STATE_UPLOADING: $a,
         STATE_POSTPROCESSING: Iu,
@@ -6784,23 +6798,23 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             hideRetryButton: d,
             recoveredState: f,
             uploadState: y,
-            totalProgress: S,
-            files: w,
+            totalProgress: w,
+            files: S,
             supportsUploadProgress: R,
             hideAfterFinish: x,
-            isSomeGhost: E,
+            isSomeGhost: F,
             doneButtonHandler: N,
-            isUploadStarted: V,
-            i18n: $,
+            isUploadStarted: H,
+            i18n: q,
             startUpload: K,
-            uppy: U,
+            uppy: k,
             isAllComplete: B,
             showProgressDetails: z,
             numUploads: G,
-            complete: Dt,
-            totalSize: Wt,
-            totalETA: Kt,
-            totalUploadedSize: Gt
+            complete: Nt,
+            totalSize: Kt,
+            totalETA: Gt,
+            totalUploadedSize: Xt
         } = i;
 
         function ir() {
@@ -6808,27 +6822,27 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 case Iu:
                 case Bu:
                 {
-                    let xt = Wo(w);
-                    return xt.mode === "determinate" ? xt.value * 100 : S
+                    let xt = Wo(S);
+                    return xt.mode === "determinate" ? xt.value * 100 : w
                 }
-                case mf:
+                case gf:
                     return null;
                 case $a:
-                    return R ? S : null;
+                    return R ? w : null;
                 default:
-                    return S
+                    return w
             }
         }
         n(ir, "getProgressValue");
 
-        function xr() {
+        function Fr() {
             switch (y) {
                 case Iu:
                 case Bu:
                 {
                     let {
                         mode: xt
-                    } = Wo(w);
+                    } = Wo(S);
                     return xt === "indeterminate"
                 }
                 case $a:
@@ -6837,12 +6851,12 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                     return !1
             }
         }
-        n(xr, "getIsIndeterminate");
+        n(Fr, "getIsIndeterminate");
 
         function xe() {
             if (f) return !1;
             switch (y) {
-                case gf:
+                case yf:
                     return l || e === 0;
                 case qa:
                     return x;
@@ -6852,30 +6866,30 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         }
         n(xe, "getIsHidden");
         let Si = ir(),
-            Ts = xe(),
-            Xt = Si ?? 100,
-            Fr = !a && e && !r && !s && t && !l,
-            _i = !c && y !== gf && y !== qa,
+            ks = xe(),
+            Yt = Si ?? 100,
+            Er = !a && e && !r && !s && t && !l,
+            _i = !c && y !== yf && y !== qa,
             rr = o && !h && y === $a,
             Pi = a && !B && !d,
-            Er = N && y === qa,
-            Or = (0, Lu.default)("uppy-StatusBar-progress", {
-                "is-indeterminate": xr()
+            Or = N && y === qa,
+            Rr = (0, Lu.default)("uppy-StatusBar-progress", {
+                "is-indeterminate": Fr()
             }),
             xi = (0, Lu.default)("uppy-StatusBar", `is-${y}`, {
-                "has-ghosts": E
+                "has-ghosts": F
             });
         return u("div", {
             className: xi,
-            "aria-hidden": Ts
+            "aria-hidden": ks
         }, u("div", {
-            className: Or,
+            className: Rr,
             style: {
-                width: `${Xt}%`
+                width: `${Yt}%`
             },
             role: "progressbar",
-            "aria-label": `${Xt}%`,
-            "aria-valuetext": `${Xt}%`,
+            "aria-label": `${Yt}%`,
+            "aria-valuetext": `${Yt}%`,
             "aria-valuemin": "0",
             "aria-valuemax": "100",
             "aria-valuenow": Si
@@ -6883,35 +6897,35 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             switch (y) {
                 case Bu:
                 case Iu:
-                    return u(hf, {
-                        progress: Wo(w)
+                    return u(cf, {
+                        progress: Wo(S)
                     });
                 case qa:
-                    return u(pf, {
-                        i18n: $
-                    });
-                case mf:
                     return u(ff, {
+                        i18n: q
+                    });
+                case gf:
+                    return u(mf, {
                         error: a,
-                        i18n: $,
+                        i18n: q,
                         numUploads: G,
-                        complete: Dt
+                        complete: Nt
                     });
                 case $a:
-                    return u(df, {
-                        i18n: $,
+                    return u(pf, {
+                        i18n: q,
                         supportsUploadProgress: R,
-                        totalProgress: S,
+                        totalProgress: w,
                         showProgressDetails: z,
-                        isUploadStarted: V,
+                        isUploadStarted: H,
                         isAllComplete: B,
                         isAllPaused: s,
                         newFiles: e,
                         numUploads: G,
-                        complete: Dt,
-                        totalUploadedSize: Gt,
-                        totalSize: Wt,
-                        totalETA: Kt,
+                        complete: Nt,
+                        totalUploadedSize: Xt,
+                        totalSize: Kt,
+                        totalETA: Gt,
                         startUpload: K
                     });
                 default:
@@ -6919,33 +6933,33 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             }
         })(), u("div", {
             className: "uppy-StatusBar-actions"
-        }, f || Fr ? u(sf, {
+        }, f || Er ? u( of , {
             newFiles: e,
-            isUploadStarted: V,
+            isUploadStarted: H,
             recoveredState: f,
-            i18n: $,
-            isSomeGhost: E,
+            i18n: q,
+            isSomeGhost: F,
             startUpload: K,
             uploadState: y
-        }) : null, Pi ? u( of , {
-            i18n: $,
-            uppy: U
-        }) : null, rr ? u(af, {
+        }) : null, Pi ? u(nf, {
+            i18n: q,
+            uppy: k
+        }) : null, rr ? u(lf, {
             isAllPaused: s,
-            i18n: $,
+            i18n: q,
             isAllComplete: B,
             resumableUploads: o,
-            uppy: U
-        }) : null, _i ? u(nf, {
-            i18n: $,
-            uppy: U
-        }) : null, Er ? u(lf, {
-            i18n: $,
+            uppy: k
+        }) : null, _i ? u(af, {
+            i18n: q,
+            uppy: k
+        }) : null, Or ? u(uf, {
+            i18n: q,
             doneButtonHandler: N
         }) : null))
     }
     n(Mu, "StatusBar");
-    var yf = {
+    var vf = {
         strings: {
             uploading: "Uploading",
             complete: "Complete",
@@ -6979,27 +6993,27 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             showErrorDetails: "Show error details"
         }
     };
-    var f1 = {
+    var m1 = {
         version: "3.0.1"
     };
 
-    function m1(i) {
+    function g1(i) {
         let e = 0;
         return i.forEach(t => {
             e += Tu(t.progress)
         }), e
     }
-    n(m1, "getTotalSpeed");
+    n(g1, "getTotalSpeed");
 
-    function g1(i) {
-        let e = m1(i);
+    function y1(i) {
+        let e = g1(i);
         if (e === 0) return 0;
         let t = i.reduce((r, s) => r + ku(s.progress), 0);
         return Math.round(t / e * 10) / 10
     }
-    n(g1, "getTotalETA");
+    n(y1, "getTotalETA");
 
-    function y1(i, e, t, r) {
+    function v1(i, e, t, r) {
         if (i && !e) return Ke.STATE_ERROR;
         if (e) return Ke.STATE_COMPLETE;
         if (t) return Ke.STATE_WAITING;
@@ -7014,8 +7028,8 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         }
         return s
     }
-    n(y1, "getUploadingState");
-    var ri = class extends q {
+    n(v1, "getUploadingState");
+    var ri = class extends V {
         constructor(e, t) {
             super(e, t), this.startUpload = () => {
                 let {
@@ -7026,7 +7040,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                     return
                 }
                 return this.uppy.upload().catch(() => {})
-            }, this.id = this.opts.id || "StatusBar", this.title = "StatusBar", this.type = "progressindicator", this.defaultLocale = yf;
+            }, this.id = this.opts.id || "StatusBar", this.title = "StatusBar", this.type = "progressindicator", this.defaultLocale = vf;
             let r = {
                 target: "body",
                 hideUploadButton: !1,
@@ -7055,38 +7069,38 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 completeFiles: d,
                 inProgressNotPausedFiles: f,
                 isUploadStarted: y,
-                isAllComplete: S,
-                isAllErrored: w,
+                isAllComplete: w,
+                isAllErrored: S,
                 isAllPaused: R,
                 isUploadInProgress: x,
-                isSomeGhost: E
-            } = this.uppy.getObjectOfFilesPerState(), N = l ? Object.values(r) : h, V = g1(f), $ = !!t.resumableUploads, K = t.uploadProgress !== !1, U = 0, B = 0;
+                isSomeGhost: F
+            } = this.uppy.getObjectOfFilesPerState(), N = l ? Object.values(r) : h, H = y1(f), q = !!t.resumableUploads, K = t.uploadProgress !== !1, k = 0, B = 0;
             return c.forEach(z => {
-                U += z.progress.bytesTotal || 0, B += z.progress.bytesUploaded || 0
+                k += z.progress.bytesTotal || 0, B += z.progress.bytesUploaded || 0
             }), Mu({
                 error: a,
-                uploadState: y1(a, S, l, e.files || {}),
+                uploadState: v1(a, w, l, e.files || {}),
                 allowNewUpload: s,
                 totalProgress: o,
-                totalSize: U,
+                totalSize: k,
                 totalUploadedSize: B,
                 isAllComplete: !1,
                 isAllPaused: R,
-                isAllErrored: w,
+                isAllErrored: S,
                 isUploadStarted: y,
                 isUploadInProgress: x,
-                isSomeGhost: E,
+                isSomeGhost: F,
                 recoveredState: l,
                 complete: d.length,
                 newFiles: N.length,
                 numUploads: c.length,
-                totalETA: V,
+                totalETA: H,
                 files: r,
                 i18n: this.i18n,
                 uppy: this.uppy,
                 startUpload: this.startUpload,
                 doneButtonHandler: this.opts.doneButtonHandler,
-                resumableUploads: $,
+                resumableUploads: q,
                 supportsUploadProgress: K,
                 showProgressDetails: this.opts.showProgressDetails,
                 hideUploadButton: this.opts.hideUploadButton,
@@ -7112,17 +7126,17 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         }
     };
     n(ri, "StatusBar");
-    ri.VERSION = f1.version;
-    var vf = 300,
-        $s = class extends ie {
+    ri.VERSION = m1.version;
+    var bf = 300,
+        qs = class extends ie {
             constructor() {
-                super(...arguments), this.ref = Ep()
+                super(...arguments), this.ref = Op()
             }
             componentWillEnter(e) {
-                this.ref.current.style.opacity = "1", this.ref.current.style.transform = "none", setTimeout(e, vf)
+                this.ref.current.style.opacity = "1", this.ref.current.style.transform = "none", setTimeout(e, bf)
             }
             componentWillLeave(e) {
-                this.ref.current.style.opacity = "0", this.ref.current.style.transform = "translateY(350%)", setTimeout(e, vf)
+                this.ref.current.style.opacity = "0", this.ref.current.style.transform = "translateY(350%)", setTimeout(e, bf)
             }
             render() {
                 let {
@@ -7134,39 +7148,39 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 }, e)
             }
         };
-    n($s, "FadeIn");
-
-    function v1(i, e) {
-        return Object.assign(i, e)
-    }
-    n(v1, "assign");
+    n(qs, "FadeIn");
 
     function b1(i, e) {
+        return Object.assign(i, e)
+    }
+    n(b1, "assign");
+
+    function w1(i, e) {
         var t;
         return (t = i ?.key) != null ? t : e
     }
-    n(b1, "getKey");
+    n(w1, "getKey");
 
-    function w1(i, e) {
+    function S1(i, e) {
         let t = i._ptgLinkedRefs || (i._ptgLinkedRefs = {});
         return t[e] || (t[e] = r => {
             i.refs[e] = r
         })
     }
-    n(w1, "linkRef");
+    n(S1, "linkRef");
 
     function Ko(i) {
         let e = {};
         for (let t = 0; t < i.length; t++)
             if (i[t] != null) {
-                let r = b1(i[t], t.toString(36));
+                let r = w1(i[t], t.toString(36));
                 e[r] = i[t]
             }
         return e
     }
     n(Ko, "getChildMapping");
 
-    function S1(i, e) {
+    function _1(i, e) {
         i = i || {}, e = e || {};
         let t = n(a => e.hasOwnProperty(a) ? e[a] : i[a], "getValueForKey"),
             r = {},
@@ -7184,12 +7198,12 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         for (let a = 0; a < s.length; a++) o[s[a]] = t(s[a]);
         return o
     }
-    n(S1, "mergeChildMappings");
-    var _1 = n(i => i, "identity"),
+    n(_1, "mergeChildMappings");
+    var P1 = n(i => i, "identity"),
         Go = class extends ie {
             constructor(e, t) {
                 super(e, t), this.refs = {}, this.state = {
-                    children: Ko(Rt(Rt(this.props.children)) || [])
+                    children: Ko(Ct(Ct(this.props.children)) || [])
                 }, this.performAppear = this.performAppear.bind(this), this.performEnter = this.performEnter.bind(this), this.performLeave = this.performLeave.bind(this)
             }
             componentWillMount() {
@@ -7200,10 +7214,10 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 for (let t in e) e[t] && this.performAppear(t)
             }
             componentWillReceiveProps(e) {
-                let t = Ko(Rt(e.children) || []),
+                let t = Ko(Ct(e.children) || []),
                     r = this.state.children;
                 this.setState(o => ({
-                    children: S1(o.children, t)
+                    children: _1(o.children, t)
                 }));
                 let s;
                 for (s in t)
@@ -7239,7 +7253,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             _handleDoneAppearing(e) {
                 let t = this.refs[e];
                 t.componentDidAppear && t.componentDidAppear(), delete this.currentlyTransitioningKeys[e], this._finishAbort(e);
-                let r = Ko(Rt(this.props.children) || []);
+                let r = Ko(Ct(this.props.children) || []);
                 (!r || !r.hasOwnProperty(e)) && this.performLeave(e)
             }
             performEnter(e) {
@@ -7250,7 +7264,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             _handleDoneEntering(e) {
                 let t = this.refs[e];
                 t.componentDidEnter && t.componentDidEnter(), delete this.currentlyTransitioningKeys[e], this._finishAbort(e);
-                let r = Ko(Rt(this.props.children) || []);
+                let r = Ko(Ct(this.props.children) || []);
                 (!r || !r.hasOwnProperty(e)) && this.performLeave(e)
             }
             performLeave(e) {
@@ -7263,10 +7277,10 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 if (this.keysToAbortLeave.indexOf(e) !== -1) return;
                 let r = this.refs[e];
                 r.componentDidLeave && r.componentDidLeave(), delete this.currentlyTransitioningKeys[e];
-                let s = Ko(Rt(this.props.children) || []);
+                let s = Ko(Ct(this.props.children) || []);
                 if (s && s.hasOwnProperty(e)) this.performEnter(e);
                 else {
-                    let o = v1({}, this.state.children);
+                    let o = b1({}, this.state.children);
                     delete o[e], this.setState({
                         children: o
                     })
@@ -7285,33 +7299,33 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                     component: f,
                     ...y
                 } = e, {
-                    children: S
-                } = t, w = Object.entries(S).map(R => {
-                    let [x, E] = R;
-                    if (!E) return;
-                    let N = w1(this, x);
-                    return Na(r(E), {
+                    children: w
+                } = t, S = Object.entries(w).map(R => {
+                    let [x, F] = R;
+                    if (!F) return;
+                    let N = S1(this, x);
+                    return Na(r(F), {
                         ref: N,
                         key: x
                     })
                 }).filter(Boolean);
-                return u(f, y, w)
+                return u(f, y, S)
             }
         };
     n(Go, "TransitionGroup");
     Go.defaultProps = {
         component: "span",
-        childFactory: _1
+        childFactory: P1
     };
-    var bf = Go;
-    var P1 = {
+    var wf = Go;
+    var x1 = {
             version: "3.0.1"
         },
-        si = class extends q {
+        si = class extends V {
             constructor(e, t) {
                 super(e, t), this.render = s => u("div", {
                     className: "uppy uppy-Informer"
-                }, u(bf, null, s.info.map(o => u($s, {
+                }, u(wf, null, s.info.map(o => u(qs, {
                     key: o.message
                 }, u("p", {
                     role: "alert"
@@ -7337,12 +7351,12 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             }
         };
     n(si, "Informer");
-    si.VERSION = P1.version;
-    var x1 = /^data:([^/]+\/[^,;]+(?:[^,]*?))(;base64)?,([\s\S]*)$/;
+    si.VERSION = x1.version;
+    var F1 = /^data:([^/]+\/[^,;]+(?:[^,]*?))(;base64)?,([\s\S]*)$/;
 
     function zu(i, e, t) {
         var r, s;
-        let o = x1.exec(i),
+        let o = F1.exec(i),
             a = (r = (s = e.mimeType) != null ? s : o ?.[1]) != null ? r : "plain/text",
             l;
         if (o[2] != null) {
@@ -7373,35 +7387,35 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         }) : i[e] = t, i
     }
     n(ne, "e");
-    var Rf = typeof self < "u" ? self : global,
+    var Cf = typeof self < "u" ? self : global,
         Zo = typeof navigator < "u",
-        F1 = Zo && typeof HTMLImageElement > "u",
-        wf = !(typeof global > "u" || typeof process > "u" || !process.versions || !process.versions.node),
-        Cf = Rf.Buffer,
-        Tf = !!Cf,
-        E1 = n(i => i !== void 0, "h");
+        E1 = Zo && typeof HTMLImageElement > "u",
+        Sf = !(typeof global > "u" || typeof process > "u" || !process.versions || !process.versions.node),
+        Tf = Cf.Buffer,
+        kf = !!Tf,
+        O1 = n(i => i !== void 0, "h");
 
-    function kf(i) {
-        return i === void 0 || (i instanceof Map ? i.size === 0 : Object.values(i).filter(E1).length === 0)
+    function Af(i) {
+        return i === void 0 || (i instanceof Map ? i.size === 0 : Object.values(i).filter(O1).length === 0)
     }
-    n(kf, "f");
+    n(Af, "f");
 
-    function ke(i) {
+    function Ae(i) {
         let e = new Error(i);
         throw delete e.stack, e
     }
-    n(ke, "l");
+    n(Ae, "l");
 
-    function Sf(i) {
+    function _f(i) {
         let e = function(t) {
             let r = 0;
             return t.ifd0.enabled && (r += 1024), t.exif.enabled && (r += 2048), t.makerNote && (r += 2048), t.userComment && (r += 1024), t.gps.enabled && (r += 512), t.interop.enabled && (r += 100), t.ifd1.enabled && (r += 1024), r + 2048
         }(i);
         return i.jfif.enabled && (e += 50), i.xmp.enabled && (e += 2e4), i.iptc.enabled && (e += 14e3), i.icc.enabled && (e += 6e3), e
     }
-    n(Sf, "o");
+    n(_f, "o");
     var ju = n(i => String.fromCharCode.apply(null, i), "u"),
-        _f = typeof TextDecoder < "u" ? new TextDecoder("utf-8") : void 0,
+        Pf = typeof TextDecoder < "u" ? new TextDecoder("utf-8") : void 0,
         nt = class {
             static from(e, t) {
                 return e instanceof this && e.le === t ? e : new nt(e, void 0, void 0, t)
@@ -7413,13 +7427,13 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                     let o = new DataView(e, t, r);
                     this._swapDataView(o)
                 } else if (e instanceof Uint8Array || e instanceof DataView || e instanceof nt) {
-                    r === void 0 && (r = e.byteLength - t), (t += e.byteOffset) + r > e.byteOffset + e.byteLength && ke("Creating view outside of available memory in ArrayBuffer");
+                    r === void 0 && (r = e.byteLength - t), (t += e.byteOffset) + r > e.byteOffset + e.byteLength && Ae("Creating view outside of available memory in ArrayBuffer");
                     let o = new DataView(e.buffer, t, r);
                     this._swapDataView(o)
                 } else if (typeof e == "number") {
                     let o = new DataView(new ArrayBuffer(e));
                     this._swapDataView(o)
-                } else ke("Invalid input argument for BufferView: " + e)
+                } else Ae("Invalid input argument for BufferView: " + e)
             }
             _swapArrayBuffer(e) {
                 this._swapDataView(new DataView(e))
@@ -7434,7 +7448,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 return this.byteLength - e
             }
             set(e, t, r = nt) {
-                return e instanceof DataView || e instanceof nt ? e = new Uint8Array(e.buffer, e.byteOffset, e.byteLength) : e instanceof ArrayBuffer && (e = new Uint8Array(e)), e instanceof Uint8Array || ke("BufferView.set(): Invalid data argument."), this.toUint8().set(e, t), new r(this, t, e.byteLength)
+                return e instanceof DataView || e instanceof nt ? e = new Uint8Array(e.buffer, e.byteOffset, e.byteLength) : e instanceof ArrayBuffer && (e = new Uint8Array(e)), e instanceof Uint8Array || Ae("BufferView.set(): Invalid data argument."), this.toUint8().set(e, t), new r(this, t, e.byteLength)
             }
             subarray(e, t) {
                 return t = t || this._lengthToEnd(e), new nt(this, e, t)
@@ -7446,7 +7460,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 return new Uint8Array(this.buffer, this.byteOffset + e, t)
             }
             getString(e = 0, t = this.byteLength) {
-                return s = this.getUint8Array(e, t), _f ? _f.decode(s) : Tf ? Buffer.from(s).toString("utf8") : decodeURIComponent(escape(ju(s)));
+                return s = this.getUint8Array(e, t), Pf ? Pf.decode(s) : kf ? Buffer.from(s).toString("utf8") : decodeURIComponent(escape(ju(s)));
                 var s
             }
             getLatin1String(e = 0, t = this.byteLength) {
@@ -7520,38 +7534,38 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
     n(nt, "c");
 
     function $u(i, e) {
-        ke(`${i} '${e}' was not loaded, try using full build of exifr.`)
+        Ae(`${i} '${e}' was not loaded, try using full build of exifr.`)
     }
     n($u, "p");
-    var Gs = class extends Map {
+    var Xs = class extends Map {
         constructor(e) {
             super(), this.kind = e
         }
         get(e, t) {
             return this.has(e) || $u(this.kind, e), t && (e in t || function(r, s) {
-                ke(`Unknown ${r} '${s}'.`)
+                Ae(`Unknown ${r} '${s}'.`)
             }(this.kind, e), t[e].enabled || $u(this.kind, e)), super.get(e)
         }
         keyList() {
             return Array.from(this.keys())
         }
     };
-    n(Gs, "g");
-    var Za = new Gs("file parser"),
-        ft = new Gs("segment parser"),
-        rn = new Gs("file reader"),
-        O1 = Rf.fetch;
+    n(Xs, "g");
+    var Za = new Xs("file parser"),
+        ft = new Xs("segment parser"),
+        rn = new Xs("file reader"),
+        R1 = Cf.fetch;
 
-    function Pf(i, e) {
-        return (t = i).startsWith("data:") || t.length > 1e4 ? Vu(i, e, "base64") : wf && i.includes("://") ? qu(i, e, "url", Ja) : wf ? Vu(i, e, "fs") : Zo ? qu(i, e, "url", Ja) : void ke("Invalid input argument");
+    function xf(i, e) {
+        return (t = i).startsWith("data:") || t.length > 1e4 ? Vu(i, e, "base64") : Sf && i.includes("://") ? qu(i, e, "url", Ja) : Sf ? Vu(i, e, "fs") : Zo ? qu(i, e, "url", Ja) : void Ae("Invalid input argument");
         var t
     }
-    n(Pf, "k");
+    n(xf, "k");
     async function qu(i, e, t, r) {
         return rn.has(t) ? Vu(i, e, t) : r ? async function(s, o) {
             let a = await o(s);
             return new nt(a)
-        }(i, r) : void ke(`Parser ${t} is not loaded`)
+        }(i, r) : void Ae(`Parser ${t} is not loaded`)
     }
     n(qu, "O");
     async function Vu(i, e, t) {
@@ -7559,7 +7573,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         return await r.read(), r
     }
     n(Vu, "v");
-    var Ja = n(i => O1(i).then(e => e.arrayBuffer()), "S"),
+    var Ja = n(i => R1(i).then(e => e.arrayBuffer()), "S"),
         en = n(i => new Promise((e, t) => {
             let r = new FileReader;
             r.onloadend = () => e(r.result || new ArrayBuffer), r.onerror = t, r.readAsArrayBuffer(i)
@@ -7574,7 +7588,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         };
     n(Wa, "U");
 
-    function Af(i, e, t) {
+    function Uf(i, e, t) {
         let r = new Wa;
         for (let [s, o] of t) r.set(s, o);
         if (Array.isArray(e))
@@ -7582,24 +7596,24 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         else i.set(e, r);
         return r
     }
-    n(Af, "x");
+    n(Uf, "x");
 
-    function Uf(i, e, t) {
+    function Df(i, e, t) {
         let r, s = i.get(e);
         for (r of t) s.set(r[0], r[1])
     }
-    n(Uf, "C");
+    n(Df, "C");
     var sn = new Map,
         Wu = new Map,
         Ku = new Map,
-        qs = ["chunked", "firstChunkSize", "firstChunkSizeNode", "firstChunkSizeBrowser", "chunkSize", "chunkLimit"],
+        Vs = ["chunked", "firstChunkSize", "firstChunkSizeNode", "firstChunkSizeBrowser", "chunkSize", "chunkLimit"],
         el = ["jfif", "xmp", "icc", "iptc", "ihdr"],
         tn = ["tiff", ...el],
         Se = ["ifd0", "ifd1", "exif", "gps", "interop"],
-        Vs = [...tn, ...Se],
-        Ws = ["makerNote", "userComment"],
+        Ws = [...tn, ...Se],
+        Ks = ["makerNote", "userComment"],
         tl = ["translateKeys", "translateValues", "reviveValues", "multiSegment"],
-        Ks = [...tl, "sanitize", "mergeOutput", "silentErrors"],
+        Gs = [...tl, "sanitize", "mergeOutput", "silentErrors"],
         Jo = class {
             get translate() {
                 return this.translateKeys || this.translateValues || this.reviveValues
@@ -7622,7 +7636,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                         o && o.length > 0 && this.translateTagSet(o, this.pick), a && a.length > 0 && this.translateTagSet(a, this.skip)
                     }
                     this.applyInheritables(r)
-                } else r === !0 || r === !1 ? this.parse = this.enabled = r : ke(`Invalid options argument: ${r}`)
+                } else r === !0 || r === !1 ? this.parse = this.enabled = r : Ae(`Invalid options argument: ${r}`)
         }
         applyInheritables(e) {
             let t, r;
@@ -7673,45 +7687,45 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             chunkSize: 65536,
             chunkLimit: 5
         },
-        xf = new Map,
+        Ff = new Map,
         cr = class extends Jo {
             static useCached(e) {
-                let t = xf.get(e);
-                return t !== void 0 || (t = new this(e), xf.set(e, t)), t
+                let t = Ff.get(e);
+                return t !== void 0 || (t = new this(e), Ff.set(e, t)), t
             }
             constructor(e) {
-                super(), e === !0 ? this.setupFromTrue() : e === void 0 ? this.setupFromUndefined() : Array.isArray(e) ? this.setupFromArray(e) : typeof e == "object" ? this.setupFromObject(e) : ke(`Invalid options argument ${e}`), this.firstChunkSize === void 0 && (this.firstChunkSize = Zo ? this.firstChunkSizeBrowser : this.firstChunkSizeNode), this.mergeOutput && (this.ifd1.enabled = !1), this.filterNestedSegmentTags(), this.traverseTiffDependencyTree(), this.checkLoadedPlugins()
+                super(), e === !0 ? this.setupFromTrue() : e === void 0 ? this.setupFromUndefined() : Array.isArray(e) ? this.setupFromArray(e) : typeof e == "object" ? this.setupFromObject(e) : Ae(`Invalid options argument ${e}`), this.firstChunkSize === void 0 && (this.firstChunkSize = Zo ? this.firstChunkSizeBrowser : this.firstChunkSizeNode), this.mergeOutput && (this.ifd1.enabled = !1), this.filterNestedSegmentTags(), this.traverseTiffDependencyTree(), this.checkLoadedPlugins()
             }
             setupFromUndefined() {
                 let e;
-                for (e of qs) this[e] = Ge[e];
+                for (e of Vs) this[e] = Ge[e];
+                for (e of Gs) this[e] = Ge[e];
                 for (e of Ks) this[e] = Ge[e];
-                for (e of Ws) this[e] = Ge[e];
-                for (e of Vs) this[e] = new hr(e, Ge[e], void 0, this)
+                for (e of Ws) this[e] = new hr(e, Ge[e], void 0, this)
             }
             setupFromTrue() {
                 let e;
-                for (e of qs) this[e] = Ge[e];
-                for (e of Ks) this[e] = Ge[e];
-                for (e of Ws) this[e] = !0;
-                for (e of Vs) this[e] = new hr(e, !0, void 0, this)
+                for (e of Vs) this[e] = Ge[e];
+                for (e of Gs) this[e] = Ge[e];
+                for (e of Ks) this[e] = !0;
+                for (e of Ws) this[e] = new hr(e, !0, void 0, this)
             }
             setupFromArray(e) {
                 let t;
-                for (t of qs) this[t] = Ge[t];
+                for (t of Vs) this[t] = Ge[t];
+                for (t of Gs) this[t] = Ge[t];
                 for (t of Ks) this[t] = Ge[t];
-                for (t of Ws) this[t] = Ge[t];
-                for (t of Vs) this[t] = new hr(t, !1, void 0, this);
+                for (t of Ws) this[t] = new hr(t, !1, void 0, this);
                 this.setupGlobalFilters(e, void 0, Se)
             }
             setupFromObject(e) {
                 let t;
-                for (t of (Se.ifd0 = Se.ifd0 || Se.image, Se.ifd1 = Se.ifd1 || Se.thumbnail, Object.assign(this, e), qs)) this[t] = Hu(e[t], Ge[t]);
+                for (t of (Se.ifd0 = Se.ifd0 || Se.image, Se.ifd1 = Se.ifd1 || Se.thumbnail, Object.assign(this, e), Vs)) this[t] = Hu(e[t], Ge[t]);
+                for (t of Gs) this[t] = Hu(e[t], Ge[t]);
                 for (t of Ks) this[t] = Hu(e[t], Ge[t]);
-                for (t of Ws) this[t] = Hu(e[t], Ge[t]);
                 for (t of tn) this[t] = new hr(t, Ge[t], e[t], this);
                 for (t of Se) this[t] = new hr(t, Ge[t], e[t], this.tiff);
-                this.setupGlobalFilters(e.pick, e.skip, Se, Vs), e.tiff === !0 ? this.batchEnableWithBool(Se, !0) : e.tiff === !1 ? this.batchEnableWithUserValue(Se, e) : Array.isArray(e.tiff) ? this.setupGlobalFilters(e.tiff, void 0, Se) : typeof e.tiff == "object" && this.setupGlobalFilters(e.tiff.pick, e.tiff.skip, Se)
+                this.setupGlobalFilters(e.pick, e.skip, Se, Ws), e.tiff === !0 ? this.batchEnableWithBool(Se, !0) : e.tiff === !1 ? this.batchEnableWithUserValue(Se, e) : Array.isArray(e.tiff) ? this.setupGlobalFilters(e.tiff, void 0, Se) : typeof e.tiff == "object" && this.setupGlobalFilters(e.tiff.pick, e.tiff.skip, Se)
             }
             batchEnableWithBool(e, t) {
                 for (let r of e) this[r].enabled = t
@@ -7725,10 +7739,10 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             setupGlobalFilters(e, t, r, s = r) {
                 if (e && e.length) {
                     for (let a of s) this[a].enabled = !1;
-                    let o = Ff(e, r);
+                    let o = Ef(e, r);
                     for (let [a, l] of o) Qa(this[a].pick, l), this[a].enabled = !0
                 } else if (t && t.length) {
-                    let o = Ff(t, r);
+                    let o = Ef(t, r);
                     for (let [a, l] of o) Qa(this[a].skip, l)
                 }
             }
@@ -7761,7 +7775,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         };
     n(cr, "R");
 
-    function Ff(i, e) {
+    function Ef(i, e) {
         let t, r, s, o, a = [];
         for (s of e) {
             for (o of (t = sn.get(s), r = [], t))(i.includes(o[0]) || i.includes(o[1])) && r.push(o[0]);
@@ -7769,7 +7783,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
         }
         return a
     }
-    n(Ff, "K");
+    n(Ef, "K");
 
     function Hu(i, e) {
         return i !== void 0 ? i : e !== void 0 ? e : void 0
@@ -7781,14 +7795,14 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
     }
     n(Qa, "X");
     ne(cr, "default", Ge);
-    var zr = class {
+    var jr = class {
         constructor(e) {
             ne(this, "parsers", {}), ne(this, "output", {}), ne(this, "errors", []), ne(this, "pushToErrors", t => this.errors.push(t)), this.options = cr.useCached(e)
         }
         async read(e) {
             this.file = await
                 function(t, r) {
-                    return typeof t == "string" ? Pf(t, r) : Zo && !F1 && t instanceof HTMLImageElement ? Pf(t.src, r) : t instanceof Uint8Array || t instanceof ArrayBuffer || t instanceof DataView ? new nt(t) : Zo && t instanceof Blob ? qu(t, r, "blob", en) : void ke("Invalid input argument")
+                    return typeof t == "string" ? xf(t, r) : Zo && !E1 && t instanceof HTMLImageElement ? xf(t.src, r) : t instanceof Uint8Array || t instanceof ArrayBuffer || t instanceof DataView ? new nt(t) : Zo && t instanceof Blob ? qu(t, r, "blob", en) : void Ae("Invalid input argument")
                 }(e, this.options)
         }
         setup() {
@@ -7798,14 +7812,14 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             } = this, t = e.getUint16(0);
             for (let [r, s] of Za)
                 if (s.canHandle(e, t)) return this.fileParser = new s(this.options, this.file, this.parsers), e[r] = !0;
-            this.file.close && this.file.close(), ke("Unknown file format")
+            this.file.close && this.file.close(), Ae("Unknown file format")
         }
         async parse() {
             let {
                 output: e,
                 errors: t
             } = this;
-            return this.setup(), this.options.silentErrors ? (await this.executeParsers().catch(this.pushToErrors), t.push(...this.fileParser.errors)) : await this.executeParsers(), this.file.close && this.file.close(), this.options.silentErrors && t.length > 0 && (e.errors = t), kf(r = e) ? void 0 : r;
+            return this.setup(), this.options.silentErrors ? (await this.executeParsers().catch(this.pushToErrors), t.push(...this.fileParser.errors)) : await this.executeParsers(), this.file.close && this.file.close(), this.options.silentErrors && t.length > 0 && (e.errors = t), Af(r = e) ? void 0 : r;
             var r
         }
         async executeParsers() {
@@ -7836,34 +7850,34 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             return t.close && t.close(), l
         }
     };
-    n(zr, "H");
-    async function Df(i, e) {
-        let t = new zr(e);
+    n(jr, "H");
+    async function Nf(i, e) {
+        let t = new jr(e);
         return await t.read(i), t.parse()
     }
-    n(Df, "Y");
-    var R1 = Object.freeze({
+    n(Nf, "Y");
+    var C1 = Object.freeze({
             __proto__: null,
-            parse: Df,
-            Exifr: zr,
+            parse: Nf,
+            Exifr: jr,
             fileParsers: Za,
             segmentParsers: ft,
             fileReaders: rn,
             tagKeys: sn,
             tagValues: Wu,
             tagRevivers: Ku,
-            createDictionary: Af,
-            extendDictionary: Uf,
+            createDictionary: Uf,
+            extendDictionary: Df,
             fetchUrlAsArrayBuffer: Ja,
             readBlobAsArrayBuffer: en,
-            chunkedProps: qs,
+            chunkedProps: Vs,
             otherSegments: el,
             segments: tn,
             tiffBlocks: Se,
-            segmentsAndBlocks: Vs,
-            tiffExtractables: Ws,
+            segmentsAndBlocks: Ws,
+            tiffExtractables: Ks,
             inheritables: tl,
-            allFormatters: Ks,
+            allFormatters: Gs,
             Options: cr
         }),
         Ii = class {
@@ -7927,21 +7941,21 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
     n(Ii, "J");
     ne(Ii, "headerLength", 4), ne(Ii, "type", void 0), ne(Ii, "multiSegment", !1), ne(Ii, "canHandle", () => !1);
 
-    function C1(i) {
+    function T1(i) {
         return i === 192 || i === 194 || i === 196 || i === 219 || i === 221 || i === 218 || i === 254
     }
-    n(C1, "q");
+    n(T1, "q");
 
-    function T1(i) {
+    function k1(i) {
         return i >= 224 && i <= 239
     }
-    n(T1, "Q");
+    n(k1, "Q");
 
-    function k1(i, e, t) {
+    function A1(i, e, t) {
         for (let [r, s] of ft)
             if (s.canHandle(i, e, t)) return r
     }
-    n(k1, "Z");
+    n(A1, "Z");
     var Qo = class extends class {
         constructor(e, t, r) {
             ne(this, "errors", []), ne(this, "ensureSegmentChunk", async s => {
@@ -7952,8 +7966,8 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                     else try {
                         s.chunk = await this.file.readChunk(o, a)
                     } catch (l) {
-                        ke(`Couldn't read segment: ${JSON.stringify(s)}. ${l.message}`)
-                    } else this.file.byteLength > o + a ? s.chunk = this.file.subarray(o, a) : s.size === void 0 ? s.chunk = this.file.subarray(o) : ke("Segment unreachable: " + JSON.stringify(s));
+                        Ae(`Couldn't read segment: ${JSON.stringify(s)}. ${l.message}`)
+                    } else this.file.byteLength > o + a ? s.chunk = this.file.subarray(o, a) : s.size === void 0 ? s.chunk = this.file.subarray(o) : Ae("Segment unreachable: " + JSON.stringify(s));
                 return s.chunk
             }), this.extendOptions && this.extendOptions(e), this.options = e, this.file = t, this.parsers = r
         }
@@ -8022,16 +8036,16 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                 findAll: d,
                 wanted: f,
                 remaining: y,
-                options: S
+                options: w
             } = this;
             for (; e < t; e++)
                 if (c.getUint8(e) === 255) {
-                    if (r = c.getUint8(e + 1), T1(r)) {
-                        if (s = c.getUint16(e + 2), o = k1(c, e, s), o && f.has(o) && (a = ft.get(o), l = a.findPosition(c, e), h = S[o], l.type = o, this.appSegments.push(l), !d && (a.multiSegment && h.multiSegment ? (this.unfinishedMultiSegment = l.chunkNumber < l.chunkCount, this.unfinishedMultiSegment || y.delete(o)) : y.delete(o), y.size === 0))) break;
-                        S.recordUnknownSegments && (l = Ii.findPosition(c, e), l.marker = r, this.unknownSegments.push(l)), e += s + 1
-                    } else if (C1(r)) {
-                        if (s = c.getUint16(e + 2), r === 218 && S.stopAfterSos !== !1) return;
-                        S.recordJpegSegments && this.jpegSegments.push({
+                    if (r = c.getUint8(e + 1), k1(r)) {
+                        if (s = c.getUint16(e + 2), o = A1(c, e, s), o && f.has(o) && (a = ft.get(o), l = a.findPosition(c, e), h = w[o], l.type = o, this.appSegments.push(l), !d && (a.multiSegment && h.multiSegment ? (this.unfinishedMultiSegment = l.chunkNumber < l.chunkCount, this.unfinishedMultiSegment || y.delete(o)) : y.delete(o), y.size === 0))) break;
+                        w.recordUnknownSegments && (l = Ii.findPosition(c, e), l.marker = r, this.unknownSegments.push(l)), e += s + 1
+                    } else if (T1(r)) {
+                        if (s = c.getUint16(e + 2), r === 218 && w.stopAfterSos !== !1) return;
+                        w.recordJpegSegments && this.jpegSegments.push({
                             offset: e,
                             length: s,
                             marker: r
@@ -8065,7 +8079,7 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
     };
     n(Qo, "ee");
     ne(Qo, "type", "jpeg"), Za.set("jpeg", Qo);
-    var A1 = [void 0, 1, 1, 2, 4, 8, 1, 1, 2, 4, 8, 4, 8, 4],
+    var U1 = [void 0, 1, 1, 2, 4, 8, 1, 1, 2, 4, 8, 4, 8, 4],
         Ka = class extends Ii {
             parseHeader() {
                 var e = this.chunk.getUint16();
@@ -8093,8 +8107,8 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             parseTag(e, t, r) {
                 let {
                     chunk: s
-                } = this, o = s.getUint16(e + 2), a = s.getUint32(e + 4), l = A1[o];
-                if (l * a <= 4 ? e += 8 : e = s.getUint32(e + 8), (o < 1 || o > 13) && ke(`Invalid TIFF value type. block: ${r.toUpperCase()}, tag: ${t.toString(16)}, type: ${o}, offset ${e}`), e > s.byteLength && ke(`Invalid TIFF value offset. block: ${r.toUpperCase()}, tag: ${t.toString(16)}, type: ${o}, offset ${e} is outside of chunk size ${s.byteLength}`), o === 1) return s.getUint8Array(e, a);
+                } = this, o = s.getUint16(e + 2), a = s.getUint32(e + 4), l = U1[o];
+                if (l * a <= 4 ? e += 8 : e = s.getUint32(e + 8), (o < 1 || o > 13) && Ae(`Invalid TIFF value type. block: ${r.toUpperCase()}, tag: ${t.toString(16)}, type: ${o}, offset ${e}`), e > s.byteLength && Ae(`Invalid TIFF value offset. block: ${r.toUpperCase()}, tag: ${t.toString(16)}, type: ${o}, offset ${e} is outside of chunk size ${s.byteLength}`), o === 1) return s.getUint8Array(e, a);
                 if (o === 2) return (h = function(c) {
                     for (; c.endsWith("\0");) c = c.slice(0, -1);
                     return c
@@ -8161,12 +8175,12 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
                     case 13:
                         return r.getUint32(t);
                     default:
-                        ke(`Invalid tiff type ${e}`)
+                        Ae(`Invalid tiff type ${e}`)
                 }
             }
         };
     n(Ka, "se");
-    var Xs = class extends Ka {
+    var Ys = class extends Ka {
         static canHandle(e, t) {
             return e.getUint8(t + 1) === 225 && e.getUint32(t + 4) === 1165519206 && e.getUint16(t + 8) === 0
         }
@@ -8201,14 +8215,14 @@ Uppy plugins must have unique \`id\` options. See https://uppy.io/docs/plugins/#
             let {
                 file: e
             } = this;
-            this.findIfd0Offset(), this.ifd0Offset < 8 && ke("Malformed EXIF data"), !e.chunked && this.ifd0Offset > e.byteLength && ke(`IFD0 offset points to outside of file.
-this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff && await e.ensureChunk(this.ifd0Offset, Sf(this.options));
+            this.findIfd0Offset(), this.ifd0Offset < 8 && Ae("Malformed EXIF data"), !e.chunked && this.ifd0Offset > e.byteLength && Ae(`IFD0 offset points to outside of file.
+this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff && await e.ensureChunk(this.ifd0Offset, _f(this.options));
             let t = this.parseBlock(this.ifd0Offset, "ifd0");
             return t.size !== 0 ? (this.exifOffset = t.get(34665), this.interopOffset = t.get(40965), this.gpsOffset = t.get(34853), this.xmp = t.get(700), this.iptc = t.get(33723), this.icc = t.get(34675), this.options.sanitize && (t.delete(34665), t.delete(40965), t.delete(34853), t.delete(700), t.delete(33723), t.delete(34675)), t) : void 0
         }
         async parseExifBlock() {
             if (this.exif || (this.ifd0 || await this.parseIfd0Block(), this.exifOffset === void 0)) return;
-            this.file.tiff && await this.file.ensureChunk(this.exifOffset, Sf(this.options));
+            this.file.tiff && await this.file.ensureChunk(this.exifOffset, _f(this.options));
             let e = this.parseBlock(this.exifOffset, "exif");
             return this.interopOffset || (this.interopOffset = e.get(40965)), this.makerNote = e.get(37500), this.userComment = e.get(37510), this.options.sanitize && (e.delete(40965), e.delete(37500), e.delete(37510)), this.unpack(e, 41728), this.unpack(e, 41729), e
         }
@@ -8219,7 +8233,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         async parseGpsBlock() {
             if (this.gps || (this.ifd0 || await this.parseIfd0Block(), this.gpsOffset === void 0)) return;
             let e = this.parseBlock(this.gpsOffset, "gps");
-            return e && e.has(2) && e.has(4) && (e.set("latitude", Ef(...e.get(2), e.get(1))), e.set("longitude", Ef(...e.get(4), e.get(3)))), e
+            return e && e.has(2) && e.has(4) && (e.set("latitude", Of(...e.get(2), e.get(1))), e.set("longitude", Of(...e.get(4), e.get(3)))), e
         }
         async parseInteropBlock() {
             if (!this.interop && (this.ifd0 || await this.parseIfd0Block(), this.interopOffset !== void 0 || this.exif || await this.parseExifBlock(), this.interopOffset !== void 0)) return this.parseBlock(this.interopOffset, "interop")
@@ -8242,7 +8256,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         createOutput() {
             let e, t, r, s = {};
             for (t of Se)
-                if (e = this[t], !kf(e))
+                if (e = this[t], !Af(e))
                     if (r = this.canTranslate ? this.translateBlock(e, t) : Object.fromEntries(e), this.options.mergeOutput) {
                         if (t === "ifd1") continue;
                         Object.assign(s, r)
@@ -8255,38 +8269,38 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 for (let [r, s] of Object.entries(t)) this.assignObjectToOutput(e, r, s)
         }
     };
-    n(Xs, "ie");
+    n(Ys, "ie");
 
-    function Ef(i, e, t, r) {
+    function Of(i, e, t, r) {
         var s = i + e / 60 + t / 3600;
         return r !== "S" && r !== "W" || (s *= -1), s
     }
-    n(Ef, "ne");
-    ne(Xs, "type", "tiff"), ne(Xs, "headerLength", 10), ft.set("tiff", Xs);
+    n(Of, "ne");
+    ne(Ys, "type", "tiff"), ne(Ys, "headerLength", 10), ft.set("tiff", Ys);
     var fO = Object.freeze({
             __proto__: null,
-            default: R1,
-            Exifr: zr,
+            default: C1,
+            Exifr: jr,
             fileParsers: Za,
             segmentParsers: ft,
             fileReaders: rn,
             tagKeys: sn,
             tagValues: Wu,
             tagRevivers: Ku,
-            createDictionary: Af,
-            extendDictionary: Uf,
+            createDictionary: Uf,
+            extendDictionary: Df,
             fetchUrlAsArrayBuffer: Ja,
             readBlobAsArrayBuffer: en,
-            chunkedProps: qs,
+            chunkedProps: Vs,
             otherSegments: el,
             segments: tn,
             tiffBlocks: Se,
-            segmentsAndBlocks: Vs,
-            tiffExtractables: Ws,
+            segmentsAndBlocks: Ws,
+            tiffExtractables: Ks,
             inheritables: tl,
-            allFormatters: Ks,
+            allFormatters: Gs,
             Options: cr,
-            parse: Df
+            parse: Nf
         }),
         Gu = {
             ifd0: !1,
@@ -8309,18 +8323,18 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         ifd1: !0,
         mergeOutput: !1
     });
-    var U1 = Object.assign({}, Gu, {
+    var D1 = Object.assign({}, Gu, {
         firstChunkSize: 4e4,
         ifd0: [274]
     });
-    async function D1(i) {
-        let e = new zr(U1);
+    async function N1(i) {
+        let e = new jr(D1);
         await e.read(i);
         let t = await e.parse();
         if (t && t.ifd0) return t.ifd0[274]
     }
-    n(D1, "ce");
-    var N1 = Object.freeze({
+    n(N1, "ce");
+    var B1 = Object.freeze({
             1: {
                 dimensionSwapped: !1,
                 scaleX: 1,
@@ -8400,14 +8414,14 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             Xo = Yo = Number(e) < 77
         }
     }
-    async function Nf(i) {
-        let e = await D1(i);
+    async function Bf(i) {
+        let e = await N1(i);
         return Object.assign({
             canvas: Xo,
             css: Yo
-        }, N1[e])
+        }, B1[e])
     }
-    n(Nf, "ye");
+    n(Bf, "ye");
     var Ga = class extends nt {
         constructor(...e) {
             super(...e), ne(this, "ranges", new Xa), this.byteLength !== 0 && this.ranges.add(0, this.byteLength)
@@ -8428,7 +8442,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }
         _extend(e) {
             let t;
-            t = Tf ? Cf.allocUnsafe(e) : new Uint8Array(e);
+            t = kf ? Tf.allocUnsafe(e) : new Uint8Array(e);
             let r = new DataView(t.buffer, t.byteOffset, t.byteLength);
             return t.set(new Uint8Array(this.buffer, this.byteOffset, this.byteLength), 0), {
                 uintView: t,
@@ -8460,7 +8474,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }
         add(e, t, r = 0) {
             let s = e + t,
-                o = this.list.filter(a => Of(e, a.offset, s) || Of(e, a.end, s));
+                o = this.list.filter(a => Rf(e, a.offset, s) || Rf(e, a.end, s));
             if (o.length > 0) {
                 e = Math.min(e, ...o.map(l => l.offset)), s = Math.max(s, ...o.map(l => l.end)), t = s - e;
                 let a = o.shift();
@@ -8478,10 +8492,10 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
     };
     n(Xa, "we");
 
-    function Of(i, e, t) {
+    function Rf(i, e, t) {
         return i <= e && e <= t
     }
-    n(Of, "ke");
+    n(Rf, "ke");
     var Ya = class extends Ga {
         constructor(e, t) {
             super(0), ne(this, "chunksRead", 0), this.input = e, this.options = t
@@ -8535,16 +8549,16 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             return this.set(s, i, !0)
         }
     });
-    var Bf = {
+    var If = {
         strings: {
             generatingThumbnails: "Generating thumbnails..."
         }
     };
-    var B1 = {
+    var I1 = {
         version: "3.0.2"
     };
 
-    function I1(i, e, t) {
+    function L1(i, e, t) {
         try {
             i.getContext("2d").getImageData(0, 0, 1, 1)
         } catch (r) {
@@ -8560,9 +8574,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             return r
         })
     }
-    n(I1, "canvasToBlob");
+    n(L1, "canvasToBlob");
 
-    function L1(i, e) {
+    function M1(i, e) {
         let t = i.width,
             r = i.height;
         (e.deg === 90 || e.deg === 270) && (t = i.height, r = i.width);
@@ -8571,9 +8585,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         let o = s.getContext("2d");
         return o.translate(t / 2, r / 2), e.canvas && (o.rotate(e.rad), o.scale(e.scaleX, e.scaleY)), o.drawImage(i, -i.width / 2, -i.height / 2, i.width, i.height), s
     }
-    n(L1, "rotateImage");
+    n(M1, "rotateImage");
 
-    function M1(i) {
+    function z1(i) {
         let e = i.width / i.height,
             t = 5e6,
             r = 4096,
@@ -8585,11 +8599,11 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }
         return i
     }
-    n(M1, "protect");
-    var Li = class extends q {
+    n(z1, "protect");
+    var Li = class extends V {
         constructor(e, t) {
             super(e, t), this.onFileAdded = s => {
-                !s.preview && s.data && js(s.type) && !s.isRemote && this.addToQueue(s.id)
+                !s.preview && s.data && Hs(s.type) && !s.isRemote && this.addToQueue(s.id)
             }, this.onCancelRequest = s => {
                 let o = this.queue.indexOf(s.id);
                 o !== -1 && this.queue.splice(o, 1)
@@ -8621,7 +8635,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                         o(), a()
                     }) : (o(), a())
                 })
-            }, this.type = "modifier", this.id = this.opts.id || "ThumbnailGenerator", this.title = "Thumbnail Generator", this.queue = [], this.queueProcessing = !1, this.defaultThumbnailDimension = 200, this.thumbnailType = this.opts.thumbnailType || "image/jpeg", this.defaultLocale = Bf;
+            }, this.type = "modifier", this.id = this.opts.id || "ThumbnailGenerator", this.title = "Thumbnail Generator", this.queue = [], this.queueProcessing = !1, this.defaultThumbnailDimension = 200, this.thumbnailType = this.opts.thumbnailType || "image/jpeg", this.defaultLocale = If;
             let r = {
                 thumbnailWidth: null,
                 thumbnailHeight: null,
@@ -8642,10 +8656,10 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                         URL.revokeObjectURL(s), h(d.error || new Error("Could not create thumbnail"))
                     })
                 }),
-                a = Nf(e.data).catch(() => 1);
+                a = Bf(e.data).catch(() => 1);
             return Promise.all([o, a]).then(l => {
-                let [h, c] = l, d = this.getProportionalDimensions(h, t, r, c.deg), f = L1(h, c), y = this.resizeImage(f, d.width, d.height);
-                return I1(y, this.thumbnailType, 80)
+                let [h, c] = l, d = this.getProportionalDimensions(h, t, r, c.deg), f = M1(h, c), y = this.resizeImage(f, d.width, d.height);
+                return L1(y, this.thumbnailType, 80)
             }).then(l => URL.createObjectURL(l))
         }
         getProportionalDimensions(e, t, r, s) {
@@ -8662,7 +8676,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         }
         resizeImage(e, t, r) {
-            let s = M1(e),
+            let s = z1(e),
                 o = Math.ceil(Math.log2(s.width / t));
             o < 1 && (o = 1);
             let a = t * 2 ** (o - 1),
@@ -8690,7 +8704,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             return this.queueProcessing = !1, this.uppy.log("[ThumbnailGenerator] Emptied thumbnail queue"), this.uppy.emit("thumbnail:all-generated"), Promise.resolve()
         }
         requestThumbnail(e) {
-            return js(e.type) && !e.isRemote ? this.createThumbnail(e, this.opts.thumbnailWidth, this.opts.thumbnailHeight).then(t => {
+            return Hs(e.type) && !e.isRemote ? this.createThumbnail(e, this.opts.thumbnailWidth, this.opts.thumbnailHeight).then(t => {
                 this.setPreviewURL(e.id, t), this.uppy.log(`[ThumbnailGenerator] Generated thumbnail for ${e.id}`), this.uppy.emit("thumbnail:generated", this.uppy.getFile(e.id), t)
             }).catch(t => {
                 this.uppy.log(`[ThumbnailGenerator] Failed thumbnail for ${e.id}:`, "warning"), this.uppy.log(t, "warning"), this.uppy.emit("thumbnail:error", this.uppy.getFile(e.id), t)
@@ -8704,7 +8718,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }
     };
     n(Li, "ThumbnailGenerator");
-    Li.VERSION = B1.version;
+    Li.VERSION = I1.version;
 
     function il(i) {
         if (typeof i == "string") {
@@ -8733,7 +8747,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
     }
     n(rl, "getFilesAndDirectoriesFromDirectory");
 
-    function If(i, e) {
+    function Lf(i, e) {
         return i == null ? i : {
             kind: i.isFile ? "file" : i.isDirectory ? "directory" : void 0,
             name: i.name,
@@ -8744,27 +8758,27 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 let t = i.createReader();
                 yield* await new Promise(s => {
                     rl(t, [], e, {
-                        onSuccess: o => s(o.map(a => If(a, e)))
+                        onSuccess: o => s(o.map(a => Lf(a, e)))
                     })
                 })
             }
         }
     }
-    n(If, "getAsFileSystemHandleFromEntry");
-    async function* Lf(i, e, t) {
+    n(Lf, "getAsFileSystemHandleFromEntry");
+    async function* Mf(i, e, t) {
         if (t === void 0 && (t = void 0), i.kind === "file") {
             let r = await i.getFile();
             r !== null ? (r.relativePath = e ? `${e}/${i.name}` : null, yield r) : t != null && (yield t)
         } else if (i.kind === "directory")
-            for await (let r of i.values()) yield* Lf(r, `${e}/${i.name}`);
+            for await (let r of i.values()) yield* Mf(r, `${e}/${i.name}`);
         else t != null && (yield t)
     }
-    n(Lf, "createPromiseToAddFileOrParseDirectory");
+    n(Mf, "createPromiseToAddFileOrParseDirectory");
     async function* Xu(i, e) {
         let t = await Promise.all(Array.from(i.items, async r => {
             var s;
             let o = r.getAsFile(),
-                a = (s = await (r.getAsFileSystemHandle == null ? void 0 : r.getAsFileSystemHandle())) != null ? s : If(r.webkitGetAsEntry(), e);
+                a = (s = await (r.getAsFileSystemHandle == null ? void 0 : r.getAsFileSystemHandle())) != null ? s : Lf(r.webkitGetAsEntry(), e);
             return {
                 lastResortFile: o,
                 entry: a
@@ -8775,7 +8789,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             entry: s
         } of t)
             if (s != null) try {
-                yield* Lf(s, "", r)
+                yield* Mf(s, "", r)
             } catch (o) {
                 r != null ? yield r: e(o)
             } else r != null && (yield r)
@@ -8787,7 +8801,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         return Promise.resolve(e)
     }
     n(Yu, "fallbackApi");
-    async function jr(i, e) {
+    async function Hr(i, e) {
         let {
             logDropError: t = n(() => {}, "logDropError")
         } = e === void 0 ? {} : e;
@@ -8799,26 +8813,26 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             return Yu(i)
         }
     }
-    n(jr, "getDroppedFiles");
-    var Mf = Number.isNaN || n(function(e) {
+    n(Hr, "getDroppedFiles");
+    var zf = Number.isNaN || n(function(e) {
         return typeof e == "number" && e !== e
     }, "ponyfill");
 
-    function z1(i, e) {
-        return !!(i === e || Mf(i) && Mf(e))
-    }
-    n(z1, "isEqual");
-
     function j1(i, e) {
+        return !!(i === e || zf(i) && zf(e))
+    }
+    n(j1, "isEqual");
+
+    function H1(i, e) {
         if (i.length !== e.length) return !1;
         for (var t = 0; t < i.length; t++)
-            if (!z1(i[t], e[t])) return !1;
+            if (!j1(i[t], e[t])) return !1;
         return !0
     }
-    n(j1, "areInputsEqual");
+    n(H1, "areInputsEqual");
 
     function Ju(i, e) {
-        e === void 0 && (e = j1);
+        e === void 0 && (e = H1);
         var t = null;
 
         function r() {
@@ -8836,7 +8850,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }, "clear"), r
     }
     n(Ju, "memoizeOne");
-    var Ys = ['a[href]:not([tabindex^="-"]):not([inert]):not([aria-hidden])', 'area[href]:not([tabindex^="-"]):not([inert]):not([aria-hidden])', "input:not([disabled]):not([inert]):not([aria-hidden])", "select:not([disabled]):not([inert]):not([aria-hidden])", "textarea:not([disabled]):not([inert]):not([aria-hidden])", "button:not([disabled]):not([inert]):not([aria-hidden])", 'iframe:not([tabindex^="-"]):not([inert]):not([aria-hidden])', 'object:not([tabindex^="-"]):not([inert]):not([aria-hidden])', 'embed:not([tabindex^="-"]):not([inert]):not([aria-hidden])', '[contenteditable]:not([tabindex^="-"]):not([inert]):not([aria-hidden])', '[tabindex]:not([tabindex^="-"]):not([inert]):not([aria-hidden])'];
+    var sl = ['a[href]:not([tabindex^="-"]):not([inert]):not([aria-hidden])', 'area[href]:not([tabindex^="-"]):not([inert]):not([aria-hidden])', "input:not([disabled]):not([inert]):not([aria-hidden])", "select:not([disabled]):not([inert]):not([aria-hidden])", "textarea:not([disabled]):not([inert]):not([aria-hidden])", "button:not([disabled]):not([inert]):not([aria-hidden])", 'iframe:not([tabindex^="-"]):not([inert]):not([aria-hidden])', 'object:not([tabindex^="-"]):not([inert]):not([aria-hidden])', 'embed:not([tabindex^="-"]):not([inert]):not([aria-hidden])', '[contenteditable]:not([tabindex^="-"]):not([inert]):not([aria-hidden])', '[tabindex]:not([tabindex^="-"]):not([inert]):not([aria-hidden])'];
 
     function on(i, e) {
         if (e) {
@@ -8847,40 +8861,40 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
     }
     n(on, "getActiveOverlayEl");
 
-    function zf(i, e) {
+    function jf(i, e) {
         let t = e[0];
         t && (t.focus(), i.preventDefault())
     }
-    n(zf, "focusOnFirstNode");
+    n(jf, "focusOnFirstNode");
 
-    function H1(i, e) {
+    function $1(i, e) {
         let t = e[e.length - 1];
         t && (t.focus(), i.preventDefault())
     }
-    n(H1, "focusOnLastNode");
+    n($1, "focusOnLastNode");
 
-    function $1(i) {
+    function q1(i) {
         return i.contains(document.activeElement)
     }
-    n($1, "isFocusInOverlay");
+    n(q1, "isFocusInOverlay");
 
     function Qu(i, e, t) {
         let r = on(t, e),
-            s = _e(r.querySelectorAll(Ys)),
+            s = _e(r.querySelectorAll(sl)),
             o = s.indexOf(document.activeElement);
-        $1(r) ? i.shiftKey && o === 0 ? H1(i, s) : !i.shiftKey && o === s.length - 1 && zf(i, s) : zf(i, s)
+        q1(r) ? i.shiftKey && o === 0 ? $1(i, s) : !i.shiftKey && o === s.length - 1 && jf(i, s) : jf(i, s)
     }
     n(Qu, "trapFocus");
 
-    function jf(i, e, t) {
+    function Hf(i, e, t) {
         e === null || Qu(i, e, t)
     }
-    n(jf, "forInline");
-    var Wf = oe(Vf(), 1);
+    n(Hf, "forInline");
+    var Kf = oe(Wf(), 1);
 
     function th() {
         let i = !1;
-        return (0, Wf.default)(n((t, r) => {
+        return (0, Kf.default)(n((t, r) => {
             let s = on(t, r),
                 o = s.contains(document.activeElement);
             if (o && i) return;
@@ -8890,7 +8904,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     preventScroll: !0
                 }), i = !0;
                 else {
-                    let l = s.querySelector(Ys);
+                    let l = s.querySelector(sl);
                     l ?.focus({
                         preventScroll: !0
                     }), i = !1
@@ -8898,17 +8912,17 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }, "superFocus"), 260)
     }
     n(th, "createSuperFocus");
-    var ym = oe(Ct(), 1);
+    var vm = oe(Tt(), 1);
 
     function nn() {
         let i = document.body;
         return !(!("draggable" in i) || !("ondragstart" in i && "ondrop" in i) || !("FormData" in window) || !("FileReader" in window))
     }
     n(nn, "isDragDropSupported");
-    var Zf = oe(Ct(), 1),
-        em = oe(Gf(), 1);
+    var em = oe(Tt(), 1),
+        tm = oe(Xf(), 1);
 
-    function lw() {
+    function uw() {
         return u("svg", {
             "aria-hidden": "true",
             focusable: "false",
@@ -8930,9 +8944,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             r: "1.5"
         })))
     }
-    n(lw, "iconImage");
+    n(uw, "iconImage");
 
-    function uw() {
+    function hw() {
         return u("svg", {
             "aria-hidden": "true",
             focusable: "false",
@@ -8946,9 +8960,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             fillRule: "nonzero"
         }))
     }
-    n(uw, "iconAudio");
+    n(hw, "iconAudio");
 
-    function hw() {
+    function cw() {
         return u("svg", {
             "aria-hidden": "true",
             focusable: "false",
@@ -8962,9 +8976,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             fillRule: "nonzero"
         }))
     }
-    n(hw, "iconVideo");
+    n(cw, "iconVideo");
 
-    function cw() {
+    function dw() {
         return u("svg", {
             "aria-hidden": "true",
             focusable: "false",
@@ -8978,9 +8992,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             fillRule: "nonzero"
         }))
     }
-    n(cw, "iconPDF");
+    n(dw, "iconPDF");
 
-    function dw() {
+    function pw() {
         return u("svg", {
             "aria-hidden": "true",
             focusable: "false",
@@ -8993,9 +9007,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             fillRule: "nonzero"
         }))
     }
-    n(dw, "iconArchive");
+    n(pw, "iconArchive");
 
-    function pw() {
+    function fw() {
         return u("svg", {
             "aria-hidden": "true",
             focusable: "false",
@@ -9012,9 +9026,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             d: "M15 4v3a1 1 0 0 0 1 1h3V7h-3V4h-1z"
         })))
     }
-    n(pw, "iconFile");
+    n(fw, "iconFile");
 
-    function fw() {
+    function mw() {
         return u("svg", {
             "aria-hidden": "true",
             focusable: "false",
@@ -9028,37 +9042,37 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             fillRule: "nonzero"
         }))
     }
-    n(fw, "iconText");
+    n(mw, "iconText");
 
-    function Hr(i) {
+    function $r(i) {
         let e = {
             color: "#838999",
-            icon: pw()
+            icon: fw()
         };
         if (!i) return e;
         let t = i.split("/")[0],
             r = i.split("/")[1];
         return t === "text" ? {
             color: "#5a5e69",
-            icon: fw()
+            icon: mw()
         } : t === "image" ? {
             color: "#686de0",
-            icon: lw()
+            icon: uw()
         } : t === "audio" ? {
             color: "#068dbb",
-            icon: uw()
+            icon: hw()
         } : t === "video" ? {
             color: "#19af67",
-            icon: hw()
+            icon: cw()
         } : t === "application" && r === "pdf" ? {
             color: "#e25149",
-            icon: cw()
+            icon: dw()
         } : t === "application" && ["zip", "x-7z-compressed", "x-rar-compressed", "x-tar", "x-gzip", "x-apple-diskimage"].indexOf(r) !== -1 ? {
             color: "#00C469",
-            icon: dw()
+            icon: pw()
         } : e
     }
-    n(Hr, "getIconByMime");
+    n($r, "getIconByMime");
 
     function an(i) {
         let {
@@ -9072,7 +9086,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         let {
             color: t,
             icon: r
-        } = Hr(e.type);
+        } = $r(e.type);
         return u("div", {
             className: "uppy-Dashboard-Item-previewIconWrap"
         }, u("span", {
@@ -9096,7 +9110,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         })))
     }
     n(an, "FilePreview");
-    var mw = n((i, e) => (typeof e == "function" ? e() : e).filter(s => s.id === i)[0].name, "metaFieldIdToName");
+    var gw = n((i, e) => (typeof e == "function" ? e() : e).filter(s => s.id === i)[0].name, "metaFieldIdToName");
 
     function ln(i) {
         let {
@@ -9108,7 +9122,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             missingRequiredMetaFields: o
         } = e;
         if (!(o != null && o.length)) return null;
-        let a = o.map(l => mw(l, s)).join(", ");
+        let a = o.map(l => gw(l, s)).join(", ");
         return u("div", {
             className: "uppy-Dashboard-Item-errorMessage"
         }, r("missingRequiredMetaFields", {
@@ -9126,7 +9140,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         return u("div", {
             className: "uppy-Dashboard-Item-previewInnerWrap",
             style: {
-                backgroundColor: Hr(i.file.type).color
+                backgroundColor: $r(i.file.type).color
             }
         }, i.showLinkToFileUploadResult && i.file.uploadURL && u("a", {
             className: "uppy-Dashboard-Item-previewLink",
@@ -9147,7 +9161,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
     }
     n(ih, "FilePreviewAndLink");
 
-    function gw(i) {
+    function yw(i) {
         if (!i.isUploaded) {
             if (i.error && !i.hideRetryButton) {
                 i.uppy.retryUpload(i.file.id);
@@ -9156,12 +9170,12 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             i.resumableUploads && !i.hidePauseResumeButton ? i.uppy.pauseResume(i.file.id) : i.individualCancellation && !i.hideCancelButton && i.uppy.removeFile(i.file.id)
         }
     }
-    n(gw, "onPauseResumeCancelRetry");
+    n(yw, "onPauseResumeCancelRetry");
 
-    function Xf(i) {
+    function Yf(i) {
         return i.isUploaded ? i.i18n("uploadComplete") : i.error ? i.i18n("retryUpload") : i.resumableUploads ? i.file.isPaused ? i.i18n("resumeUpload") : i.i18n("pauseUpload") : i.individualCancellation ? i.i18n("cancelUpload") : ""
     }
-    n(Xf, "progressIndicatorTitle");
+    n(Yf, "progressIndicatorTitle");
 
     function rh(i) {
         return u("div", {
@@ -9169,14 +9183,14 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }, u("button", {
             className: "uppy-u-reset uppy-c-btn uppy-Dashboard-Item-progressIndicator",
             type: "button",
-            "aria-label": Xf(i),
-            title: Xf(i),
-            onClick: () => gw(i)
+            "aria-label": Yf(i),
+            title: Yf(i),
+            onClick: () => yw(i)
         }, i.children))
     }
     n(rh, "ProgressIndicatorButton");
 
-    function sl(i) {
+    function ol(i) {
         let {
             children: e
         } = i;
@@ -9189,7 +9203,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             className: "uppy-c-icon uppy-Dashboard-Item-progressIcon--circle"
         }, e)
     }
-    n(sl, "ProgressCircleContainer");
+    n(ol, "ProgressCircleContainer");
 
     function sh(i) {
         let {
@@ -9222,7 +9236,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             className: "uppy-Dashboard-Item-progress"
         }, u("div", {
             className: "uppy-Dashboard-Item-progressIndicator"
-        }, u(sl, null, u("circle", {
+        }, u(ol, null, u("circle", {
             r: "15",
             cx: "18",
             cy: "18",
@@ -9247,7 +9261,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             d: "M8.536.5l3.535 3.536-1.414 1.414L7.12 1.914z"
         }), u("path", {
             d: "M10.657 2.621l1.414 1.415L8.536 7.57 7.12 6.157z"
-        }))) : i.resumableUploads && !i.hidePauseResumeButton ? u(rh, i, u(sl, null, u(sh, {
+        }))) : i.resumableUploads && !i.hidePauseResumeButton ? u(rh, i, u(ol, null, u(sh, {
             progress: i.file.progress.percentage
         }), i.file.isPaused ? u("polygon", {
             className: "uppy-Dashboard-Item-progressIcon--play",
@@ -9268,7 +9282,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             width: "2",
             height: "10",
             rx: "0"
-        })))) : !i.resumableUploads && i.individualCancellation && !i.hideCancelButton ? u(rh, i, u(sl, null, u(sh, {
+        })))) : !i.resumableUploads && i.individualCancellation && !i.hideCancelButton ? u(rh, i, u(ol, null, u(sh, {
             progress: i.file.progress.percentage
         }), u("polygon", {
             className: "cancel",
@@ -9278,15 +9292,15 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             className: "uppy-Dashboard-Item-progress"
         }, u("div", {
             className: "uppy-Dashboard-Item-progressIndicator"
-        }, u(sl, null, u(sh, {
+        }, u(ol, null, u(sh, {
             progress: i.file.progress.percentage
         }))))
     }
     n(oh, "FileProgress");
-    var Qf = oe(Jf(), 1);
+    var Zf = oe(Qf(), 1);
     var nh = "...";
 
-    function ol(i, e) {
+    function nl(i, e) {
         if (e === 0) return "";
         if (i.length <= e) return i;
         if (e <= nh.length + 1) return `${i.slice(0,e-1)}\u2026`;
@@ -9295,8 +9309,8 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             s = Math.floor(t / 2);
         return i.slice(0, r) + nh + i.slice(-s)
     }
-    n(ol, "truncateString");
-    var yw = n(i => {
+    n(nl, "truncateString");
+    var vw = n(i => {
             let {
                 author: e,
                 name: t
@@ -9308,9 +9322,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             return n(r, "getMaxNameLength"), u("div", {
                 className: "uppy-Dashboard-Item-name",
                 title: t
-            }, ol(t, r()))
+            }, nl(t, r()))
         }, "renderFileName"),
-        vw = n(i => {
+        bw = n(i => {
             let {
                 author: e
             } = i.file.meta, {
@@ -9322,17 +9336,17 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 href: `${e.url}?utm_source=Companion&utm_medium=referral`,
                 target: "_blank",
                 rel: "noopener noreferrer"
-            }, ol(e.name, 13)), t ? u(Qt, null, ` ${r} `, t, ` ${r} `) : null) : null
+            }, nl(e.name, 13)), t ? u(Rt, null, ` ${r} `, t, ` ${r} `) : null) : null
         }, "renderAuthor"),
-        bw = n(i => i.file.size && u("div", {
+        ww = n(i => i.file.size && u("div", {
             className: "uppy-Dashboard-Item-statusSize"
-        }, (0, Qf.default)(i.file.size)), "renderFileSize"),
-        ww = n(i => i.file.isGhost && u("span", null, " \u2022 ", u("button", {
+        }, (0, Zf.default)(i.file.size)), "renderFileSize"),
+        Sw = n(i => i.file.isGhost && u("span", null, " \u2022 ", u("button", {
             className: "uppy-u-reset uppy-c-btn uppy-Dashboard-Item-reSelect",
             type: "button",
             onClick: i.toggleAddFilesPanel
         }, i.i18n("reSelect"))), "ReSelectButton"),
-        Sw = n(i => {
+        _w = n(i => {
             let {
                 file: e,
                 onClick: t
@@ -9356,12 +9370,12 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             "data-uppy-file-source": e.source
         }, u("div", {
             className: "uppy-Dashboard-Item-fileName"
-        }, yw(i), u(Sw, {
+        }, vw(i), u(_w, {
             file: i.file,
             onClick: () => alert(i.file.error)
         })), u("div", {
             className: "uppy-Dashboard-Item-status"
-        }, vw(i), bw(i), ww(i)), u(ln, {
+        }, bw(i), ww(i), Sw(i)), u(ln, {
             file: i.file,
             i18n: i.i18n,
             toggleFileCard: i.toggleFileCard,
@@ -9397,7 +9411,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
     }
     n(lh, "copyToClipboard");
 
-    function _w(i) {
+    function Pw(i) {
         let {
             file: e,
             uploadInProgressOrComplete: t,
@@ -9439,9 +9453,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             d: "M6.793 2.5L9.5 5.207l.707-.707L7.5 1.793z"
         })))) : null
     }
-    n(_w, "EditButton");
+    n(Pw, "EditButton");
 
-    function Pw(i) {
+    function xw(i) {
         let {
             i18n: e,
             onClick: t,
@@ -9471,8 +9485,8 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             d: "M13 12.222l-.778.778L9 9.778 5.778 13 5 12.222 8.222 9 5 5.778 5.778 5 9 8.222 12.222 5l.778.778L9.778 9z"
         })))
     }
-    n(Pw, "RemoveButton");
-    var xw = n((i, e) => {
+    n(xw, "RemoveButton");
+    var Fw = n((i, e) => {
         lh(e.file.uploadURL, e.i18n("copyLinkToClipboardFallback")).then(() => {
             e.uppy.log("Link copied to clipboard."), e.uppy.info(e.i18n("copyLinkToClipboardSuccess"), "info", 3e3)
         }).catch(e.uppy.log).then(() => i.target.focus({
@@ -9480,7 +9494,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }))
     }, "copyLinkToClipboard");
 
-    function Fw(i) {
+    function Ew(i) {
         let {
             i18n: e
         } = i;
@@ -9489,7 +9503,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             type: "button",
             "aria-label": e("copyLink"),
             title: e("copyLink"),
-            onClick: t => xw(t, i)
+            onClick: t => Fw(t, i)
         }, u("svg", {
             "aria-hidden": "true",
             focusable: "false",
@@ -9501,7 +9515,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             d: "M7.94 7.703a2.613 2.613 0 0 1-.626 2.681l-.852.851a2.597 2.597 0 0 1-1.849.766A2.616 2.616 0 0 1 2.764 7.54l.852-.852a2.596 2.596 0 0 1 2.69-.625L5.267 7.099a1.44 1.44 0 0 0-.833.407l-.852.851a1.458 1.458 0 0 0 1.03 2.486c.39 0 .755-.152 1.03-.426l.852-.852c.231-.231.363-.522.406-.824l1.04-1.038zm4.295-5.937A2.596 2.596 0 0 0 10.387 1c-.698 0-1.355.272-1.849.766l-.852.851a2.614 2.614 0 0 0-.624 2.688l1.036-1.036c.041-.304.173-.6.407-.833l.852-.852c.275-.275.64-.426 1.03-.426a1.458 1.458 0 0 1 1.03 2.486l-.852.851a1.442 1.442 0 0 1-.824.406l-1.04 1.04a2.596 2.596 0 0 0 2.683-.628l.851-.85a2.616 2.616 0 0 0 0-3.697zm-6.88 6.883a.577.577 0 0 0 .82 0l3.474-3.474a.579.579 0 1 0-.819-.82L5.355 7.83a.579.579 0 0 0 0 .819z"
         })))
     }
-    n(Fw, "CopyLinkButton");
+    n(Ew, "CopyLinkButton");
 
     function uh(i) {
         let {
@@ -9518,7 +9532,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         } = i;
         return u("div", {
             className: "uppy-Dashboard-Item-actionWrapper"
-        }, u(_w, {
+        }, u(Pw, {
             i18n: h,
             file: t,
             uploadInProgressOrComplete: r,
@@ -9527,11 +9541,11 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             onClick: n(() => {
                 o && o.length > 0 ? c(!0, t.id) : d(t)
             }, "editAction")
-        }), a && t.uploadURL ? u(Fw, {
+        }), a && t.uploadURL ? u(Ew, {
             file: t,
             uppy: e,
             i18n: h
-        }) : null, l ? u(Pw, {
+        }) : null, l ? u(xw, {
             i18n: h,
             file: t,
             uppy: e,
@@ -9547,7 +9561,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             e.preview || this.props.handleRequestThumbnail(e)
         }
         shouldComponentUpdate(e) {
-            return !(0, em.default)(this.props, e)
+            return !(0, tm.default)(this.props, e)
         }
         componentDidUpdate() {
             let {
@@ -9568,7 +9582,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 isGhost: l
             } = e, h = (this.props.individualCancellation || !o) && !r;
             r && this.props.showRemoveButtonAfterComplete && (h = !0);
-            let c = (0, Zf.default)({
+            let c = (0, em.default)({
                 "uppy-Dashboard-Item": !0,
                 "is-inprogress": o && !this.props.recoveredState,
                 "is-processing": t,
@@ -9641,19 +9655,19 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }, hh.apply(this, arguments)
     }
     n(hh, "_extends");
-    var Ew = {
+    var Ow = {
             position: "relative",
             width: "100%",
             minHeight: "100%"
         },
-        Ow = {
+        Rw = {
             position: "absolute",
             top: 0,
             left: 0,
             width: "100%",
             overflow: "visible"
         },
-        nl = class extends ie {
+        al = class extends ie {
             constructor(e) {
                 super(e), this.handleScroll = () => {
                     this.setState({
@@ -9700,25 +9714,25 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 o && (c = Math.max(0, c - c % o), d += o);
                 let f = c + d + 4,
                     y = t.slice(c, f),
-                    S = { ...Ew,
+                    w = { ...Ow,
                         height: t.length * r
                     },
-                    w = { ...Ow,
+                    S = { ...Rw,
                         top: c * r
                     };
                 return u("div", hh({
                     onScroll: this.handleScroll
                 }, a), u("div", {
                     role: "presentation",
-                    style: S
+                    style: w
                 }, u("div", {
                     role: "presentation",
-                    style: w
+                    style: S
                 }, y.map(s))))
             }
         };
-    n(nl, "VirtualList");
-    var tm = nl;
+    n(al, "VirtualList");
+    var im = al;
 
     function ch() {
         return ch = Object.assign ? Object.assign.bind() : function(i) {
@@ -9731,15 +9745,15 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
     }
     n(ch, "_extends");
 
-    function Rw(i, e) {
+    function Cw(i, e) {
         let t = [],
             r = [];
         return i.forEach(s => {
             r.length < e ? r.push(s) : (t.push(r), r = [s])
         }), r.length && t.push(r), t
     }
-    n(Rw, "chunks");
-    var im = n(i => {
+    n(Cw, "chunks");
+    var rm = n(i => {
         let e = i.itemsPerRow === 1 ? 71 : 200,
             t = {
                 id: i.id,
@@ -9765,7 +9779,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             r = n((l, h) => i.files[h].isGhost - i.files[l].isGhost, "sortByGhostComesFirst"),
             s = Object.keys(i.files);
         i.recoveredState && s.sort(r);
-        let o = Rw(s, i.itemsPerRow),
+        let o = Cw(s, i.itemsPerRow),
             a = n(l => u("div", {
                 class: "uppy-Dashboard-filesInner",
                 role: "presentation",
@@ -9782,7 +9796,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             })))), "renderRow");
         return i.singleFile ? u("div", {
             class: "uppy-Dashboard-files"
-        }, a(o[0])) : u(tm, {
+        }, a(o[0])) : u(im, {
             class: "uppy-Dashboard-files",
             role: "list",
             data: o,
@@ -9790,9 +9804,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             rowHeight: e
         })
     }, "default");
-    var rm;
-    rm = Symbol.for("uppy test: disable unused locale key warning");
-    var al = class extends ie {
+    var sm;
+    sm = Symbol.for("uppy test: disable unused locale key warning");
+    var ll = class extends ie {
         constructor() {
             super(...arguments), this.triggerFileInputClick = () => {
                 this.fileInput.click()
@@ -9931,9 +9945,8 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     onClick: t,
                     "data-uppy-super-focusable": r === 0
                 }, e)
-            }, this.renderDropPasteBrowseTagline = () => {
-                let e = this.props.acquirers.length,
-                    t = this.renderBrowseButton(this.props.i18n("browseFiles"), this.triggerFileInputClick),
+            }, this.renderDropPasteBrowseTagline = e => {
+                let t = this.renderBrowseButton(this.props.i18n("browseFiles"), this.triggerFileInputClick),
                     r = this.renderBrowseButton(this.props.i18n("browseFolders"), this.triggerFolderInputClick),
                     s = this.props.fileManagerSelectionType,
                     o = s.charAt(0).toUpperCase() + s.slice(1);
@@ -9967,7 +9980,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }, e.name))), this.renderAcquirers = e => {
                 let t = [...e],
                     r = t.splice(e.length - 2, e.length);
-                return u(Qt, null, t.map(s => this.renderAcquirer(s)), u("span", {
+                return u(Rt, null, t.map(s => this.renderAcquirer(s)), u("span", {
                     role: "presentation",
                     style: {
                         "white-space": "nowrap"
@@ -9977,13 +9990,42 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 let {
                     showNativePhotoCameraButton: r,
                     showNativeVideoCameraButton: s
-                } = this.props;
-                return u("div", {
+                } = this.props, o = [], a = "myDevice";
+                t || (o.push({
+                    key: a,
+                    elements: this.renderMyDeviceAcquirer()
+                }), r && o.push({
+                    key: "nativePhotoCameraButton",
+                    elements: this.renderPhotoCamera()
+                }), s && o.push({
+                    key: "nativePhotoCameraButton",
+                    elements: this.renderVideoCamera()
+                })), o.push(...e.map(f => ({
+                    key: f.id,
+                    elements: this.renderAcquirer(f)
+                }))), o.length === 1 && o[0].key === a && (o = []);
+                let h = [...o],
+                    c = h.splice(o.length - 2, o.length),
+                    d = n(f => f.map(y => {
+                        let {
+                            key: w,
+                            elements: S
+                        } = y;
+                        return u(Rt, {
+                            key: w
+                        }, S)
+                    }), "renderList");
+                return u(Rt, null, this.renderDropPasteBrowseTagline(o.length), u("div", {
                     className: "uppy-Dashboard-AddFiles-list",
                     role: "tablist"
-                }, !t && this.renderMyDeviceAcquirer(), !t && r && this.renderPhotoCamera(), !t && s && this.renderVideoCamera(), e.length > 0 && this.renderAcquirers(e))
+                }, d(h), u("span", {
+                    role: "presentation",
+                    style: {
+                        "white-space": "nowrap"
+                    }
+                }, d(c))))
             }
-        }[rm]() {
+        }[sm]() {
             this.props.i18nArray("dropPasteBoth"), this.props.i18nArray("dropPasteFiles"), this.props.i18nArray("dropPasteFolders"), this.props.i18nArray("dropPasteImportBoth"), this.props.i18nArray("dropPasteImportFiles"), this.props.i18nArray("dropPasteImportFolders")
         }
         renderPoweredByUppy() {
@@ -10028,18 +10070,18 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 this.mobilePhotoFileInput = s
             }), t && this.renderHiddenCameraInput("video", r, s => {
                 this.mobileVideoFileInput = s
-            }), this.renderDropPasteBrowseTagline(), this.renderSourcesList(this.props.acquirers, this.props.disableLocalFiles), u("div", {
+            }), this.renderSourcesList(this.props.acquirers, this.props.disableLocalFiles), u("div", {
                 className: "uppy-Dashboard-AddFiles-info"
             }, this.props.note && u("div", {
                 className: "uppy-Dashboard-note"
             }, this.props.note), this.props.proudlyDisplayPoweredByUppy && this.renderPoweredByUppy(this.props)))
         }
     };
-    n(al, "AddFiles");
-    var ll = al;
-    var sm = oe(Ct(), 1);
-    var Cw = n(i => u("div", {
-            className: (0, sm.default)("uppy-Dashboard-AddFilesPanel", i.className),
+    n(ll, "AddFiles");
+    var ul = ll;
+    var om = oe(Tt(), 1);
+    var Tw = n(i => u("div", {
+            className: (0, om.default)("uppy-Dashboard-AddFilesPanel", i.className),
             "data-uppy-panelType": "AddFiles",
             "aria-hidden": i.showAddFilesPanel
         }, u("div", {
@@ -10052,11 +10094,11 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             className: "uppy-DashboardContent-back",
             type: "button",
             onClick: () => i.toggleAddFilesPanel(!1)
-        }, i.i18n("back"))), u(ll, i)), "AddFilesPanel"),
-        om = Cw;
-    var nm = oe(Ct(), 1);
+        }, i.i18n("back"))), u(ul, i)), "AddFilesPanel"),
+        nm = Tw;
+    var am = oe(Tt(), 1);
 
-    function Tw(i) {
+    function kw(i) {
         let {
             tagName: e
         } = i.target;
@@ -10066,10 +10108,10 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }
         i.preventDefault(), i.stopPropagation()
     }
-    n(Tw, "ignoreEvent");
-    var oi = Tw;
+    n(kw, "ignoreEvent");
+    var oi = kw;
 
-    function kw(i) {
+    function Aw(i) {
         let {
             activePickerPanel: e,
             className: t,
@@ -10079,7 +10121,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             uppy: a
         } = i;
         return u("div", {
-            className: (0, nm.default)("uppy-DashboardContent-panel", t),
+            className: (0, am.default)("uppy-DashboardContent-panel", t),
             role: "tabpanel",
             "data-uppy-panelType": "PickerPanel",
             id: `uppy-DashboardContent-panel--${e.id}`,
@@ -10103,14 +10145,14 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             className: "uppy-DashboardContent-panelBody"
         }, a.getPlugin(e.id).render(o)))
     }
-    n(kw, "PickerPanelContent");
-    var am = kw;
-    var lm = oe(Ct(), 1);
+    n(Aw, "PickerPanelContent");
+    var lm = Aw;
+    var um = oe(Tt(), 1);
 
-    function Aw(i) {
+    function Uw(i) {
         let e = i.files[i.fileCardFor];
         return u("div", {
-            className: (0, lm.default)("uppy-DashboardContent-panel", i.className),
+            className: (0, um.default)("uppy-DashboardContent-panel", i.className),
             role: "tabpanel",
             "data-uppy-panelType": "FileEditor",
             id: "uppy-DashboardContent-panel--editor"
@@ -10136,8 +10178,8 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             className: "uppy-DashboardContent-panelBody"
         }, i.editors.map(t => i.uppy.getPlugin(t.id).render(i.state))))
     }
-    n(Aw, "EditorPanel");
-    var um = Aw;
+    n(Uw, "EditorPanel");
+    var hm = Uw;
     var ni = {
         STATE_ERROR: "error",
         STATE_WAITING: "waiting",
@@ -10148,7 +10190,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         STATE_PAUSED: "paused"
     };
 
-    function Uw(i, e, t, r) {
+    function Dw(i, e, t, r) {
         if (r === void 0 && (r = {}), i) return ni.STATE_ERROR;
         if (e) return ni.STATE_COMPLETE;
         if (t) return ni.STATE_PAUSED;
@@ -10163,9 +10205,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }
         return s
     }
-    n(Uw, "getUploadingState");
+    n(Dw, "getUploadingState");
 
-    function Dw(i) {
+    function Nw(i) {
         let {
             files: e,
             i18n: t,
@@ -10176,7 +10218,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             newFiles: l,
             processingFiles: h
         } = i;
-        switch (Uw(s, r, o, e)) {
+        switch (Dw(s, r, o, e)) {
             case "uploading":
                 return t("uploadingXFiles", {
                     smart_count: a.length
@@ -10197,9 +10239,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             default:
         }
     }
-    n(Dw, "UploadStatus");
+    n(Nw, "UploadStatus");
 
-    function Nw(i) {
+    function Bw(i) {
         let {
             i18n: e,
             isAllComplete: t,
@@ -10220,7 +10262,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             className: "uppy-DashboardContent-title",
             role: "heading",
             "aria-level": "1"
-        }, u(Dw, i)), l ? u("button", {
+        }, u(Nw, i)), l ? u("button", {
             className: "uppy-DashboardContent-addMore",
             type: "button",
             "aria-label": e("addMoreFiles"),
@@ -10239,10 +10281,10 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             className: "uppy-DashboardContent-addMoreCaption"
         }, e("addMore"))) : u("div", null))
     }
-    n(Nw, "PanelTopBar");
-    var hm = Nw;
-    var cm = oe(Ct(), 1);
-    var ul = class extends ie {
+    n(Bw, "PanelTopBar");
+    var cm = Bw;
+    var dm = oe(Tt(), 1);
+    var hl = class extends ie {
         constructor(e) {
             super(e), this.form = document.createElement("form"), this.updateMeta = (o, a) => {
                 this.setState(l => {
@@ -10326,7 +10368,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             let e = this.props.files[this.props.fileCardFor],
                 t = this.props.canEditFile(e);
             return u("div", {
-                className: (0, cm.default)("uppy-Dashboard-FileCard", this.props.className),
+                className: (0, dm.default)("uppy-Dashboard-FileCard", this.props.className),
                 "data-uppy-panelType": "FileCard",
                 onDragOver: oi,
                 onDragLeave: oi,
@@ -10353,7 +10395,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }, u("div", {
                 className: "uppy-Dashboard-FileCard-preview",
                 style: {
-                    backgroundColor: Hr(e.type).color
+                    backgroundColor: $r(e.type).color
                 }
             }, u(an, {
                 file: e
@@ -10381,12 +10423,12 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }, this.props.i18n("cancel")))))
         }
     };
-    n(ul, "FileCard");
-    var dm = ul;
-    var fm = oe(Ct(), 1);
+    n(hl, "FileCard");
+    var pm = hl;
+    var mm = oe(Tt(), 1);
     var Qs = "uppy-transition-slideDownUp",
-        pm = 250,
-        hl = class extends ie {
+        fm = 250,
+        cl = class extends ie {
             constructor(e) {
                 super(e), this.state = {
                     cachedChildren: null,
@@ -10396,7 +10438,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             componentWillUpdate(e) {
                 let {
                     cachedChildren: t
-                } = this.state, r = Rt(e.children)[0];
+                } = this.state, r = Ct(e.children)[0];
                 if (t === r) return null;
                 let s = {
                     cachedChildren: r
@@ -10408,7 +10450,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                         this.setState({
                             className: ""
                         })
-                    }, pm)
+                    }, fm)
                 })), t && !r && this.leaveTimeout === void 0 && (s.cachedChildren = t, s.className = `${Qs}-leave`, cancelAnimationFrame(this.animationFrame), clearTimeout(this.enterTimeout), this.enterTimeout = void 0, this.animationFrame = requestAnimationFrame(() => {
                     this.setState({
                         className: `${Qs}-leave ${Qs}-leave-active`
@@ -10417,7 +10459,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                             cachedChildren: null,
                             className: ""
                         })
-                    }, pm)
+                    }, fm)
                 })), this.setState(s)
             }
             render() {
@@ -10426,12 +10468,12 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     className: t
                 } = this.state;
                 return e ? Na(e, {
-                    className: (0, fm.default)(t, e.props.className)
+                    className: (0, mm.default)(t, e.props.className)
                 }) : null
             }
         };
-    n(hl, "Slide");
-    var un = hl;
+    n(cl, "Slide");
+    var un = cl;
 
     function dr() {
         return dr = Object.assign ? Object.assign.bind() : function(i) {
@@ -10443,16 +10485,16 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }, dr.apply(this, arguments)
     }
     n(dr, "_extends");
-    var mm = 900,
-        gm = 700,
+    var gm = 900,
+        ym = 700,
         dh = 576,
-        Bw = 400;
+        Iw = 400;
 
     function ph(i) {
         let e = i.totalFileCount === 0,
             t = i.totalFileCount === 1,
             r = i.containerWidth > dh,
-            s = (0, ym.default)({
+            s = (0, vm.default)({
                 "uppy-Dashboard": !0,
                 "uppy-Dashboard--isDisabled": i.disabled,
                 "uppy-Dashboard--animateOpenClose": i.animateOpenClose,
@@ -10460,15 +10502,15 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 "uppy-Dashboard--isDraggingOver": i.isDraggingOver,
                 "uppy-Dashboard--modal": !i.inline,
                 "uppy-size--md": i.containerWidth > dh,
-                "uppy-size--lg": i.containerWidth > gm,
-                "uppy-size--xl": i.containerWidth > mm,
-                "uppy-size--height-md": i.containerHeight > Bw,
+                "uppy-size--lg": i.containerWidth > ym,
+                "uppy-size--xl": i.containerWidth > gm,
+                "uppy-size--height-md": i.containerHeight > Iw,
                 "uppy-Dashboard--isAddFilesPanelVisible": i.showAddFilesPanel,
                 "uppy-Dashboard--isInnerWrapVisible": i.areInsidesReadyToBeVisible,
                 "uppy-Dashboard--singleFile": t
             }),
             o = 1;
-        i.containerWidth > mm ? o = 5 : i.containerWidth > gm ? o = 4 : i.containerWidth > dh && (o = 3);
+        i.containerWidth > gm ? o = 5 : i.containerWidth > ym ? o = 4 : i.containerWidth > dh && (o = 3);
         let a = i.showSelectedFiles && !e,
             l = i.recoveredState ? Object.keys(i.recoveredState.files).length : null,
             h = i.files ? Object.keys(i.files).filter(f => i.files[f].isGhost).length : null,
@@ -10512,7 +10554,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             className: "uppy-Dashboard-innerWrap"
         }, u("div", {
             className: "uppy-Dashboard-dropFilesHereHint"
-        }, i.i18n("dropHint")), a && u(hm, i), l && u("div", {
+        }, i.i18n("dropHint")), a && u(cm, i), l && u("div", {
             className: "uppy-Dashboard-serviceMsg"
         }, u("svg", {
             className: "uppy-Dashboard-serviceMsg-icon",
@@ -10540,27 +10582,27 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             className: "uppy-Dashboard-serviceMsg-title"
         }, i.i18n("sessionRestored")), u("div", {
             className: "uppy-Dashboard-serviceMsg-text"
-        }, c())), a ? u(im, dr({}, i, {
+        }, c())), a ? u(rm, dr({}, i, {
             singleFile: t,
             itemsPerRow: o
-        })) : u(ll, dr({}, i, {
+        })) : u(ul, dr({}, i, {
             isSizeMD: r
-        })), u(un, null, i.showAddFilesPanel ? u(om, dr({
+        })), u(un, null, i.showAddFilesPanel ? u(nm, dr({
             key: "AddFiles"
         }, i, {
             isSizeMD: r
-        })) : null), u(un, null, i.fileCardFor ? u(dm, dr({
+        })) : null), u(un, null, i.fileCardFor ? u(pm, dr({
             key: "FileCard"
-        }, i)) : null), u(un, null, i.activePickerPanel ? u(am, dr({
+        }, i)) : null), u(un, null, i.activePickerPanel ? u(lm, dr({
             key: "Picker"
-        }, i)) : null), u(un, null, i.showFileEditor ? u(um, dr({
+        }, i)) : null), u(un, null, i.showFileEditor ? u(hm, dr({
             key: "Editor"
         }, i)) : null), u("div", {
             className: "uppy-Dashboard-progressindicators"
         }, i.progressindicators.map(f => i.uppy.getPlugin(f.id).render(i.state))))))
     }
     n(ph, "Dashboard");
-    var vm = {
+    var bm = {
         strings: {
             closeModal: "Close Modal",
             addMoreFiles: "Add more files",
@@ -10627,33 +10669,33 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }
     };
 
-    function He(i, e) {
+    function Re(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
-    n(He, "_classPrivateFieldLooseBase");
-    var Iw = 0;
+    n(Re, "_classPrivateFieldLooseBase");
+    var Lw = 0;
 
-    function qr(i) {
-        return "__private_" + Iw++ + "_" + i
+    function pr(i) {
+        return "__private_" + Lw++ + "_" + i
     }
-    n(qr, "_classPrivateFieldLooseKey");
-    var Lw = {
-            version: "3.2.1"
+    n(pr, "_classPrivateFieldLooseKey");
+    var Mw = {
+            version: "3.2.2"
         },
         fh = Ju.default || Ju,
-        bm = 9,
-        Mw = 27;
+        wm = 9,
+        zw = 27;
 
-    function wm() {
+    function Sm() {
         let i = {};
         return i.promise = new Promise((e, t) => {
             i.resolve = e, i.reject = t
         }), i
     }
-    n(wm, "createPromise");
+    n(Sm, "createPromise");
 
-    function zw() {
+    function jw() {
         return u("svg", {
             "aria-hidden": "true",
             focusable: "false",
@@ -10664,18 +10706,22 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             d: "M15 30c8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15zm4.258-12.676v6.846h-8.426v-6.846H5.204l9.82-12.364 9.82 12.364H19.26z"
         }))
     }
-    n(zw, "defaultPickerIcon");
-    var Mi = qr("generateLargeThumbnailIfSingleFile"),
-        hn = qr("openFileEditorWhenFilesAdded"),
-        $r = qr("attachRenderFunctionToTarget"),
-        mh = qr("isTargetSupported"),
-        gh = qr("getAcquirers"),
-        yh = qr("getProgressIndicators"),
-        zi = qr("getEditors"),
-        ai = class extends q {
+    n(jw, "defaultPickerIcon");
+    var qr = pr("disabledNodes"),
+        Mi = pr("generateLargeThumbnailIfSingleFile"),
+        hn = pr("openFileEditorWhenFilesAdded"),
+        Vr = pr("attachRenderFunctionToTarget"),
+        mh = pr("isTargetSupported"),
+        gh = pr("getAcquirers"),
+        yh = pr("getProgressIndicators"),
+        zi = pr("getEditors"),
+        ai = class extends V {
             constructor(e, t) {
                 var r;
-                super(e, t), r = this, this.removeTarget = o => {
+                super(e, t), r = this, Object.defineProperty(this, qr, {
+                    writable: !0,
+                    value: null
+                }), this.removeTarget = o => {
                     let l = this.getPluginState().targets.filter(h => h.id !== o.id);
                     this.setPluginState({
                         targets: l
@@ -10720,11 +10766,11 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     let {
                         targets: a
                     } = this.getPluginState();
-                    return He(this, zi)[zi](a).some(h => this.uppy.getPlugin(h.id).canEditFile(o))
+                    return Re(this, zi)[zi](a).some(h => this.uppy.getPlugin(h.id).canEditFile(o))
                 }, this.openFileEditor = o => {
                     let {
                         targets: a
-                    } = this.getPluginState(), l = He(this, zi)[zi](a);
+                    } = this.getPluginState(), l = Re(this, zi)[zi](a);
                     this.setPluginState({
                         showFileEditor: !0,
                         fileCardFor: o.id || null,
@@ -10736,14 +10782,14 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     let {
                         targets: o
                     } = this.getPluginState();
-                    He(this, zi)[zi](o).forEach(l => {
+                    Re(this, zi)[zi](o).forEach(l => {
                         this.uppy.getPlugin(l.id).save()
                     }), this.hideAllPanels()
                 }, this.openModal = () => {
                     let {
                         promise: o,
                         resolve: a
-                    } = wm();
+                    } = Sm();
                     if (this.savedScrollPosition = window.pageYOffset, this.savedActiveElement = document.activeElement, this.opts.disablePageScrollWhenModalOpen && document.body.classList.add("uppy-Dashboard-isFixed"), this.opts.animateOpenClose && this.getPluginState().isClosing) {
                         let l = n(() => {
                             this.setPluginState({
@@ -10767,7 +10813,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     let {
                         promise: c,
                         resolve: d
-                    } = wm();
+                    } = Sm();
                     if (r.opts.disablePageScrollWhenModalOpen && document.body.classList.remove("uppy-Dashboard-isFixed"), r.opts.animateOpenClose) {
                         r.setPluginState({
                             isClosing: !0
@@ -10832,7 +10878,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                                 width: l,
                                 height: h
                             } = a.contentRect;
-                        this.uppy.log(`[Dashboard] resized: ${l} / ${h}`, "debug"), this.setPluginState({
+                        this.setPluginState({
                             containerWidth: l,
                             containerHeight: h,
                             areInsidesReadyToBeVisible: !0
@@ -10840,7 +10886,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     }), this.resizeObserver.observe(this.el.querySelector(".uppy-Dashboard-inner")), this.makeDashboardInsidesVisibleAnywayTimeout = setTimeout(() => {
                         let o = this.getPluginState(),
                             a = !this.opts.inline && o.isHidden;
-                        !o.areInsidesReadyToBeVisible && !a && (this.uppy.log("[Dashboard] resize event didn't fire on time: defaulted to mobile layout", "debug"), this.setPluginState({
+                        !o.areInsidesReadyToBeVisible && !a && (this.uppy.log("[Dashboard] resize event didn\u2019t fire on time: defaulted to mobile layout", "warning"), this.setPluginState({
                             areInsidesReadyToBeVisible: !0
                         }))
                     }, 1e3)
@@ -10848,14 +10894,12 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     this.resizeObserver.disconnect(), clearTimeout(this.makeDashboardInsidesVisibleAnywayTimeout)
                 }, this.recordIfFocusedOnUppyRecently = o => {
                     this.el.contains(o.target) ? this.ifFocusedOnUppyRecently = !0 : (this.ifFocusedOnUppyRecently = !1, this.superFocus.cancel())
-                }, this.disableAllFocusableElements = o => {
-                    let a = _e(this.el.querySelectorAll(Ys));
-                    o ? a.forEach(l => {
-                        let h = l.getAttribute("tabindex");
-                        h && (l.dataset.inertTabindex = h), l.setAttribute("tabindex", "-1")
-                    }) : a.forEach(l => {
-                        "inertTabindex" in l.dataset ? l.setAttribute("tabindex", l.dataset.inertTabindex) : l.removeAttribute("tabindex")
-                    }), this.dashboardIsDisabled = o
+                }, this.disableInteractiveElements = o => {
+                    var a;
+                    let l = ["a[href]", "input:not([disabled])", "select:not([disabled])", "textarea:not([disabled])", "button:not([disabled])", '[role="button"]:not([disabled])'],
+                        h = (a = Re(this, qr)[qr]) != null ? a : _e(this.el.querySelectorAll(l)).filter(c => !c.classList.contains("uppy-Dashboard-close"));
+                    for (let c of h) c.tagName === "A" ? c.setAttribute("aria-disabled", o) : c.disabled = o;
+                    o ? Re(this, qr)[qr] = h : Re(this, qr)[qr] = null, this.dashboardIsDisabled = o
                 }, this.updateBrowserHistory = () => {
                     var o;
                     (o = history.state) != null && o[this.modalName] || history.pushState({ ...history.state,
@@ -10867,7 +10911,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                         manualClose: !1
                     }), !this.isModalOpen() && (a = o.state) != null && a[this.modalName] && history.back()
                 }, this.handleKeyDownInModal = o => {
-                    o.keyCode === Mw && this.requestCloseModal(o), o.keyCode === bm && Qu(o, this.getPluginState().activeOverlayType, this.el)
+                    o.keyCode === zw && this.requestCloseModal(o), o.keyCode === wm && Qu(o, this.getPluginState().activeOverlayType, this.el)
                 }, this.handleClickOutside = () => {
                     this.opts.closeModalOnClickOutside && this.requestCloseModal()
                 }, this.handlePaste = o => {
@@ -10885,15 +10929,15 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     o.preventDefault(), o.stopPropagation();
                     let h = n(() => {
                             let y = !0;
-                            return this.uppy.iteratePlugins(S => {
-                                S.canHandleRootDrop != null && S.canHandleRootDrop(o) && (y = !0)
+                            return this.uppy.iteratePlugins(w => {
+                                w.canHandleRootDrop != null && w.canHandleRootDrop(o) && (y = !0)
                             }), y
                         }, "canSomePluginHandleRootDrop"),
                         c = n(() => {
                             let {
                                 types: y
                             } = o.dataTransfer;
-                            return y.some(S => S === "Files")
+                            return y.some(w => w === "Files")
                         }, "doesEventHaveFiles"),
                         d = h(o),
                         f = c(o);
@@ -10922,7 +10966,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                         c = n(f => {
                             this.uppy.log(f, "error"), h || (this.uppy.info(f.message, "error"), h = !0)
                         }, "logDropError"),
-                        d = await jr(o.dataTransfer, {
+                        d = await Hr(o.dataTransfer, {
                             logDropError: c
                         });
                     d.length > 0 && (this.uppy.log("[Dashboard] Files dropped"), this.addFiles(d)), (a = (l = this.opts).onDrop) == null || a.call(l, o)
@@ -10931,7 +10975,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 }, this.handleCancelThumbnail = o => {
                     this.opts.waitForThumbnailsBeforeUpload || this.uppy.emit("thumbnail:cancel", o)
                 }, this.handleKeyDownInInline = o => {
-                    o.keyCode === bm && jf(o, this.getPluginState().activeOverlayType, this.el)
+                    o.keyCode === wm && Hf(o, this.getPluginState().activeOverlayType, this.el)
                 }, this.handlePasteOnBody = o => {
                     this.el.contains(document.activeElement) && this.handlePaste(o)
                 }, this.handleComplete = o => {
@@ -10973,10 +11017,10 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                         let o = il(this.opts.trigger);
                         o ? o.forEach(a => a.addEventListener("click", this.openModal)) : this.uppy.log("Dashboard modal trigger not found. Make sure `trigger` is set in Dashboard options, unless you are planning to call `dashboard.openModal()` method yourself", "warning")
                     }
-                    this.startListeningToResize(), document.addEventListener("paste", this.handlePasteOnBody), this.uppy.on("plugin-remove", this.removeTarget), this.uppy.on("file-added", this.hideAllPanels), this.uppy.on("dashboard:modal-closed", this.hideAllPanels), this.uppy.on("file-editor:complete", this.hideAllPanels), this.uppy.on("complete", this.handleComplete), this.uppy.on("files-added", He(this, Mi)[Mi]), this.uppy.on("file-removed", He(this, Mi)[Mi]), document.addEventListener("focus", this.recordIfFocusedOnUppyRecently, !0), document.addEventListener("click", this.recordIfFocusedOnUppyRecently, !0), this.opts.inline && this.el.addEventListener("keydown", this.handleKeyDownInInline), this.opts.autoOpenFileEditor && this.uppy.on("files-added", He(this, hn)[hn])
+                    this.startListeningToResize(), document.addEventListener("paste", this.handlePasteOnBody), this.uppy.on("plugin-remove", this.removeTarget), this.uppy.on("file-added", this.hideAllPanels), this.uppy.on("dashboard:modal-closed", this.hideAllPanels), this.uppy.on("file-editor:complete", this.hideAllPanels), this.uppy.on("complete", this.handleComplete), this.uppy.on("files-added", Re(this, Mi)[Mi]), this.uppy.on("file-removed", Re(this, Mi)[Mi]), document.addEventListener("focus", this.recordIfFocusedOnUppyRecently, !0), document.addEventListener("click", this.recordIfFocusedOnUppyRecently, !0), this.opts.inline && this.el.addEventListener("keydown", this.handleKeyDownInInline), this.opts.autoOpenFileEditor && this.uppy.on("files-added", Re(this, hn)[hn])
                 }, this.removeEvents = () => {
                     let o = il(this.opts.trigger);
-                    !this.opts.inline && o && o.forEach(a => a.removeEventListener("click", this.openModal)), this.stopListeningToResize(), document.removeEventListener("paste", this.handlePasteOnBody), window.removeEventListener("popstate", this.handlePopState, !1), this.uppy.off("plugin-remove", this.removeTarget), this.uppy.off("file-added", this.hideAllPanels), this.uppy.off("dashboard:modal-closed", this.hideAllPanels), this.uppy.off("file-editor:complete", this.hideAllPanels), this.uppy.off("complete", this.handleComplete), this.uppy.off("files-added", He(this, Mi)[Mi]), this.uppy.off("file-removed", He(this, Mi)[Mi]), document.removeEventListener("focus", this.recordIfFocusedOnUppyRecently), document.removeEventListener("click", this.recordIfFocusedOnUppyRecently), this.opts.inline && this.el.removeEventListener("keydown", this.handleKeyDownInInline), this.opts.autoOpenFileEditor && this.uppy.off("files-added", He(this, hn)[hn])
+                    !this.opts.inline && o && o.forEach(a => a.removeEventListener("click", this.openModal)), this.stopListeningToResize(), document.removeEventListener("paste", this.handlePasteOnBody), window.removeEventListener("popstate", this.handlePopState, !1), this.uppy.off("plugin-remove", this.removeTarget), this.uppy.off("file-added", this.hideAllPanels), this.uppy.off("dashboard:modal-closed", this.hideAllPanels), this.uppy.off("file-editor:complete", this.hideAllPanels), this.uppy.off("complete", this.handleComplete), this.uppy.off("files-added", Re(this, Mi)[Mi]), this.uppy.off("file-removed", Re(this, Mi)[Mi]), document.removeEventListener("focus", this.recordIfFocusedOnUppyRecently), document.removeEventListener("click", this.recordIfFocusedOnUppyRecently), this.opts.inline && this.el.removeEventListener("keydown", this.handleKeyDownInInline), this.opts.autoOpenFileEditor && this.uppy.off("files-added", Re(this, hn)[hn])
                 }, this.superFocusOnEachUpdate = () => {
                     let o = this.el.contains(document.activeElement),
                         a = document.activeElement === document.body || document.activeElement === null,
@@ -10985,12 +11029,12 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     l && (h || o || a && this.ifFocusedOnUppyRecently) ? this.superFocus(this.el, this.getPluginState().activeOverlayType) : this.superFocus.cancel()
                 }, this.afterUpdate = () => {
                     if (this.opts.disabled && !this.dashboardIsDisabled) {
-                        this.disableAllFocusableElements(!0);
+                        this.disableInteractiveElements(!0);
                         return
-                    }!this.opts.disabled && this.dashboardIsDisabled && this.disableAllFocusableElements(!1), this.superFocusOnEachUpdate()
+                    }!this.opts.disabled && this.dashboardIsDisabled && this.disableInteractiveElements(!1), this.superFocusOnEachUpdate()
                 }, this.saveFileCard = (o, a) => {
                     this.uppy.setFileMeta(a, o), this.toggleFileCard(!1, a)
-                }, Object.defineProperty(this, $r, {
+                }, Object.defineProperty(this, Vr, {
                     writable: !0,
                     value: o => {
                         let a = this.uppy.getPlugin(o.id);
@@ -11007,13 +11051,13 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     }
                 }), Object.defineProperty(this, gh, {
                     writable: !0,
-                    value: fh(o => o.filter(a => a.type === "acquirer" && He(this, mh)[mh](a)).map(He(this, $r)[$r]))
+                    value: fh(o => o.filter(a => a.type === "acquirer" && Re(this, mh)[mh](a)).map(Re(this, Vr)[Vr]))
                 }), Object.defineProperty(this, yh, {
                     writable: !0,
-                    value: fh(o => o.filter(a => a.type === "progressindicator").map(He(this, $r)[$r]))
+                    value: fh(o => o.filter(a => a.type === "progressindicator").map(Re(this, Vr)[Vr]))
                 }), Object.defineProperty(this, zi, {
                     writable: !0,
-                    value: fh(o => o.filter(a => a.type === "editor").map(He(this, $r)[$r]))
+                    value: fh(o => o.filter(a => a.type === "editor").map(Re(this, Vr)[Vr]))
                 }), this.render = o => {
                     let a = this.getPluginState(),
                         {
@@ -11025,18 +11069,18 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                             newFiles: d,
                             uploadStartedFiles: f,
                             completeFiles: y,
-                            erroredFiles: S,
-                            inProgressFiles: w,
+                            erroredFiles: w,
+                            inProgressFiles: S,
                             inProgressNotPausedFiles: R,
                             processingFiles: x,
-                            isUploadStarted: E,
+                            isUploadStarted: F,
                             isAllComplete: N,
-                            isAllErrored: V,
-                            isAllPaused: $
+                            isAllErrored: H,
+                            isAllPaused: q
                         } = this.uppy.getObjectOfFilesPerState(),
-                        K = He(this, gh)[gh](a.targets),
-                        U = He(this, yh)[yh](a.targets),
-                        B = He(this, zi)[zi](a.targets),
+                        K = Re(this, gh)[gh](a.targets),
+                        k = Re(this, yh)[yh](a.targets),
+                        B = Re(this, zi)[zi](a.targets),
                         z;
                     return this.opts.theme === "auto" ? z = h.darkMode ? "dark" : "light" : z = this.opts.theme, ["files", "folders", "both"].indexOf(this.opts.fileManagerSelectionType) < 0 && (this.opts.fileManagerSelectionType = "files", console.warn(`Unsupported option for "fileManagerSelectionType". Using default of "${this.opts.fileManagerSelectionType}".`)), ph({
                         state: o,
@@ -11045,14 +11089,14 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                         newFiles: d,
                         uploadStartedFiles: f,
                         completeFiles: y,
-                        erroredFiles: S,
-                        inProgressFiles: w,
+                        erroredFiles: w,
+                        inProgressFiles: S,
                         inProgressNotPausedFiles: R,
                         processingFiles: x,
-                        isUploadStarted: E,
+                        isUploadStarted: F,
                         isAllComplete: N,
-                        isAllErrored: V,
-                        isAllPaused: $,
+                        isAllErrored: H,
+                        isAllPaused: q,
                         totalFileCount: Object.keys(l).length,
                         totalProgress: o.totalProgress,
                         allowNewUpload: c,
@@ -11064,10 +11108,10 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                         activePickerPanel: a.activePickerPanel,
                         showFileEditor: a.showFileEditor,
                         saveFileEditor: this.saveFileEditor,
-                        disableAllFocusableElements: this.disableAllFocusableElements,
+                        disableInteractiveElements: this.disableInteractiveElements,
                         animateOpenClose: this.opts.animateOpenClose,
                         isClosing: a.isClosing,
-                        progressindicators: U,
+                        progressindicators: k,
                         editors: B,
                         autoProceed: this.uppy.opts.autoProceed,
                         id: this.id,
@@ -11154,8 +11198,8 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                         target: c
                     } = this.opts;
                     c && this.mount(c, this), (this.opts.plugins || []).forEach(y => {
-                        let S = this.uppy.getPlugin(y);
-                        S && S.mount(this, S)
+                        let w = this.uppy.getPlugin(y);
+                        w && w.mount(this, w)
                     }), this.opts.disableStatusBar || this.uppy.use(ri, {
                         id: `${this.id}:StatusBar`,
                         target: this,
@@ -11196,7 +11240,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                         let l = this.uppy.getPlugin(a);
                         l && l.unmount()
                     }), this.opts.theme === "auto" && this.darkModeMediaQuery.removeListener(this.handleSystemDarkModeChange), this.unmount(), this.removeEvents()
-                }, this.id = this.opts.id || "Dashboard", this.title = "Dashboard", this.type = "orchestrator", this.modalName = `uppy-Dashboard-${Ot()}`, this.defaultLocale = vm;
+                }, this.id = this.opts.id || "Dashboard", this.title = "Dashboard", this.type = "orchestrator", this.modalName = `uppy-Dashboard-${Ot()}`, this.defaultLocale = bm;
                 let s = {
                     target: "body",
                     metaFields: [],
@@ -11207,7 +11251,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     thumbnailWidth: 280,
                     thumbnailType: "image/jpeg",
                     waitForThumbnailsBeforeUpload: !1,
-                    defaultPickerIcon: zw,
+                    defaultPickerIcon: jw,
                     showLinkToFileUploadResult: !1,
                     showProgressDetails: !1,
                     hideUploadButton: !1,
@@ -11245,17 +11289,17 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         };
     n(ai, "Dashboard");
-    ai.VERSION = Lw.version;
-    var Sm = {
+    ai.VERSION = Mw.version;
+    var _m = {
         strings: {
             dropHereOr: "Drop here or %{browse}",
             browse: "browse"
         }
     };
-    var jw = {
+    var Hw = {
             version: "3.0.1"
         },
-        li = class extends q {
+        li = class extends V {
             constructor(e, t) {
                 super(e, t), this.handleDrop = async s => {
                     var o, a;
@@ -11265,11 +11309,11 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     let l = n(c => {
                             this.uppy.log(c, "error")
                         }, "logDropError"),
-                        h = await jr(s.dataTransfer, {
+                        h = await Hr(s.dataTransfer, {
                             logDropError: l
                         });
                     h.length > 0 && (this.uppy.log("[DragDrop] Files dropped"), this.addFiles(h)), (o = (a = this.opts).onDrop) == null || o.call(a, s)
-                }, this.type = "acquirer", this.id = this.opts.id || "DragDrop", this.title = "Drag & Drop", this.defaultLocale = Sm;
+                }, this.type = "acquirer", this.id = this.opts.id || "DragDrop", this.title = "Drag & Drop", this.defaultLocale = _m;
                 let r = {
                     target: null,
                     inputName: "files[]",
@@ -11404,8 +11448,8 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         };
     n(li, "DragDrop");
-    li.VERSION = jw.version;
-    var Hw = {
+    li.VERSION = Hw.version;
+    var $w = {
         version: "2.0.1"
     };
 
@@ -11414,7 +11458,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         return (e = (t = i.dataTransfer.types) == null ? void 0 : t.some(r => r === "Files")) != null ? e : !1
     }
     n(vh, "isFileTransfer");
-    var Vr = class extends ae {
+    var Wr = class extends ae {
         constructor(e, t) {
             super(e, t), this.addFiles = s => {
                 let o = s.map(a => ({
@@ -11443,7 +11487,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     h = n(d => {
                         this.uppy.log(d, "error"), l || (this.uppy.info(d.message, "error"), l = !0)
                     }, "logDropError"),
-                    c = await jr(s.dataTransfer, {
+                    c = await Hr(s.dataTransfer, {
                         logDropError: h
                     });
                 c.length > 0 && (this.uppy.log("[DropTarget] Files were dropped"), this.addFiles(c)), (o = (a = this.opts).onDrop) == null || o.call(a, s)
@@ -11493,19 +11537,19 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             this.removeListeners()
         }
     };
-    n(Vr, "DropTarget");
-    Vr.VERSION = Hw.version;
-    var _m = {
+    n(Wr, "DropTarget");
+    Wr.VERSION = $w.version;
+    var Pm = {
         strings: {
             chooseFiles: "Choose files"
         }
     };
-    var $w = {
+    var qw = {
             version: "3.0.1"
         },
-        pr = class extends q {
+        fr = class extends V {
             constructor(e, t) {
-                super(e, t), this.id = this.opts.id || "FileInput", this.title = "File Input", this.type = "acquirer", this.defaultLocale = _m;
+                super(e, t), this.id = this.opts.id || "FileInput", this.title = "File Input", this.type = "acquirer", this.defaultLocale = Pm;
                 let r = {
                     target: null,
                     pretty: !0,
@@ -11578,9 +11622,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 this.unmount()
             }
         };
-    n(pr, "FileInput");
-    pr.VERSION = $w.version;
-    var xm = oe(Pm(), 1);
+    n(fr, "FileInput");
+    fr.VERSION = qw.version;
+    var Fm = oe(xm(), 1);
     var Zs = class extends ie {
         constructor(e) {
             super(e), this.granularRotateOnChange = t => {
@@ -11604,7 +11648,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 opts: e,
                 storeCropperInstance: t
             } = this.props;
-            this.cropper = new xm.default(this.imgElement, e.cropperOptions), t(this.cropper), e.actions.granularRotate && this.imgElement.addEventListener("crop", r => {
+            this.cropper = new Fm.default(this.imgElement, e.cropperOptions), t(this.cropper), e.actions.granularRotate && this.imgElement.addEventListener("crop", r => {
                 let s = r.detail.rotate;
                 this.setState({
                     rotationAngle: s,
@@ -11850,7 +11894,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }
     };
     n(Zs, "Editor");
-    var Fm = {
+    var Em = {
         strings: {
             revert: "Revert",
             rotate: "Rotate",
@@ -11862,10 +11906,10 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             aspectRatioPortrait: "Crop portrait (9:16)"
         }
     };
-    var qw = {
+    var Vw = {
             version: "2.1.0"
         },
-        fr = class extends q {
+        mr = class extends V {
             constructor(e, t) {
                 super(e, t), this.save = () => {
                     let a = n(h => {
@@ -11892,7 +11936,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     this.uppy.emit("file-editor:start", a), this.setPluginState({
                         currentImage: a
                     })
-                }, this.id = this.opts.id || "ImageEditor", this.title = "Image Editor", this.type = "editor", this.defaultLocale = Fm;
+                }, this.id = this.opts.id || "ImageEditor", this.title = "Image Editor", this.type = "editor", this.defaultLocale = Em;
                 let r = {
                         viewMode: 1,
                         background: !1,
@@ -11961,12 +12005,12 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 })
             }
         };
-    n(fr, "ImageEditor");
-    fr.VERSION = qw.version;
-    var Vw = {
+    n(mr, "ImageEditor");
+    mr.VERSION = Vw.version;
+    var Ww = {
             version: "3.0.1"
         },
-        mr = class extends q {
+        gr = class extends V {
             constructor(e, t) {
                 super(e, t), this.id = this.opts.id || "ProgressBar", this.title = "Progress Bar", this.type = "progressindicator";
                 let r = {
@@ -12006,9 +12050,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 this.unmount()
             }
         };
-    n(mr, "ProgressBar");
-    mr.VERSION = Vw.version;
-    var Ww = {
+    n(gr, "ProgressBar");
+    gr.VERSION = Ww.version;
+    var Kw = {
         "audio/mp3": "mp3",
         "audio/mp4": "mp4",
         "audio/ogg": "ogg",
@@ -12028,7 +12072,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
     };
 
     function ui(i) {
-        return [i] = i.split(";", 1), Ww[i] || null
+        return [i] = i.split(";", 1), Kw[i] || null
     }
     n(ui, "getFileTypeExtension");
 
@@ -12037,35 +12081,35 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         return typeof MediaRecorder == "function" && typeof((i = MediaRecorder.prototype) == null ? void 0 : i.start) == "function"
     }
     n(Sh, "supportsMediaRecorder");
-    var Fh, at, _h, Em, Ph = 0,
-        Um = [],
-        cl = [],
-        Om = W.__b,
-        Rm = W.__r,
-        Cm = W.diffed,
-        Tm = W.__c,
-        km = W.unmount;
+    var Fh, at, _h, Om, Ph = 0,
+        Dm = [],
+        dl = [],
+        Rm = W.__b,
+        Cm = W.__r,
+        Tm = W.diffed,
+        km = W.__c,
+        Am = W.unmount;
 
-    function Dm(i, e) {
+    function Nm(i, e) {
         W.__h && W.__h(at, i, Ph || e), Ph = 0;
         var t = at.__H || (at.__H = {
             __: [],
             __h: []
         });
         return i >= t.__.length && t.__.push({
-            __V: cl
+            __V: dl
         }), t.__[i]
     }
-    n(Dm, "p");
+    n(Nm, "p");
 
     function Eh(i, e) {
-        var t = Dm(Fh++, 3);
-        !W.__s && Nm(t.__H, e) && (t.__ = i, t.u = e, at.__H.__h.push(t))
+        var t = Nm(Fh++, 3);
+        !W.__s && Bm(t.__H, e) && (t.__ = i, t.u = e, at.__H.__h.push(t))
     }
     n(Eh, "_");
 
     function Oh(i) {
-        return Ph = 5, Kw(function() {
+        return Ph = 5, Gw(function() {
             return {
                 current: i
             }
@@ -12073,45 +12117,45 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
     }
     n(Oh, "s");
 
-    function Kw(i, e) {
-        var t = Dm(Fh++, 7);
-        return Nm(t.__H, e) ? (t.__V = i(), t.u = e, t.__h = i, t.__V) : t.__
+    function Gw(i, e) {
+        var t = Nm(Fh++, 7);
+        return Bm(t.__H, e) ? (t.__V = i(), t.u = e, t.__h = i, t.__V) : t.__
     }
-    n(Kw, "F");
+    n(Gw, "F");
 
-    function Gw() {
-        for (var i; i = Um.shift();)
+    function Xw() {
+        for (var i; i = Dm.shift();)
             if (i.__P) try {
-                i.__H.__h.forEach(dl), i.__H.__h.forEach(xh), i.__H.__h = []
+                i.__H.__h.forEach(pl), i.__H.__h.forEach(xh), i.__H.__h = []
             } catch (e) {
                 i.__H.__h = [], W.__e(e, i.__v)
             }
     }
-    n(Gw, "b");
+    n(Xw, "b");
     W.__b = function(i) {
-        at = null, Om && Om(i)
+        at = null, Rm && Rm(i)
     }, W.__r = function(i) {
-        Rm && Rm(i), Fh = 0;
+        Cm && Cm(i), Fh = 0;
         var e = (at = i.__c).__H;
         e && (_h === at ? (e.__h = [], at.__h = [], e.__.forEach(function(t) {
-            t.__V = cl, t.u = void 0
-        })) : (e.__h.forEach(dl), e.__h.forEach(xh), e.__h = [])), _h = at
+            t.__V = dl, t.u = void 0
+        })) : (e.__h.forEach(pl), e.__h.forEach(xh), e.__h = [])), _h = at
     }, W.diffed = function(i) {
-        Cm && Cm(i);
+        Tm && Tm(i);
         var e = i.__c;
-        e && e.__H && (e.__H.__h.length && (Um.push(e) !== 1 && Em === W.requestAnimationFrame || ((Em = W.requestAnimationFrame) || function(t) {
+        e && e.__H && (e.__H.__h.length && (Dm.push(e) !== 1 && Om === W.requestAnimationFrame || ((Om = W.requestAnimationFrame) || function(t) {
             var r, s = n(function() {
-                    clearTimeout(o), Am && cancelAnimationFrame(r), setTimeout(t)
+                    clearTimeout(o), Um && cancelAnimationFrame(r), setTimeout(t)
                 }, "u"),
                 o = setTimeout(s, 100);
-            Am && (r = requestAnimationFrame(s))
-        })(Gw)), e.__H.__.forEach(function(t) {
-            t.u && (t.__H = t.u), t.__V !== cl && (t.__ = t.__V), t.u = void 0, t.__V = cl
+            Um && (r = requestAnimationFrame(s))
+        })(Xw)), e.__H.__.forEach(function(t) {
+            t.u && (t.__H = t.u), t.__V !== dl && (t.__ = t.__V), t.u = void 0, t.__V = dl
         })), _h = at = null
     }, W.__c = function(i, e) {
         e.some(function(t) {
             try {
-                t.__h.forEach(dl), t.__h = t.__h.filter(function(r) {
+                t.__h.forEach(pl), t.__h = t.__h.filter(function(r) {
                     return !r.__ || xh(r)
                 })
             } catch (r) {
@@ -12119,26 +12163,26 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     s.__h && (s.__h = [])
                 }), e = [], W.__e(r, t.__v)
             }
-        }), Tm && Tm(i, e)
+        }), km && km(i, e)
     }, W.unmount = function(i) {
-        km && km(i);
+        Am && Am(i);
         var e, t = i.__c;
         t && t.__H && (t.__H.__.forEach(function(r) {
             try {
-                dl(r)
+                pl(r)
             } catch (s) {
                 e = s
             }
         }), e && W.__e(e, t.__v))
     };
-    var Am = typeof requestAnimationFrame == "function";
+    var Um = typeof requestAnimationFrame == "function";
 
-    function dl(i) {
+    function pl(i) {
         var e = at,
             t = i.__c;
         typeof t == "function" && (i.__c = void 0, t()), at = e
     }
-    n(dl, "j");
+    n(pl, "j");
 
     function xh(i) {
         var e = at;
@@ -12146,12 +12190,12 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
     }
     n(xh, "k");
 
-    function Nm(i, e) {
+    function Bm(i, e) {
         return !i || i.length !== e.length || e.some(function(t, r) {
             return t !== i[r]
         })
     }
-    n(Nm, "w");
+    n(Bm, "w");
 
     function Rh(i) {
         let {
@@ -12218,7 +12262,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }, r)
     }
     n(Th, "RecordingLength");
-    var Bm = n(i => {
+    var Im = n(i => {
         let {
             currentDeviceId: e,
             audioSources: t,
@@ -12238,28 +12282,28 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }, s.label))))
     }, "default");
 
-    function Xw(i, e) {
+    function Yw(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
-    n(Xw, "_classPrivateFieldLooseBase");
-    var Yw = 0;
+    n(Yw, "_classPrivateFieldLooseBase");
+    var Jw = 0;
 
-    function Jw(i) {
-        return "__private_" + Yw++ + "_" + i
+    function Qw(i) {
+        return "__private_" + Jw++ + "_" + i
     }
-    n(Jw, "_classPrivateFieldLooseKey");
+    n(Qw, "_classPrivateFieldLooseKey");
 
-    function Im(i) {
+    function Lm(i) {
         return typeof i == "function"
     }
-    n(Im, "isFunction");
+    n(Lm, "isFunction");
 
     function cn(i) {
-        return Im(i) ? i() : i
+        return Lm(i) ? i() : i
     }
     n(cn, "result");
-    var kh = Jw("draw"),
+    var kh = Qw("draw"),
         eo = class {
             constructor(e, t) {
                 t === void 0 && (t = {}), Object.defineProperty(this, kh, {
@@ -12268,7 +12312,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 });
                 let r = t.canvas || {},
                     s = t.canvasContext || {};
-                this.analyser = null, this.bufferLength = 0, this.dataArray = [], this.canvas = e, this.width = cn(r.width) || this.canvas.width, this.height = cn(r.height) || this.canvas.height, this.canvas.width = this.width, this.canvas.height = this.height, this.canvasContext = this.canvas.getContext("2d"), this.canvasContext.fillStyle = cn(s.fillStyle) || "rgb(255, 255, 255)", this.canvasContext.strokeStyle = cn(s.strokeStyle) || "rgb(0, 0, 0)", this.canvasContext.lineWidth = cn(s.lineWidth) || 1, this.onDrawFrame = Im(t.onDrawFrame) ? t.onDrawFrame : () => {}
+                this.analyser = null, this.bufferLength = 0, this.dataArray = [], this.canvas = e, this.width = cn(r.width) || this.canvas.width, this.height = cn(r.height) || this.canvas.height, this.canvas.width = this.width, this.canvas.height = this.height, this.canvasContext = this.canvas.getContext("2d"), this.canvasContext.fillStyle = cn(s.fillStyle) || "rgb(255, 255, 255)", this.canvasContext.strokeStyle = cn(s.strokeStyle) || "rgb(0, 0, 0)", this.canvasContext.lineWidth = cn(s.lineWidth) || 1, this.onDrawFrame = Lm(t.onDrawFrame) ? t.onDrawFrame : () => {}
             }
             addSource(e) {
                 this.streamSource = e, this.audioContext = this.streamSource.context, this.analyser = this.audioContext.createAnalyser(), this.analyser.fftSize = 2048, this.bufferLength = this.analyser.frequencyBinCount, this.source = this.audioContext.createBufferSource(), this.dataArray = new Uint8Array(this.bufferLength), this.analyser.getByteTimeDomainData(this.dataArray), this.streamSource.connect(this.analyser)
@@ -12287,12 +12331,12 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     let f = t[c] / 128 * (a / 2);
                     c === 0 ? s.moveTo(h, f) : s.lineTo(h, f), h += l
                 }
-                s.lineTo(o, a / 2), s.stroke(), this.onDrawFrame(this), requestAnimationFrame(Xw(this, kh)[kh])
+                s.lineTo(o, a / 2), s.stroke(), this.onDrawFrame(this), requestAnimationFrame(Yw(this, kh)[kh])
             }
         };
     n(eo, "AudioOscilloscope");
 
-    function Qw(i) {
+    function Zw(i) {
         let {
             onSubmit: e,
             i18n: t
@@ -12318,10 +12362,10 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             d: "M10.66 0L12 1.31 4.136 9 0 4.956l1.34-1.31L4.136 6.38z"
         })))
     }
-    n(Qw, "SubmitButton");
-    var Lm = Qw;
+    n(Zw, "SubmitButton");
+    var Mm = Zw;
 
-    function Zw(i) {
+    function e2(i) {
         let {
             onDiscard: e,
             i18n: t
@@ -12349,8 +12393,8 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             d: "M11.104 12.782L.497 2.175 1.911.76l10.607 10.606z"
         }))))
     }
-    n(Zw, "DiscardButton");
-    var Mm = Zw;
+    n(e2, "DiscardButton");
+    var zm = e2;
 
     function Ah(i) {
         let {
@@ -12366,12 +12410,12 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             onStartRecording: d,
             onStopRecording: f,
             onDiscardRecordedAudio: y,
-            recordingLengthSeconds: S
-        } = i, w = Oh(null), R = Oh(null);
+            recordingLengthSeconds: w
+        } = i, S = Oh(null), R = Oh(null);
         Eh(() => () => {
             R.current = null, r()
         }, [r]), Eh(() => {
-            if (!t && (R.current = new eo(w.current, {
+            if (!t && (R.current = new eo(S.current, {
                 canvas: {
                     width: 600,
                     height: 600
@@ -12382,12 +12426,12 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     strokeStyle: "green"
                 }
             }), R.current.draw(), e)) {
-                let $ = new AudioContext().createMediaStreamSource(e);
-                R.current.addSource($)
+                let q = new AudioContext().createMediaStreamSource(e);
+                R.current.addSource(q)
             }
         }, [t, e]);
         let x = t != null,
-            E = !x && o,
+            F = !x && o,
             N = l && !x && a && a.length > 1;
         return u("div", {
             className: "uppy-Audio-container"
@@ -12398,34 +12442,34 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             controls: !0,
             src: t
         }) : u("canvas", {
-            ref: w,
+            ref: S,
             className: "uppy-Audio-canvas"
         })), u("div", {
             className: "uppy-Audio-footer"
         }, u("div", {
             className: "uppy-Audio-audioSourceContainer"
-        }, N ? Bm(i) : null), u("div", {
+        }, N ? Im(i) : null), u("div", {
             className: "uppy-Audio-buttonContainer"
-        }, E && u(Rh, {
+        }, F && u(Rh, {
             recording: s,
             onStartRecording: d,
             onStopRecording: f,
             i18n: c
-        }), x && u(Lm, {
+        }), x && u(Mm, {
             onSubmit: h,
             i18n: c
-        }), x && u(Mm, {
+        }), x && u(zm, {
             onDiscard: y,
             i18n: c
         })), u("div", {
             className: "uppy-Audio-recordingLength"
         }, !x && u(Th, {
-            recordingLengthSeconds: S,
+            recordingLengthSeconds: w,
             i18n: c
         }))))
     }
     n(Ah, "RecordingScreen");
-    var zm = n(i => {
+    var jm = n(i => {
         let {
             icon: e,
             hasAudio: t,
@@ -12439,7 +12483,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             className: "uppy-Audio-title"
         }, r(t ? "allowAudioAccessTitle" : "noAudioTitle")), u("p", null, r(t ? "allowAudioAccessDescription" : "noAudioDescription")))
     }, "default");
-    var jm = {
+    var Hm = {
         strings: {
             pluginNameAudio: "Audio",
             startAudioRecording: "Begin audio recording",
@@ -12471,40 +12515,40 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         return i
     }
     n(I, "_classPrivateFieldLooseBase");
-    var e2 = 0;
+    var t2 = 0;
 
-    function Be(i) {
-        return "__private_" + e2++ + "_" + i
+    function Ie(i) {
+        return "__private_" + t2++ + "_" + i
     }
-    n(Be, "_classPrivateFieldLooseKey");
-    var t2 = {
-            version: "1.0.3"
+    n(Ie, "_classPrivateFieldLooseKey");
+    var i2 = {
+            version: "1.0.4"
         },
-        De = Be("stream"),
-        ji = Be("audioActive"),
-        me = Be("recordingChunks"),
-        fe = Be("recorder"),
-        Hi = Be("capturedMediaFile"),
-        Ne = Be("mediaDevices"),
-        dn = Be("supportsUserMedia"),
-        Uh = Be("hasAudioCheck"),
-        Wr = Be("start"),
-        Dh = Be("startRecording"),
-        pn = Be("stopRecording"),
-        Nh = Be("discardRecordedAudio"),
-        Bh = Be("submit"),
-        $i = Be("stop"),
-        Ih = Be("getAudio"),
-        Lh = Be("changeSource"),
-        Kr = Be("updateSources"),
-        gr = class extends q {
+        Ne = Ie("stream"),
+        ji = Ie("audioActive"),
+        me = Ie("recordingChunks"),
+        fe = Ie("recorder"),
+        Hi = Ie("capturedMediaFile"),
+        Be = Ie("mediaDevices"),
+        dn = Ie("supportsUserMedia"),
+        Uh = Ie("hasAudioCheck"),
+        Kr = Ie("start"),
+        Dh = Ie("startRecording"),
+        pn = Ie("stopRecording"),
+        Nh = Ie("discardRecordedAudio"),
+        Bh = Ie("submit"),
+        $i = Ie("stop"),
+        Ih = Ie("getAudio"),
+        Lh = Ie("changeSource"),
+        Gr = Ie("updateSources"),
+        yr = class extends V {
             constructor(e, t) {
                 var r;
                 super(e, t), r = this, Object.defineProperty(this, Ih, {
-                    value: r2
+                    value: s2
                 }), Object.defineProperty(this, Uh, {
-                    value: i2
-                }), Object.defineProperty(this, De, {
+                    value: r2
+                }), Object.defineProperty(this, Ne, {
                     writable: !0,
                     value: null
                 }), Object.defineProperty(this, ji, {
@@ -12519,27 +12563,27 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 }), Object.defineProperty(this, Hi, {
                     writable: !0,
                     value: null
-                }), Object.defineProperty(this, Ne, {
+                }), Object.defineProperty(this, Be, {
                     writable: !0,
                     value: null
                 }), Object.defineProperty(this, dn, {
                     writable: !0,
                     value: null
-                }), Object.defineProperty(this, Wr, {
+                }), Object.defineProperty(this, Kr, {
                     writable: !0,
                     value: function(s) {
                         if (s === void 0 && (s = null), !I(r, dn)[dn]) return Promise.reject(new Error("Microphone access not supported"));
                         I(r, ji)[ji] = !0, I(r, Uh)[Uh]().then(o => (r.setPluginState({
                             hasAudio: o
-                        }), I(r, Ne)[Ne].getUserMedia({
+                        }), I(r, Be)[Be].getUserMedia({
                             audio: !0
                         }).then(a => {
-                            I(r, De)[De] = a;
+                            I(r, Ne)[Ne] = a;
                             let l = null,
                                 h = a.getAudioTracks();
                             !s || !s.deviceId ? l = h[0].getSettings().deviceId : h.forEach(c => {
                                 c.getSettings().deviceId === s.deviceId && (l = c.getSettings().deviceId)
-                            }), I(r, Kr)[Kr](), r.setPluginState({
+                            }), I(r, Gr)[Gr](), r.setPluginState({
                                 currentDeviceId: l,
                                 audioReady: !0
                             })
@@ -12553,7 +12597,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 }), Object.defineProperty(this, Dh, {
                     writable: !0,
                     value: () => {
-                        I(this, fe)[fe] = new MediaRecorder(I(this, De)[De]), I(this, me)[me] = [];
+                        I(this, fe)[fe] = new MediaRecorder(I(this, Ne)[Ne]), I(this, me)[me] = [];
                         let s = !1;
                         I(this, fe)[fe].addEventListener("dataavailable", o => {
                             I(this, me)[me].push(o.data);
@@ -12611,17 +12655,17 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                         try {
                             I(this, Hi)[Hi] && this.uppy.addFile(I(this, Hi)[Hi])
                         } catch (s) {
-                            s.isRestriction || this.uppy.log(s, "error")
+                            s.isRestriction || this.uppy.log(s, "warning")
                         }
                     }
                 }), Object.defineProperty(this, $i, {
                     writable: !0,
                     value: async () => {
-                        I(this, De)[De] && I(this, De)[De].getAudioTracks().forEach(o => o.stop()), I(this, fe)[fe] && await new Promise(s => {
+                        I(this, Ne)[Ne] && I(this, Ne)[Ne].getAudioTracks().forEach(o => o.stop()), I(this, fe)[fe] && await new Promise(s => {
                             I(this, fe)[fe].addEventListener("stop", s, {
                                 once: !0
                             }), I(this, fe)[fe].stop(), clearInterval(this.recordingLengthTimer)
-                        }), I(this, me)[me] = null, I(this, fe)[fe] = null, I(this, ji)[ji] = !1, I(this, De)[De] = null, this.setPluginState({
+                        }), I(this, me)[me] = null, I(this, fe)[fe] = null, I(this, ji)[ji] = !1, I(this, Ne)[Ne] = null, this.setPluginState({
                             recordedAudio: null,
                             isRecording: !1,
                             recordingLengthSeconds: 0
@@ -12630,20 +12674,20 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 }), Object.defineProperty(this, Lh, {
                     writable: !0,
                     value: s => {
-                        I(this, $i)[$i](), I(this, Wr)[Wr]({
+                        I(this, $i)[$i](), I(this, Kr)[Kr]({
                             deviceId: s
                         })
                     }
-                }), Object.defineProperty(this, Kr, {
+                }), Object.defineProperty(this, Gr, {
                     writable: !0,
                     value: () => {
-                        I(this, Ne)[Ne].enumerateDevices().then(s => {
+                        I(this, Be)[Be].enumerateDevices().then(s => {
                             this.setPluginState({
                                 audioSources: s.filter(o => o.kind === "audioinput")
                             })
                         })
                     }
-                }), I(this, Ne)[Ne] = navigator.mediaDevices, I(this, dn)[dn] = I(this, Ne)[Ne] != null, this.id = this.opts.id || "Audio", this.type = "acquirer", this.icon = () => u("svg", {
+                }), I(this, Be)[Be] = navigator.mediaDevices, I(this, dn)[dn] = I(this, Be)[Be] != null, this.id = this.opts.id || "Audio", this.type = "acquirer", this.icon = () => u("svg", {
                     "aria-hidden": "true",
                     focusable: "false",
                     width: "32px",
@@ -12661,7 +12705,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     d: "M16 20c-2.21 0-4-1.71-4-3.818V9.818C12 7.71 13.79 6 16 6s4 1.71 4 3.818v6.364C20 18.29 18.21 20 16 20zm-6.364-7h.637c.351 0 .636.29.636.65v1.95c0 3.039 2.565 5.477 5.6 5.175 2.645-.264 4.582-2.692 4.582-5.407V13.65c0-.36.285-.65.636-.65h.637c.351 0 .636.29.636.65v1.631c0 3.642-2.544 6.888-6.045 7.382v1.387h2.227c.351 0 .636.29.636.65v.65c0 .36-.285.65-.636.65h-6.364a.643.643 0 0 1-.636-.65v-.65c0-.36.285-.65.636-.65h2.227v-1.372C11.637 22.2 9 19.212 9 15.6v-1.95c0-.36.285-.65.636-.65z",
                     fill: "#FFF",
                     "fill-rule": "nonzero"
-                }))), this.defaultLocale = jm, this.opts = { ...t
+                }))), this.defaultLocale = Hm, this.opts = { ...t
                 }, this.i18nInit(), this.title = this.i18n("pluginNameAudio"), this.setPluginState({
                     hasAudio: !1,
                     audioReady: !1,
@@ -12672,9 +12716,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 })
             }
             render() {
-                I(this, ji)[ji] || I(this, Wr)[Wr]();
+                I(this, ji)[ji] || I(this, Kr)[Kr]();
                 let e = this.getPluginState();
-                return !e.audioReady || !e.hasAudio ? u(zm, {
+                return !e.audioReady || !e.hasAudio ? u(jm, {
                     icon: this.icon,
                     i18n: this.i18n,
                     hasAudio: e.hasAudio
@@ -12690,7 +12734,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     showAudioSourceDropdown: this.opts.showAudioSourceDropdown,
                     supportsRecording: Sh(),
                     recording: e.isRecording,
-                    stream: I(this, De)[De]
+                    stream: I(this, Ne)[Ne]
                 }))
             }
             install() {
@@ -12701,8 +12745,8 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 let {
                     target: e
                 } = this.opts;
-                e && this.mount(e, this), I(this, Ne)[Ne] && (I(this, Kr)[Kr](), I(this, Ne)[Ne].ondevicechange = () => {
-                    if (I(this, Kr)[Kr](), I(this, De)[De]) {
+                e && this.mount(e, this), I(this, Be)[Be] && (I(this, Gr)[Gr](), I(this, Be)[Be].ondevicechange = () => {
+                    if (I(this, Gr)[Gr](), I(this, Ne)[Ne]) {
                         let t = !0,
                             {
                                 audioSources: r,
@@ -12710,22 +12754,22 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                             } = this.getPluginState();
                         r.forEach(o => {
                             s === o.deviceId && (t = !1)
-                        }), t && (I(this, $i)[$i](), I(this, Wr)[Wr]())
+                        }), t && (I(this, $i)[$i](), I(this, Kr)[Kr]())
                     }
                 })
             }
             uninstall() {
-                I(this, De)[De] && I(this, $i)[$i](), this.unmount()
+                I(this, Ne)[Ne] && I(this, $i)[$i](), this.unmount()
             }
         };
-    n(gr, "Audio");
-
-    function i2() {
-        return I(this, Ne)[Ne] ? I(this, Ne)[Ne].enumerateDevices().then(i => i.some(e => e.kind === "audioinput")) : Promise.resolve(!1)
-    }
-    n(i2, "_hasAudioCheck2");
+    n(yr, "Audio");
 
     function r2() {
+        return I(this, Be)[Be] ? I(this, Be)[Be].enumerateDevices().then(i => i.some(e => e.kind === "audioinput")) : Promise.resolve(!1)
+    }
+    n(r2, "_hasAudioCheck2");
+
+    function s2() {
         let i = I(this, me)[me].find(o => {
                 var a;
                 return ((a = o.type) == null ? void 0 : a.length) > 0
@@ -12746,17 +12790,17 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             };
         return Promise.resolve(s)
     }
-    n(r2, "_getAudio2");
-    gr.VERSION = t2.version;
-    var Hm = {
+    n(s2, "_getAudio2");
+    yr.VERSION = i2.version;
+    var $m = {
         strings: {
             pluginNameBox: "Box"
         }
     };
-    var s2 = {
+    var o2 = {
             version: "2.0.1"
         },
-        hi = class extends q {
+        hi = class extends V {
             constructor(e, t) {
                 super(e, t), this.id = this.opts.id || "Box", Y.initPlugin(this, t), this.title = this.opts.title || "Box", this.icon = () => u("svg", {
                     "aria-hidden": "true",
@@ -12787,7 +12831,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     companionCookiesRule: this.opts.companionCookiesRule,
                     provider: "box",
                     pluginId: this.id
-                }), this.defaultLocale = Hm, this.i18nInit(), this.title = this.i18n("pluginNameBox"), this.onFirstRender = this.onFirstRender.bind(this), this.render = this.render.bind(this)
+                }), this.defaultLocale = $m, this.i18nInit(), this.title = this.i18n("pluginNameBox"), this.onFirstRender = this.onFirstRender.bind(this), this.render = this.render.bind(this)
             }
             install() {
                 this.view = new pe(this, {
@@ -12809,16 +12853,16 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         };
     n(hi, "Box");
-    hi.VERSION = s2.version;
-    var $m = {
+    hi.VERSION = o2.version;
+    var qm = {
         strings: {
             pluginNameDropbox: "Dropbox"
         }
     };
-    var o2 = {
+    var n2 = {
             version: "3.0.1"
         },
-        ci = class extends q {
+        ci = class extends V {
             constructor(e, t) {
                 super(e, t), this.id = this.opts.id || "Dropbox", Y.initPlugin(this, t), this.title = this.opts.title || "Dropbox", this.icon = () => u("svg", {
                     "aria-hidden": "true",
@@ -12846,7 +12890,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     companionCookiesRule: this.opts.companionCookiesRule,
                     provider: "dropbox",
                     pluginId: this.id
-                }), this.defaultLocale = $m, this.i18nInit(), this.title = this.i18n("pluginNameDropbox"), this.onFirstRender = this.onFirstRender.bind(this), this.render = this.render.bind(this)
+                }), this.defaultLocale = qm, this.i18nInit(), this.title = this.i18n("pluginNameDropbox"), this.onFirstRender = this.onFirstRender.bind(this), this.render = this.render.bind(this)
             }
             install() {
                 this.view = new pe(this, {
@@ -12868,16 +12912,16 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         };
     n(ci, "Dropbox");
-    ci.VERSION = o2.version;
-    var qm = {
+    ci.VERSION = n2.version;
+    var Vm = {
         strings: {
             pluginNameFacebook: "Facebook"
         }
     };
-    var n2 = {
+    var a2 = {
             version: "3.0.1"
         },
-        di = class extends q {
+        di = class extends V {
             constructor(e, t) {
                 super(e, t), this.id = this.opts.id || "Facebook", Y.initPlugin(this, t), this.title = this.opts.title || "Facebook", this.icon = () => u("svg", {
                     "aria-hidden": "true",
@@ -12905,7 +12949,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     companionCookiesRule: this.opts.companionCookiesRule,
                     provider: "facebook",
                     pluginId: this.id
-                }), this.defaultLocale = qm, this.i18nInit(), this.title = this.i18n("pluginNameFacebook"), this.onFirstRender = this.onFirstRender.bind(this), this.render = this.render.bind(this)
+                }), this.defaultLocale = Vm, this.i18nInit(), this.title = this.i18n("pluginNameFacebook"), this.onFirstRender = this.onFirstRender.bind(this), this.render = this.render.bind(this)
             }
             install() {
                 this.view = new pe(this, {
@@ -12928,22 +12972,22 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         };
     n(di, "Facebook");
-    di.VERSION = n2.version;
+    di.VERSION = a2.version;
     var to = class extends pe {
         toggleCheckbox(e, t) {
             e.stopPropagation(), e.preventDefault(), t.custom.isSharedDrive || super.toggleCheckbox(e, t)
         }
     };
     n(to, "DriveProviderViews");
-    var Vm = {
+    var Wm = {
         strings: {
             pluginNameGoogleDrive: "Google Drive"
         }
     };
-    var a2 = {
+    var l2 = {
             version: "3.0.1"
         },
-        pi = class extends q {
+        pi = class extends V {
             constructor(e, t) {
                 super(e, t), this.id = this.opts.id || "GoogleDrive", this.title = this.opts.title || "Google Drive", Y.initPlugin(this, t), this.title = this.opts.title || "Google Drive", this.icon = () => u("svg", {
                     "aria-hidden": "true",
@@ -12970,7 +13014,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     companionCookiesRule: this.opts.companionCookiesRule,
                     provider: "drive",
                     pluginId: this.id
-                }), this.defaultLocale = Vm, this.i18nInit(), this.title = this.i18n("pluginNameGoogleDrive"), this.onFirstRender = this.onFirstRender.bind(this), this.render = this.render.bind(this)
+                }), this.defaultLocale = Wm, this.i18nInit(), this.title = this.i18n("pluginNameGoogleDrive"), this.onFirstRender = this.onFirstRender.bind(this), this.render = this.render.bind(this)
             }
             install() {
                 this.view = new to(this, {
@@ -12992,16 +13036,16 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         };
     n(pi, "GoogleDrive");
-    pi.VERSION = a2.version;
-    var Wm = {
+    pi.VERSION = l2.version;
+    var Km = {
         strings: {
             pluginNameInstagram: "Instagram"
         }
     };
-    var l2 = {
+    var u2 = {
             version: "3.0.1"
         },
-        fi = class extends q {
+        fi = class extends V {
             constructor(e, t) {
                 super(e, t), this.id = this.opts.id || "Instagram", Y.initPlugin(this, t), this.icon = () => u("svg", {
                     "aria-hidden": "true",
@@ -13021,7 +13065,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 }), u("path", {
                     d: "M16 8.622c2.403 0 2.688.009 3.637.052.877.04 1.354.187 1.67.31.392.144.745.374 1.036.673.299.29.529.644.673 1.035.123.317.27.794.31 1.671.043.95.052 1.234.052 3.637s-.009 2.688-.052 3.637c-.04.877-.187 1.354-.31 1.671a2.98 2.98 0 0 1-1.708 1.708c-.317.123-.794.27-1.671.31-.95.043-1.234.053-3.637.053s-2.688-.01-3.637-.053c-.877-.04-1.354-.187-1.671-.31a2.788 2.788 0 0 1-1.035-.673 2.788 2.788 0 0 1-.673-1.035c-.123-.317-.27-.794-.31-1.671-.043-.949-.052-1.234-.052-3.637s.009-2.688.052-3.637c.04-.877.187-1.354.31-1.67.144-.392.374-.745.673-1.036.29-.299.644-.529 1.035-.673.317-.123.794-.27 1.671-.31.95-.043 1.234-.052 3.637-.052zM16 7c-2.444 0-2.75.01-3.71.054-.959.044-1.613.196-2.185.419-.6.225-1.145.58-1.594 1.038-.458.45-.813.993-1.039 1.594-.222.572-.374 1.226-.418 2.184C7.01 13.25 7 13.556 7 16s.01 2.75.054 3.71c.044.959.196 1.613.419 2.185.226.6.58 1.145 1.038 1.594.45.458.993.813 1.594 1.038.572.223 1.227.375 2.184.419.96.044 1.267.054 3.711.054s2.75-.01 3.71-.054c.959-.044 1.613-.196 2.185-.419a4.602 4.602 0 0 0 2.632-2.632c.223-.572.375-1.226.419-2.184.044-.96.054-1.267.054-3.711s-.01-2.75-.054-3.71c-.044-.959-.196-1.613-.419-2.185A4.412 4.412 0 0 0 23.49 8.51a4.412 4.412 0 0 0-1.594-1.039c-.572-.222-1.226-.374-2.184-.418C18.75 7.01 18.444 7 16 7zm0 4.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm0 7.421a2.921 2.921 0 1 1 0-5.842 2.921 2.921 0 0 1 0 5.842zm4.875-6.671a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25z",
                     fill: "#FFF"
-                }))), this.defaultLocale = Wm, this.i18nInit(), this.title = this.i18n("pluginNameInstagram"), this.provider = new Y(e, {
+                }))), this.defaultLocale = Km, this.i18nInit(), this.title = this.i18n("pluginNameInstagram"), this.provider = new Y(e, {
                     companionUrl: this.opts.companionUrl,
                     companionHeaders: this.opts.companionHeaders,
                     companionKeysParams: this.opts.companionKeysParams,
@@ -13054,16 +13098,16 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         };
     n(fi, "Instagram");
-    fi.VERSION = l2.version;
-    var Km = {
+    fi.VERSION = u2.version;
+    var Gm = {
         strings: {
             pluginNameOneDrive: "OneDrive"
         }
     };
-    var u2 = {
+    var h2 = {
             version: "3.0.1"
         },
-        mi = class extends q {
+        mi = class extends V {
             constructor(e, t) {
                 super(e, t), this.id = this.opts.id || "OneDrive", Y.initPlugin(this, t), this.title = this.opts.title || "OneDrive", this.icon = () => u("svg", {
                     "aria-hidden": "true",
@@ -13093,7 +13137,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     companionCookiesRule: this.opts.companionCookiesRule,
                     provider: "onedrive",
                     pluginId: this.id
-                }), this.defaultLocale = Km, this.i18nInit(), this.title = this.i18n("pluginNameOneDrive"), this.onFirstRender = this.onFirstRender.bind(this), this.render = this.render.bind(this)
+                }), this.defaultLocale = Gm, this.i18nInit(), this.title = this.i18n("pluginNameOneDrive"), this.onFirstRender = this.onFirstRender.bind(this), this.render = this.render.bind(this)
             }
             install() {
                 this.view = new pe(this, {
@@ -13115,11 +13159,11 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         };
     n(mi, "OneDrive");
-    mi.VERSION = u2.version;
-    var h2 = {
+    mi.VERSION = h2.version;
+    var c2 = {
             version: "3.0.1"
         },
-        gi = class extends q {
+        gi = class extends V {
             constructor(e, t) {
                 if (super(e, t), this.id = this.opts.id || "Unsplash", this.title = this.opts.title || "Unsplash", Y.initPlugin(this, t, {}), this.icon = () => u("svg", {
                     viewBox: "0 0 32 32",
@@ -13165,22 +13209,22 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         };
     n(gi, "Unsplash");
-    gi.VERSION = h2.version;
+    gi.VERSION = c2.version;
 
     function zh(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
     n(zh, "_classPrivateFieldLooseBase");
-    var c2 = 0;
+    var d2 = 0;
 
-    function Gm(i) {
-        return "__private_" + c2++ + "_" + i
+    function Xm(i) {
+        return "__private_" + d2++ + "_" + i
     }
-    n(Gm, "_classPrivateFieldLooseKey");
-    var jh = Gm("handleKeyPress"),
-        fn = Gm("handleSubmit"),
-        pl = class extends ie {
+    n(Xm, "_classPrivateFieldLooseKey");
+    var jh = Xm("handleKeyPress"),
+        fn = Xm("handleSubmit"),
+        fl = class extends ie {
             constructor() {
                 super(...arguments), Object.defineProperty(this, jh, {
                     writable: !0,
@@ -13223,10 +13267,10 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 }, e("import")))
             }
         };
-    n(pl, "UrlUI");
-    var Xm = pl;
+    n(fl, "UrlUI");
+    var Ym = fl;
 
-    function fl(i, e, t) {
+    function ml(i, e, t) {
         let r = _e(i.items),
             s;
         switch (e) {
@@ -13247,8 +13291,8 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             o.getAsString(a => t(a))
         })
     }
-    n(fl, "forEachDroppedOrPastedUrl");
-    var Ym = {
+    n(ml, "forEachDroppedOrPastedUrl");
+    var Jm = {
         strings: {
             import: "Import",
             enterUrlToImport: "Enter URL to import a file",
@@ -13256,11 +13300,11 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             enterCorrectUrl: "Incorrect URL: Please make sure you are entering a direct link to a file"
         }
     };
-    var d2 = {
+    var p2 = {
         version: "3.1.0"
     };
 
-    function p2() {
+    function f2() {
         return u("svg", {
             "aria-hidden": "true",
             focusable: "false",
@@ -13282,37 +13326,37 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             fillRule: "nonzero"
         })))
     }
-    n(p2, "UrlIcon");
+    n(f2, "UrlIcon");
 
-    function f2(i) {
+    function m2(i) {
         let e = /^[a-z0-9]+:\/\//,
             t = "http://";
         return e.test(i) ? i : t + i
     }
-    n(f2, "addProtocolToURL");
-
-    function m2(i) {
-        return _e(i.dataTransfer.items).filter(r => r.kind === "string" && r.type === "text/uri-list").length > 0
-    }
-    n(m2, "canHandleRootDrop");
+    n(m2, "addProtocolToURL");
 
     function g2(i) {
+        return _e(i.dataTransfer.items).filter(r => r.kind === "string" && r.type === "text/uri-list").length > 0
+    }
+    n(g2, "canHandleRootDrop");
+
+    function y2(i) {
         if (!i) return !1;
         let e = i.match(/^([a-z0-9]+):\/\//)[1];
         return !(e !== "http" && e !== "https")
     }
-    n(g2, "checkIfCorrectURL");
+    n(y2, "checkIfCorrectURL");
 
-    function y2(i) {
+    function v2(i) {
         let {
             pathname: e
         } = new URL(i);
         return e.substring(e.lastIndexOf("/") + 1)
     }
-    n(y2, "getFileNameFromUrl");
-    var zt = class extends q {
+    n(v2, "getFileNameFromUrl");
+    var jt = class extends V {
         constructor(e, t) {
-            super(e, t), this.id = this.opts.id || "Url", this.title = this.opts.title || "Link", this.type = "acquirer", this.icon = () => u(p2, null), this.defaultLocale = Ym;
+            super(e, t), this.id = this.opts.id || "Url", this.title = this.opts.title || "Link", this.type = "acquirer", this.icon = () => u(f2, null), this.defaultLocale = Jm;
             let r = {};
             if (this.opts = { ...r,
                 ...t
@@ -13333,8 +13377,8 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }
         async addFile(e, t) {
             t === void 0 && (t = void 0);
-            let r = f2(e);
-            if (!g2(r)) {
+            let r = m2(e);
+            if (!y2(r)) {
                 this.uppy.log(`[URL] Incorrect URL entered: ${r}`), this.uppy.info(this.i18n("enterCorrectUrl"), "error", 4e3);
                 return
             }
@@ -13343,7 +13387,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     o = {
                         meta: t,
                         source: this.id,
-                        name: y2(r),
+                        name: v2(r),
                         type: s.type,
                         data: {
                             size: s.size
@@ -13376,17 +13420,17 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         }
         handleRootDrop(e) {
-            fl(e.dataTransfer, "drop", t => {
+            ml(e.dataTransfer, "drop", t => {
                 this.uppy.log(`[URL] Adding file from dropped url: ${t}`), this.addFile(t)
             })
         }
         handleRootPaste(e) {
-            fl(e.clipboardData, "paste", t => {
+            ml(e.clipboardData, "paste", t => {
                 this.uppy.log(`[URL] Adding file from pasted url: ${t}`), this.addFile(t)
             })
         }
         render() {
-            return u(Xm, {
+            return u(Ym, {
                 i18n: this.i18n,
                 addFile: this.addFile
             })
@@ -13401,18 +13445,18 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             this.unmount()
         }
     };
-    n(zt, "Url");
-    zt.VERSION = d2.version;
-    zt.prototype.canHandleRootDrop = m2;
-    var Jm = {
+    n(jt, "Url");
+    jt.VERSION = p2.version;
+    jt.prototype.canHandleRootDrop = g2;
+    var Qm = {
         strings: {
             pluginNameZoom: "Zoom"
         }
     };
-    var v2 = {
+    var b2 = {
             version: "2.0.1"
         },
-        yi = class extends q {
+        yi = class extends V {
             constructor(e, t) {
                 super(e, t), this.id = this.opts.id || "Zoom", Y.initPlugin(this, t), this.title = this.opts.title || "Zoom", this.icon = () => u("svg", {
                     "aria-hidden": "true",
@@ -13448,7 +13492,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     companionCookiesRule: this.opts.companionCookiesRule,
                     provider: "zoom",
                     pluginId: this.id
-                }), this.defaultLocale = Jm, this.i18nInit(), this.title = this.i18n("pluginNameZoom"), this.onFirstRender = this.onFirstRender.bind(this), this.render = this.render.bind(this)
+                }), this.defaultLocale = Qm, this.i18nInit(), this.title = this.i18n("pluginNameZoom"), this.onFirstRender = this.onFirstRender.bind(this), this.render = this.render.bind(this)
             }
             install() {
                 this.view = new pe(this, {
@@ -13470,20 +13514,20 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         };
     n(yi, "Zoom");
-    yi.VERSION = v2.version;
+    yi.VERSION = b2.version;
 
     function Hh(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
     n(Hh, "_classPrivateFieldLooseBase");
-    var b2 = 0;
+    var w2 = 0;
 
-    function w2(i) {
-        return "__private_" + b2++ + "_" + i
+    function S2(i) {
+        return "__private_" + w2++ + "_" + i
     }
-    n(w2, "_classPrivateFieldLooseKey");
-    var S2 = {
+    n(S2, "_classPrivateFieldLooseKey");
+    var _2 = {
             version: "1.0.2"
         },
         $h = {
@@ -13495,13 +13539,13 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             Instagram: fi,
             OneDrive: mi,
             Unsplash: gi,
-            Url: zt,
+            Url: jt,
             Zoom: yi
         },
-        Gr = w2("installedPlugins"),
-        Xr = class extends ae {
+        Xr = S2("installedPlugins"),
+        Yr = class extends ae {
             constructor(e, t) {
-                super(e, t), Object.defineProperty(this, Gr, {
+                super(e, t), Object.defineProperty(this, Xr, {
                     writable: !0,
                     value: new Set
                 }), this.id = this.opts.id || "RemoteSources", this.type = "acquirer";
@@ -13530,17 +13574,17 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                             });
                         throw new Error(`Invalid plugin: "${e}" is not one of: ${o.format(s)}.`)
                     }
-                    this.uppy.use(r, t), Hh(this, Gr)[Gr].add(this.uppy.getPlugin(e))
+                    this.uppy.use(r, t), Hh(this, Xr)[Xr].add(this.uppy.getPlugin(e))
                 })
             }
             uninstall() {
-                for (let e of Hh(this, Gr)[Gr]) this.uppy.removePlugin(e);
-                Hh(this, Gr)[Gr].clear()
+                for (let e of Hh(this, Xr)[Xr]) this.uppy.removePlugin(e);
+                Hh(this, Xr)[Xr].clear()
             }
         };
-    n(Xr, "RemoteSources");
-    Xr.VERSION = S2.version;
-    var Qm = n(() => u("svg", {
+    n(Yr, "RemoteSources");
+    Yr.VERSION = _2.version;
+    var Zm = n(() => u("svg", {
         "aria-hidden": "true",
         focusable: "false",
         width: "32",
@@ -13643,7 +13687,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }))) : null
     }
     n(Vh, "SubmitButton");
-    var ml = class extends ie {
+    var gl = class extends ie {
         constructor(e) {
             super(e), this.state = {
                 elapsedTime: 0
@@ -13717,9 +13761,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }, s))) : null
         }
     };
-    n(ml, "StopWatch");
-    var Zm = ml;
-    var eg = n(i => {
+    n(gl, "StopWatch");
+    var eg = gl;
+    var tg = n(i => {
         let {
             streamActive: e,
             i18n: t
@@ -13775,7 +13819,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }, Wh.apply(this, arguments)
     }
     n(Wh, "_extends");
-    var gl = class extends ie {
+    var yl = class extends ie {
         componentWillUnmount() {
             let {
                 onStop: e
@@ -13794,19 +13838,19 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 className: "uppy uppy-ScreenCapture-container"
             }, u("div", {
                 className: "uppy-ScreenCapture-videoContainer"
-            }, u(eg, this.props), u("video", Wh({
+            }, u(tg, this.props), u("video", Wh({
                 ref: o => {
                     this.videoElement = o
                 },
                 className: "uppy-ScreenCapture-video"
-            }, s)), u(Zm, this.props)), u("div", {
+            }, s)), u(eg, this.props)), u("div", {
                 className: "uppy-ScreenCapture-buttonContainer"
             }, u(qh, this.props), u(Vh, this.props)))
         }
     };
-    n(gl, "RecorderScreen");
-    var tg = gl;
-    var ig = {
+    n(yl, "RecorderScreen");
+    var ig = yl;
+    var rg = {
         strings: {
             startCapturing: "Begin screen capturing",
             stopCapturing: "Stop screen capturing",
@@ -13828,23 +13872,23 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }, Kh.apply(this, arguments)
     }
     n(Kh, "_extends");
-    var _2 = {
-        version: "3.0.1"
+    var P2 = {
+        version: "3.0.2"
     };
 
-    function P2() {
+    function x2() {
         var i;
         return window.MediaRecorder && ((i = navigator.mediaDevices) == null ? void 0 : i.getDisplayMedia)
     }
-    n(P2, "isScreenRecordingSupported");
+    n(x2, "isScreenRecordingSupported");
 
-    function x2() {
+    function F2() {
         return window.MediaRecorder && navigator.mediaDevices
     }
-    n(x2, "getMediaDevices");
-    var yr = class extends q {
+    n(F2, "getMediaDevices");
+    var vr = class extends V {
         constructor(e, t) {
-            super(e, t), this.mediaDevices = x2(), this.protocol = location.protocol === "https:" ? "https" : "http", this.id = this.opts.id || "ScreenCapture", this.title = this.opts.title || "Screencast", this.type = "acquirer", this.icon = Qm, this.defaultLocale = ig;
+            super(e, t), this.mediaDevices = F2(), this.protocol = location.protocol === "https:" ? "https" : "http", this.id = this.opts.id || "ScreenCapture", this.title = this.opts.title || "Screencast", this.type = "acquirer", this.icon = Zm, this.defaultLocale = rg;
             let r = {
                 displayMediaConstraints: {
                     video: {
@@ -13868,7 +13912,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }, this.i18nInit(), this.install = this.install.bind(this), this.setPluginState = this.setPluginState.bind(this), this.render = this.render.bind(this), this.start = this.start.bind(this), this.stop = this.stop.bind(this), this.startRecording = this.startRecording.bind(this), this.stopRecording = this.stopRecording.bind(this), this.submit = this.submit.bind(this), this.streamInterrupted = this.streamInactivated.bind(this), this.captureActive = !1, this.capturedMediaFile = null
         }
         install() {
-            if (!P2()) return this.uppy.log("Screen recorder access is not supported", "error"), null;
+            if (!x2()) return this.uppy.log("Screen recorder access is not supported", "warning"), null;
             this.setPluginState({
                 streamActive: !1,
                 audioStreamActive: !1
@@ -13900,7 +13944,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         selectAudioStreamSource() {
             return this.audioStream ? new Promise(e => e(this.audioStream)) : this.mediaDevices.getUserMedia(this.opts.userMediaConstraints).then(e => (this.audioStream = e, this.setPluginState({
                 audioStreamActive: !0
-            }), e)).catch(e => (e.name === "NotAllowedError" && this.uppy.info(this.i18n("micDisabled"), "error", 5e3), !1))
+            }), e)).catch(e => (e.name === "NotAllowedError" && (this.uppy.info(this.i18n("micDisabled"), "error", 5e3), this.uppy.log(this.i18n("micDisabled"), "warning")), !1))
         }
         startRecording() {
             let e = {};
@@ -13952,7 +13996,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             try {
                 this.capturedMediaFile && this.uppy.addFile(this.capturedMediaFile)
             } catch (e) {
-                e.isRestriction || this.uppy.log(e, "error")
+                e.isRestriction || this.uppy.log(e, "warning")
             }
         }
         stop() {
@@ -13992,7 +14036,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }
         render() {
             let e = this.getPluginState();
-            return !e.streamActive && !this.captureActive && !this.userDenied && this.start(), u(tg, Kh({}, e, {
+            return !e.streamActive && !this.captureActive && !this.userDenied && this.start(), u(ig, Kh({}, e, {
                 onStartRecording: this.startRecording,
                 onStopRecording: this.stopRecording,
                 onStop: this.stop,
@@ -14002,9 +14046,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }))
         }
     };
-    n(yr, "ScreenCapture");
-    yr.VERSION = _2.version;
-    var dg = oe(rg(), 1);
+    n(vr, "ScreenCapture");
+    vr.VERSION = P2.version;
+    var pg = oe(sg(), 1);
 
     function Xh(i, e, t) {
         return new Promise(r => {
@@ -14017,7 +14061,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         return typeof MediaRecorder == "function" && !!MediaRecorder.prototype && typeof MediaRecorder.prototype.start == "function"
     }
     n(Yh, "supportsMediaRecorder");
-    var vl = n(() => u("svg", {
+    var bl = n(() => u("svg", {
         "aria-hidden": "true",
         focusable: "false",
         fill: "#0097DC",
@@ -14028,7 +14072,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         d: "M57.3 8.433c4.59 0 8.1 3.51 8.1 8.1v29.7c0 4.59-3.51 8.1-8.1 8.1H8.7c-4.59 0-8.1-3.51-8.1-8.1v-29.7c0-4.59 3.51-8.1 8.1-8.1h9.45l4.59-7.02c.54-.54 1.35-1.08 2.16-1.08h16.2c.81 0 1.62.54 2.16 1.08l4.59 7.02h9.45zM33 14.64c-8.62 0-15.393 6.773-15.393 15.393 0 8.62 6.773 15.393 15.393 15.393 8.62 0 15.393-6.773 15.393-15.393 0-8.62-6.773-15.393-15.393-15.393zM33 40c-5.648 0-9.966-4.319-9.966-9.967 0-5.647 4.318-9.966 9.966-9.966s9.966 4.319 9.966 9.966C42.966 35.681 38.648 40 33 40z",
         fillRule: "evenodd"
     })), "default");
-    var sg = n(i => {
+    var og = n(i => {
         let {
             onSnapshot: e,
             i18n: t
@@ -14040,7 +14084,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             "aria-label": t("takePicture"),
             onClick: e,
             "data-uppy-super-focusable": !0
-        }, vl())
+        }, bl())
     }, "default");
 
     function Jh(i) {
@@ -14108,7 +14152,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }, r)
     }
     n(Zh, "RecordingLength");
-    var og = n(i => {
+    var ng = n(i => {
         let {
             currentDeviceId: e,
             videoSources: t,
@@ -14128,7 +14172,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }, s.label))))
     }, "default");
 
-    function R2(i) {
+    function C2(i) {
         let {
             onSubmit: e,
             i18n: t
@@ -14154,10 +14198,10 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             d: "M10.66 0L12 1.31 4.136 9 0 4.956l1.34-1.31L4.136 6.38z"
         })))
     }
-    n(R2, "SubmitButton");
-    var ng = R2;
+    n(C2, "SubmitButton");
+    var ag = C2;
 
-    function C2(i) {
+    function T2(i) {
         let {
             onDiscard: e,
             i18n: t
@@ -14186,8 +14230,8 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             d: "M11.104 12.782L.497 2.175 1.911.76l10.607 10.606z"
         }))))
     }
-    n(C2, "DiscardButton");
-    var ag = C2;
+    n(T2, "DiscardButton");
+    var lg = T2;
 
     function ec() {
         return ec = Object.assign ? Object.assign.bind() : function(i) {
@@ -14200,11 +14244,11 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
     }
     n(ec, "_extends");
 
-    function bl(i, e) {
+    function wl(i, e) {
         return i.includes(e)
     }
-    n(bl, "isModeAvailable");
-    var wl = class extends ie {
+    n(wl, "isModeAvailable");
+    var Sl = class extends ie {
         componentDidMount() {
             let {
                 onFocus: e
@@ -14231,51 +14275,51 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 i18n: d,
                 mirror: f,
                 onSnapshot: y,
-                onStartRecording: S,
-                onStopRecording: w,
+                onStartRecording: w,
+                onStopRecording: S,
                 onDiscardRecordedVideo: R,
                 recordingLengthSeconds: x
-            } = this.props, E = !!t, N = !E && o && (bl(s, "video-only") || bl(s, "audio-only") || bl(s, "video-audio")), V = !E && bl(s, "picture"), $ = o && h && !E, K = l && a && a.length > 1, U = {
+            } = this.props, F = !!t, N = !F && o && (wl(s, "video-only") || wl(s, "audio-only") || wl(s, "video-audio")), H = !F && wl(s, "picture"), q = o && h && !F, K = l && a && a.length > 1, k = {
                 playsinline: !0
             };
-            return t ? (U.muted = !1, U.controls = !0, U.src = t, this.videoElement && (this.videoElement.srcObject = void 0)) : (U.muted = !0, U.autoplay = !0, U.srcObject = e), u("div", {
+            return t ? (k.muted = !1, k.controls = !0, k.src = t, this.videoElement && (this.videoElement.srcObject = void 0)) : (k.muted = !0, k.autoplay = !0, k.srcObject = e), u("div", {
                 className: "uppy uppy-Webcam-container"
             }, u("div", {
                 className: "uppy-Webcam-videoContainer"
             }, u("video", ec({
                 ref: B => this.videoElement = B,
                 className: `uppy-Webcam-video  ${f?"uppy-Webcam-video--mirrored":""}`
-            }, U))), u("div", {
+            }, k))), u("div", {
                 className: "uppy-Webcam-footer"
             }, u("div", {
                 className: "uppy-Webcam-videoSourceContainer"
-            }, K ? og(this.props) : null), u("div", {
+            }, K ? ng(this.props) : null), u("div", {
                 className: "uppy-Webcam-buttonContainer"
-            }, V && u(sg, {
+            }, H && u(og, {
                 onSnapshot: y,
                 i18n: d
             }), N && u(Jh, {
                 recording: r,
-                onStartRecording: S,
-                onStopRecording: w,
+                onStartRecording: w,
+                onStopRecording: S,
                 i18n: d
-            }), E && u(ng, {
+            }), F && u(ag, {
                 onSubmit: c,
                 i18n: d
-            }), E && u(ag, {
+            }), F && u(lg, {
                 onDiscard: R,
                 i18n: d
             })), u("div", {
                 className: "uppy-Webcam-recordingLength"
-            }, $ && u(Zh, {
+            }, q && u(Zh, {
                 recordingLengthSeconds: x,
                 i18n: d
             }))))
         }
     };
-    n(wl, "CameraScreen");
-    var lg = wl;
-    var ug = n(i => {
+    n(Sl, "CameraScreen");
+    var ug = Sl;
+    var hg = n(i => {
         let {
             icon: e,
             i18n: t,
@@ -14289,7 +14333,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             className: "uppy-Webcam-title"
         }, t(r ? "allowAccessTitle" : "noCameraTitle")), u("p", null, t(r ? "allowAccessDescription" : "noCameraDescription")))
     }, "default");
-    var hg = {
+    var cg = {
         strings: {
             pluginNameCamera: "Camera",
             noCameraTitle: "Camera Not Available",
@@ -14323,47 +14367,47 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         return i
     }
     n(mn, "_classPrivateFieldLooseBase");
-    var T2 = 0;
+    var k2 = 0;
 
-    function k2(i) {
-        return "__private_" + T2++ + "_" + i
+    function A2(i) {
+        return "__private_" + k2++ + "_" + i
     }
-    n(k2, "_classPrivateFieldLooseKey");
-    var A2 = {
+    n(A2, "_classPrivateFieldLooseKey");
+    var U2 = {
         version: "3.2.1"
     };
 
-    function cg(i) {
+    function dg(i) {
         return i[0] === "." ? So[i.slice(1)] : i
     }
-    n(cg, "toMimeType");
-
-    function U2(i) {
-        return /^video\/[^*]+$/.test(i)
-    }
-    n(U2, "isVideoMimeType");
+    n(dg, "toMimeType");
 
     function D2(i) {
+        return /^video\/[^*]+$/.test(i)
+    }
+    n(D2, "isVideoMimeType");
+
+    function N2(i) {
         return /^image\/[^*]+$/.test(i)
     }
-    n(D2, "isImageMimeType");
+    n(N2, "isImageMimeType");
 
-    function N2() {
+    function B2() {
         return navigator.mediaDevices
     }
-    n(N2, "getMediaDevices");
+    n(B2, "getMediaDevices");
 
     function tc(i, e) {
         return i.includes(e)
     }
     n(tc, "isModeAvailable");
-    var jt = k2("enableMirror"),
-        vr = class extends q {
+    var Ht = A2("enableMirror"),
+        br = class extends V {
             constructor(e, t) {
-                super(e, t), Object.defineProperty(this, jt, {
+                super(e, t), Object.defineProperty(this, Ht, {
                     writable: !0,
                     value: void 0
-                }), this.mediaDevices = N2(), this.supportsUserMedia = !!this.mediaDevices, this.protocol = location.protocol.match(/https/i) ? "https" : "http", this.id = this.opts.id || "Webcam", this.type = "acquirer", this.capturedMediaFile = null, this.icon = () => u("svg", {
+                }), this.mediaDevices = B2(), this.supportsUserMedia = !!this.mediaDevices, this.protocol = location.protocol.match(/https/i) ? "https" : "http", this.id = this.opts.id || "Webcam", this.type = "acquirer", this.capturedMediaFile = null, this.icon = () => u("svg", {
                     "aria-hidden": "true",
                     focusable: "false",
                     width: "32",
@@ -14382,7 +14426,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     d: "M22 11c1.133 0 2 .867 2 2v7.333c0 1.134-.867 2-2 2H10c-1.133 0-2-.866-2-2V13c0-1.133.867-2 2-2h2.333l1.134-1.733C13.6 9.133 13.8 9 14 9h4c.2 0 .4.133.533.267L19.667 11H22zm-6 1.533a3.764 3.764 0 0 0-3.8 3.8c0 2.129 1.672 3.801 3.8 3.801s3.8-1.672 3.8-3.8c0-2.13-1.672-3.801-3.8-3.801zm0 6.261c-1.395 0-2.46-1.066-2.46-2.46 0-1.395 1.065-2.461 2.46-2.461s2.46 1.066 2.46 2.46c0 1.395-1.065 2.461-2.46 2.461z",
                     fill: "#FFF",
                     fillRule: "nonzero"
-                }))), this.defaultLocale = hg;
+                }))), this.defaultLocale = cg;
                 let r = {
                     onBeforeSnapshot: () => Promise.resolve(),
                     countdown: !1,
@@ -14394,13 +14438,13 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     preferredImageMimeType: null,
                     preferredVideoMimeType: null,
                     showRecordingLength: !1,
-                    mobileNativeCamera: (0, dg.default)({
+                    mobileNativeCamera: (0, pg.default)({
                         tablet: !0
                     })
                 };
                 this.opts = { ...r,
                     ...t
-                }, this.i18nInit(), this.title = this.i18n("pluginNameCamera"), mn(this, jt)[jt] = this.opts.mirror, this.install = this.install.bind(this), this.setPluginState = this.setPluginState.bind(this), this.render = this.render.bind(this), this.start = this.start.bind(this), this.stop = this.stop.bind(this), this.takeSnapshot = this.takeSnapshot.bind(this), this.startRecording = this.startRecording.bind(this), this.stopRecording = this.stopRecording.bind(this), this.discardRecordedVideo = this.discardRecordedVideo.bind(this), this.submit = this.submit.bind(this), this.oneTwoThreeSmile = this.oneTwoThreeSmile.bind(this), this.focus = this.focus.bind(this), this.changeVideoSource = this.changeVideoSource.bind(this), this.webcamActive = !1, this.opts.countdown && (this.opts.onBeforeSnapshot = this.oneTwoThreeSmile), this.setPluginState({
+                }, this.i18nInit(), this.title = this.i18n("pluginNameCamera"), mn(this, Ht)[Ht] = this.opts.mirror, this.install = this.install.bind(this), this.setPluginState = this.setPluginState.bind(this), this.render = this.render.bind(this), this.start = this.start.bind(this), this.stop = this.stop.bind(this), this.takeSnapshot = this.takeSnapshot.bind(this), this.startRecording = this.startRecording.bind(this), this.stopRecording = this.stopRecording.bind(this), this.discardRecordedVideo = this.discardRecordedVideo.bind(this), this.submit = this.submit.bind(this), this.oneTwoThreeSmile = this.oneTwoThreeSmile.bind(this), this.focus = this.focus.bind(this), this.changeVideoSource = this.changeVideoSource.bind(this), this.webcamActive = !1, this.opts.countdown && (this.opts.onBeforeSnapshot = this.oneTwoThreeSmile), this.setPluginState({
                     hasCamera: !1,
                     cameraReady: !1,
                     cameraError: null,
@@ -14441,7 +14485,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
             start(e) {
                 if (e === void 0 && (e = null), !this.supportsUserMedia) return Promise.reject(new Error("Webcam access not supported"));
-                this.webcamActive = !0, this.opts.mirror && (mn(this, jt)[jt] = !0);
+                this.webcamActive = !0, this.opts.mirror && (mn(this, Ht)[Ht] = !0);
                 let t = this.getConstraints(e && e.deviceId ? e.deviceId : null);
                 this.hasCameraCheck().then(r => (this.setPluginState({
                     hasCamera: r
@@ -14468,7 +14512,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     let {
                         restrictions: t
                     } = this.uppy.opts, r = [];
-                    this.opts.preferredVideoMimeType ? r = [this.opts.preferredVideoMimeType] : t.allowedFileTypes && (r = t.allowedFileTypes.map(cg).filter(U2));
+                    this.opts.preferredVideoMimeType ? r = [this.opts.preferredVideoMimeType] : t.allowedFileTypes && (r = t.allowedFileTypes.map(dg).filter(D2));
                     let s = n(a => MediaRecorder.isTypeSupported(a) && ui(a), "filterSupportedTypes"),
                         o = r.filter(s);
                     o.length > 0 && (e.mimeType = o[0])
@@ -14511,7 +14555,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     try {
                         this.capturedMediaFile = t, this.setPluginState({
                             recordedVideo: URL.createObjectURL(t.data)
-                        }), mn(this, jt)[jt] = !1
+                        }), mn(this, Ht)[Ht] = !1
                     } catch (r) {
                         r.isRestriction || this.uppy.log(r)
                     }
@@ -14524,7 +14568,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             discardRecordedVideo() {
                 this.setPluginState({
                     recordedVideo: null
-                }), this.opts.mirror && (mn(this, jt)[jt] = !0), this.capturedMediaFile = null
+                }), this.opts.mirror && (mn(this, Ht)[Ht] = !0), this.capturedMediaFile = null
             }
             submit() {
                 try {
@@ -14586,7 +14630,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 let {
                     restrictions: a
                 } = this.uppy.opts, l = [];
-                this.opts.preferredImageMimeType ? l = [this.opts.preferredImageMimeType] : a.allowedFileTypes && (l = a.allowedFileTypes.map(cg).filter(D2));
+                this.opts.preferredImageMimeType ? l = [this.opts.preferredImageMimeType] : a.allowedFileTypes && (l = a.allowedFileTypes.map(dg).filter(N2));
                 let h = l[0] || "image/jpeg",
                     c = ui(h) || "jpg",
                     d = `cam-${Date.now()}.${c}`;
@@ -14640,11 +14684,11 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             render() {
                 this.webcamActive || this.start();
                 let e = this.getPluginState();
-                return !e.cameraReady || !e.hasCamera ? u(ug, {
-                    icon: vl,
+                return !e.cameraReady || !e.hasCamera ? u(hg, {
+                    icon: bl,
                     i18n: this.i18n,
                     hasCamera: e.hasCamera
-                }) : u(lg, ic({}, e, {
+                }) : u(ug, ic({}, e, {
                     onChangeVideoSource: this.changeVideoSource,
                     onSnapshot: this.takeSnapshot,
                     onStartRecording: this.startRecording,
@@ -14659,7 +14703,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                     showVideoSourceDropdown: this.opts.showVideoSourceDropdown,
                     supportsRecording: Yh(),
                     recording: e.isRecording,
-                    mirror: mn(this, jt)[jt],
+                    mirror: mn(this, Ht)[Ht],
                     src: this.stream
                 }))
             }
@@ -14704,29 +14748,29 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 this.stop()
             }
         };
-    n(vr, "Webcam");
-    vr.VERSION = A2.version;
+    n(br, "Webcam");
+    br.VERSION = U2.version;
 
     function j(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
     n(j, "_classPrivateFieldLooseBase");
-    var B2 = 0;
+    var I2 = 0;
 
     function lt(i) {
-        return "__private_" + B2++ + "_" + i
+        return "__private_" + I2++ + "_" + i
     }
     n(lt, "_classPrivateFieldLooseKey");
 
-    function I2(i) {
+    function L2(i) {
         return new Error("Cancelled", {
             cause: i
         })
     }
-    n(I2, "createCancelError");
+    n(L2, "createCancelError");
 
-    function L2(i) {
+    function M2(i) {
         if (i != null) {
             let e = n(() => this.abort(i.reason), "abortPromise");
             i.addEventListener("abort", e, {
@@ -14739,13 +14783,13 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         }
         return this
     }
-    n(L2, "abortOn");
+    n(M2, "abortOn");
     var gt = lt("activeRequests"),
         Ye = lt("queuedHandlers"),
         mt = lt("paused"),
-        Yr = lt("pauseTimer"),
+        Jr = lt("pauseTimer"),
         Xe = lt("downLimit"),
-        Jr = lt("upperLimit"),
+        Qr = lt("upperLimit"),
         qi = lt("rateLimitingTimer"),
         gn = lt("call"),
         Vi = lt("queueNext"),
@@ -14753,19 +14797,19 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         rc = lt("queue"),
         nc = lt("dequeue"),
         sc = lt("resume"),
-        Qr = lt("increaseLimit"),
+        Zr = lt("increaseLimit"),
         Je = class {
             constructor(e) {
                 Object.defineProperty(this, nc, {
-                    value: $2
+                    value: q2
                 }), Object.defineProperty(this, rc, {
-                    value: H2
+                    value: $2
                 }), Object.defineProperty(this, oc, {
-                    value: j2
+                    value: H2
                 }), Object.defineProperty(this, Vi, {
-                    value: z2
+                    value: j2
                 }), Object.defineProperty(this, gn, {
-                    value: M2
+                    value: z2
                 }), Object.defineProperty(this, gt, {
                     writable: !0,
                     value: 0
@@ -14775,13 +14819,13 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 }), Object.defineProperty(this, mt, {
                     writable: !0,
                     value: !1
-                }), Object.defineProperty(this, Yr, {
+                }), Object.defineProperty(this, Jr, {
                     writable: !0,
                     value: void 0
                 }), Object.defineProperty(this, Xe, {
                     writable: !0,
                     value: 1
-                }), Object.defineProperty(this, Jr, {
+                }), Object.defineProperty(this, Qr, {
                     writable: !0,
                     value: void 0
                 }), Object.defineProperty(this, qi, {
@@ -14790,16 +14834,16 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 }), Object.defineProperty(this, sc, {
                     writable: !0,
                     value: () => this.resume()
-                }), Object.defineProperty(this, Qr, {
+                }), Object.defineProperty(this, Zr, {
                     writable: !0,
                     value: () => {
                         if (j(this, mt)[mt]) {
-                            j(this, qi)[qi] = setTimeout(j(this, Qr)[Qr], 0);
+                            j(this, qi)[qi] = setTimeout(j(this, Zr)[Zr], 0);
                             return
                         }
-                        j(this, Xe)[Xe] = this.limit, this.limit = Math.ceil((j(this, Jr)[Jr] + j(this, Xe)[Xe]) / 2);
+                        j(this, Xe)[Xe] = this.limit, this.limit = Math.ceil((j(this, Qr)[Qr] + j(this, Xe)[Xe]) / 2);
                         for (let t = j(this, Xe)[Xe]; t <= this.limit; t++) j(this, Vi)[Vi]();
-                        j(this, Jr)[Jr] - j(this, Xe)[Xe] > 3 ? j(this, qi)[qi] = setTimeout(j(this, Qr)[Qr], 2e3) : j(this, Xe)[Xe] = Math.floor(j(this, Xe)[Xe] / 2)
+                        j(this, Qr)[Qr] - j(this, Xe)[Xe] > 3 ? j(this, qi)[qi] = setTimeout(j(this, Zr)[Zr], 2e3) : j(this, Xe)[Xe] = Math.floor(j(this, Xe)[Xe] / 2)
                     }
                 }), typeof e != "number" || e === 0 ? this.limit = 1 / 0 : this.limit = e
             }
@@ -14815,32 +14859,32 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                             let f, y;
                             try {
                                 y = Promise.resolve(e(...o))
-                            } catch (S) {
-                                y = Promise.reject(S)
+                            } catch (w) {
+                                y = Promise.reject(w)
                             }
-                            return y.then(S => {
-                                f ? d(f) : (l.done(), c(S))
-                            }, S => {
-                                f ? d(f) : (l.done(), d(S))
-                            }), S => {
-                                f = I2(S)
+                            return y.then(w => {
+                                f ? d(f) : (l.done(), c(w))
+                            }, w => {
+                                f ? d(f) : (l.done(), d(w))
+                            }), w => {
+                                f = L2(w)
                             }
                         }, t)
                     });
                     return h.abort = c => {
                         l.abort(c)
-                    }, h.abortOn = L2, h
+                    }, h.abortOn = M2, h
                 }
             }
             resume() {
-                j(this, mt)[mt] = !1, clearTimeout(j(this, Yr)[Yr]);
+                j(this, mt)[mt] = !1, clearTimeout(j(this, Jr)[Jr]);
                 for (let e = 0; e < this.limit; e++) j(this, Vi)[Vi]()
             }
             pause(e) {
-                e === void 0 && (e = null), j(this, mt)[mt] = !0, clearTimeout(j(this, Yr)[Yr]), e != null && (j(this, Yr)[Yr] = setTimeout(j(this, sc)[sc], e))
+                e === void 0 && (e = null), j(this, mt)[mt] = !0, clearTimeout(j(this, Jr)[Jr]), e != null && (j(this, Jr)[Jr] = setTimeout(j(this, sc)[sc], e))
             }
             rateLimit(e) {
-                clearTimeout(j(this, qi)[qi]), this.pause(e), this.limit > 1 && Number.isFinite(this.limit) && (j(this, Jr)[Jr] = this.limit - 1, this.limit = j(this, Xe)[Xe], j(this, qi)[qi] = setTimeout(j(this, Qr)[Qr], e))
+                clearTimeout(j(this, qi)[qi]), this.pause(e), this.limit > 1 && Number.isFinite(this.limit) && (j(this, Qr)[Qr] = this.limit - 1, this.limit = j(this, Xe)[Xe], j(this, qi)[qi] = setTimeout(j(this, Zr)[Zr], e))
             }
             get isPaused() {
                 return j(this, mt)[mt]
@@ -14848,7 +14892,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         };
     n(Je, "RateLimitedQueue");
 
-    function M2(i) {
+    function z2(i) {
         j(this, gt)[gt] += 1;
         let e = !1,
             t;
@@ -14866,22 +14910,22 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         }
     }
-    n(M2, "_call2");
-
-    function z2() {
-        queueMicrotask(() => j(this, oc)[oc]())
-    }
-    n(z2, "_queueNext2");
+    n(z2, "_call2");
 
     function j2() {
+        queueMicrotask(() => j(this, oc)[oc]())
+    }
+    n(j2, "_queueNext2");
+
+    function H2() {
         if (j(this, mt)[mt] || j(this, gt)[gt] >= this.limit || j(this, Ye)[Ye].length === 0) return;
         let i = j(this, Ye)[Ye].shift(),
             e = j(this, gn)[gn](i.fn);
         i.abort = e.abort, i.done = e.done
     }
-    n(j2, "_next2");
+    n(H2, "_next2");
 
-    function H2(i, e) {
+    function $2(i, e) {
         e === void 0 && (e = {});
         let t = {
                 fn: i,
@@ -14896,17 +14940,17 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             r = j(this, Ye)[Ye].findIndex(s => t.priority > s.priority);
         return r === -1 ? j(this, Ye)[Ye].push(t) : j(this, Ye)[Ye].splice(r, 0, t), t
     }
-    n(H2, "_queue2");
+    n($2, "_queue2");
 
-    function $2(i) {
+    function q2(i) {
         let e = j(this, Ye)[Ye].indexOf(i);
         e !== -1 && j(this, Ye)[Ye].splice(e, 1)
     }
-    n($2, "_dequeue2");
-    var br = Symbol("__queue");
-    var pg = oe(bo(), 1);
+    n(q2, "_dequeue2");
+    var wr = Symbol("__queue");
+    var fg = oe(bo(), 1);
 
-    function q2(i, e, t) {
+    function V2(i, e, t) {
         let {
             progress: r,
             bytesUploaded: s,
@@ -14918,8 +14962,8 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             bytesTotal: o
         }))
     }
-    n(q2, "emitSocketProgress");
-    var wr = (0, pg.default)(q2, 300, {
+    n(V2, "emitSocketProgress");
+    var Sr = (0, fg.default)(V2, 300, {
         leading: !0,
         trailing: !0
     });
@@ -14935,147 +14979,147 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
         return i
     }
     n(yn, "_classPrivateFieldLooseBase");
-    var V2 = 0;
+    var W2 = 0;
 
-    function fg(i) {
-        return "__private_" + V2++ + "_" + i
+    function mg(i) {
+        return "__private_" + W2++ + "_" + i
     }
-    n(fg, "_classPrivateFieldLooseKey");
-    var Zr = fg("emitter"),
-        vn = fg("events"),
+    n(mg, "_classPrivateFieldLooseKey");
+    var es = mg("emitter"),
+        vn = mg("events"),
         $e = class {
             constructor(e) {
-                Object.defineProperty(this, Zr, {
+                Object.defineProperty(this, es, {
                     writable: !0,
                     value: void 0
                 }), Object.defineProperty(this, vn, {
                     writable: !0,
                     value: []
-                }), yn(this, Zr)[Zr] = e
+                }), yn(this, es)[es] = e
             }
             on(e, t) {
-                return yn(this, vn)[vn].push([e, t]), yn(this, Zr)[Zr].on(e, t)
+                return yn(this, vn)[vn].push([e, t]), yn(this, es)[es].on(e, t)
             }
             remove() {
-                for (let [e, t] of yn(this, vn)[vn].splice(0)) yn(this, Zr)[Zr].off(e, t)
+                for (let [e, t] of yn(this, vn)[vn].splice(0)) yn(this, es)[es].off(e, t)
             }
         };
     n($e, "EventTracker");
 
-    function kt(i, e) {
+    function At(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
-    n(kt, "_classPrivateFieldLooseBase");
-    var W2 = 0;
+    n(At, "_classPrivateFieldLooseBase");
+    var K2 = 0;
 
-    function _l(i) {
-        return "__private_" + W2++ + "_" + i
+    function Pl(i) {
+        return "__private_" + K2++ + "_" + i
     }
-    n(_l, "_classPrivateFieldLooseKey");
-    var Ki = _l("aliveTimer"),
-        es = _l("isDone"),
-        bn = _l("onTimedOut"),
-        ts = _l("timeout"),
-        Sl = class {
+    n(Pl, "_classPrivateFieldLooseKey");
+    var Ki = Pl("aliveTimer"),
+        ts = Pl("isDone"),
+        bn = Pl("onTimedOut"),
+        is = Pl("timeout"),
+        _l = class {
             constructor(e, t) {
                 Object.defineProperty(this, Ki, {
                     writable: !0,
                     value: void 0
-                }), Object.defineProperty(this, es, {
+                }), Object.defineProperty(this, ts, {
                     writable: !0,
                     value: !1
                 }), Object.defineProperty(this, bn, {
                     writable: !0,
                     value: void 0
-                }), Object.defineProperty(this, ts, {
+                }), Object.defineProperty(this, is, {
                     writable: !0,
                     value: void 0
-                }), kt(this, ts)[ts] = e, kt(this, bn)[bn] = t
+                }), At(this, is)[is] = e, At(this, bn)[bn] = t
             }
             progress() {
-                kt(this, es)[es] || kt(this, ts)[ts] > 0 && (clearTimeout(kt(this, Ki)[Ki]), kt(this, Ki)[Ki] = setTimeout(kt(this, bn)[bn], kt(this, ts)[ts]))
+                At(this, ts)[ts] || At(this, is)[is] > 0 && (clearTimeout(At(this, Ki)[Ki]), At(this, Ki)[Ki] = setTimeout(At(this, bn)[bn], At(this, is)[is]))
             }
             done() {
-                kt(this, es)[es] || (clearTimeout(kt(this, Ki)[Ki]), kt(this, Ki)[Ki] = null, kt(this, es)[es] = !0)
+                At(this, ts)[ts] || (clearTimeout(At(this, Ki)[Ki]), At(this, Ki)[Ki] = null, At(this, ts)[ts] = !0)
             }
         };
-    n(Sl, "ProgressTimeout");
-    var wn = Sl;
+    n(_l, "ProgressTimeout");
+    var wn = _l;
 
-    function K2(i) {
+    function G2(i) {
         return i ? i.readyState !== 0 && i.readyState !== 4 || i.status === 0 : !1
     }
-    n(K2, "isNetworkError");
-    var is = K2;
+    n(G2, "isNetworkError");
+    var rs = G2;
 
     function ut(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
     n(ut, "_classPrivateFieldLooseBase");
-    var G2 = 0;
+    var X2 = 0;
 
-    function ns(i) {
-        return "__private_" + G2++ + "_" + i
+    function as(i) {
+        return "__private_" + X2++ + "_" + i
     }
-    n(ns, "_classPrivateFieldLooseKey");
+    n(as, "_classPrivateFieldLooseKey");
 
-    function mg(i, e) {
-        if (is(i)) return new Lt(e, i);
+    function gg(i, e) {
+        if (rs(i)) return new Mt(e, i);
         let t = new Zt("Upload error", {
             cause: e
         });
         return t.request = i, t
     }
-    n(mg, "buildResponseError");
+    n(gg, "buildResponseError");
 
-    function X2(i) {
+    function Y2(i) {
         return i.data.slice(0, i.data.size, i.meta.type)
     }
-    n(X2, "setTypeInBlob");
+    n(Y2, "setTypeInBlob");
 
-    function Y2(i, e, t) {
+    function J2(i, e, t) {
         (Array.isArray(t.allowedMetaFields) ? t.allowedMetaFields : Object.keys(e)).forEach(s => {
             i.append(s, e[s])
         })
     }
-    n(Y2, "addMetadata");
+    n(J2, "addMetadata");
 
-    function J2(i, e) {
+    function Q2(i, e) {
         let t = new FormData;
-        Y2(t, i.meta, e);
-        let r = X2(i);
+        J2(t, i.meta, e);
+        let r = Y2(i);
         return i.name ? t.append(e.fieldName, r, i.meta.name) : t.append(e.fieldName, r), t
     }
-    n(J2, "createFormDataUpload");
-    var Q2 = n(i => i.data, "createBareUpload"),
-        Sn = ns("queueRequestSocketToken"),
-        rs = ns("getOptions"),
-        ss = ns("addEventHandlerForFile"),
-        os = ns("addEventHandlerIfFileStillExists"),
-        ac = ns("uploadLocalFile"),
-        lc = ns("requestSocketToken"),
-        uc = ns("uploadRemoteFile"),
+    n(Q2, "createFormDataUpload");
+    var Z2 = n(i => i.data, "createBareUpload"),
+        Sn = as("queueRequestSocketToken"),
+        ss = as("getOptions"),
+        os = as("addEventHandlerForFile"),
+        ns = as("addEventHandlerIfFileStillExists"),
+        ac = as("uploadLocalFile"),
+        lc = as("requestSocketToken"),
+        uc = as("uploadRemoteFile"),
         io = class {
             constructor(e, t) {
                 Object.defineProperty(this, uc, {
-                    value: rS
+                    value: sS
                 }), Object.defineProperty(this, ac, {
+                    value: rS
+                }), Object.defineProperty(this, ns, {
                     value: iS
                 }), Object.defineProperty(this, os, {
                     value: tS
                 }), Object.defineProperty(this, ss, {
                     value: eS
-                }), Object.defineProperty(this, rs, {
-                    value: Z2
                 }), Object.defineProperty(this, Sn, {
                     writable: !0,
                     value: void 0
                 }), Object.defineProperty(this, lc, {
                     writable: !0,
                     value: async r => {
-                        let s = ut(this, rs)[rs](r),
+                        let s = ut(this, ss)[ss](r),
                             o = r.remote.providerOptions.provider ? Y : le,
                             a = new o(this.uppy, r.remote.providerOptions),
                             l = Array.isArray(s.allowedMetaFields) ? s.allowedMetaFields : Object.keys(r.meta);
@@ -15095,7 +15139,7 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                         return r >= 200 && r < 300
                     },
                     ...t
-                }, this.requests = t[br], this.uploaderEvents = Object.create(null), this.i18n = t.i18n, ut(this, Sn)[Sn] = this.requests.wrapPromiseFunction(ut(this, lc)[lc], {
+                }, this.requests = t[wr], this.uploaderEvents = Object.create(null), this.i18n = t.i18n, ut(this, Sn)[Sn] = this.requests.wrapPromiseFunction(ut(this, lc)[lc], {
                     priority: -1
                 })
             }
@@ -15106,28 +15150,28 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
             connectToServerSocket(e) {
                 return new Promise((t, r) => {
-                    let s = ut(this, rs)[rs](e),
+                    let s = ut(this, ss)[ss](e),
                         o = e.serverToken,
                         a = Wi(e.remote.companionUrl),
                         l, h = n(() => {
                             l == null && (l = new ot({
                                 target: `${a}/api/${o}`
-                            }), l.on("progress", f => wr(this, f, e)), l.on("success", f => {
+                            }), l.on("progress", f => Sr(this, f, e)), l.on("success", f => {
                                 let y = s.getResponseData(f.response.responseText, f.response),
-                                    S = y[s.responseUrlFieldName],
-                                    w = {
+                                    w = y[s.responseUrlFieldName],
+                                    S = {
                                         status: f.response.status,
                                         body: y,
-                                        uploadURL: S,
+                                        uploadURL: w,
                                         bytesUploaded: f.bytesUploaded
                                     };
-                                return this.uppy.emit("upload-success", e, w), c.done(), l.close(), this.uploaderEvents[e.id] && (this.uploaderEvents[e.id].remove(), this.uploaderEvents[e.id] = null), t()
+                                return this.uppy.emit("upload-success", e, S), c.done(), l.close(), this.uploaderEvents[e.id] && (this.uploaderEvents[e.id].remove(), this.uploaderEvents[e.id] = null), t()
                             }), l.on("error", f => {
                                 let y = f.response,
-                                    S = y ? s.getResponseError(y.responseText, y) : new Zt(f.error.message, {
+                                    w = y ? s.getResponseError(y.responseText, y) : new Zt(f.error.message, {
                                         cause: f.error
                                     });
-                                this.uppy.emit("upload-error", e, S), c.done(), this.uploaderEvents[e.id] && (this.uploaderEvents[e.id].remove(), this.uploaderEvents[e.id] = null), r(S)
+                                this.uppy.emit("upload-error", e, w), c.done(), this.uploaderEvents[e.id] && (this.uploaderEvents[e.id].remove(), this.uploaderEvents[e.id] = null), r(w)
                             }))
                         }, "createSocket");
                     this.uploaderEvents[e.id] = new $e(this.uppy);
@@ -15138,29 +15182,29 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                         } else h();
                         return () => l.close()
                     });
-                    ut(this, ss)[ss]("file-removed", e.id, () => {
+                    ut(this, os)[os]("file-removed", e.id, () => {
                         var f;
                         (f = l) == null || f.send("cancel", {}), c.abort(), t(`upload ${e.id} was removed`)
-                    }), ut(this, os)[os]("cancel-all", e.id, function(f) {
+                    }), ut(this, ns)[ns]("cancel-all", e.id, function(f) {
                         let {
                             reason: y
                         } = f === void 0 ? {} : f;
                         if (y === "user") {
-                            var S;
-                            (S = l) == null || S.send("cancel", {}), c.abort()
+                            var w;
+                            (w = l) == null || w.send("cancel", {}), c.abort()
                         }
                         t(`upload ${e.id} was canceled`)
                     });
                     let d = n(() => {
                         l == null ? c.abort() : (l.send("pause", {}), c.done()), c = this.requests.run(() => (e.isPaused || (l == null ? h() : l.send("resume", {})), () => l.close()))
                     }, "onRetryRequest");
-                    ut(this, ss)[ss]("upload-retry", e.id, d), ut(this, os)[os]("retry-all", e.id, d)
+                    ut(this, os)[os]("upload-retry", e.id, d), ut(this, ns)[ns]("retry-all", e.id, d)
                 }).catch(t => (this.uppy.emit("upload-error", e, t), Promise.reject(t)))
             }
         };
     n(io, "MiniXHRUpload");
 
-    function Z2(i) {
+    function eS(i) {
         var e;
         let {
             uppy: t
@@ -15174,29 +15218,29 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }
         }
     }
-    n(Z2, "_getOptions2");
+    n(eS, "_getOptions2");
 
-    function eS(i, e, t) {
+    function tS(i, e, t) {
         this.uploaderEvents[e].on(i, r => {
             var s;
             let o = (s = r ?.id) != null ? s : r;
             e === o && t()
         })
     }
-    n(eS, "_addEventHandlerForFile2");
+    n(tS, "_addEventHandlerForFile2");
 
-    function tS(i, e, t) {
+    function iS(i, e, t) {
         var r = this;
         this.uploaderEvents[e].on(i, function() {
             r.uppy.getFile(e) && t(...arguments)
         })
     }
-    n(tS, "_addEventHandlerIfFileStillExists2");
+    n(iS, "_addEventHandlerIfFileStillExists2");
 
-    function iS(i, e, t) {
-        let r = ut(this, rs)[rs](i);
+    function rS(i, e, t) {
+        let r = ut(this, ss)[ss](i);
         return this.uppy.log(`uploading ${e} of ${t}`), new Promise((s, o) => {
-            let a = r.formData ? J2(i, r) : Q2(i, r),
+            let a = r.formData ? Q2(i, r) : Z2(i, r),
                 l = new XMLHttpRequest;
             this.uploaderEvents[i.id] = new $e(this.uppy);
             let h = new wn(r.timeout, () => {
@@ -15219,23 +15263,23 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
                 if (this.uppy.log(`[AwsS3/XHRUpload] ${c} finished`), h.done(), d.done(), this.uploaderEvents[i.id] && (this.uploaderEvents[i.id].remove(), this.uploaderEvents[i.id] = null), r.validateStatus(f.target.status, l.responseText, l)) {
                     let R = r.getResponseData(l.responseText, l),
                         x = R[r.responseUrlFieldName],
-                        E = {
+                        F = {
                             status: f.target.status,
                             body: R,
                             uploadURL: x
                         };
-                    return this.uppy.emit("upload-success", i, E), x && this.uppy.log(`Download ${i.name} from ${x}`), s(i)
+                    return this.uppy.emit("upload-success", i, F), x && this.uppy.log(`Download ${i.name} from ${x}`), s(i)
                 }
                 let y = r.getResponseData(l.responseText, l),
-                    S = mg(l, r.getResponseError(l.responseText, l)),
-                    w = {
+                    w = gg(l, r.getResponseError(l.responseText, l)),
+                    S = {
                         status: f.target.status,
                         body: y
                     };
-                return this.uppy.emit("upload-error", i, S, w), o(S)
+                return this.uppy.emit("upload-error", i, w, S), o(w)
             }), l.addEventListener("error", () => {
                 this.uppy.log(`[AwsS3/XHRUpload] ${c} errored`), h.done(), d.done(), this.uploaderEvents[i.id] && (this.uploaderEvents[i.id].remove(), this.uploaderEvents[i.id] = null);
-                let f = mg(l, r.getResponseError(l.responseText, l));
+                let f = gg(l, r.getResponseError(l.responseText, l));
                 return this.uppy.emit("upload-error", i, f), o(f)
             }), l.open(r.method.toUpperCase(), r.endpoint, !0), l.withCredentials = Boolean(r.withCredentials), r.responseType !== "" && (l.responseType = r.responseType), Object.keys(r.headers).forEach(f => {
                 l.setRequestHeader(f, r.headers[f])
@@ -15245,9 +15289,9 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             }), {
                 priority: 1
             });
-            ut(this, ss)[ss]("file-removed", i.id, () => {
+            ut(this, os)[os]("file-removed", i.id, () => {
                 d.abort(), o(new Error("File removed"))
-            }), ut(this, os)[os]("cancel-all", i.id, function(f) {
+            }), ut(this, ns)[ns]("cancel-all", i.id, function(f) {
                 let {
                     reason: y
                 } = f === void 0 ? {} : f;
@@ -15255,8 +15299,8 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             })
         })
     }
-    n(iS, "_uploadLocalFile2");
-    async function rS(i) {
+    n(rS, "_uploadLocalFile2");
+    async function sS(i) {
         try {
             if (i.serverToken) return this.connectToServerSocket(i);
             let e = await ut(this, Sn)[Sn](i);
@@ -15267,49 +15311,49 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
             throw this.uppy.emit("upload-error", i, e), e
         }
     }
-    n(rS, "_uploadRemoteFile2");
+    n(sS, "_uploadRemoteFile2");
 
-    function sS(i) {
+    function oS(i) {
         return i.replace(/;.*$/, "")
     }
-    n(sS, "removeMimeParameters");
+    n(oS, "removeMimeParameters");
 
-    function oS(i, e) {
+    function nS(i, e) {
         let t = e.headers ? e.headers["content-type"] : e.getResponseHeader("Content-Type");
         if (typeof t == "string") {
-            let r = sS(t).toLowerCase();
+            let r = oS(t).toLowerCase();
             if (r === "application/xml" || r === "text/xml" || r === "text/html" && /^<\?xml /.test(i)) return !0
         }
         return !1
     }
-    n(oS, "isXml");
-    var hc = oS;
-    var gg = {
+    n(nS, "isXml");
+    var hc = nS;
+    var yg = {
         strings: {
             timedOut: "Upload stalled for %{seconds} seconds, aborting."
         }
     };
-    var vg;
+    var bg;
 
     function Qe(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
     n(Qe, "_classPrivateFieldLooseBase");
-    var nS = 0;
+    var aS = 0;
 
     function En(i) {
-        return "__private_" + nS++ + "_" + i
+        return "__private_" + aS++ + "_" + i
     }
     n(En, "_classPrivateFieldLooseKey");
-    var aS = {
+    var lS = {
         version: "3.0.5"
     };
 
-    function lS(i, e) {
+    function uS(i, e) {
         return !i && !e.startsWith("https://") && !e.startsWith("http://") && (e = `https://${e}`), new URL(e, i || void 0).toString()
     }
-    n(lS, "resolveUrl");
+    n(uS, "resolveUrl");
 
     function Fn(i, e) {
         let t = i.indexOf(`<${e}>`),
@@ -15318,42 +15362,42 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
     }
     n(Fn, "getXmlValue");
 
-    function uS(i) {
+    function hS(i) {
         if (i && i.error) {
             let e = new Error(i.message);
             throw Object.assign(e, i.error), e
         }
         return i
     }
-    n(uS, "assertServerError");
+    n(hS, "assertServerError");
 
-    function hS(i, e) {
+    function cS(i, e) {
         if (!(e != null && typeof e.url == "string" && (typeof e.fields == "object" || e.fields == null))) throw new TypeError(`AwsS3: got incorrect result from 'getUploadParameters()' for file '${i.name}', expected an object '{ url, method, fields, headers }' but got '${JSON.stringify(e)}' instead.
 See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expected format.`);
         if (!(e.method == null || /^p(u|os)t$/i.test(e.method))) throw new TypeError(`AwsS3: got incorrect method from 'getUploadParameters()' for file '${i.name}', expected  'put' or 'post' but got '${e.method}' instead.
 See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expected format.`)
     }
-    n(hS, "validateParameters");
+    n(cS, "validateParameters");
 
-    function cS(i, e) {
+    function dS(i, e) {
         if (!hc(i, e)) return;
         let t = Fn(i, "Message");
         return new Error(t)
     }
-    n(cS, "defaultGetResponseError");
-    var yg = !1,
+    n(dS, "defaultGetResponseError");
+    var vg = !1,
         yt = En("client"),
-        as = En("requests"),
+        ls = En("requests"),
         _n = En("uploader"),
         Pn = En("handleUpload"),
         xn = En("setCompanionHeaders");
-    vg = Symbol.for("uppy test: getClient");
-    var ls = class extends ae {
+    bg = Symbol.for("uppy test: getClient");
+    var us = class extends ae {
         constructor(e, t) {
             super(e, t), Object.defineProperty(this, yt, {
                 writable: !0,
                 value: void 0
-            }), Object.defineProperty(this, as, {
+            }), Object.defineProperty(this, ls, {
                 writable: !0,
                 value: void 0
             }), Object.defineProperty(this, _n, {
@@ -15375,28 +15419,28 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                         let d = this.uppy.getFile(c);
                         this.uppy.emit("upload-started", d)
                     });
-                    let l = Qe(this, as)[as].wrapPromiseFunction(c => this.opts.getUploadParameters(c)),
+                    let l = Qe(this, ls)[ls].wrapPromiseFunction(c => this.opts.getUploadParameters(c)),
                         h = s.length;
                     return Promise.allSettled(s.map((c, d) => (o[c] = l(this.uppy.getFile(c)), o[c].then(f => {
                         delete o[c];
                         let y = this.uppy.getFile(c);
-                        hS(y, f);
+                        cS(y, f);
                         let {
-                            method: S = "post",
-                            url: w,
+                            method: w = "post",
+                            url: S,
                             fields: R,
                             headers: x
-                        } = f, E = {
-                            method: S,
-                            formData: S.toLowerCase() === "post",
-                            endpoint: w,
+                        } = f, F = {
+                            method: w,
+                            formData: w.toLowerCase() === "post",
+                            endpoint: S,
                             allowedMetaFields: R ? Object.keys(R) : []
                         };
-                        return x && (E.headers = x), this.uppy.setFileState(y.id, {
+                        return x && (F.headers = x), this.uppy.setFileState(y.id, {
                             meta: { ...y.meta,
                                 ...R
                             },
-                            xhrUpload: E
+                            xhrUpload: F
                         }), Qe(this, _n)[_n].uploadFile(y.id, d, h)
                     }).catch(f => {
                         delete o[c];
@@ -15409,7 +15453,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             }), Object.defineProperty(this, xn, {
                 writable: !0,
                 value: () => (Qe(this, yt)[yt].setCompanionHeaders(this.opts.companionHeaders), Promise.resolve())
-            }), this.type = "uploader", this.id = this.opts.id || "AwsS3", this.title = "AWS S3", this.defaultLocale = gg;
+            }), this.type = "uploader", this.id = this.opts.id || "AwsS3", this.title = "AWS S3", this.defaultLocale = yg;
             let r = {
                 timeout: 30 * 1e3,
                 limit: 0,
@@ -15420,8 +15464,8 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             if (this.opts = { ...r,
                 ...t
             }, t ?.allowedMetaFields === void 0 && "metaFields" in this.opts) throw new Error("The `metaFields` option has been renamed to `allowedMetaFields`.");
-            this.i18nInit(), Qe(this, yt)[yt] = new le(e, t), Qe(this, as)[as] = new Je(this.opts.limit)
-        }[vg]() {
+            this.i18nInit(), Qe(this, yt)[yt] = new le(e, t), Qe(this, ls)[ls] = new Je(this.opts.limit)
+        }[bg]() {
             return Qe(this, yt)[yt]
         }
         get client() {
@@ -15442,7 +15486,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                     type: r,
                     ...s
                 });
-            return Qe(this, yt)[yt].get(`s3/params?${o}`).then(uS)
+            return Qe(this, yt)[yt].get(`s3/params?${o}`).then(hS)
         }
         install() {
             let {
@@ -15453,11 +15497,11 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             function t(s, o) {
                 let a = this;
                 return hc(s, o) ? {
-                    location: lS(o.responseURL, Fn(s, "Location")),
+                    location: uS(o.responseURL, Fn(s, "Location")),
                     bucket: Fn(s, "Bucket"),
                     key: Fn(s, "Key"),
                     etag: Fn(s, "ETag")
-                } : a.method.toUpperCase() === "POST" ? (yg || (e.log("[AwsS3] No response data found, make sure to set the success_action_status AWS SDK option to 201. See https://uppy.io/docs/aws-s3/#POST-Uploads", "warning"), yg = !0), {
+                } : a.method.toUpperCase() === "POST" ? (vg || (e.log("[AwsS3] No response data found, make sure to set the success_action_status AWS SDK option to 201. See https://uppy.io/docs/aws-s3/#POST-Uploads", "warning"), vg = !0), {
                     location: null
                 }) : o.responseURL ? {
                     location: o.responseURL.replace(/\?.*$/, "")
@@ -15470,10 +15514,10 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                 fieldName: "file",
                 responseUrlFieldName: "location",
                 timeout: this.opts.timeout,
-                [br]: Qe(this, as)[as],
+                [wr]: Qe(this, ls)[ls],
                 responseType: "text",
                 getResponseData: this.opts.getResponseData || t,
-                getResponseError: cS
+                getResponseError: dS
             };
             r.i18n = this.i18n, Qe(this, _n)[_n] = new io(e, r)
         }
@@ -15481,12 +15525,12 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             this.uppy.removePreProcessor(Qe(this, xn)[xn]), this.uppy.removeUploader(Qe(this, Pn)[Pn])
         }
     };
-    n(ls, "AwsS3");
-    ls.VERSION = aS.version;
+    n(us, "AwsS3");
+    us.VERSION = lS.version;
     var {
-        AbortController: Pl
+        AbortController: xl
     } = globalThis, {
-        AbortSignal: PU
+        AbortSignal: _U
     } = globalThis, cc = n(function(i, e) {
         i === void 0 && (i = "Aborted");
         let t = new DOMException(i, "AbortError");
@@ -15503,14 +15547,14 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
         return i
     }
     n(M, "_classPrivateFieldLooseBase");
-    var dS = 0;
+    var pS = 0;
 
     function et(i) {
-        return "__private_" + dS++ + "_" + i
+        return "__private_" + pS++ + "_" + i
     }
     n(et, "_classPrivateFieldLooseKey");
-    var pS = 1024 * 1024,
-        bg = {
+    var fS = 1024 * 1024,
+        wg = {
             getChunkSize(i) {
                 return Math.ceil(i.size / 1e4)
             },
@@ -15522,21 +15566,21 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             }
         };
 
-    function fS(i) {
+    function mS(i) {
         if (typeof i == "string") return parseInt(i, 10);
         if (typeof i == "number") return i;
         throw new TypeError("Expected a number")
     }
-    n(fS, "ensureInt");
+    n(mS, "ensureInt");
     var dc = Symbol("pausing upload, not an actual error"),
-        Ie = et("abortController"),
+        Le = et("abortController"),
         Ze = et("chunks"),
         vt = et("chunkState"),
-        Re = et("data"),
+        Ce = et("data"),
         Gi = et("file"),
-        us = et("uploadPromise"),
+        hs = et("uploadPromise"),
         On = et("onError"),
-        hs = et("onSuccess"),
+        cs = et("onSuccess"),
         Tn = et("onReject"),
         pc = et("initChunks"),
         fc = et("createUpload"),
@@ -15544,39 +15588,39 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
         Rn = et("onPartProgress"),
         Cn = et("onPartComplete"),
         gc = et("abortUpload"),
-        xl = class {
+        Fl = class {
             constructor(e, t) {
                 var r, s;
                 Object.defineProperty(this, gc, {
-                    value: vS
+                    value: bS
                 }), Object.defineProperty(this, mc, {
-                    value: yS
+                    value: vS
                 }), Object.defineProperty(this, fc, {
-                    value: gS
+                    value: yS
                 }), Object.defineProperty(this, pc, {
-                    value: mS
-                }), Object.defineProperty(this, Ie, {
+                    value: gS
+                }), Object.defineProperty(this, Le, {
                     writable: !0,
-                    value: new Pl
+                    value: new xl
                 }), Object.defineProperty(this, Ze, {
                     writable: !0,
                     value: void 0
                 }), Object.defineProperty(this, vt, {
                     writable: !0,
                     value: void 0
-                }), Object.defineProperty(this, Re, {
+                }), Object.defineProperty(this, Ce, {
                     writable: !0,
                     value: void 0
                 }), Object.defineProperty(this, Gi, {
                     writable: !0,
                     value: void 0
-                }), Object.defineProperty(this, us, {
+                }), Object.defineProperty(this, hs, {
                     writable: !0,
                     value: void 0
                 }), Object.defineProperty(this, On, {
                     writable: !0,
                     value: void 0
-                }), Object.defineProperty(this, hs, {
+                }), Object.defineProperty(this, cs, {
                     writable: !0,
                     value: void 0
                 }), Object.defineProperty(this, Tn, {
@@ -15587,9 +15631,9 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                     value: o => a => {
                         if (!a.lengthComputable) return;
                         let l = a.loaded;
-                        M(this, vt)[vt][o].uploaded = fS(l);
+                        M(this, vt)[vt][o].uploaded = mS(l);
                         let h = M(this, vt)[vt].reduce((c, d) => c + d.uploaded, 0);
-                        this.options.onProgress(h, M(this, Re)[Re].size)
+                        this.options.onProgress(h, M(this, Ce)[Ce].size)
                     }
                 }), Object.defineProperty(this, Cn, {
                     writable: !0,
@@ -15601,15 +15645,15 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                         };
                         this.options.onPartComplete(l)
                     }
-                }), this.options = { ...bg,
+                }), this.options = { ...wg,
                     ...t
-                }, (s = (r = this.options).getChunkSize) != null || (r.getChunkSize = bg.getChunkSize), M(this, Re)[Re] = e, M(this, Gi)[Gi] = t.file, M(this, hs)[hs] = this.options.onSuccess, M(this, On)[On] = this.options.onError, M(this, pc)[pc]()
+                }, (s = (r = this.options).getChunkSize) != null || (r.getChunkSize = wg.getChunkSize), M(this, Ce)[Ce] = e, M(this, Gi)[Gi] = t.file, M(this, cs)[cs] = this.options.onSuccess, M(this, On)[On] = this.options.onError, M(this, pc)[pc]()
             }
             start() {
-                M(this, us)[us] ? (M(this, Ie)[Ie].signal.aborted || M(this, Ie)[Ie].abort(dc), M(this, Ie)[Ie] = new Pl, M(this, mc)[mc]()) : M(this, fc)[fc]()
+                M(this, hs)[hs] ? (M(this, Le)[Le].signal.aborted || M(this, Le)[Le].abort(dc), M(this, Le)[Le] = new xl, M(this, mc)[mc]()) : M(this, fc)[fc]()
             }
             pause() {
-                M(this, Ie)[Ie].abort(dc), M(this, Ie)[Ie] = new Pl
+                M(this, Le)[Le].abort(dc), M(this, Le)[Le] = new xl
             }
             abort(e) {
                 var t;
@@ -15619,21 +15663,21 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                 return M(this, vt)[vt]
             }
         };
-    n(xl, "MultipartUploader");
+    n(Fl, "MultipartUploader");
 
-    function mS() {
-        let i = this.options.getChunkSize(M(this, Re)[Re]),
-            e = M(this, Re)[Re].size,
-            t = Math.max(5 * pS, Math.ceil(e / 1e4)),
+    function gS() {
+        let i = this.options.getChunkSize(M(this, Ce)[Ce]),
+            e = M(this, Ce)[Ce].size,
+            t = Math.max(5 * fS, Math.ceil(e / 1e4)),
             r = Math.max(i, t);
-        if (M(this, Re)[Re].size === 0) M(this, Ze)[Ze] = [M(this, Re)[Re]], M(this, Re)[Re].onProgress = M(this, Rn)[Rn](0), M(this, Re)[Re].onComplete = M(this, Cn)[Cn](0);
+        if (M(this, Ce)[Ce].size === 0) M(this, Ze)[Ze] = [M(this, Ce)[Ce]], M(this, Ce)[Ce].onProgress = M(this, Rn)[Rn](0), M(this, Ce)[Ce].onComplete = M(this, Cn)[Cn](0);
         else {
             let s = Math.ceil(e / r);
             M(this, Ze)[Ze] = Array(s);
             let o = 0;
             for (let a = 0; a < e; a += r) {
                 let l = Math.min(e, a + r),
-                    h = M(this, Re)[Re].slice(a, l);
+                    h = M(this, Ce)[Ce].slice(a, l);
                 h.onProgress = M(this, Rn)[Rn](o), h.onComplete = M(this, Cn)[Cn](o), M(this, Ze)[Ze][o++] = h
             }
         }
@@ -15641,37 +15685,37 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             uploaded: 0
         }))
     }
-    n(mS, "_initChunks2");
-
-    function gS() {
-        M(this, us)[us] = this.options.companionComm.uploadFile(M(this, Gi)[Gi], M(this, Ze)[Ze], M(this, Ie)[Ie].signal).then(M(this, hs)[hs], M(this, Tn)[Tn])
-    }
-    n(gS, "_createUpload2");
+    n(gS, "_initChunks2");
 
     function yS() {
-        M(this, us)[us] = this.options.companionComm.resumeUploadFile(M(this, Gi)[Gi], M(this, Ze)[Ze], M(this, Ie)[Ie].signal).then(M(this, hs)[hs], M(this, Tn)[Tn])
+        M(this, hs)[hs] = this.options.companionComm.uploadFile(M(this, Gi)[Gi], M(this, Ze)[Ze], M(this, Le)[Le].signal).then(M(this, cs)[cs], M(this, Tn)[Tn])
     }
-    n(yS, "_resumeUpload2");
+    n(yS, "_createUpload2");
 
     function vS() {
-        M(this, Ie)[Ie].abort(), this.options.companionComm.abortFileUpload(M(this, Gi)[Gi]).catch(i => this.options.log(i))
+        M(this, hs)[hs] = this.options.companionComm.resumeUploadFile(M(this, Gi)[Gi], M(this, Ze)[Ze], M(this, Le)[Le].signal).then(M(this, cs)[cs], M(this, Tn)[Tn])
     }
-    n(vS, "_abortUpload2");
-    var wg = xl;
-    var Sg;
+    n(vS, "_resumeUpload2");
 
-    function H(i, e) {
+    function bS() {
+        M(this, Le)[Le].abort(), this.options.companionComm.abortFileUpload(M(this, Gi)[Gi]).catch(i => this.options.log(i))
+    }
+    n(bS, "_abortUpload2");
+    var Sg = Fl;
+    var _g;
+
+    function $(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
-    n(H, "_classPrivateFieldLooseBase");
-    var bS = 0;
+    n($, "_classPrivateFieldLooseBase");
+    var wS = 0;
 
-    function Ae(i) {
-        return "__private_" + bS++ + "_" + i
+    function Ue(i) {
+        return "__private_" + wS++ + "_" + i
     }
-    n(Ae, "_classPrivateFieldLooseKey");
-    var wS = {
+    n(Ue, "_classPrivateFieldLooseKey");
+    var SS = {
         version: "3.1.2"
     };
 
@@ -15690,26 +15734,26 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
         })
     }
     n(tt, "throwIfAborted");
-    var An = Ae("abortMultipartUpload"),
-        Ht = Ae("cache"),
-        Un = Ae("createMultipartUpload"),
-        Dn = Ae("fetchSignature"),
-        Nn = Ae("listParts"),
-        ps = Ae("previousRetryDelay"),
-        fs = Ae("requests"),
-        Xi = Ae("retryDelayIterator"),
-        cs = Ae("sendCompletionRequest"),
-        Bn = Ae("setS3MultipartState"),
-        In = Ae("uploadPartBytes"),
-        yc = Ae("shouldRetry"),
-        Fl = class {
+    var An = Ue("abortMultipartUpload"),
+        $t = Ue("cache"),
+        Un = Ue("createMultipartUpload"),
+        Dn = Ue("fetchSignature"),
+        Nn = Ue("listParts"),
+        fs = Ue("previousRetryDelay"),
+        ms = Ue("requests"),
+        Xi = Ue("retryDelayIterator"),
+        ds = Ue("sendCompletionRequest"),
+        Bn = Ue("setS3MultipartState"),
+        In = Ue("uploadPartBytes"),
+        yc = Ue("shouldRetry"),
+        El = class {
             constructor(e, t, r) {
                 Object.defineProperty(this, yc, {
-                    value: SS
+                    value: _S
                 }), Object.defineProperty(this, An, {
                     writable: !0,
                     value: void 0
-                }), Object.defineProperty(this, Ht, {
+                }), Object.defineProperty(this, $t, {
                     writable: !0,
                     value: new WeakMap
                 }), Object.defineProperty(this, Un, {
@@ -15721,16 +15765,16 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                 }), Object.defineProperty(this, Nn, {
                     writable: !0,
                     value: void 0
-                }), Object.defineProperty(this, ps, {
+                }), Object.defineProperty(this, fs, {
                     writable: !0,
                     value: void 0
-                }), Object.defineProperty(this, fs, {
+                }), Object.defineProperty(this, ms, {
                     writable: !0,
                     value: void 0
                 }), Object.defineProperty(this, Xi, {
                     writable: !0,
                     value: void 0
-                }), Object.defineProperty(this, cs, {
+                }), Object.defineProperty(this, ds, {
                     writable: !0,
                     value: void 0
                 }), Object.defineProperty(this, Bn, {
@@ -15739,38 +15783,38 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                 }), Object.defineProperty(this, In, {
                     writable: !0,
                     value: void 0
-                }), H(this, fs)[fs] = e, H(this, Bn)[Bn] = r, this.setOptions(t)
+                }), $(this, ms)[ms] = e, $(this, Bn)[Bn] = r, this.setOptions(t)
             }
             setOptions(e) {
-                let t = H(this, fs)[fs];
-                if ("abortMultipartUpload" in e && (H(this, An)[An] = t.wrapPromiseFunction(e.abortMultipartUpload)), "createMultipartUpload" in e && (H(this, Un)[Un] = t.wrapPromiseFunction(e.createMultipartUpload, {
+                let t = $(this, ms)[ms];
+                if ("abortMultipartUpload" in e && ($(this, An)[An] = t.wrapPromiseFunction(e.abortMultipartUpload)), "createMultipartUpload" in e && ($(this, Un)[Un] = t.wrapPromiseFunction(e.createMultipartUpload, {
                     priority: -1
-                })), "signPart" in e && (H(this, Dn)[Dn] = t.wrapPromiseFunction(e.signPart)), "listParts" in e && (H(this, Nn)[Nn] = t.wrapPromiseFunction(e.listParts)), "completeMultipartUpload" in e && (H(this, cs)[cs] = t.wrapPromiseFunction(e.completeMultipartUpload)), "retryDelays" in e) {
+                })), "signPart" in e && ($(this, Dn)[Dn] = t.wrapPromiseFunction(e.signPart)), "listParts" in e && ($(this, Nn)[Nn] = t.wrapPromiseFunction(e.listParts)), "completeMultipartUpload" in e && ($(this, ds)[ds] = t.wrapPromiseFunction(e.completeMultipartUpload)), "retryDelays" in e) {
                     var r;
-                    H(this, Xi)[Xi] = (r = e.retryDelays) == null ? void 0 : r.values()
+                    $(this, Xi)[Xi] = (r = e.retryDelays) == null ? void 0 : r.values()
                 }
-                "uploadPartBytes" in e && (H(this, In)[In] = t.wrapPromiseFunction(e.uploadPartBytes, {
+                "uploadPartBytes" in e && ($(this, In)[In] = t.wrapPromiseFunction(e.uploadPartBytes, {
                     priority: 1 / 0
                 }))
             }
             async getUploadId(e, t) {
-                let r = H(this, Ht)[Ht].get(e.data);
+                let r = $(this, $t)[$t].get(e.data);
                 if (r != null) return r;
-                let s = H(this, Un)[Un](e, t),
+                let s = $(this, Un)[Un](e, t),
                     o = n(() => {
-                        s.abort(t.reason), H(this, Ht)[Ht].delete(e.data)
+                        s.abort(t.reason), $(this, $t)[$t].delete(e.data)
                     }, "abortPromise");
                 return t.addEventListener("abort", o, {
                     once: !0
-                }), H(this, Ht)[Ht].set(e.data, s), s.then(async a => {
-                    t.removeEventListener("abort", o), H(this, Bn)[Bn](e, a), H(this, Ht)[Ht].set(e.data, a)
+                }), $(this, $t)[$t].set(e.data, s), s.then(async a => {
+                    t.removeEventListener("abort", o), $(this, Bn)[Bn](e, a), $(this, $t)[$t].set(e.data, a)
                 }, () => {
                     t.removeEventListener("abort", o)
                 }), s
             }
             async abortFileUpload(e) {
-                let t = H(this, Ht)[Ht].get(e.data);
-                t != null && await H(this, An)[An](e, await t)
+                let t = $(this, $t)[$t].get(e.data);
+                t != null && await $(this, An)[An](e, await t)
             }
             async uploadFile(e, t, r) {
                 tt(r);
@@ -15780,7 +15824,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                 } = await this.getUploadId(e, r);
                 tt(r);
                 let a = await Promise.all(t.map((l, h) => this.uploadChunk(e, h + 1, l, r)));
-                return tt(r), H(this, cs)[cs](e, {
+                return tt(r), $(this, ds)[ds](e, {
                     key: o,
                     uploadId: s,
                     parts: a,
@@ -15794,7 +15838,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                     key: o
                 } = await this.getUploadId(e, r);
                 tt(r);
-                let a = await H(this, Nn)[Nn](e, {
+                let a = await $(this, Nn)[Nn](e, {
                     uploadId: s,
                     key: o,
                     signal: r
@@ -15804,16 +15848,16 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                     let d = c + 1,
                         f = a.find(y => {
                             let {
-                                PartNumber: S
+                                PartNumber: w
                             } = y;
-                            return S === d
+                            return w === d
                         });
                     return f == null ? this.uploadChunk(e, d, h, r) : {
                         PartNumber: d,
                         ETag: f.ETag
                     }
                 }));
-                return tt(r), H(this, cs)[cs](e, {
+                return tt(r), $(this, ds)[ds](e, {
                     key: o,
                     uploadId: s,
                     parts: l,
@@ -15827,7 +15871,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                     key: a
                 } = await this.getUploadId(e, s);
                 for (tt(s);;) {
-                    let l = await H(this, Dn)[Dn](e, {
+                    let l = await $(this, Dn)[Dn](e, {
                         uploadId: o,
                         key: a,
                         partNumber: t,
@@ -15838,34 +15882,34 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                     try {
                         return {
                             PartNumber: t,
-                            ...await H(this, In)[In](l, r, s).abortOn(s)
+                            ...await $(this, In)[In](l, r, s).abortOn(s)
                         }
                     } catch (h) {
-                        if (!await H(this, yc)[yc](h)) throw h
+                        if (!await $(this, yc)[yc](h)) throw h
                     }
                 }
             }
         };
-    n(Fl, "HTTPCommunicationQueue");
-    async function SS(i) {
+    n(El, "HTTPCommunicationQueue");
+    async function _S(i) {
         var e;
-        let t = H(this, fs)[fs],
+        let t = $(this, ms)[ms],
             r = i == null || (e = i.source) == null ? void 0 : e.status;
         if (r == null) return !1;
         if (r === 403 && i.message === "Request has expired") {
             if (!t.isPaused) {
-                if (t.limit === 1 || H(this, ps)[ps] == null) {
+                if (t.limit === 1 || $(this, fs)[fs] == null) {
                     var s;
-                    let l = (s = H(this, Xi)[Xi]) == null ? void 0 : s.next();
+                    let l = (s = $(this, Xi)[Xi]) == null ? void 0 : s.next();
                     if (l == null || l.done) return !1;
-                    H(this, ps)[ps] = l.value
+                    $(this, fs)[fs] = l.value
                 }
-                t.rateLimit(0), await new Promise(l => setTimeout(l, H(this, ps)[ps]))
+                t.rateLimit(0), await new Promise(l => setTimeout(l, $(this, fs)[fs]))
             }
         } else if (r === 429) {
             if (!t.isPaused) {
                 var o;
-                let l = (o = H(this, Xi)[Xi]) == null ? void 0 : o.next();
+                let l = (o = $(this, Xi)[Xi]) == null ? void 0 : o.next();
                 if (l == null || l.done) return !1;
                 t.rateLimit(l.value)
             }
@@ -15878,31 +15922,31 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             }));
             else {
                 var a;
-                let l = (a = H(this, Xi)[Xi]) == null ? void 0 : a.next();
+                let l = (a = $(this, Xi)[Xi]) == null ? void 0 : a.next();
                 if (l == null || l.done) return !1;
                 await new Promise(h => setTimeout(h, l.value))
             }
         }
         return !0
     }
-    n(SS, "_shouldRetry2");
-    var Ln = Ae("queueRequestSocketToken"),
-        ds = Ae("companionCommunicationQueue"),
-        Le = Ae("client"),
-        vc = Ae("setS3MultipartState"),
-        bc = Ae("requestSocketToken"),
-        Mn = Ae("setCompanionHeaders");
-    Sg = Symbol.for("uppy test: getClient");
+    n(_S, "_shouldRetry2");
+    var Ln = Ue("queueRequestSocketToken"),
+        ps = Ue("companionCommunicationQueue"),
+        Me = Ue("client"),
+        vc = Ue("setS3MultipartState"),
+        bc = Ue("requestSocketToken"),
+        Mn = Ue("setCompanionHeaders");
+    _g = Symbol.for("uppy test: getClient");
     var Yi = class extends ae {
         constructor(e, t) {
             var r;
             super(e, t), Object.defineProperty(this, Ln, {
                 writable: !0,
                 value: void 0
-            }), Object.defineProperty(this, ds, {
+            }), Object.defineProperty(this, ps, {
                 writable: !0,
                 value: void 0
-            }), Object.defineProperty(this, Le, {
+            }), Object.defineProperty(this, Me, {
                 writable: !0,
                 value: void 0
             }), Object.defineProperty(this, vc, {
@@ -15936,9 +15980,9 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             }), Object.defineProperty(this, Mn, {
                 writable: !0,
                 value: () => {
-                    H(this, Le)[Le].setCompanionHeaders(this.opts.companionHeaders)
+                    $(this, Me)[Me].setCompanionHeaders(this.opts.companionHeaders)
                 }
-            }), this.type = "uploader", this.id = this.opts.id || "AwsS3Multipart", this.title = "AWS S3 Multipart", H(this, Le)[Le] = new le(e, t);
+            }), this.type = "uploader", this.id = this.opts.id || "AwsS3Multipart", this.title = "AWS S3 Multipart", $(this, Me)[Me] = new le(e, t);
             let s = {
                 allowedMetaFields: null,
                 limit: 6,
@@ -15962,7 +16006,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                     signal: f
                 } = a, {
                     presignedUrls: y,
-                    headers: S
+                    headers: w
                 } = await t.prepareUploadParts(o, {
                     uploadId: l,
                     key: h,
@@ -15974,16 +16018,16 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                 });
                 return {
                     url: y ?.[c],
-                    headers: S ?.[c]
+                    headers: w ?.[c]
                 }
-            }), this.upload = this.upload.bind(this), this.requests = (r = this.opts.rateLimitedQueue) != null ? r : new Je(this.opts.limit), H(this, ds)[ds] = new Fl(this.requests, this.opts, H(this, vc)[vc]), this.uploaders = Object.create(null), this.uploaderEvents = Object.create(null), this.uploaderSockets = Object.create(null), H(this, Ln)[Ln] = this.requests.wrapPromiseFunction(H(this, bc)[bc], {
+            }), this.upload = this.upload.bind(this), this.requests = (r = this.opts.rateLimitedQueue) != null ? r : new Je(this.opts.limit), $(this, ps)[ps] = new El(this.requests, this.opts, $(this, vc)[vc]), this.uploaders = Object.create(null), this.uploaderEvents = Object.create(null), this.uploaderSockets = Object.create(null), $(this, Ln)[Ln] = this.requests.wrapPromiseFunction($(this, bc)[bc], {
                 priority: -1
             })
-        }[Sg]() {
-            return H(this, Le)[Le]
+        }[_g]() {
+            return $(this, Me)[Me]
         }
         setOptions(e) {
-            return H(this, ds)[ds].setOptions(e), super.setOptions(e)
+            return $(this, ps)[ps].setOptions(e), super.setOptions(e)
         }
         resetUploaderReferences(e, t) {
             t === void 0 && (t = {}), this.uploaders[e] && (this.uploaders[e].abort({
@@ -15997,7 +16041,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             var r;
             this.assertHost("createMultipartUpload"), tt(t);
             let s = e.meta ? Object.fromEntries(((r = this.opts.allowedMetaFields) != null ? r : Object.keys(e.meta)).filter(o => e.meta[o] != null).map(o => [o, String(e.meta[o])])) : {};
-            return H(this, Le)[Le].post("s3/multipart", {
+            return $(this, Me)[Me].post("s3/multipart", {
                 filename: e.name,
                 type: e.type,
                 metadata: s
@@ -16012,7 +16056,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             } = t;
             this.assertHost("listParts"), tt(r);
             let a = encodeURIComponent(s);
-            return H(this, Le)[Le].get(`s3/multipart/${o}?key=${a}`, {
+            return $(this, Me)[Me].get(`s3/multipart/${o}?key=${a}`, {
                 signal: r
             }).then(kn)
         }
@@ -16025,7 +16069,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             this.assertHost("completeMultipartUpload"), tt(r);
             let l = encodeURIComponent(s),
                 h = encodeURIComponent(o);
-            return H(this, Le)[Le].post(`s3/multipart/${h}/complete?key=${l}`, {
+            return $(this, Me)[Me].post(`s3/multipart/${h}/complete?key=${l}`, {
                 parts: a
             }, {
                 signal: r
@@ -16040,7 +16084,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             } = t;
             if (this.assertHost("signPart"), tt(a), r == null || s == null || o == null) throw new Error("Cannot sign without a key, an uploadId, and a partNumber");
             let l = encodeURIComponent(s);
-            return H(this, Le)[Le].get(`s3/multipart/${r}/${o}?key=${l}`, {
+            return $(this, Me)[Me].get(`s3/multipart/${r}/${o}?key=${l}`, {
                 signal: a
             }).then(kn)
         }
@@ -16052,7 +16096,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             this.assertHost("abortMultipartUpload");
             let a = encodeURIComponent(s),
                 l = encodeURIComponent(o);
-            return H(this, Le)[Le].delete(`s3/multipart/${l}?key=${a}`, void 0, {
+            return $(this, Me)[Me].delete(`s3/multipart/${l}?key=${a}`, void 0, {
                 signal: r
             }).then(kn)
         }
@@ -16087,28 +16131,28 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                     }, h(y)
                 }), c.addEventListener("load", y => {
                     if (f(), y.target.status === 403 && y.target.responseText.includes("<Message>Request has expired</Message>")) {
-                        let w = new Error("Request has expired");
-                        w.source = y.target, h(w);
+                        let S = new Error("Request has expired");
+                        S.source = y.target, h(S);
                         return
                     }
                     if (y.target.status < 200 || y.target.status >= 300) {
-                        let w = new Error("Non 2xx");
-                        w.source = y.target, h(w);
+                        let S = new Error("Non 2xx");
+                        S.source = y.target, h(S);
                         return
                     }
                     t.onProgress == null || t.onProgress(t.size);
-                    let S = y.target.getResponseHeader("ETag");
-                    if (S === null) {
+                    let w = y.target.getResponseHeader("ETag");
+                    if (w === null) {
                         h(new Error("AwsS3/Multipart: Could not read the ETag header. This likely means CORS is not configured correctly on the S3 Bucket. See https://uppy.io/docs/aws-s3-multipart#S3-Bucket-Configuration for instructions."));
                         return
                     }
-                    t.onComplete == null || t.onComplete(S), l({
-                        ETag: S
+                    t.onComplete == null || t.onComplete(w), l({
+                        ETag: w
                     })
                 }), c.addEventListener("error", y => {
                     f();
-                    let S = new Error("Unknown error");
-                    S.source = y.target, h(S)
+                    let w = new Error("Unknown error");
+                    w.source = y.target, h(w)
                 }), c.send(t)
             })
         }
@@ -16133,15 +16177,15 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                                 uploadURL: d.location
                             };
                         this.resetUploaderReferences(e.id);
-                        let S = this.uppy.getFile(e.id);
-                        this.uppy.emit("upload-success", S || e, y), d.location && this.uppy.log(`Download ${e.name} from ${d.location}`), r(f)
+                        let w = this.uppy.getFile(e.id);
+                        this.uppy.emit("upload-success", w || e, y), d.location && this.uppy.log(`Download ${e.name} from ${d.location}`), r(f)
                     }, "onSuccess"),
                     h = n(d => {
                         let f = this.uppy.getFile(e.id);
                         !f || this.uppy.emit("s3-multipart:part-uploaded", f, d)
                     }, "onPartComplete"),
-                    c = new wg(e.data, {
-                        companionComm: H(this, ds)[ds],
+                    c = new Sg(e.data, {
+                        companionComm: $(this, ps)[ps],
                         log: function() {
                             return t.uppy.log(...arguments)
                         },
@@ -16177,7 +16221,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             this.resetUploaderReferences(e.id), (!e.progress.uploadStarted || !e.isRestored) && this.uppy.emit("upload-started", e);
             try {
                 if (e.serverToken) return this.connectToServerSocket(e);
-                let t = await H(this, Ln)[Ln](e);
+                let t = await $(this, Ln)[Ln](e);
                 return this.uppy.setFileState(e.id, {
                     serverToken: t
                 }), this.connectToServerSocket(this.uppy.getFile(e.id))
@@ -16214,7 +16258,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                     h.isOpen && (h.send("pause", {}), h.send("resume", {}))
                 }), this.onRetryAll(e.id, () => {
                     h.isOpen && (h.send("pause", {}), h.send("resume", {}))
-                }), h.on("progress", c => wr(this, c, e)), h.on("error", c => {
+                }), h.on("progress", c => Sr(this, c, e)), h.on("error", c => {
                     this.uppy.emit("upload-error", e, new Error(c.error)), this.resetUploaderReferences(e.id), o.done(), s(new Error(c.error))
                 }), h.on("success", c => {
                     let d = {
@@ -16276,7 +16320,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                 capabilities: { ...e,
                     resumableUploads: !0
                 }
-            }), this.uppy.addPreProcessor(H(this, Mn)[Mn]), this.uppy.addUploader(this.upload)
+            }), this.uppy.addPreProcessor($(this, Mn)[Mn]), this.uppy.addUploader(this.upload)
         }
         uninstall() {
             let {
@@ -16286,30 +16330,30 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                 capabilities: { ...e,
                     resumableUploads: !1
                 }
-            }), this.uppy.removePreProcessor(H(this, Mn)[Mn]), this.uppy.removeUploader(this.upload)
+            }), this.uppy.removePreProcessor($(this, Mn)[Mn]), this.uppy.removeUploader(this.upload)
         }
     };
     n(Yi, "AwsS3Multipart");
-    Yi.VERSION = wS.version;
-    var Og = "3.7.2",
-        _S = Og,
-        PS = typeof atob == "function",
-        xS = typeof btoa == "function",
+    Yi.VERSION = SS.version;
+    var Rg = "3.7.2",
+        PS = Rg,
+        xS = typeof atob == "function",
+        FS = typeof btoa == "function",
         so = typeof Buffer == "function",
-        _g = typeof TextDecoder == "function" ? new TextDecoder : void 0,
-        Pg = typeof TextEncoder == "function" ? new TextEncoder : void 0,
-        FS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
-        zn = Array.prototype.slice.call(FS),
-        El = (i => {
+        Pg = typeof TextDecoder == "function" ? new TextDecoder : void 0,
+        xg = typeof TextEncoder == "function" ? new TextEncoder : void 0,
+        ES = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+        zn = Array.prototype.slice.call(ES),
+        Ol = (i => {
             let e = {};
             return i.forEach((t, r) => e[t] = r), e
         })(zn),
-        ES = /^(?:[A-Za-z\d+\/]{4})*?(?:[A-Za-z\d+\/]{2}(?:==)?|[A-Za-z\d+\/]{3}=?)?$/,
-        Me = String.fromCharCode.bind(String),
-        xg = typeof Uint8Array.from == "function" ? Uint8Array.from.bind(Uint8Array) : (i, e = t => t) => new Uint8Array(Array.prototype.slice.call(i, 0).map(e)),
-        Rg = n(i => i.replace(/=/g, "").replace(/[+\/]/g, e => e == "+" ? "-" : "_"), "_mkUriSafe"),
-        Cg = n(i => i.replace(/[^A-Za-z0-9\+\/]/g, ""), "_tidyB64"),
-        Tg = n(i => {
+        OS = /^(?:[A-Za-z\d+\/]{4})*?(?:[A-Za-z\d+\/]{2}(?:==)?|[A-Za-z\d+\/]{3}=?)?$/,
+        ze = String.fromCharCode.bind(String),
+        Fg = typeof Uint8Array.from == "function" ? Uint8Array.from.bind(Uint8Array) : (i, e = t => t) => new Uint8Array(Array.prototype.slice.call(i, 0).map(e)),
+        Cg = n(i => i.replace(/=/g, "").replace(/[+\/]/g, e => e == "+" ? "-" : "_"), "_mkUriSafe"),
+        Tg = n(i => i.replace(/[^A-Za-z0-9\+\/]/g, ""), "_tidyB64"),
+        kg = n(i => {
             let e, t, r, s, o = "",
                 a = i.length % 3;
             for (let l = 0; l < i.length;) {
@@ -16318,68 +16362,68 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             }
             return a ? o.slice(0, a - 3) + "===".substring(a) : o
         }, "btoaPolyfill"),
-        _c = xS ? i => btoa(i) : so ? i => Buffer.from(i, "binary").toString("base64") : Tg,
+        _c = FS ? i => btoa(i) : so ? i => Buffer.from(i, "binary").toString("base64") : kg,
         wc = so ? i => Buffer.from(i).toString("base64") : i => {
             let t = [];
-            for (let r = 0, s = i.length; r < s; r += 4096) t.push(Me.apply(null, i.subarray(r, r + 4096)));
+            for (let r = 0, s = i.length; r < s; r += 4096) t.push(ze.apply(null, i.subarray(r, r + 4096)));
             return _c(t.join(""))
         },
-        Ol = n((i, e = !1) => e ? Rg(wc(i)) : wc(i), "fromUint8Array"),
-        OS = n(i => {
+        Rl = n((i, e = !1) => e ? Cg(wc(i)) : wc(i), "fromUint8Array"),
+        RS = n(i => {
             if (i.length < 2) {
                 var e = i.charCodeAt(0);
-                return e < 128 ? i : e < 2048 ? Me(192 | e >>> 6) + Me(128 | e & 63) : Me(224 | e >>> 12 & 15) + Me(128 | e >>> 6 & 63) + Me(128 | e & 63)
+                return e < 128 ? i : e < 2048 ? ze(192 | e >>> 6) + ze(128 | e & 63) : ze(224 | e >>> 12 & 15) + ze(128 | e >>> 6 & 63) + ze(128 | e & 63)
             } else {
                 var e = 65536 + (i.charCodeAt(0) - 55296) * 1024 + (i.charCodeAt(1) - 56320);
-                return Me(240 | e >>> 18 & 7) + Me(128 | e >>> 12 & 63) + Me(128 | e >>> 6 & 63) + Me(128 | e & 63)
+                return ze(240 | e >>> 18 & 7) + ze(128 | e >>> 12 & 63) + ze(128 | e >>> 6 & 63) + ze(128 | e & 63)
             }
         }, "cb_utob"),
-        RS = /[\uD800-\uDBFF][\uDC00-\uDFFFF]|[^\x00-\x7F]/g,
-        kg = n(i => i.replace(RS, OS), "utob"),
-        Fg = so ? i => Buffer.from(i, "utf8").toString("base64") : Pg ? i => wc(Pg.encode(i)) : i => _c(kg(i)),
-        ro = n((i, e = !1) => e ? Rg(Fg(i)) : Fg(i), "encode"),
-        Eg = n(i => ro(i, !0), "encodeURI"),
-        CS = /[\xC0-\xDF][\x80-\xBF]|[\xE0-\xEF][\x80-\xBF]{2}|[\xF0-\xF7][\x80-\xBF]{3}/g,
-        TS = n(i => {
+        CS = /[\uD800-\uDBFF][\uDC00-\uDFFFF]|[^\x00-\x7F]/g,
+        Ag = n(i => i.replace(CS, RS), "utob"),
+        Eg = so ? i => Buffer.from(i, "utf8").toString("base64") : xg ? i => wc(xg.encode(i)) : i => _c(Ag(i)),
+        ro = n((i, e = !1) => e ? Cg(Eg(i)) : Eg(i), "encode"),
+        Og = n(i => ro(i, !0), "encodeURI"),
+        TS = /[\xC0-\xDF][\x80-\xBF]|[\xE0-\xEF][\x80-\xBF]{2}|[\xF0-\xF7][\x80-\xBF]{3}/g,
+        kS = n(i => {
             switch (i.length) {
                 case 4:
                     var e = (7 & i.charCodeAt(0)) << 18 | (63 & i.charCodeAt(1)) << 12 | (63 & i.charCodeAt(2)) << 6 | 63 & i.charCodeAt(3),
                         t = e - 65536;
-                    return Me((t >>> 10) + 55296) + Me((t & 1023) + 56320);
+                    return ze((t >>> 10) + 55296) + ze((t & 1023) + 56320);
                 case 3:
-                    return Me((15 & i.charCodeAt(0)) << 12 | (63 & i.charCodeAt(1)) << 6 | 63 & i.charCodeAt(2));
+                    return ze((15 & i.charCodeAt(0)) << 12 | (63 & i.charCodeAt(1)) << 6 | 63 & i.charCodeAt(2));
                 default:
-                    return Me((31 & i.charCodeAt(0)) << 6 | 63 & i.charCodeAt(1))
+                    return ze((31 & i.charCodeAt(0)) << 6 | 63 & i.charCodeAt(1))
             }
         }, "cb_btou"),
-        Ag = n(i => i.replace(CS, TS), "btou"),
-        Ug = n(i => {
-            if (i = i.replace(/\s+/g, ""), !ES.test(i)) throw new TypeError("malformed base64.");
+        Ug = n(i => i.replace(TS, kS), "btou"),
+        Dg = n(i => {
+            if (i = i.replace(/\s+/g, ""), !OS.test(i)) throw new TypeError("malformed base64.");
             i += "==".slice(2 - (i.length & 3));
             let e, t = "",
                 r, s;
-            for (let o = 0; o < i.length;) e = El[i.charAt(o++)] << 18 | El[i.charAt(o++)] << 12 | (r = El[i.charAt(o++)]) << 6 | (s = El[i.charAt(o++)]), t += r === 64 ? Me(e >> 16 & 255) : s === 64 ? Me(e >> 16 & 255, e >> 8 & 255) : Me(e >> 16 & 255, e >> 8 & 255, e & 255);
+            for (let o = 0; o < i.length;) e = Ol[i.charAt(o++)] << 18 | Ol[i.charAt(o++)] << 12 | (r = Ol[i.charAt(o++)]) << 6 | (s = Ol[i.charAt(o++)]), t += r === 64 ? ze(e >> 16 & 255) : s === 64 ? ze(e >> 16 & 255, e >> 8 & 255) : ze(e >> 16 & 255, e >> 8 & 255, e & 255);
             return t
         }, "atobPolyfill"),
-        Pc = PS ? i => atob(Cg(i)) : so ? i => Buffer.from(i, "base64").toString("binary") : Ug,
-        Dg = so ? i => xg(Buffer.from(i, "base64")) : i => xg(Pc(i), e => e.charCodeAt(0)),
-        Ng = n(i => Dg(Bg(i)), "toUint8Array"),
-        kS = so ? i => Buffer.from(i, "base64").toString("utf8") : _g ? i => _g.decode(Dg(i)) : i => Ag(Pc(i)),
-        Bg = n(i => Cg(i.replace(/[-_]/g, e => e == "-" ? "+" : "/")), "_unURI"),
-        Sc = n(i => kS(Bg(i)), "decode"),
-        AS = n(i => {
+        Pc = xS ? i => atob(Tg(i)) : so ? i => Buffer.from(i, "base64").toString("binary") : Dg,
+        Ng = so ? i => Fg(Buffer.from(i, "base64")) : i => Fg(Pc(i), e => e.charCodeAt(0)),
+        Bg = n(i => Ng(Ig(i)), "toUint8Array"),
+        AS = so ? i => Buffer.from(i, "base64").toString("utf8") : Pg ? i => Pg.decode(Ng(i)) : i => Ug(Pc(i)),
+        Ig = n(i => Tg(i.replace(/[-_]/g, e => e == "-" ? "+" : "/")), "_unURI"),
+        Sc = n(i => AS(Ig(i)), "decode"),
+        US = n(i => {
             if (typeof i != "string") return !1;
             let e = i.replace(/\s+/g, "").replace(/={0,2}$/, "");
             return !/[^\s0-9a-zA-Z\+/]/.test(e) || !/[^\s0-9a-zA-Z\-_]/.test(e)
         }, "isValid"),
-        Ig = n(i => ({
+        Lg = n(i => ({
             value: i,
             enumerable: !1,
             writable: !0,
             configurable: !0
         }), "_noEnum"),
-        Lg = n(function() {
-            let i = n((e, t) => Object.defineProperty(String.prototype, e, Ig(t)), "_add");
+        Mg = n(function() {
+            let i = n((e, t) => Object.defineProperty(String.prototype, e, Lg(t)), "_add");
             i("fromBase64", function() {
                 return Sc(this)
             }), i("toBase64", function(e) {
@@ -16389,45 +16433,45 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             }), i("toBase64URL", function() {
                 return ro(this, !0)
             }), i("toUint8Array", function() {
-                return Ng(this)
+                return Bg(this)
             })
         }, "extendString"),
-        Mg = n(function() {
-            let i = n((e, t) => Object.defineProperty(Uint8Array.prototype, e, Ig(t)), "_add");
+        zg = n(function() {
+            let i = n((e, t) => Object.defineProperty(Uint8Array.prototype, e, Lg(t)), "_add");
             i("toBase64", function(e) {
-                return Ol(this, e)
+                return Rl(this, e)
             }), i("toBase64URI", function() {
-                return Ol(this, !0)
+                return Rl(this, !0)
             }), i("toBase64URL", function() {
-                return Ol(this, !0)
+                return Rl(this, !0)
             })
         }, "extendUint8Array"),
-        US = n(() => {
-            Lg(), Mg()
+        DS = n(() => {
+            Mg(), zg()
         }, "extendBuiltins"),
-        zg = {
-            version: Og,
-            VERSION: _S,
+        jg = {
+            version: Rg,
+            VERSION: PS,
             atob: Pc,
-            atobPolyfill: Ug,
+            atobPolyfill: Dg,
             btoa: _c,
-            btoaPolyfill: Tg,
+            btoaPolyfill: kg,
             fromBase64: Sc,
             toBase64: ro,
             encode: ro,
-            encodeURI: Eg,
-            encodeURL: Eg,
-            utob: kg,
-            btou: Ag,
+            encodeURI: Og,
+            encodeURL: Og,
+            utob: Ag,
+            btou: Ug,
             decode: Sc,
-            isValid: AS,
-            fromUint8Array: Ol,
-            toUint8Array: Ng,
-            extendString: Lg,
-            extendUint8Array: Mg,
-            extendBuiltins: US
+            isValid: US,
+            fromUint8Array: Rl,
+            toUint8Array: Bg,
+            extendString: Mg,
+            extendUint8Array: zg,
+            extendBuiltins: DS
         };
-    var cy = oe(Zg());
+    var dy = oe(ey());
 
     function Oc(i) {
         return Oc = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(e) {
@@ -16438,27 +16482,27 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
     }
     n(Oc, "_typeof");
 
-    function ey(i, e) {
+    function ty(i, e) {
         for (var t = 0; t < e.length; t++) {
             var r = e[t];
             r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(i, r.key, r)
         }
     }
-    n(ey, "_defineProperties");
+    n(ty, "_defineProperties");
 
-    function VS(i, e, t) {
-        return e && ey(i.prototype, e), t && ey(i, t), Object.defineProperty(i, "prototype", {
+    function WS(i, e, t) {
+        return e && ty(i.prototype, e), t && ty(i, t), Object.defineProperty(i, "prototype", {
             writable: !1
         }), i
     }
-    n(VS, "_createClass");
-
-    function WS(i, e) {
-        if (!(i instanceof e)) throw new TypeError("Cannot call a class as a function")
-    }
-    n(WS, "_classCallCheck");
+    n(WS, "_createClass");
 
     function KS(i, e) {
+        if (!(i instanceof e)) throw new TypeError("Cannot call a class as a function")
+    }
+    n(KS, "_classCallCheck");
+
+    function GS(i, e) {
         if (typeof e != "function" && e !== null) throw new TypeError("Super expression must either be null or a function");
         i.prototype = Object.create(e && e.prototype, {
             constructor: {
@@ -16470,10 +16514,10 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             writable: !1
         }), e && jn(i, e)
     }
-    n(KS, "_inherits");
+    n(GS, "_inherits");
 
-    function GS(i) {
-        var e = ty();
+    function XS(i) {
+        var e = iy();
         return n(function() {
             var r = Hn(i),
                 s;
@@ -16481,28 +16525,28 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                 var o = Hn(this).constructor;
                 s = Reflect.construct(r, arguments, o)
             } else s = r.apply(this, arguments);
-            return XS(this, s)
+            return YS(this, s)
         }, "_createSuperInternal")
     }
-    n(GS, "_createSuper");
+    n(XS, "_createSuper");
 
-    function XS(i, e) {
+    function YS(i, e) {
         if (e && (Oc(e) === "object" || typeof e == "function")) return e;
         if (e !== void 0) throw new TypeError("Derived constructors may only return object or undefined");
-        return YS(i)
+        return JS(i)
     }
-    n(XS, "_possibleConstructorReturn");
+    n(YS, "_possibleConstructorReturn");
 
-    function YS(i) {
+    function JS(i) {
         if (i === void 0) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
         return i
     }
-    n(YS, "_assertThisInitialized");
+    n(JS, "_assertThisInitialized");
 
     function Rc(i) {
         var e = typeof Map == "function" ? new Map : void 0;
         return Rc = n(function(r) {
-            if (r === null || !JS(r)) return r;
+            if (r === null || !QS(r)) return r;
             if (typeof r != "function") throw new TypeError("Super expression must either be null or a function");
             if (typeof e < "u") {
                 if (e.has(r)) return e.get(r);
@@ -16510,7 +16554,7 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             }
 
             function s() {
-                return Cl(r, arguments, Hn(this).constructor)
+                return Tl(r, arguments, Hn(this).constructor)
             }
             return n(s, "Wrapper"), s.prototype = Object.create(r.prototype, {
                 constructor: {
@@ -16524,18 +16568,18 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
     }
     n(Rc, "_wrapNativeSuper");
 
-    function Cl(i, e, t) {
-        return ty() ? Cl = Reflect.construct.bind() : Cl = n(function(s, o, a) {
+    function Tl(i, e, t) {
+        return iy() ? Tl = Reflect.construct.bind() : Tl = n(function(s, o, a) {
             var l = [null];
             l.push.apply(l, o);
             var h = Function.bind.apply(s, l),
                 c = new h;
             return a && jn(c, a.prototype), c
-        }, "_construct"), Cl.apply(null, arguments)
+        }, "_construct"), Tl.apply(null, arguments)
     }
-    n(Cl, "_construct");
+    n(Tl, "_construct");
 
-    function ty() {
+    function iy() {
         if (typeof Reflect > "u" || !Reflect.construct || Reflect.construct.sham) return !1;
         if (typeof Proxy == "function") return !0;
         try {
@@ -16544,12 +16588,12 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
             return !1
         }
     }
-    n(ty, "_isNativeReflectConstruct");
+    n(iy, "_isNativeReflectConstruct");
 
-    function JS(i) {
+    function QS(i) {
         return Function.toString.call(i).indexOf("[native code]") !== -1
     }
-    n(JS, "_isNativeFunction");
+    n(QS, "_isNativeFunction");
 
     function jn(i, e) {
         return jn = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : n(function(r, s) {
@@ -16564,15 +16608,15 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
         }, "_getPrototypeOf"), Hn(i)
     }
     n(Hn, "_getPrototypeOf");
-    var QS = function(i) {
-            KS(t, i);
-            var e = GS(t);
+    var ZS = function(i) {
+            GS(t, i);
+            var e = XS(t);
 
             function t(r) {
                 var s, o = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : null,
                     a = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null,
                     l = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null;
-                if (WS(this, t), s = e.call(this, r), s.originalRequest = a, s.originalResponse = l, s.causingError = o, o != null && (r += ", caused by ".concat(o.toString())), a != null) {
+                if (KS(this, t), s = e.call(this, r), s.originalRequest = a, s.originalResponse = l, s.causingError = o, o != null && (r += ", caused by ".concat(o.toString())), a != null) {
                     var h = a.getHeader("X-Request-ID") || "n/a",
                         c = a.getMethod(),
                         d = a.getURL(),
@@ -16582,15 +16626,15 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
                 }
                 return s.message = r, s
             }
-            return n(t, "DetailedError"), VS(t)
+            return n(t, "DetailedError"), WS(t)
         }(Rc(Error)),
-        oo = QS;
-    var ZS = !1;
+        oo = ZS;
+    var e_ = !1;
 
-    function Sr(i) {
-        !ZS || console.log(i)
+    function _r(i) {
+        !e_ || console.log(i)
     }
-    n(Sr, "log");
+    n(_r, "log");
 
     function Cc() {
         return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(i) {
@@ -16601,35 +16645,35 @@ See https://uppy.io/docs/aws-s3/#getUploadParameters-file for more on the expect
     }
     n(Cc, "uuid");
 
-    function hy(i, e) {
-        return r_(i) || i_(i, e) || t_(i, e) || e_()
+    function cy(i, e) {
+        return s_(i) || r_(i, e) || i_(i, e) || t_()
     }
-    n(hy, "_slicedToArray");
+    n(cy, "_slicedToArray");
 
-    function e_() {
+    function t_() {
         throw new TypeError(`Invalid attempt to destructure non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)
     }
-    n(e_, "_nonIterableRest");
+    n(t_, "_nonIterableRest");
 
-    function t_(i, e) {
+    function i_(i, e) {
         if (!!i) {
-            if (typeof i == "string") return iy(i, e);
+            if (typeof i == "string") return ry(i, e);
             var t = Object.prototype.toString.call(i).slice(8, -1);
             if (t === "Object" && i.constructor && (t = i.constructor.name), t === "Map" || t === "Set") return Array.from(i);
-            if (t === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)) return iy(i, e)
+            if (t === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)) return ry(i, e)
         }
     }
-    n(t_, "_unsupportedIterableToArray");
+    n(i_, "_unsupportedIterableToArray");
 
-    function iy(i, e) {
+    function ry(i, e) {
         (e == null || e > i.length) && (e = i.length);
         for (var t = 0, r = new Array(e); t < e; t++) r[t] = i[t];
         return r
     }
-    n(iy, "_arrayLikeToArray");
+    n(ry, "_arrayLikeToArray");
 
-    function i_(i, e) {
+    function r_(i, e) {
         var t = i == null ? null : typeof Symbol < "u" && i[Symbol.iterator] || i["@@iterator"];
         if (t != null) {
             var r = [],
@@ -16650,14 +16694,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             return r
         }
     }
-    n(i_, "_iterableToArrayLimit");
+    n(r_, "_iterableToArrayLimit");
 
-    function r_(i) {
+    function s_(i) {
         if (Array.isArray(i)) return i
     }
-    n(r_, "_arrayWithHoles");
+    n(s_, "_arrayWithHoles");
 
-    function ry(i, e) {
+    function sy(i, e) {
         var t = Object.keys(i);
         if (Object.getOwnPropertySymbols) {
             var r = Object.getOwnPropertySymbols(i);
@@ -16667,14 +16711,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         return t
     }
-    n(ry, "ownKeys");
+    n(sy, "ownKeys");
 
     function no(i) {
         for (var e = 1; e < arguments.length; e++) {
             var t = arguments[e] != null ? arguments[e] : {};
-            e % 2 ? ry(Object(t), !0).forEach(function(r) {
-                s_(i, r, t[r])
-            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(i, Object.getOwnPropertyDescriptors(t)) : ry(Object(t)).forEach(function(r) {
+            e % 2 ? sy(Object(t), !0).forEach(function(r) {
+                o_(i, r, t[r])
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(i, Object.getOwnPropertyDescriptors(t)) : sy(Object(t)).forEach(function(r) {
                 Object.defineProperty(i, r, Object.getOwnPropertyDescriptor(t, r))
             })
         }
@@ -16682,7 +16726,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(no, "_objectSpread");
 
-    function s_(i, e, t) {
+    function o_(i, e, t) {
         return e in i ? Object.defineProperty(i, e, {
             value: t,
             enumerable: !0,
@@ -16690,28 +16734,28 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             writable: !0
         }) : i[e] = t, i
     }
-    n(s_, "_defineProperty");
+    n(o_, "_defineProperty");
 
-    function o_(i, e) {
+    function n_(i, e) {
         if (!(i instanceof e)) throw new TypeError("Cannot call a class as a function")
     }
-    n(o_, "_classCallCheck");
+    n(n_, "_classCallCheck");
 
-    function sy(i, e) {
+    function oy(i, e) {
         for (var t = 0; t < e.length; t++) {
             var r = e[t];
             r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(i, r.key, r)
         }
     }
-    n(sy, "_defineProperties");
+    n(oy, "_defineProperties");
 
-    function n_(i, e, t) {
-        return e && sy(i.prototype, e), t && sy(i, t), Object.defineProperty(i, "prototype", {
+    function a_(i, e, t) {
+        return e && oy(i.prototype, e), t && oy(i, t), Object.defineProperty(i, "prototype", {
             writable: !1
         }), i
     }
-    n(n_, "_createClass");
-    var a_ = {
+    n(a_, "_createClass");
+    var l_ = {
             endpoint: null,
             uploadUrl: null,
             metadata: {},
@@ -16723,7 +16767,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             onError: null,
             _onUploadUrlAvailable: null,
             overridePatchMethod: !1,
-            overrideDeleteMethod: !1,
             headers: {},
             addRequestId: !1,
             onBeforeRequest: null,
@@ -16741,11 +16784,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             fileReader: null,
             httpStack: null
         },
-        dy = function() {
+        py = function() {
             function i(e, t) {
-                o_(this, i), "resume" in t && console.log("tus: The `resume` option has been removed in tus-js-client v2. Please use the URL storage API instead."), this.options = t, this.options.chunkSize = Number(this.options.chunkSize), this._urlStorage = this.options.urlStorage, this.file = e, this.url = null, this._req = null, this._fingerprint = null, this._urlStorageKey = null, this._offset = null, this._aborted = !1, this._size = null, this._source = null, this._retryAttempt = 0, this._retryTimeout = null, this._offsetBeforeRetry = 0, this._parallelUploads = null, this._parallelUploadUrls = null
+                n_(this, i), "resume" in t && console.log("tus: The `resume` option has been removed in tus-js-client v2. Please use the URL storage API instead."), this.options = t, this.options.chunkSize = Number(this.options.chunkSize), this._urlStorage = this.options.urlStorage, this.file = e, this.url = null, this._req = null, this._fingerprint = null, this._urlStorageKey = null, this._offset = null, this._aborted = !1, this._size = null, this._source = null, this._retryAttempt = 0, this._retryTimeout = null, this._offsetBeforeRetry = 0, this._parallelUploads = null, this._parallelUploadUrls = null
             }
-            return n(i, "BaseUpload"), n_(i, [{
+            return n(i, "BaseUpload"), a_(i, [{
                 key: "findPreviousUploads",
                 value: n(function() {
                     var t = this;
@@ -16795,7 +16838,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         }
                     }
                     this.options.fingerprint(r, this.options).then(function(h) {
-                        return h == null ? Sr("No fingerprint was calculated meaning that the upload cannot be stored in the URL storage.") : Sr("Calculated fingerprint: ".concat(h)), t._fingerprint = h, t._source ? t._source : t.options.fileReader.openFile(r, t.options.chunkSize)
+                        return h == null ? _r("No fingerprint was calculated meaning that the upload cannot be stored in the URL storage.") : _r("Calculated fingerprint: ".concat(h)), t._fingerprint = h, t._source ? t._source : t.options.fileReader.openFile(r, t.options.chunkSize)
                     }).then(function(h) {
                         if (t._source = h, t.options.uploadLengthDeferred) t._size = null;
                         else if (t.options.uploadSize != null) {
@@ -16820,16 +16863,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         o = 0;
                     this._parallelUploads = [];
                     var a = this._parallelUploadUrls != null ? this._parallelUploadUrls.length : this.options.parallelUploads,
-                        l = (t = this.options.parallelUploadBoundaries) !== null && t !== void 0 ? t : u_(this._source.size, a);
+                        l = (t = this.options.parallelUploadBoundaries) !== null && t !== void 0 ? t : h_(this._source.size, a);
                     this._parallelUploadUrls && l.forEach(function(d, f) {
                         d.uploadUrl = r._parallelUploadUrls[f] || null
                     }), this._parallelUploadUrls = new Array(l.length);
                     var h = l.map(function(d, f) {
                             var y = 0;
-                            return r._source.slice(d.start, d.end).then(function(S) {
-                                var w = S.value;
+                            return r._source.slice(d.start, d.end).then(function(w) {
+                                var S = w.value;
                                 return new Promise(function(R, x) {
-                                    var E = no(no({}, r.options), {}, {
+                                    var F = no(no({}, r.options), {}, {
                                             uploadUrl: d.uploadUrl || null,
                                             storeFingerprintForResuming: !1,
                                             removeFingerprintOnSuccess: !1,
@@ -16841,16 +16884,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                                             }),
                                             onSuccess: R,
                                             onError: x,
-                                            onProgress: n(function($) {
-                                                o = o - y + $, y = $, r._emitProgress(o, s)
+                                            onProgress: n(function(q) {
+                                                o = o - y + q, y = q, r._emitProgress(o, s)
                                             }, "onProgress"),
                                             _onUploadUrlAvailable: n(function() {
-                                                r._parallelUploadUrls[f] = N.url, r._parallelUploadUrls.filter(function($) {
-                                                    return Boolean($)
+                                                r._parallelUploadUrls[f] = N.url, r._parallelUploadUrls.filter(function(q) {
+                                                    return Boolean(q)
                                                 }).length === l.length && r._saveUploadInUrlStorage()
                                             }, "_onUploadUrlAvailable")
                                         }),
-                                        N = new i(w, E);
+                                        N = new i(S, F);
                                     N.start(), r._parallelUploads.push(N)
                                 })
                             })
@@ -16858,7 +16901,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         c;
                     Promise.all(h).then(function() {
                         c = r._openRequest("POST", r.options.endpoint), c.setHeader("Upload-Concat", "final;".concat(r._parallelUploadUrls.join(" ")));
-                        var d = oy(r.options.metadata);
+                        var d = ny(r.options.metadata);
                         return d !== "" && c.setHeader("Upload-Metadata", d), r._sendRequest(c, null)
                     }).then(function(d) {
                         if (!ao(d.getStatus(), 200)) {
@@ -16870,7 +16913,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             r._emitHttpError(c, d, "tus: invalid or missing Location header");
                             return
                         }
-                        r.url = uy(r.options.endpoint, f), Sr("Created upload at ".concat(r.url)), r._emitSuccess()
+                        r.url = hy(r.options.endpoint, f), _r("Created upload at ".concat(r.url)), r._emitSuccess()
                     }).catch(function(d) {
                         r._emitError(d)
                     })
@@ -16879,14 +16922,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 key: "_startSingleUpload",
                 value: n(function() {
                     if (this._aborted = !1, this.url != null) {
-                        Sr("Resuming upload from previous URL: ".concat(this.url)), this._resumeUpload();
+                        _r("Resuming upload from previous URL: ".concat(this.url)), this._resumeUpload();
                         return
                     }
                     if (this.options.uploadUrl != null) {
-                        Sr("Resuming upload from provided URL: ".concat(this.options.uploadUrl)), this.url = this.options.uploadUrl, this._resumeUpload();
+                        _r("Resuming upload from provided URL: ".concat(this.options.uploadUrl)), this.url = this.options.uploadUrl, this._resumeUpload();
                         return
                     }
-                    Sr("Creating a new upload"), this._createUpload()
+                    _r("Creating a new upload"), this._createUpload()
                 }, "_startSingleUpload")
             }, {
                 key: "abort",
@@ -16910,7 +16953,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     if (!this._aborted) {
                         if (this.options.retryDelays != null) {
                             var s = this._offset != null && this._offset > this._offsetBeforeRetry;
-                            if (s && (this._retryAttempt = 0), ly(t, this._retryAttempt, this.options)) {
+                            if (s && (this._retryAttempt = 0), uy(t, this._retryAttempt, this.options)) {
                                 var o = this.options.retryDelays[this._retryAttempt++];
                                 this._offsetBeforeRetry = this._offset, this._retryTimeout = setTimeout(function() {
                                     r.start()
@@ -16947,7 +16990,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     }
                     var r = this._openRequest("POST", this.options.endpoint);
                     this.options.uploadLengthDeferred ? r.setHeader("Upload-Defer-Length", 1) : r.setHeader("Upload-Length", this._size);
-                    var s = oy(this.options.metadata);
+                    var s = ny(this.options.metadata);
                     s !== "" && r.setHeader("Upload-Metadata", s);
                     var o;
                     this.options.uploadDataDuringCreation && !this.options.uploadLengthDeferred ? (this._offset = 0, o = this._addChunkToRequest(r)) : o = this._sendRequest(r, null), o.then(function(a) {
@@ -16960,7 +17003,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             t._emitHttpError(r, a, "tus: invalid or missing Location header");
                             return
                         }
-                        if (t.url = uy(t.options.endpoint, l), Sr("Created upload at ".concat(t.url)), typeof t.options._onUploadUrlAvailable == "function" && t.options._onUploadUrlAvailable(), t._size === 0) {
+                        if (t.url = hy(t.options.endpoint, l), _r("Created upload at ".concat(t.url)), typeof t.options._onUploadUrlAvailable == "function" && t.options._onUploadUrlAvailable(), t._size === 0) {
                             t._emitSuccess(), t._source.close();
                             return
                         }
@@ -17017,23 +17060,17 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 value: n(function() {
                     var t = this;
                     if (!this._aborted) {
-                        var req;
-                        if (this.options.overridePatchMethod) {
-                            req = this._openRequest("POST", this.url);
-                            req.setHeader("X-HTTP-Method-Override", "PATCH");
-                        } else {
-                            req = this._openRequest("PATCH", this.url);
-                        }
-                        req.setHeader("Upload-Offset", this._offset);
-                        var promise = this._addChunkToRequest(req);
-                        promise.then(function(o) {
+                        var r;
+                        this.options.overridePatchMethod ? (r = this._openRequest("POST", this.url), r.setHeader("X-HTTP-Method-Override", "PATCH")) : r = this._openRequest("PATCH", this.url), r.setHeader("Upload-Offset", this._offset);
+                        var s = this._addChunkToRequest(r);
+                        s.then(function(o) {
                             if (!ao(o.getStatus(), 200)) {
-                                t._emitHttpError(req, o, "tus: unexpected response while uploading chunk");
+                                t._emitHttpError(r, o, "tus: unexpected response while uploading chunk");
                                 return
                             }
-                            t._handleUploadResponse(req, o)
+                            t._handleUploadResponse(r, o)
                         }).catch(function(o) {
-                            t._aborted || t._emitHttpError(req, null, "tus: failed to upload chunk at offset ".concat(t._offset), o)
+                            t._aborted || t._emitHttpError(r, null, "tus: failed to upload chunk at offset ".concat(t._offset), o)
                         })
                     }
                 }, "_performUpload")
@@ -17068,7 +17105,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }, {
                 key: "_openRequest",
                 value: n(function(t, r) {
-                    var s = openRequest(t, r, this.options);
+                    var s = ay(t, r, this.options);
                     return this._req = s, s
                 }, "_openRequest")
             }, {
@@ -17097,59 +17134,53 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 key: "_sendRequest",
                 value: n(function(t) {
                     var r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : null;
-                    return sendRequest(t, r, this.options)
+                    return ly(t, r, this.options)
                 }, "_sendRequest")
             }], [{
                 key: "terminate",
-                value: n(function(url) {
-                    var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                    var req;
-                    if (options.overrideDeleteMethod) {
-                        req = openRequest("POST", url, options);
-                        req.setHeader("X-HTTP-Method-Override", "DELETE");
-                    } else {
-                        req = openRequest("DELETE", url, options);
-                    }
-                    return sendRequest(req, null, options).then(function(o) {
-                        if (o.getStatus() !== 204) throw new oo("tus: unexpected response while terminating upload", null, req, o)
-                    }).catch(function(err) {
-                        if (err instanceof oo || (err = new oo("tus: failed to terminate upload", err, req, null)), !ly(err, 0, options)) throw err;
-                        var a = options.retryDelays[0],
-                            l = options.retryDelays.slice(1),
-                            h = no(no({}, options), {}, {
+                value: n(function(t) {
+                    var r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {},
+                        s = ay("DELETE", t, r);
+                    return ly(s, null, r).then(function(o) {
+                        if (o.getStatus() !== 204) throw new oo("tus: unexpected response while terminating upload", null, s, o)
+                    }).catch(function(o) {
+                        if (o instanceof oo || (o = new oo("tus: failed to terminate upload", o, s, null)), !uy(o, 0, r)) throw o;
+                        var a = r.retryDelays[0],
+                            l = r.retryDelays.slice(1),
+                            h = no(no({}, r), {}, {
                                 retryDelays: l
                             });
                         return new Promise(function(c) {
                             return setTimeout(c, a)
                         }).then(function() {
-                            return i.terminate(url, h)
+                            return i.terminate(t, h)
                         })
                     })
                 }, "terminate")
             }]), i
         }();
 
-    function oy(i) {
+    function ny(i) {
         return Object.entries(i).map(function(e) {
-            var t = hy(e, 2),
+            var t = cy(e, 2),
                 r = t[0],
                 s = t[1];
-            return "".concat(r, " ").concat(zg.encode(String(s)))
+            return "".concat(r, " ").concat(jg.encode(String(s)))
         }).join(",")
     }
-    n(oy, "encodeMetadata");
+    n(ny, "encodeMetadata");
 
     function ao(i, e) {
         return i >= e && i < e + 100
     }
     n(ao, "inStatusCategory");
 
-    function openRequest(i, e, t) {
+    function ay(i, e, t) {
         var r = t.httpStack.createRequest(i, e);
         r.setHeader("Tus-Resumable", "1.0.0");
         var s = t.headers || {};
         if (Object.entries(s).forEach(function(a) {
-            var l = hy(a, 2),
+            var l = cy(a, 2),
                 h = l[0],
                 c = l[1];
             r.setHeader(h, c)
@@ -17159,9 +17190,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         return r
     }
-    n(openRequest, "openRequest");
+    n(ay, "openRequest");
 
-    function sendRequest(i, e, t) {
+    function ly(i, e, t) {
         var r = typeof t.onBeforeRequest == "function" ? Promise.resolve(t.onBeforeRequest(i)) : Promise.resolve();
         return r.then(function() {
             return i.send(e).then(function(s) {
@@ -17172,62 +17203,62 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             })
         })
     }
-    n(sendRequest, "sendRequest");
+    n(ly, "sendRequest");
 
-    function l_() {
+    function u_() {
         var i = !0;
         return typeof window < "u" && "navigator" in window && window.navigator.onLine === !1 && (i = !1), i
     }
-    n(l_, "isOnline");
+    n(u_, "isOnline");
 
-    function ly(i, e, t) {
+    function uy(i, e, t) {
         if (t.retryDelays == null || e >= t.retryDelays.length || i.originalRequest == null) return !1;
         if (t && typeof t.onShouldRetry == "function") return t.onShouldRetry(i, e, t);
         var r = i.originalResponse ? i.originalResponse.getStatus() : 0;
-        return (!ao(r, 400) || r === 409 || r === 423) && l_()
+        return (!ao(r, 400) || r === 409 || r === 423) && u_()
     }
-    n(ly, "shouldRetry");
+    n(uy, "shouldRetry");
 
-    function uy(i, e) {
-        return new cy.default(e, i).toString()
+    function hy(i, e) {
+        return new dy.default(e, i).toString()
     }
-    n(uy, "resolveUrl");
+    n(hy, "resolveUrl");
 
-    function u_(i, e) {
+    function h_(i, e) {
         for (var t = Math.floor(i / e), r = [], s = 0; s < e; s++) r.push({
             start: t * s,
             end: t * (s + 1)
         });
         return r[e - 1].end = i, r
     }
-    n(u_, "splitSizeIntoParts");
-    dy.defaultOptions = a_;
-    var Tl = dy;
+    n(h_, "splitSizeIntoParts");
+    py.defaultOptions = l_;
+    var kl = py;
 
-    function h_(i, e) {
+    function c_(i, e) {
         if (!(i instanceof e)) throw new TypeError("Cannot call a class as a function")
     }
-    n(h_, "_classCallCheck");
+    n(c_, "_classCallCheck");
 
-    function py(i, e) {
+    function fy(i, e) {
         for (var t = 0; t < e.length; t++) {
             var r = e[t];
             r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(i, r.key, r)
         }
     }
-    n(py, "_defineProperties");
+    n(fy, "_defineProperties");
 
-    function c_(i, e, t) {
-        return e && py(i.prototype, e), t && py(i, t), Object.defineProperty(i, "prototype", {
+    function d_(i, e, t) {
+        return e && fy(i.prototype, e), t && fy(i, t), Object.defineProperty(i, "prototype", {
             writable: !1
         }), i
     }
-    n(c_, "_createClass");
-    var fy = function() {
+    n(d_, "_createClass");
+    var my = function() {
         function i() {
-            h_(this, i)
+            c_(this, i)
         }
-        return n(i, "NoopUrlStorage"), c_(i, [{
+        return n(i, "NoopUrlStorage"), d_(i, [{
             key: "listAllUploads",
             value: n(function() {
                 return Promise.resolve([])
@@ -17250,25 +17281,25 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }]), i
     }();
 
-    function d_(i, e) {
+    function p_(i, e) {
         if (!(i instanceof e)) throw new TypeError("Cannot call a class as a function")
     }
-    n(d_, "_classCallCheck");
+    n(p_, "_classCallCheck");
 
-    function my(i, e) {
+    function gy(i, e) {
         for (var t = 0; t < e.length; t++) {
             var r = e[t];
             r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(i, r.key, r)
         }
     }
-    n(my, "_defineProperties");
+    n(gy, "_defineProperties");
 
-    function p_(i, e, t) {
-        return e && my(i.prototype, e), t && my(i, t), Object.defineProperty(i, "prototype", {
+    function f_(i, e, t) {
+        return e && gy(i.prototype, e), t && gy(i, t), Object.defineProperty(i, "prototype", {
             writable: !1
         }), i
     }
-    n(p_, "_createClass");
+    n(f_, "_createClass");
     var kc = !1;
     try {
         kc = "localStorage" in window, Tc = "tusSupport", localStorage.setItem(Tc, localStorage.getItem(Tc))
@@ -17276,12 +17307,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         if (i.code === i.SECURITY_ERR || i.code === i.QUOTA_EXCEEDED_ERR) kc = !1;
         else throw i
     }
-    var Tc, gy = kc,
-        yy = function() {
+    var Tc, yy = kc,
+        vy = function() {
             function i() {
-                d_(this, i)
+                p_(this, i)
             }
-            return n(i, "WebStorageUrlStorage"), p_(i, [{
+            return n(i, "WebStorageUrlStorage"), f_(i, [{
                 key: "findAllUploads",
                 value: n(function() {
                     var t = this._findEntries("tus::");
@@ -17325,28 +17356,28 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(Ac, "_classCallCheck");
 
-    function vy(i, e) {
+    function by(i, e) {
         for (var t = 0; t < e.length; t++) {
             var r = e[t];
             r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(i, r.key, r)
         }
     }
-    n(vy, "_defineProperties");
+    n(by, "_defineProperties");
 
     function Uc(i, e, t) {
-        return e && vy(i.prototype, e), t && vy(i, t), Object.defineProperty(i, "prototype", {
+        return e && by(i.prototype, e), t && by(i, t), Object.defineProperty(i, "prototype", {
             writable: !1
         }), i
     }
     n(Uc, "_createClass");
-    var by = function() {
+    var wy = function() {
         function i() {
             Ac(this, i)
         }
         return n(i, "XHRHttpStack"), Uc(i, [{
             key: "createRequest",
             value: n(function(t, r) {
-                return new f_(t, r)
+                return new m_(t, r)
             }, "createRequest")
         }, {
             key: "getName",
@@ -17355,7 +17386,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }, "getName")
         }]), i
     }();
-    var f_ = function() {
+    var m_ = function() {
             function i(e, t) {
                 Ac(this, i), this._xhr = new XMLHttpRequest, this._xhr.open(e, t, !0), this._method = e, this._url = t, this._headers = {}
             }
@@ -17393,7 +17424,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         r = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : null;
                     return new Promise(function(s, o) {
                         t._xhr.onload = function() {
-                            s(new m_(t._xhr))
+                            s(new g_(t._xhr))
                         }, t._xhr.onerror = function(a) {
                             o(a)
                         }, t._xhr.send(r)
@@ -17411,7 +17442,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 }, "getUnderlyingObject")
             }]), i
         }(),
-        m_ = function() {
+        g_ = function() {
             function i(e) {
                 Ac(this, i), this._xhr = e
             }
@@ -17437,10 +17468,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 }, "getUnderlyingObject")
             }]), i
         }();
-    var g_ = n(function() {
+    var y_ = n(function() {
             return typeof navigator < "u" && typeof navigator.product == "string" && navigator.product.toLowerCase() === "reactnative"
         }, "isReactNative"),
-        kl = g_;
+        Al = y_;
 
     function Dc(i) {
         return new Promise(function(e, t) {
@@ -17454,10 +17485,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         })
     }
     n(Dc, "uriToBlob");
-    var y_ = n(function() {
+    var v_ = n(function() {
             return typeof window < "u" && (typeof window.PhoneGap < "u" || typeof window.Cordova < "u" || typeof window.cordova < "u")
         }, "isCordova"),
-        wy = y_;
+        Sy = v_;
 
     function Nc(i) {
         return new Promise(function(e, t) {
@@ -17474,33 +17505,33 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(Nc, "readAsByteArray");
 
-    function v_(i, e) {
+    function b_(i, e) {
         if (!(i instanceof e)) throw new TypeError("Cannot call a class as a function")
     }
-    n(v_, "_classCallCheck");
+    n(b_, "_classCallCheck");
 
-    function Sy(i, e) {
+    function _y(i, e) {
         for (var t = 0; t < e.length; t++) {
             var r = e[t];
             r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(i, r.key, r)
         }
     }
-    n(Sy, "_defineProperties");
+    n(_y, "_defineProperties");
 
-    function b_(i, e, t) {
-        return e && Sy(i.prototype, e), t && Sy(i, t), Object.defineProperty(i, "prototype", {
+    function w_(i, e, t) {
+        return e && _y(i.prototype, e), t && _y(i, t), Object.defineProperty(i, "prototype", {
             writable: !1
         }), i
     }
-    n(b_, "_createClass");
+    n(w_, "_createClass");
     var Bc = function() {
         function i(e) {
-            v_(this, i), this._file = e, this.size = e.size
+            b_(this, i), this._file = e, this.size = e.size
         }
-        return n(i, "FileSource"), b_(i, [{
+        return n(i, "FileSource"), w_(i, [{
             key: "slice",
             value: n(function(t, r) {
-                if (wy()) return Nc(this._file.slice(t, r));
+                if (Sy()) return Nc(this._file.slice(t, r));
                 var s = this._file.slice(t, r);
                 return Promise.resolve({
                     value: s
@@ -17512,32 +17543,32 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }]), i
     }();
 
-    function w_(i, e) {
+    function S_(i, e) {
         if (!(i instanceof e)) throw new TypeError("Cannot call a class as a function")
     }
-    n(w_, "_classCallCheck");
+    n(S_, "_classCallCheck");
 
-    function _y(i, e) {
+    function Py(i, e) {
         for (var t = 0; t < e.length; t++) {
             var r = e[t];
             r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(i, r.key, r)
         }
     }
-    n(_y, "_defineProperties");
+    n(Py, "_defineProperties");
 
-    function S_(i, e, t) {
-        return e && _y(i.prototype, e), t && _y(i, t), Object.defineProperty(i, "prototype", {
+    function __(i, e, t) {
+        return e && Py(i.prototype, e), t && Py(i, t), Object.defineProperty(i, "prototype", {
             writable: !1
         }), i
     }
-    n(S_, "_createClass");
+    n(__, "_createClass");
 
-    function Py(i) {
+    function xy(i) {
         return i === void 0 ? 0 : i.size !== void 0 ? i.size : i.length
     }
-    n(Py, "len");
+    n(xy, "len");
 
-    function __(i, e) {
+    function P_(i, e) {
         if (i.concat) return i.concat(e);
         if (i instanceof Blob) return new Blob([i, e], {
             type: i.type
@@ -17548,12 +17579,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         throw new Error("Unknown data type")
     }
-    n(__, "concat");
-    var xy = function() {
+    n(P_, "concat");
+    var Fy = function() {
         function i(e) {
-            w_(this, i), this._buffer = void 0, this._bufferOffset = 0, this._reader = e, this._done = !1
+            S_(this, i), this._buffer = void 0, this._bufferOffset = 0, this._reader = e, this._done = !1
         }
-        return n(i, "StreamSource"), S_(i, [{
+        return n(i, "StreamSource"), __(i, [{
             key: "slice",
             value: n(function(t, r) {
                 return t < this._bufferOffset ? Promise.reject(new Error("Requested data is before the reader's current offset")) : this._readUntilEnoughDataOrDone(t, r)
@@ -17562,7 +17593,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             key: "_readUntilEnoughDataOrDone",
             value: n(function(t, r) {
                 var s = this,
-                    o = r <= this._bufferOffset + Py(this._buffer);
+                    o = r <= this._bufferOffset + xy(this._buffer);
                 if (this._done || o) {
                     var a = this._getDataFromBuffer(t, r),
                         l = a == null ? this._done : !1;
@@ -17574,14 +17605,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 return this._reader.read().then(function(h) {
                     var c = h.value,
                         d = h.done;
-                    return d ? s._done = !0 : s._buffer === void 0 ? s._buffer = c : s._buffer = __(s._buffer, c), s._readUntilEnoughDataOrDone(t, r)
+                    return d ? s._done = !0 : s._buffer === void 0 ? s._buffer = c : s._buffer = P_(s._buffer, c), s._readUntilEnoughDataOrDone(t, r)
                 })
             }, "_readUntilEnoughDataOrDone")
         }, {
             key: "_getDataFromBuffer",
             value: n(function(t, r) {
                 t > this._bufferOffset && (this._buffer = this._buffer.slice(t - this._bufferOffset), this._bufferOffset = t);
-                var s = Py(this._buffer) === 0;
+                var s = xy(this._buffer) === 0;
                 return this._done && s ? null : this._buffer.slice(0, r - t)
             }, "_getDataFromBuffer")
         }, {
@@ -17592,53 +17623,53 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }]), i
     }();
 
-    function P_(i, e) {
+    function x_(i, e) {
         if (!(i instanceof e)) throw new TypeError("Cannot call a class as a function")
     }
-    n(P_, "_classCallCheck");
+    n(x_, "_classCallCheck");
 
-    function Fy(i, e) {
+    function Ey(i, e) {
         for (var t = 0; t < e.length; t++) {
             var r = e[t];
             r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(i, r.key, r)
         }
     }
-    n(Fy, "_defineProperties");
+    n(Ey, "_defineProperties");
 
-    function x_(i, e, t) {
-        return e && Fy(i.prototype, e), t && Fy(i, t), Object.defineProperty(i, "prototype", {
+    function F_(i, e, t) {
+        return e && Ey(i.prototype, e), t && Ey(i, t), Object.defineProperty(i, "prototype", {
             writable: !1
         }), i
     }
-    n(x_, "_createClass");
-    var Ey = function() {
+    n(F_, "_createClass");
+    var Oy = function() {
         function i() {
-            P_(this, i)
+            x_(this, i)
         }
-        return n(i, "FileReader"), x_(i, [{
+        return n(i, "FileReader"), F_(i, [{
             key: "openFile",
             value: n(function(t, r) {
-                return kl() && t && typeof t.uri < "u" ? Dc(t.uri).then(function(s) {
+                return Al() && t && typeof t.uri < "u" ? Dc(t.uri).then(function(s) {
                     return new Bc(s)
                 }).catch(function(s) {
                     throw new Error("tus: cannot fetch `file.uri` as Blob, make sure the uri is correct and accessible. ".concat(s))
-                }) : typeof t.slice == "function" && typeof t.size < "u" ? Promise.resolve(new Bc(t)) : typeof t.read == "function" ? (r = Number(r), Number.isFinite(r) ? Promise.resolve(new xy(t, r)) : Promise.reject(new Error("cannot create source for stream without a finite value for the `chunkSize` option"))) : Promise.reject(new Error("source object may only be an instance of File, Blob, or Reader in this environment"))
+                }) : typeof t.slice == "function" && typeof t.size < "u" ? Promise.resolve(new Bc(t)) : typeof t.read == "function" ? (r = Number(r), Number.isFinite(r) ? Promise.resolve(new Fy(t, r)) : Promise.reject(new Error("cannot create source for stream without a finite value for the `chunkSize` option"))) : Promise.reject(new Error("source object may only be an instance of File, Blob, or Reader in this environment"))
             }, "openFile")
         }]), i
     }();
 
     function Ic(i, e) {
-        return kl() ? Promise.resolve(F_(i, e)) : Promise.resolve(["tus-br", i.name, i.type, i.size, i.lastModified, e.endpoint].join("-"))
+        return Al() ? Promise.resolve(E_(i, e)) : Promise.resolve(["tus-br", i.name, i.type, i.size, i.lastModified, e.endpoint].join("-"))
     }
     n(Ic, "fingerprint");
 
-    function F_(i, e) {
-        var t = i.exif ? E_(JSON.stringify(i.exif)) : "noexif";
+    function E_(i, e) {
+        var t = i.exif ? O_(JSON.stringify(i.exif)) : "noexif";
         return ["tus-rn", i.name || "noname", i.size || "nosize", t, e.endpoint].join("/")
     }
-    n(F_, "reactNativeFingerprint");
+    n(E_, "reactNativeFingerprint");
 
-    function E_(i) {
+    function O_(i) {
         var e = 0;
         if (i.length === 0) return e;
         for (var t = 0; t < i.length; t++) {
@@ -17647,7 +17678,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         return e
     }
-    n(E_, "hashCode");
+    n(O_, "hashCode");
 
     function Lc(i) {
         return Lc = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(e) {
@@ -17658,27 +17689,27 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(Lc, "_typeof");
 
-    function O_(i, e) {
+    function R_(i, e) {
         if (!(i instanceof e)) throw new TypeError("Cannot call a class as a function")
     }
-    n(O_, "_classCallCheck");
+    n(R_, "_classCallCheck");
 
-    function Oy(i, e) {
+    function Ry(i, e) {
         for (var t = 0; t < e.length; t++) {
             var r = e[t];
             r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(i, r.key, r)
         }
     }
-    n(Oy, "_defineProperties");
+    n(Ry, "_defineProperties");
 
-    function R_(i, e, t) {
-        return e && Oy(i.prototype, e), t && Oy(i, t), Object.defineProperty(i, "prototype", {
+    function C_(i, e, t) {
+        return e && Ry(i.prototype, e), t && Ry(i, t), Object.defineProperty(i, "prototype", {
             writable: !1
         }), i
     }
-    n(R_, "_createClass");
+    n(C_, "_createClass");
 
-    function C_(i, e) {
+    function T_(i, e) {
         if (typeof e != "function" && e !== null) throw new TypeError("Super expression must either be null or a function");
         i.prototype = Object.create(e && e.prototype, {
             constructor: {
@@ -17690,7 +17721,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             writable: !1
         }), e && Mc(i, e)
     }
-    n(C_, "_inherits");
+    n(T_, "_inherits");
 
     function Mc(i, e) {
         return Mc = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : n(function(r, s) {
@@ -17699,34 +17730,34 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(Mc, "_setPrototypeOf");
 
-    function T_(i) {
-        var e = U_();
+    function k_(i) {
+        var e = D_();
         return n(function() {
-            var r = Al(i),
+            var r = Ul(i),
                 s;
             if (e) {
-                var o = Al(this).constructor;
+                var o = Ul(this).constructor;
                 s = Reflect.construct(r, arguments, o)
             } else s = r.apply(this, arguments);
-            return k_(this, s)
+            return A_(this, s)
         }, "_createSuperInternal")
     }
-    n(T_, "_createSuper");
+    n(k_, "_createSuper");
 
-    function k_(i, e) {
+    function A_(i, e) {
         if (e && (Lc(e) === "object" || typeof e == "function")) return e;
         if (e !== void 0) throw new TypeError("Derived constructors may only return object or undefined");
-        return A_(i)
+        return U_(i)
     }
-    n(k_, "_possibleConstructorReturn");
+    n(A_, "_possibleConstructorReturn");
 
-    function A_(i) {
+    function U_(i) {
         if (i === void 0) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
         return i
     }
-    n(A_, "_assertThisInitialized");
+    n(U_, "_assertThisInitialized");
 
-    function U_() {
+    function D_() {
         if (typeof Reflect > "u" || !Reflect.construct || Reflect.construct.sham) return !1;
         if (typeof Proxy == "function") return !0;
         try {
@@ -17735,16 +17766,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             return !1
         }
     }
-    n(U_, "_isNativeReflectConstruct");
+    n(D_, "_isNativeReflectConstruct");
 
-    function Al(i) {
-        return Al = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : n(function(t) {
+    function Ul(i) {
+        return Ul = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : n(function(t) {
             return t.__proto__ || Object.getPrototypeOf(t)
-        }, "_getPrototypeOf"), Al(i)
+        }, "_getPrototypeOf"), Ul(i)
     }
-    n(Al, "_getPrototypeOf");
+    n(Ul, "_getPrototypeOf");
 
-    function Ry(i, e) {
+    function Cy(i, e) {
         var t = Object.keys(i);
         if (Object.getOwnPropertySymbols) {
             var r = Object.getOwnPropertySymbols(i);
@@ -17754,14 +17785,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         return t
     }
-    n(Ry, "ownKeys");
+    n(Cy, "ownKeys");
 
     function lo(i) {
         for (var e = 1; e < arguments.length; e++) {
             var t = arguments[e] != null ? arguments[e] : {};
-            e % 2 ? Ry(Object(t), !0).forEach(function(r) {
-                D_(i, r, t[r])
-            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(i, Object.getOwnPropertyDescriptors(t)) : Ry(Object(t)).forEach(function(r) {
+            e % 2 ? Cy(Object(t), !0).forEach(function(r) {
+                N_(i, r, t[r])
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(i, Object.getOwnPropertyDescriptors(t)) : Cy(Object(t)).forEach(function(r) {
                 Object.defineProperty(i, r, Object.getOwnPropertyDescriptor(t, r))
             })
         }
@@ -17769,7 +17800,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(lo, "_objectSpread");
 
-    function D_(i, e, t) {
+    function N_(i, e, t) {
         return e in i ? Object.defineProperty(i, e, {
             value: t,
             enumerable: !0,
@@ -17777,33 +17808,33 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             writable: !0
         }) : i[e] = t, i
     }
-    n(D_, "_defineProperty");
-    var Ul = lo(lo({}, Tl.defaultOptions), {}, {
-            httpStack: new by,
-            fileReader: new Ey,
-            urlStorage: gy ? new yy : new fy,
+    n(N_, "_defineProperty");
+    var Dl = lo(lo({}, kl.defaultOptions), {}, {
+            httpStack: new wy,
+            fileReader: new Oy,
+            urlStorage: yy ? new vy : new my,
             fingerprint: Ic
         }),
-        Ty = function(i) {
-            C_(t, i);
-            var e = T_(t);
+        ky = function(i) {
+            T_(t, i);
+            var e = k_(t);
 
             function t() {
                 var r = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : null,
                     s = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                return O_(this, t), s = lo(lo({}, Ul), s), e.call(this, r, s)
+                return R_(this, t), s = lo(lo({}, Dl), s), e.call(this, r, s)
             }
-            return n(t, "Upload"), R_(t, null, [{
+            return n(t, "Upload"), C_(t, null, [{
                 key: "terminate",
                 value: n(function(s, o, a) {
-                    return o = lo(lo({}, Ul), o), Tl.terminate(s, o, a)
+                    return o = lo(lo({}, Dl), o), kl.terminate(s, o, a)
                 }, "terminate")
             }]), t
-        }(Tl),
-        ky = window,
-        N_ = ky.XMLHttpRequest,
-        Cy = ky.Blob,
-        $D = N_ && Cy && typeof Cy.prototype.slice == "function";
+        }(kl),
+        Ay = window,
+        B_ = Ay.XMLHttpRequest,
+        Ty = Ay.Blob,
+        HD = B_ && Ty && typeof Ty.prototype.slice == "function";
 
     function $n(i) {
         let e = [],
@@ -17824,19 +17855,19 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n($n, "settle");
 
-    function B_() {
+    function I_() {
         return typeof window < "u" && (typeof window.PhoneGap < "u" || typeof window.Cordova < "u" || typeof window.cordova < "u")
     }
-    n(B_, "isCordova");
+    n(I_, "isCordova");
 
-    function I_() {
+    function L_() {
         return typeof navigator < "u" && typeof navigator.product == "string" && navigator.product.toLowerCase() === "reactnative"
     }
-    n(I_, "isReactNative");
+    n(L_, "isReactNative");
 
     function zc(i) {
         return (e, t) => {
-            if (B_() || I_()) return Ul.fingerprint(e, t);
+            if (I_() || L_()) return Dl.fingerprint(e, t);
             let r = ["tus", i.id, t.endpoint].join("-");
             return Promise.resolve(r)
         }
@@ -17848,16 +17879,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         return i
     }
     n(qn, "_classPrivateFieldLooseBase");
-    var L_ = 0;
+    var M_ = 0;
 
     function Hc(i) {
-        return "__private_" + L_++ + "_" + i
+        return "__private_" + M_++ + "_" + i
     }
     n(Hc, "_classPrivateFieldLooseKey");
-    var M_ = {
+    var z_ = {
             version: "3.0.5"
         },
-        Uy = {
+        Dy = {
             endpoint: "",
             uploadUrl: null,
             metadata: {},
@@ -17867,7 +17898,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             onSuccess: null,
             onError: null,
             overridePatchMethod: !1,
-            overrideDeleteMethod: !1,
             headers: {},
             addRequestId: !1,
             chunkSize: 1 / 0,
@@ -17909,7 +17939,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 let o = {
                     useFastRemoteRetry: !0,
                     limit: 20,
-                    retryDelays: Uy.retryDelays,
+                    retryDelays: Dy.retryDelays,
                     withCredentials: !1
                 };
                 if (this.opts = { ...o,
@@ -17951,45 +17981,45 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         ...e.tus || {}
                     };
                     typeof h.headers == "function" && (h.headers = h.headers(e));
-                    let c = { ...Uy,
+                    let c = { ...Dy,
                         ...h
                     };
-                    c.fingerprint = zc(e), c.onBeforeRequest = w => {
-                        let R = w.getUnderlyingObject();
+                    c.fingerprint = zc(e), c.onBeforeRequest = S => {
+                        let R = S.getUnderlyingObject();
                         R.withCredentials = !!h.withCredentials;
                         let x;
-                        if (typeof h.onBeforeRequest == "function" && (x = h.onBeforeRequest(w, e)), qe(o, "shouldBeRequeued")) {
+                        if (typeof h.onBeforeRequest == "function" && (x = h.onBeforeRequest(S, e)), qe(o, "shouldBeRequeued")) {
                             if (!o.shouldBeRequeued) return Promise.reject();
-                            let E, N = new Promise(V => {
-                                E = V
+                            let F, N = new Promise(H => {
+                                F = H
                             });
-                            return o = this.requests.run(() => (e.isPaused && o.abort(), E(), () => {})), Promise.all([N, x])
+                            return o = this.requests.run(() => (e.isPaused && o.abort(), F(), () => {})), Promise.all([N, x])
                         }
                         return x
-                    }, c.onError = w => {
+                    }, c.onError = S => {
                         var R;
-                        this.uppy.log(w);
-                        let x = w.originalRequest ? w.originalRequest.getUnderlyingObject() : null;
-                        is(x) && (w = new Lt(w, x)), this.resetUploaderReferences(e.id), (R = o) == null || R.abort(), this.uppy.emit("upload-error", e, w), s(w)
-                    }, c.onProgress = (w, R) => {
+                        this.uppy.log(S);
+                        let x = S.originalRequest ? S.originalRequest.getUnderlyingObject() : null;
+                        rs(x) && (S = new Mt(S, x)), this.resetUploaderReferences(e.id), (R = o) == null || R.abort(), this.uppy.emit("upload-error", e, S), s(S)
+                    }, c.onProgress = (S, R) => {
                         this.onReceiveUploadUrl(e, l.url), this.uppy.emit("upload-progress", e, {
                             uploader: this,
-                            bytesUploaded: w,
+                            bytesUploaded: S,
                             bytesTotal: R
                         })
                     }, c.onSuccess = () => {
-                        let w = {
+                        let S = {
                             uploadURL: l.url
                         };
-                        this.resetUploaderReferences(e.id), o.done(), this.uppy.emit("upload-success", e, w), l.url && this.uppy.log(`Download ${l.file.name} from ${l.url}`), r(l)
+                        this.resetUploaderReferences(e.id), o.done(), this.uppy.emit("upload-success", e, S), l.url && this.uppy.log(`Download ${l.file.name} from ${l.url}`), r(l)
                     };
-                    let d = n(w => {
+                    let d = n(S => {
                         var R;
-                        let x = w == null || (R = w.originalResponse) == null ? void 0 : R.getStatus();
+                        let x = S == null || (R = S.originalResponse) == null ? void 0 : R.getStatus();
                         if (x === 429) {
                             if (!this.requests.isPaused) {
-                                var E;
-                                let N = (E = qn(this, Vn)[Vn]) == null ? void 0 : E.next();
+                                var F;
+                                let N = (F = qn(this, Vn)[Vn]) == null ? void 0 : F.next();
                                 if (N == null || N.done) return !1;
                                 this.requests.rateLimit(N.value)
                             }
@@ -18015,30 +18045,30 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         }, !0
                     }, "defaultOnShouldRetry");
                     h.onShouldRetry != null ? c.onShouldRetry = function() {
-                        for (var w = arguments.length, R = new Array(w), x = 0; x < w; x++) R[x] = arguments[x];
+                        for (var S = arguments.length, R = new Array(S), x = 0; x < S; x++) R[x] = arguments[x];
                         return h.onShouldRetry(...R, d)
                     } : c.onShouldRetry = d;
-                    let f = n((w, R, x) => {
-                            qe(w, R) && !qe(w, x) && (w[x] = w[R])
+                    let f = n((S, R, x) => {
+                            qe(S, R) && !qe(S, x) && (S[x] = S[R])
                         }, "copyProp"),
                         y = {};
-                    (Array.isArray(h.allowedMetaFields) ? h.allowedMetaFields : Object.keys(e.meta)).forEach(w => {
-                        y[w] = e.meta[w]
-                    }), f(y, "type", "filetype"), f(y, "name", "filename"), c.metadata = y, l = new Ty(e.data, c), this.uploaders[e.id] = l, this.uploaderEvents[e.id] = new $e(this.uppy), a = n(() => (e.isPaused || l.start(), () => {}), "qRequest"), l.findPreviousUploads().then(w => {
-                        let R = w[0];
+                    (Array.isArray(h.allowedMetaFields) ? h.allowedMetaFields : Object.keys(e.meta)).forEach(S => {
+                        y[S] = e.meta[S]
+                    }), f(y, "type", "filetype"), f(y, "name", "filename"), c.metadata = y, l = new ky(e.data, c), this.uploaders[e.id] = l, this.uploaderEvents[e.id] = new $e(this.uppy), a = n(() => (e.isPaused || l.start(), () => {}), "qRequest"), l.findPreviousUploads().then(S => {
+                        let R = S[0];
                         R && (this.uppy.log(`[Tus] Resuming upload of ${e.id} started at ${R.creationTime}`), l.resumeFromPreviousUpload(R))
-                    }), o = this.requests.run(a), this.onFileRemove(e.id, w => {
+                    }), o = this.requests.run(a), this.onFileRemove(e.id, S => {
                         o.abort(), this.resetUploaderReferences(e.id, {
                             abort: !!l.url
-                        }), r(`upload ${w} was removed`)
-                    }), this.onPause(e.id, w => {
-                        o.abort(), w ? l.abort() : o = this.requests.run(a)
+                        }), r(`upload ${S} was removed`)
+                    }), this.onPause(e.id, S => {
+                        o.abort(), S ? l.abort() : o = this.requests.run(a)
                     }), this.onPauseAll(e.id, () => {
                         o.abort(), l.abort()
-                    }), this.onCancelAll(e.id, function(w) {
+                    }), this.onCancelAll(e.id, function(S) {
                         let {
                             reason: R
-                        } = w === void 0 ? {} : w;
+                        } = S === void 0 ? {} : S;
                         R === "user" && (o.abort(), t.resetUploaderReferences(e.id, {
                             abort: !!l.url
                         })), r(`upload ${e.id} was canceled`)
@@ -18088,7 +18118,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         l.isOpen && (l.send("pause", {}), l.send("resume", {}))
                     }), this.onRetryAll(e.id, () => {
                         l.isOpen && (l.send("pause", {}), l.send("resume", {}))
-                    }), l.on("progress", c => wr(this, c, e)), l.on("error", c => {
+                    }), l.on("progress", c => Sr(this, c, e)), l.on("error", c => {
                         let {
                             message: d
                         } = c.error, f = Object.assign(new Error(d), {
@@ -18179,43 +18209,43 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }
         };
     n(wi, "Tus");
-    wi.VERSION = M_.version;
-    var nv = oe(qc(), 1);
-    var $t = Object.create(null);
-    $t.open = "0";
-    $t.close = "1";
-    $t.ping = "2";
-    $t.pong = "3";
-    $t.message = "4";
-    $t.upgrade = "5";
-    $t.noop = "6";
+    wi.VERSION = z_.version;
+    var av = oe(qc(), 1);
+    var qt = Object.create(null);
+    qt.open = "0";
+    qt.close = "1";
+    qt.ping = "2";
+    qt.pong = "3";
+    qt.message = "4";
+    qt.upgrade = "5";
+    qt.noop = "6";
     var Kn = Object.create(null);
-    Object.keys($t).forEach(i => {
-        Kn[$t[i]] = i
+    Object.keys(qt).forEach(i => {
+        Kn[qt[i]] = i
     });
-    var Dy = {
+    var Ny = {
         type: "error",
         data: "parser error"
     };
-    var j_ = typeof Blob == "function" || typeof Blob < "u" && Object.prototype.toString.call(Blob) === "[object BlobConstructor]",
-        H_ = typeof ArrayBuffer == "function",
-        $_ = n(i => typeof ArrayBuffer.isView == "function" ? ArrayBuffer.isView(i) : i && i.buffer instanceof ArrayBuffer, "isView"),
-        q_ = n(({
+    var H_ = typeof Blob == "function" || typeof Blob < "u" && Object.prototype.toString.call(Blob) === "[object BlobConstructor]",
+        $_ = typeof ArrayBuffer == "function",
+        q_ = n(i => typeof ArrayBuffer.isView == "function" ? ArrayBuffer.isView(i) : i && i.buffer instanceof ArrayBuffer, "isView"),
+        V_ = n(({
                     type: i,
                     data: e
-                }, t, r) => j_ && e instanceof Blob ? t ? r(e) : Ny(e, r) : H_ && (e instanceof ArrayBuffer || $_(e)) ? t ? r(e) : Ny(new Blob([e]), r) : r($t[i] + (e || "")), "encodePacket"),
-        Ny = n((i, e) => {
+                }, t, r) => H_ && e instanceof Blob ? t ? r(e) : By(e, r) : $_ && (e instanceof ArrayBuffer || q_(e)) ? t ? r(e) : By(new Blob([e]), r) : r(qt[i] + (e || "")), "encodePacket"),
+        By = n((i, e) => {
             let t = new FileReader;
             return t.onload = function() {
                 let r = t.result.split(",")[1];
                 e("b" + r)
             }, t.readAsDataURL(i)
         }, "encodeBlobAsBase64"),
-        Dl = q_;
-    var By = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
+        Nl = V_;
+    var Iy = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
         Gn = typeof Uint8Array > "u" ? [] : new Uint8Array(256);
-    for (let i = 0; i < By.length; i++) Gn[By.charCodeAt(i)] = i;
-    var Iy = n(i => {
+    for (let i = 0; i < Iy.length; i++) Gn[Iy.charCodeAt(i)] = i;
+    var Ly = n(i => {
         let e = i.length * .75,
             t = i.length,
             r, s = 0,
@@ -18226,33 +18256,33 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         for (r = 0; r < t; r += 4) o = Gn[i.charCodeAt(r)], a = Gn[i.charCodeAt(r + 1)], l = Gn[i.charCodeAt(r + 2)], h = Gn[i.charCodeAt(r + 3)], d[s++] = o << 2 | a >> 4, d[s++] = (a & 15) << 4 | l >> 2, d[s++] = (l & 3) << 6 | h & 63;
         return c
     }, "decode");
-    var V_ = typeof ArrayBuffer == "function",
-        W_ = n((i, e) => {
+    var W_ = typeof ArrayBuffer == "function",
+        K_ = n((i, e) => {
             if (typeof i != "string") return {
                 type: "message",
-                data: Ly(i, e)
+                data: My(i, e)
             };
             let t = i.charAt(0);
             return t === "b" ? {
                 type: "message",
-                data: K_(i.substring(1), e)
+                data: G_(i.substring(1), e)
             } : Kn[t] ? i.length > 1 ? {
                 type: Kn[t],
                 data: i.substring(1)
             } : {
                 type: Kn[t]
-            } : Dy
+            } : Ny
         }, "decodePacket"),
-        K_ = n((i, e) => {
-            if (V_) {
-                let t = Iy(i);
-                return Ly(t, e)
+        G_ = n((i, e) => {
+            if (W_) {
+                let t = Ly(i);
+                return My(t, e)
             } else return {
                 base64: !0,
                 data: i
             }
         }, "decodeBase64Packet"),
-        Ly = n((i, e) => {
+        My = n((i, e) => {
             switch (e) {
                 case "blob":
                     return i instanceof ArrayBuffer ? new Blob([i]) : i;
@@ -18261,23 +18291,23 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     return i
             }
         }, "mapBinary"),
-        Nl = W_;
-    var My = String.fromCharCode(30),
-        zy = n((i, e) => {
+        Bl = K_;
+    var zy = String.fromCharCode(30),
+        jy = n((i, e) => {
             let t = i.length,
                 r = new Array(t),
                 s = 0;
             i.forEach((o, a) => {
-                Dl(o, !1, l => {
-                    r[a] = l, ++s === t && e(r.join(My))
+                Nl(o, !1, l => {
+                    r[a] = l, ++s === t && e(r.join(zy))
                 })
             })
         }, "encodePayload"),
-        jy = n((i, e) => {
-            let t = i.split(My),
+        Hy = n((i, e) => {
+            let t = i.split(zy),
                 r = [];
             for (let s = 0; s < t.length; s++) {
-                let o = Nl(t[s], e);
+                let o = Bl(t[s], e);
                 if (r.push(o), o.type === "error") break
             }
             return r
@@ -18285,15 +18315,15 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         Vc = 4;
 
     function ue(i) {
-        if (i) return G_(i)
+        if (i) return X_(i)
     }
     n(ue, "Emitter");
 
-    function G_(i) {
+    function X_(i) {
         for (var e in ue.prototype) i[e] = ue.prototype[e];
         return i
     }
-    n(G_, "mixin");
+    n(X_, "mixin");
     ue.prototype.on = ue.prototype.addEventListener = function(i, e) {
         return this._callbacks = this._callbacks || {}, (this._callbacks["$" + i] = this._callbacks["$" + i] || []).push(e), this
     };
@@ -18331,45 +18361,45 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     ue.prototype.hasListeners = function(i) {
         return !!this.listeners(i).length
     };
-    var At = (() => typeof self < "u" ? self : typeof window < "u" ? window : Function("return this")())();
+    var Ut = (() => typeof self < "u" ? self : typeof window < "u" ? window : Function("return this")())();
 
-    function Bl(i, ...e) {
+    function Il(i, ...e) {
         return e.reduce((t, r) => (i.hasOwnProperty(r) && (t[r] = i[r]), t), {})
     }
-    n(Bl, "pick");
-    var X_ = setTimeout,
-        Y_ = clearTimeout;
+    n(Il, "pick");
+    var Y_ = setTimeout,
+        J_ = clearTimeout;
 
     function Ji(i, e) {
-        e.useNativeTimers ? (i.setTimeoutFn = X_.bind(At), i.clearTimeoutFn = Y_.bind(At)) : (i.setTimeoutFn = setTimeout.bind(At), i.clearTimeoutFn = clearTimeout.bind(At))
+        e.useNativeTimers ? (i.setTimeoutFn = Y_.bind(Ut), i.clearTimeoutFn = J_.bind(Ut)) : (i.setTimeoutFn = setTimeout.bind(Ut), i.clearTimeoutFn = clearTimeout.bind(Ut))
     }
     n(Ji, "installTimerFunctions");
-    var J_ = 1.33;
+    var Q_ = 1.33;
 
-    function Hy(i) {
-        return typeof i == "string" ? Q_(i) : Math.ceil((i.byteLength || i.size) * J_)
+    function $y(i) {
+        return typeof i == "string" ? Z_(i) : Math.ceil((i.byteLength || i.size) * Q_)
     }
-    n(Hy, "byteLength");
+    n($y, "byteLength");
 
-    function Q_(i) {
+    function Z_(i) {
         let e = 0,
             t = 0;
         for (let r = 0, s = i.length; r < s; r++) e = i.charCodeAt(r), e < 128 ? t += 1 : e < 2048 ? t += 2 : e < 55296 || e >= 57344 ? t += 3 : (r++, t += 4);
         return t
     }
-    n(Q_, "utf8Length");
-    var Il = class extends Error {
+    n(Z_, "utf8Length");
+    var Ll = class extends Error {
         constructor(e, t, r) {
             super(e), this.description = t, this.context = r, this.type = "TransportError"
         }
     };
-    n(Il, "TransportError");
-    var _r = class extends ue {
+    n(Ll, "TransportError");
+    var Pr = class extends ue {
         constructor(e) {
             super(), this.writable = !1, Ji(this, e), this.opts = e, this.query = e.query, this.readyState = "", this.socket = e.socket
         }
         onError(e, t, r) {
-            return super.emitReserved("error", new Il(e, t, r)), this
+            return super.emitReserved("error", new Ll(e, t, r)), this
         }
         open() {
             return (this.readyState === "closed" || this.readyState === "") && (this.readyState = "opening", this.doOpen()), this
@@ -18384,7 +18414,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             this.readyState = "open", this.writable = !0, super.emitReserved("open")
         }
         onData(e) {
-            let t = Nl(e, this.socket.binaryType);
+            let t = Bl(e, this.socket.binaryType);
             this.onPacket(t)
         }
         onPacket(e) {
@@ -18394,36 +18424,36 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             this.readyState = "closed", super.emitReserved("close", e)
         }
     };
-    n(_r, "Transport");
-    var Wy = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_".split(""),
+    n(Pr, "Transport");
+    var Ky = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_".split(""),
         Wc = 64,
-        Z_ = {},
-        $y = 0,
-        Ll = 0,
-        qy;
+        eP = {},
+        qy = 0,
+        Ml = 0,
+        Vy;
 
-    function Vy(i) {
+    function Wy(i) {
         let e = "";
-        do e = Wy[i % Wc] + e, i = Math.floor(i / Wc); while (i > 0);
+        do e = Ky[i % Wc] + e, i = Math.floor(i / Wc); while (i > 0);
         return e
     }
-    n(Vy, "encode");
+    n(Wy, "encode");
 
-    function Ml() {
-        let i = Vy(+new Date);
-        return i !== qy ? ($y = 0, qy = i) : i + "." + Vy($y++)
+    function zl() {
+        let i = Wy(+new Date);
+        return i !== Vy ? (qy = 0, Vy = i) : i + "." + Wy(qy++)
     }
-    n(Ml, "yeast");
-    for (; Ll < Wc; Ll++) Z_[Wy[Ll]] = Ll;
+    n(zl, "yeast");
+    for (; Ml < Wc; Ml++) eP[Ky[Ml]] = Ml;
 
-    function zl(i) {
+    function jl(i) {
         let e = "";
         for (let t in i) i.hasOwnProperty(t) && (e.length && (e += "&"), e += encodeURIComponent(t) + "=" + encodeURIComponent(i[t]));
         return e
     }
-    n(zl, "encode");
+    n(jl, "encode");
 
-    function Ky(i) {
+    function Gy(i) {
         let e = {},
             t = i.split("&");
         for (let r = 0, s = t.length; r < s; r++) {
@@ -18432,32 +18462,32 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         return e
     }
-    n(Ky, "decode");
-    var Gy = !1;
+    n(Gy, "decode");
+    var Xy = !1;
     try {
-        Gy = typeof XMLHttpRequest < "u" && "withCredentials" in new XMLHttpRequest
+        Xy = typeof XMLHttpRequest < "u" && "withCredentials" in new XMLHttpRequest
     } catch {}
-    var Xy = Gy;
+    var Yy = Xy;
 
     function Kc(i) {
         let e = i.xdomain;
         try {
-            if (typeof XMLHttpRequest < "u" && (!e || Xy)) return new XMLHttpRequest
+            if (typeof XMLHttpRequest < "u" && (!e || Yy)) return new XMLHttpRequest
         } catch {}
         if (!e) try {
-            return new At[["Active"].concat("Object").join("X")]("Microsoft.XMLHTTP")
+            return new Ut[["Active"].concat("Object").join("X")]("Microsoft.XMLHTTP")
         } catch {}
     }
     n(Kc, "XHR");
 
-    function eP() {}
-    n(eP, "empty");
-    var tP = function() {
+    function tP() {}
+    n(tP, "empty");
+    var iP = function() {
             return new Kc({
                 xdomain: !1
             }).responseType != null
         }(),
-        Xn = class extends _r {
+        Xn = class extends Pr {
             constructor(e) {
                 if (super(e), this.polling = !1, typeof location < "u") {
                     let r = location.protocol === "https:",
@@ -18465,7 +18495,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     s || (s = r ? "443" : "80"), this.xd = typeof location < "u" && e.hostname !== location.hostname || s !== e.port, this.xs = e.secure !== r
                 }
                 let t = e && e.forceBase64;
-                this.supportsBinary = tP && !t
+                this.supportsBinary = iP && !t
             }
             get name() {
                 return "polling"
@@ -18497,7 +18527,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     }), !1;
                     this.onPacket(r)
                 }, "callback");
-                jy(e, this.socket.binaryType).forEach(t), this.readyState !== "closed" && (this.polling = !1, this.emitReserved("pollComplete"), this.readyState === "open" && this.poll())
+                Hy(e, this.socket.binaryType).forEach(t), this.readyState !== "closed" && (this.polling = !1, this.emitReserved("pollComplete"), this.readyState === "open" && this.poll())
             }
             doClose() {
                 let e = n(() => {
@@ -18508,7 +18538,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 this.readyState === "open" ? e() : this.once("open", e)
             }
             write(e) {
-                this.writable = !1, zy(e, t => {
+                this.writable = !1, jy(e, t => {
                     this.doWrite(t, () => {
                         this.writable = !0, this.emitReserved("drain")
                     })
@@ -18518,8 +18548,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 let e = this.query || {},
                     t = this.opts.secure ? "https" : "http",
                     r = "";
-                this.opts.timestampRequests !== !1 && (e[this.opts.timestampParam] = Ml()), !this.supportsBinary && !e.sid && (e.b64 = 1), this.opts.port && (t === "https" && Number(this.opts.port) !== 443 || t === "http" && Number(this.opts.port) !== 80) && (r = ":" + this.opts.port);
-                let s = zl(e),
+                this.opts.timestampRequests !== !1 && (e[this.opts.timestampParam] = zl()), !this.supportsBinary && !e.sid && (e.b64 = 1), this.opts.port && (t === "https" && Number(this.opts.port) !== 443 || t === "http" && Number(this.opts.port) !== 80) && (r = ":" + this.opts.port);
+                let s = jl(e),
                     o = this.opts.hostname.indexOf(":") !== -1;
                 return t + "://" + (o ? "[" + this.opts.hostname + "]" : this.opts.hostname) + r + this.opts.path + (s.length ? "?" + s : "")
             }
@@ -18551,7 +18581,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             super(), Ji(this, t), this.opts = t, this.method = t.method || "GET", this.uri = e, this.async = t.async !== !1, this.data = t.data !== void 0 ? t.data : null, this.create()
         }
         create() {
-            let e = Bl(this.opts, "agent", "pfx", "key", "passphrase", "cert", "ca", "ciphers", "rejectUnauthorized", "autoUnref");
+            let e = Il(this.opts, "agent", "pfx", "key", "passphrase", "cert", "ca", "ciphers", "rejectUnauthorized", "autoUnref");
             e.xdomain = !!this.opts.xd, e.xscheme = !!this.opts.xs;
             let t = this.xhr = new Kc(e);
             try {
@@ -18586,7 +18616,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         cleanup(e) {
             if (!(typeof this.xhr > "u" || this.xhr === null)) {
-                if (this.xhr.onreadystatechange = eP, e) try {
+                if (this.xhr.onreadystatechange = tP, e) try {
                     this.xhr.abort()
                 } catch {}
                 typeof document < "u" && delete wt.requests[this.index], this.xhr = null
@@ -18604,23 +18634,23 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     wt.requestsCount = 0;
     wt.requests = {};
     if (typeof document < "u") {
-        if (typeof attachEvent == "function") attachEvent("onunload", Yy);
+        if (typeof attachEvent == "function") attachEvent("onunload", Jy);
         else if (typeof addEventListener == "function") {
-            let i = "onpagehide" in At ? "pagehide" : "unload";
-            addEventListener(i, Yy, !1)
+            let i = "onpagehide" in Ut ? "pagehide" : "unload";
+            addEventListener(i, Jy, !1)
         }
     }
 
-    function Yy() {
+    function Jy() {
         for (let i in wt.requests) wt.requests.hasOwnProperty(i) && wt.requests[i].abort()
     }
-    n(Yy, "unloadHandler");
-    var Jy = (() => typeof Promise == "function" && typeof Promise.resolve == "function" ? e => Promise.resolve().then(e) : (e, t) => t(e, 0))(),
-        Yn = At.WebSocket || At.MozWebSocket,
-        jl = !0,
-        Qy = "arraybuffer";
-    var Zy = typeof navigator < "u" && typeof navigator.product == "string" && navigator.product.toLowerCase() === "reactnative",
-        Jn = class extends _r {
+    n(Jy, "unloadHandler");
+    var Qy = (() => typeof Promise == "function" && typeof Promise.resolve == "function" ? e => Promise.resolve().then(e) : (e, t) => t(e, 0))(),
+        Yn = Ut.WebSocket || Ut.MozWebSocket,
+        Hl = !0,
+        Zy = "arraybuffer";
+    var ev = typeof navigator < "u" && typeof navigator.product == "string" && navigator.product.toLowerCase() === "reactnative",
+        Jn = class extends Pr {
             constructor(e) {
                 super(e), this.supportsBinary = !e.forceBase64
             }
@@ -18631,14 +18661,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 if (!this.check()) return;
                 let e = this.uri(),
                     t = this.opts.protocols,
-                    r = Zy ? {} : Bl(this.opts, "agent", "perMessageDeflate", "pfx", "key", "passphrase", "cert", "ca", "ciphers", "rejectUnauthorized", "localAddress", "protocolVersion", "origin", "maxPayload", "family", "checkServerIdentity");
+                    r = ev ? {} : Il(this.opts, "agent", "perMessageDeflate", "pfx", "key", "passphrase", "cert", "ca", "ciphers", "rejectUnauthorized", "localAddress", "protocolVersion", "origin", "maxPayload", "family", "checkServerIdentity");
                 this.opts.extraHeaders && (r.headers = this.opts.extraHeaders);
                 try {
-                    this.ws = jl && !Zy ? t ? new Yn(e, t) : new Yn(e) : new Yn(e, t, r)
+                    this.ws = Hl && !ev ? t ? new Yn(e, t) : new Yn(e) : new Yn(e, t, r)
                 } catch (s) {
                     return this.emitReserved("error", s)
                 }
-                this.ws.binaryType = this.socket.binaryType || Qy, this.addEventListeners()
+                this.ws.binaryType = this.socket.binaryType || Zy, this.addEventListeners()
             }
             addEventListeners() {
                 this.ws.onopen = () => {
@@ -18653,13 +18683,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 for (let t = 0; t < e.length; t++) {
                     let r = e[t],
                         s = t === e.length - 1;
-                    Dl(r, this.supportsBinary, o => {
+                    Nl(r, this.supportsBinary, o => {
                         let a = {};
-                        jl || (r.options && (a.compress = r.options.compress), this.opts.perMessageDeflate && (typeof o == "string" ? Buffer.byteLength(o) : o.length) < this.opts.perMessageDeflate.threshold && (a.compress = !1));
+                        Hl || (r.options && (a.compress = r.options.compress), this.opts.perMessageDeflate && (typeof o == "string" ? Buffer.byteLength(o) : o.length) < this.opts.perMessageDeflate.threshold && (a.compress = !1));
                         try {
-                            jl ? this.ws.send(o) : this.ws.send(o, a)
+                            Hl ? this.ws.send(o) : this.ws.send(o, a)
                         } catch {}
-                        s && Jy(() => {
+                        s && Qy(() => {
                             this.writable = !0, this.emitReserved("drain")
                         }, this.setTimeoutFn)
                     })
@@ -18672,8 +18702,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 let e = this.query || {},
                     t = this.opts.secure ? "wss" : "ws",
                     r = "";
-                this.opts.port && (t === "wss" && Number(this.opts.port) !== 443 || t === "ws" && Number(this.opts.port) !== 80) && (r = ":" + this.opts.port), this.opts.timestampRequests && (e[this.opts.timestampParam] = Ml()), this.supportsBinary || (e.b64 = 1);
-                let s = zl(e),
+                this.opts.port && (t === "wss" && Number(this.opts.port) !== 443 || t === "ws" && Number(this.opts.port) !== 80) && (r = ":" + this.opts.port), this.opts.timestampRequests && (e[this.opts.timestampParam] = zl()), this.supportsBinary || (e.b64 = 1);
+                let s = jl(e),
                     o = this.opts.hostname.indexOf(":") !== -1;
                 return t + "://" + (o ? "[" + this.opts.hostname + "]" : this.opts.hostname) + r + this.opts.path + (s.length ? "?" + s : "")
             }
@@ -18686,36 +18716,36 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         websocket: Jn,
         polling: Xn
     };
-    var iP = /^(?:(?![^:@]+:[^:@\/]*@)(http|https|ws|wss):\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?((?:[a-f0-9]{0,4}:){2,7}[a-f0-9]{0,4}|[^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/,
-        rP = ["source", "protocol", "authority", "userInfo", "user", "password", "host", "port", "relative", "path", "directory", "file", "query", "anchor"];
+    var rP = /^(?:(?![^:@]+:[^:@\/]*@)(http|https|ws|wss):\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?((?:[a-f0-9]{0,4}:){2,7}[a-f0-9]{0,4}|[^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/,
+        sP = ["source", "protocol", "authority", "userInfo", "user", "password", "host", "port", "relative", "path", "directory", "file", "query", "anchor"];
 
     function uo(i) {
         let e = i,
             t = i.indexOf("["),
             r = i.indexOf("]");
         t != -1 && r != -1 && (i = i.substring(0, t) + i.substring(t, r).replace(/:/g, ";") + i.substring(r, i.length));
-        let s = iP.exec(i || ""),
+        let s = rP.exec(i || ""),
             o = {},
             a = 14;
-        for (; a--;) o[rP[a]] = s[a] || "";
-        return t != -1 && r != -1 && (o.source = e, o.host = o.host.substring(1, o.host.length - 1).replace(/;/g, ":"), o.authority = o.authority.replace("[", "").replace("]", "").replace(/;/g, ":"), o.ipv6uri = !0), o.pathNames = sP(o, o.path), o.queryKey = oP(o, o.query), o
+        for (; a--;) o[sP[a]] = s[a] || "";
+        return t != -1 && r != -1 && (o.source = e, o.host = o.host.substring(1, o.host.length - 1).replace(/;/g, ":"), o.authority = o.authority.replace("[", "").replace("]", "").replace(/;/g, ":"), o.ipv6uri = !0), o.pathNames = oP(o, o.path), o.queryKey = nP(o, o.query), o
     }
     n(uo, "parse");
 
-    function sP(i, e) {
+    function oP(i, e) {
         let t = /\/{2,9}/g,
             r = e.replace(t, "/").split("/");
         return (e.substr(0, 1) == "/" || e.length === 0) && r.splice(0, 1), e.substr(e.length - 1, 1) == "/" && r.splice(r.length - 1, 1), r
     }
-    n(sP, "pathNames");
+    n(oP, "pathNames");
 
-    function oP(i, e) {
+    function nP(i, e) {
         let t = {};
         return e.replace(/(?:^|&)([^&=]*)=?([^&]*)/g, function(r, s, o) {
             s && (t[s] = o)
         }), t
     }
-    n(oP, "queryKey");
+    n(nP, "queryKey");
     var ht = class extends ue {
         constructor(e, t = {}) {
             super(), e && typeof e == "object" && (t = e, e = null), e ? (e = uo(e), t.hostname = e.host, t.secure = e.protocol === "https" || e.protocol === "wss", t.port = e.port, e.query && (t.query = e.query)) : t.host && (t.hostname = uo(t.host).host), Ji(this, t), this.secure = t.secure != null ? t.secure : typeof location < "u" && location.protocol === "https:", t.hostname && !t.port && (t.port = this.secure ? "443" : "80"), this.hostname = t.hostname || (typeof location < "u" ? location.hostname : "localhost"), this.port = t.port || (typeof location < "u" && location.port ? location.port : this.secure ? "443" : "80"), this.transports = t.transports || ["polling", "websocket"], this.readyState = "", this.writeBuffer = [], this.prevBufferLen = 0, this.opts = Object.assign({
@@ -18731,7 +18761,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 },
                 transportOptions: {},
                 closeOnBeforeunload: !0
-            }, t), this.opts.path = this.opts.path.replace(/\/$/, "") + "/", typeof this.opts.query == "string" && (this.opts.query = Ky(this.opts.query)), this.id = null, this.upgrades = null, this.pingInterval = null, this.pingTimeout = null, this.pingTimeoutTimer = null, typeof addEventListener == "function" && (this.opts.closeOnBeforeunload && addEventListener("beforeunload", () => {
+            }, t), this.opts.path = this.opts.path.replace(/\/$/, "") + "/", typeof this.opts.query == "string" && (this.opts.query = Gy(this.opts.query)), this.id = null, this.upgrades = null, this.pingInterval = null, this.pingTimeout = null, this.pingTimeoutTimer = null, typeof addEventListener == "function" && (this.opts.closeOnBeforeunload && addEventListener("beforeunload", () => {
                 this.transport && (this.transport.removeAllListeners(), this.transport.close())
             }, !1), this.hostname !== "localhost" && (this.offlineEventListener = () => {
                 this.onClose("transport close", {
@@ -18870,7 +18900,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             let t = 1;
             for (let r = 0; r < this.writeBuffer.length; r++) {
                 let s = this.writeBuffer[r].data;
-                if (s && (t += Hy(s)), r > 0 && t > this.maxPayload) return this.writeBuffer.slice(0, r);
+                if (s && (t += $y(s)), r > 0 && t > this.maxPayload) return this.writeBuffer.slice(0, r);
                 t += 2
             }
             return this.writeBuffer
@@ -18921,30 +18951,30 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     };
     n(ht, "Socket");
     ht.protocol = Vc;
-    var xN = ht.protocol;
+    var PN = ht.protocol;
 
-    function ev(i, e = "", t) {
+    function tv(i, e = "", t) {
         let r = i;
         t = t || typeof location < "u" && location, i == null && (i = t.protocol + "//" + t.host), typeof i == "string" && (i.charAt(0) === "/" && (i.charAt(1) === "/" ? i = t.protocol + i : i = t.host + i), /^(https?|wss?):\/\//.test(i) || (typeof t < "u" ? i = t.protocol + "//" + i : i = "https://" + i), r = uo(i)), r.port || (/^(http|ws)$/.test(r.protocol) ? r.port = "80" : /^(http|ws)s$/.test(r.protocol) && (r.port = "443")), r.path = r.path || "/";
         let o = r.host.indexOf(":") !== -1 ? "[" + r.host + "]" : r.host;
         return r.id = r.protocol + "://" + o + ":" + r.port + e, r.href = r.protocol + "://" + o + (t && t.port === r.port ? "" : ":" + r.port), r
     }
-    n(ev, "url");
+    n(tv, "url");
     var Jc = {};
     yo(Jc, {
         Decoder: () => ho,
-        Encoder: () => Hl,
+        Encoder: () => $l,
         PacketType: () => ee,
-        protocol: () => sv
+        protocol: () => ov
     });
-    var nP = typeof ArrayBuffer == "function",
-        aP = n(i => typeof ArrayBuffer.isView == "function" ? ArrayBuffer.isView(i) : i.buffer instanceof ArrayBuffer, "isView"),
-        tv = Object.prototype.toString,
-        lP = typeof Blob == "function" || typeof Blob < "u" && tv.call(Blob) === "[object BlobConstructor]",
-        uP = typeof File == "function" || typeof File < "u" && tv.call(File) === "[object FileConstructor]";
+    var aP = typeof ArrayBuffer == "function",
+        lP = n(i => typeof ArrayBuffer.isView == "function" ? ArrayBuffer.isView(i) : i.buffer instanceof ArrayBuffer, "isView"),
+        iv = Object.prototype.toString,
+        uP = typeof Blob == "function" || typeof Blob < "u" && iv.call(Blob) === "[object BlobConstructor]",
+        hP = typeof File == "function" || typeof File < "u" && iv.call(File) === "[object FileConstructor]";
 
     function Zn(i) {
-        return nP && (i instanceof ArrayBuffer || aP(i)) || lP && i instanceof Blob || uP && i instanceof File
+        return aP && (i instanceof ArrayBuffer || lP(i)) || uP && i instanceof Blob || hP && i instanceof File
     }
     n(Zn, "isBinary");
 
@@ -18963,7 +18993,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(Qn, "hasBinary");
 
-    function iv(i) {
+    function rv(i) {
         let e = [],
             t = i.data,
             r = i;
@@ -18972,7 +19002,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             buffers: e
         }
     }
-    n(iv, "deconstructPacket");
+    n(rv, "deconstructPacket");
 
     function Xc(i, e) {
         if (!i) return i;
@@ -18995,10 +19025,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(Xc, "_deconstructPacket");
 
-    function rv(i, e) {
+    function sv(i, e) {
         return i.data = Yc(i.data, e), i.attachments = void 0, i
     }
-    n(rv, "reconstructPacket");
+    n(sv, "reconstructPacket");
 
     function Yc(i, e) {
         if (!i) return i;
@@ -19012,12 +19042,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         return i
     }
     n(Yc, "_reconstructPacket");
-    var sv = 5,
+    var ov = 5,
         ee;
     (function(i) {
         i[i.CONNECT = 0] = "CONNECT", i[i.DISCONNECT = 1] = "DISCONNECT", i[i.EVENT = 2] = "EVENT", i[i.ACK = 3] = "ACK", i[i.CONNECT_ERROR = 4] = "CONNECT_ERROR", i[i.BINARY_EVENT = 5] = "BINARY_EVENT", i[i.BINARY_ACK = 6] = "BINARY_ACK"
     })(ee || (ee = {}));
-    var Hl = class {
+    var $l = class {
         constructor(e) {
             this.replacer = e
         }
@@ -19029,13 +19059,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             return (e.type === ee.BINARY_EVENT || e.type === ee.BINARY_ACK) && (t += e.attachments + "-"), e.nsp && e.nsp !== "/" && (t += e.nsp + ","), e.id != null && (t += e.id), e.data != null && (t += JSON.stringify(e.data, this.replacer)), t
         }
         encodeAsBinary(e) {
-            let t = iv(e),
+            let t = rv(e),
                 r = this.encodeAsString(t.packet),
                 s = t.buffers;
             return s.unshift(r), s
         }
     };
-    n(Hl, "Encoder");
+    n($l, "Encoder");
     var ho = class extends ue {
         constructor(e) {
             super(), this.reviver = e
@@ -19044,7 +19074,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             let t;
             if (typeof e == "string") {
                 if (this.reconstructor) throw new Error("got plaintext data when reconstructing a packet");
-                t = this.decodeString(e), t.type === ee.BINARY_EVENT || t.type === ee.BINARY_ACK ? (this.reconstructor = new $l(t), t.attachments === 0 && super.emitReserved("decoded", t)) : super.emitReserved("decoded", t)
+                t = this.decodeString(e), t.type === ee.BINARY_EVENT || t.type === ee.BINARY_ACK ? (this.reconstructor = new ql(t), t.attachments === 0 && super.emitReserved("decoded", t)) : super.emitReserved("decoded", t)
             } else if (Zn(e) || e.base64)
                 if (this.reconstructor) t = this.reconstructor.takeBinaryData(e), t && (this.reconstructor = null, super.emitReserved("decoded", t));
                 else throw new Error("got binary data when not reconstructing a packet");
@@ -19116,13 +19146,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
     };
     n(ho, "Decoder");
-    var $l = class {
+    var ql = class {
         constructor(e) {
             this.packet = e, this.buffers = [], this.reconPack = e
         }
         takeBinaryData(e) {
             if (this.buffers.push(e), this.buffers.length === this.reconPack.attachments) {
-                let t = rv(this.reconPack, this.buffers);
+                let t = sv(this.reconPack, this.buffers);
                 return this.finishedReconstruction(), t
             }
             return null
@@ -19131,7 +19161,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             this.reconPack = null, this.buffers = []
         }
     };
-    n($l, "BinaryReconstructor");
+    n(ql, "BinaryReconstructor");
 
     function St(i, e, t) {
         return i.on(e, t), n(function() {
@@ -19139,7 +19169,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }, "subDestroy")
     }
     n(St, "on");
-    var hP = Object.freeze({
+    var cP = Object.freeze({
             connect: 1,
             connect_error: 1,
             disconnect: 1,
@@ -19147,7 +19177,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             newListener: 1,
             removeListener: 1
         }),
-        ms = class extends ue {
+        gs = class extends ue {
             constructor(e, t, r) {
                 super(), this.connected = !1, this.receiveBuffer = [], this.sendBuffer = [], this.ids = 0, this.acks = {}, this.flags = {}, this.io = e, this.nsp = t, r && r.auth && (this.auth = r.auth), this.io._autoConnect && this.open()
             }
@@ -19172,7 +19202,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 return e.unshift("message"), this.emit.apply(this, e), this
             }
             emit(e, ...t) {
-                if (hP.hasOwnProperty(e)) throw new Error('"' + e + '" is a reserved event name');
+                if (cP.hasOwnProperty(e)) throw new Error('"' + e + '" is a reserved event name');
                 t.unshift(e);
                 let r = {
                     type: ee.EVENT,
@@ -19347,13 +19377,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 }
             }
         };
-    n(ms, "Socket");
+    n(gs, "Socket");
 
-    function gs(i) {
+    function ys(i) {
         i = i || {}, this.ms = i.min || 100, this.max = i.max || 1e4, this.factor = i.factor || 2, this.jitter = i.jitter > 0 && i.jitter <= 1 ? i.jitter : 0, this.attempts = 0
     }
-    n(gs, "Backoff");
-    gs.prototype.duration = function() {
+    n(ys, "Backoff");
+    ys.prototype.duration = function() {
         var i = this.ms * Math.pow(this.factor, this.attempts++);
         if (this.jitter) {
             var e = Math.random(),
@@ -19362,22 +19392,22 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         return Math.min(i, this.max) | 0
     };
-    gs.prototype.reset = function() {
+    ys.prototype.reset = function() {
         this.attempts = 0
     };
-    gs.prototype.setMin = function(i) {
+    ys.prototype.setMin = function(i) {
         this.ms = i
     };
-    gs.prototype.setMax = function(i) {
+    ys.prototype.setMax = function(i) {
         this.max = i
     };
-    gs.prototype.setJitter = function(i) {
+    ys.prototype.setJitter = function(i) {
         this.jitter = i
     };
-    var ys = class extends ue {
+    var vs = class extends ue {
         constructor(e, t) {
             var r;
-            super(), this.nsps = {}, this.subs = [], e && typeof e == "object" && (t = e, e = void 0), t = t || {}, t.path = t.path || "/socket.io", this.opts = t, Ji(this, t), this.reconnection(t.reconnection !== !1), this.reconnectionAttempts(t.reconnectionAttempts || 1 / 0), this.reconnectionDelay(t.reconnectionDelay || 1e3), this.reconnectionDelayMax(t.reconnectionDelayMax || 5e3), this.randomizationFactor((r = t.randomizationFactor) !== null && r !== void 0 ? r : .5), this.backoff = new gs({
+            super(), this.nsps = {}, this.subs = [], e && typeof e == "object" && (t = e, e = void 0), t = t || {}, t.path = t.path || "/socket.io", this.opts = t, Ji(this, t), this.reconnection(t.reconnection !== !1), this.reconnectionAttempts(t.reconnectionAttempts || 1 / 0), this.reconnectionDelay(t.reconnectionDelay || 1e3), this.reconnectionDelayMax(t.reconnectionDelayMax || 5e3), this.randomizationFactor((r = t.randomizationFactor) !== null && r !== void 0 ? r : .5), this.backoff = new ys({
                 min: this.reconnectionDelay(),
                 max: this.reconnectionDelayMax(),
                 jitter: this.randomizationFactor()
@@ -19455,7 +19485,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         socket(e, t) {
             let r = this.nsps[e];
-            return r || (r = new ms(this, e, t), this.nsps[e] = r), r
+            return r || (r = new gs(this, e, t), this.nsps[e] = r), r
         }
         _destroy(e) {
             let t = Object.keys(this.nsps);
@@ -19501,24 +19531,24 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             this._reconnecting = !1, this.backoff.reset(), this.emitReserved("reconnect", e)
         }
     };
-    n(ys, "Manager");
+    n(vs, "Manager");
     var ea = {};
 
     function ta(i, e) {
         typeof i == "object" && (e = i, i = void 0), e = e || {};
-        let t = ev(i, e.path || "/socket.io"),
+        let t = tv(i, e.path || "/socket.io"),
             r = t.source,
             s = t.id,
             o = t.path,
             a = ea[s] && o in ea[s].nsps,
             l = e.forceNew || e["force new connection"] || e.multiplex === !1 || a,
             h;
-        return l ? h = new ys(r, e) : (ea[s] || (ea[s] = new ys(r, e)), h = ea[s]), t.query && !e.query && (e.query = t.queryKey), h.socket(t.path, e)
+        return l ? h = new vs(r, e) : (ea[s] || (ea[s] = new vs(r, e)), h = ea[s]), t.query && !e.query && (e.query = t.queryKey), h.socket(t.path, e)
     }
     n(ta, "lookup");
     Object.assign(ta, {
-        Manager: ys,
-        Socket: ms,
+        Manager: vs,
+        Socket: gs,
         io: ta,
         connect: ta
     });
@@ -19543,54 +19573,54 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         return i
     }
     n(Pe, "_classPrivateFieldLooseBase");
-    var cP = 0;
+    var dP = 0;
 
     function er(i) {
-        return "__private_" + cP++ + "_" + i
+        return "__private_" + dP++ + "_" + i
     }
     n(er, "_classPrivateFieldLooseKey");
-    var dP = "ASSEMBLY_UPLOADING",
+    var pP = "ASSEMBLY_UPLOADING",
         id = "ASSEMBLY_EXECUTING",
         rd = "ASSEMBLY_COMPLETED",
-        ov = [dP, id, rd];
+        nv = [pP, id, rd];
 
-    function ql(i, e) {
-        return ov.indexOf(i) >= ov.indexOf(e)
+    function Vl(i, e) {
+        return nv.indexOf(i) >= nv.indexOf(e)
     }
-    n(ql, "isStatus");
-    var bs = er("rateLimitedQueue"),
+    n(Vl, "isStatus");
+    var ws = er("rateLimitedQueue"),
         ia = er("fetchWithNetworkError"),
-        vs = er("previousFetchStatusStillPending"),
+        bs = er("previousFetchStatusStillPending"),
         sd = er("onFinished"),
         Zc = er("connectSocket"),
         Qi = er("onError"),
         ed = er("beginPolling"),
         Zi = er("fetchStatus"),
         td = er("diffStatus"),
-        Vl = class extends nv.default {
+        Wl = class extends av.default {
             constructor(e, t) {
                 super(), Object.defineProperty(this, td, {
-                    value: vP
+                    value: bP
                 }), Object.defineProperty(this, Zi, {
-                    value: yP
+                    value: vP
                 }), Object.defineProperty(this, ed, {
-                    value: gP
+                    value: yP
                 }), Object.defineProperty(this, Qi, {
-                    value: mP
+                    value: gP
                 }), Object.defineProperty(this, Zc, {
-                    value: fP
+                    value: mP
                 }), Object.defineProperty(this, sd, {
-                    value: pP
-                }), Object.defineProperty(this, bs, {
+                    value: fP
+                }), Object.defineProperty(this, ws, {
                     writable: !0,
                     value: void 0
                 }), Object.defineProperty(this, ia, {
                     writable: !0,
                     value: void 0
-                }), Object.defineProperty(this, vs, {
+                }), Object.defineProperty(this, bs, {
                     writable: !0,
                     value: !1
-                }), this.status = e, this.socket = null, this.pollInterval = null, this.closed = !1, Pe(this, bs)[bs] = t, Pe(this, ia)[ia] = t.wrapPromiseFunction(Br)
+                }), this.status = e, this.socket = null, this.pollInterval = null, this.closed = !1, Pe(this, ws)[ws] = t, Pe(this, ia)[ia] = t.wrapPromiseFunction(Ir)
             }
             connect() {
                 Pe(this, Zc)[Zc](), Pe(this, ed)[ed]()
@@ -19607,14 +19637,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 this.closed = !0, this.socket && (this.socket.disconnect(), this.socket = null), clearInterval(this.pollInterval), this.pollInterval = null
             }
         };
-    n(Vl, "TransloaditAssembly");
-
-    function pP() {
-        this.emit("finished"), this.close()
-    }
-    n(pP, "_onFinished2");
+    n(Wl, "TransloaditAssembly");
 
     function fP() {
+        this.emit("finished"), this.close()
+    }
+    n(fP, "_onFinished2");
+
+    function mP() {
         let i = Qc(this.status.websocket_url),
             e = ta(i.origin, {
                 transports: ["websocket"],
@@ -19644,33 +19674,33 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             })
         }), this.socket = e
     }
-    n(fP, "_connectSocket2");
+    n(mP, "_connectSocket2");
 
-    function mP(i) {
+    function gP(i) {
         this.emit("error", Object.assign(new Error(i.message), i)), this.close()
     }
-    n(mP, "_onError2");
+    n(gP, "_onError2");
 
-    function gP() {
+    function yP() {
         this.pollInterval = setInterval(() => {
             (!this.socket || !this.socket.connected) && Pe(this, Zi)[Zi]()
         }, 2e3)
     }
-    n(gP, "_beginPolling2");
-    async function yP(i) {
+    n(yP, "_beginPolling2");
+    async function vP(i) {
         let {
             diff: e = !0
         } = i === void 0 ? {} : i;
-        if (!(this.closed || Pe(this, bs)[bs].isPaused || Pe(this, vs)[vs])) try {
-            Pe(this, vs)[vs] = !0;
+        if (!(this.closed || Pe(this, ws)[ws].isPaused || Pe(this, bs)[bs])) try {
+            Pe(this, bs)[bs] = !0;
             let t = await Pe(this, ia)[ia](this.status.assembly_ssl_url);
-            if (Pe(this, vs)[vs] = !1, this.closed) return;
+            if (Pe(this, bs)[bs] = !1, this.closed) return;
             if (t.status === 429) {
-                Pe(this, bs)[bs].rateLimit(2e3);
+                Pe(this, ws)[ws].rateLimit(2e3);
                 return
             }
             if (!t.ok) {
-                Pe(this, Qi)[Qi](new Lt(t.statusText));
+                Pe(this, Qi)[Qi](new Mt(t.statusText));
                 return
             }
             let r = await t.json();
@@ -19680,13 +19710,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             Pe(this, Qi)[Qi](t)
         }
     }
-    n(yP, "_fetchStatus2");
+    n(vP, "_fetchStatus2");
 
-    function vP(i, e) {
+    function bP(i, e) {
         let t = i.ok,
             r = e.ok;
         if (e.error && !i.error) return Pe(this, Qi)[Qi](e);
-        let s = ql(r, id) && !ql(t, id);
+        let s = Vl(r, id) && !Vl(t, id);
         s && this.emit("executing"), Object.keys(e.uploads).filter(o => !qe(i.uploads, o)).forEach(o => {
             this.emit("upload", e.uploads[o])
         }), s && this.emit("metadata"), Object.keys(e.results).forEach(o => {
@@ -19695,31 +19725,31 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             a.filter(h => !l || !l.some(c => c.id === h.id)).forEach(h => {
                 this.emit("result", o, h)
             })
-        }), ql(r, rd) && !ql(t, rd) && this.emit("finished")
+        }), Vl(r, rd) && !Vl(t, rd) && this.emit("finished")
     }
-    n(vP, "_diffStatus2");
-    var od = Vl;
+    n(bP, "_diffStatus2");
+    var od = Wl;
 
     function ge(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
     n(ge, "_classPrivateFieldLooseBase");
-    var bP = 0;
+    var wP = 0;
 
-    function Wl(i) {
-        return "__private_" + bP++ + "_" + i
+    function Kl(i) {
+        return "__private_" + wP++ + "_" + i
     }
-    n(Wl, "_classPrivateFieldLooseKey");
-    var av = "/assemblies",
-        it = Wl("headers"),
-        ra = Wl("fetchWithNetworkError"),
-        ze = Wl("fetchJSON"),
-        _t = Wl("reportError"),
+    n(Kl, "_classPrivateFieldLooseKey");
+    var lv = "/assemblies",
+        it = Kl("headers"),
+        ra = Kl("fetchWithNetworkError"),
+        je = Kl("fetchJSON"),
+        _t = Kl("reportError"),
         co = class {
             constructor(e) {
-                e === void 0 && (e = {}), Object.defineProperty(this, ze, {
-                    value: wP
+                e === void 0 && (e = {}), Object.defineProperty(this, je, {
+                    value: SP
                 }), Object.defineProperty(this, it, {
                     writable: !0,
                     value: {}
@@ -19735,7 +19765,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         };
                         throw r.assembly && (s.assembly = r.assembly.assembly_id, s.instance = r.assembly.instance), r.url && (s.endpoint = r.url), this.submitError(t, s).catch(() => {}), t
                     }
-                }), this.opts = e, this.opts.client != null && (ge(this, it)[it]["Transloadit-Client"] = this.opts.client), ge(this, ra)[ra] = this.opts.rateLimitedQueue.wrapPromiseFunction(Br)
+                }), this.opts = e, this.opts.client != null && (ge(this, it)[it]["Transloadit-Client"] = this.opts.client), ge(this, ra)[ra] = this.opts.rateLimitedQueue.wrapPromiseFunction(Ir)
             }
             createAssembly(e) {
                 let {
@@ -19747,8 +19777,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 a.append("params", typeof t == "string" ? t : JSON.stringify(t)), s && a.append("signature", s), Object.keys(r).forEach(h => {
                     a.append(h, r[h])
                 }), a.append("num_expected_upload_files", o);
-                let l = new URL(av, `${this.opts.service}`).href;
-                return ge(this, ze)[ze](l, {
+                let l = new URL(lv, `${this.opts.service}`).href;
+                return ge(this, je)[je](l, {
                     method: "post",
                     headers: ge(this, it)[it],
                     body: a
@@ -19760,7 +19790,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             reserveFile(e, t) {
                 let r = encodeURIComponent(t.size),
                     s = `${e.assembly_ssl_url}/reserve_file?size=${r}`;
-                return ge(this, ze)[ze](s, {
+                return ge(this, je)[je](s, {
                     method: "post",
                     headers: ge(this, it)[it]
                 }).catch(o => ge(this, _t)[_t](o, {
@@ -19777,7 +19807,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     o = encodeURIComponent(t.name),
                     l = `size=${r}&filename=${o}&fieldname=file&s3Url=${s}`,
                     h = `${e.assembly_ssl_url}/add_file?${l}`;
-                return ge(this, ze)[ze](h, {
+                return ge(this, je)[je](h, {
                     method: "post",
                     headers: ge(this, it)[it]
                 }).catch(c => ge(this, _t)[_t](c, {
@@ -19796,7 +19826,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         num_expected_upload_files: t
                     }]
                 });
-                return ge(this, ze)[ze](r, {
+                return ge(this, je)[je](r, {
                     method: "post",
                     headers: ge(this, it)[it],
                     body: s
@@ -19807,7 +19837,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }
             cancelAssembly(e) {
                 let t = e.assembly_ssl_url;
-                return ge(this, ze)[ze](t, {
+                return ge(this, je)[je](t, {
                     method: "delete",
                     headers: ge(this, it)[it]
                 }).catch(r => ge(this, _t)[_t](r, {
@@ -19816,7 +19846,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 }))
             }
             getAssemblyStatus(e) {
-                return ge(this, ze)[ze](e, {
+                return ge(this, je)[je](e, {
                     headers: ge(this, it)[it]
                 }).catch(t => ge(this, _t)[_t](t, {
                     url: e,
@@ -19829,7 +19859,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     instance: s,
                     assembly: o
                 } = t === void 0 ? {} : t, a = e.details ? `${e.message} (${e.details})` : e.message;
-                return ge(this, ze)[ze]("https://transloaditstatus.com/client_error", {
+                return ge(this, je)[je]("https://transloaditstatus.com/client_error", {
                     method: "post",
                     body: JSON.stringify({
                         endpoint: r,
@@ -19844,13 +19874,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         };
     n(co, "Client");
 
-    function wP() {
+    function SP() {
         for (var i = arguments.length, e = new Array(i), t = 0; t < i; t++) e[t] = arguments[t];
         return ge(this, ra)[ra](...e).then(r => {
-            if (r.status === 429) return this.opts.rateLimitedQueue.rateLimit(2e3), ge(this, ze)[ze](...e);
+            if (r.status === 429) return this.opts.rateLimitedQueue.rateLimit(2e3), ge(this, je)[je](...e);
             if (!r.ok) {
                 let s = new Error(r.statusText);
-                return s.statusCode = r.status, `${e[0]}`.endsWith(av) ? r.json().then(o => {
+                return s.statusCode = r.status, `${e[0]}`.endsWith(lv) ? r.json().then(o => {
                     if (!o.error) throw s;
                     let a = new Error(o.error);
                     throw a.details = o.message, a.assembly = o, o.assembly_id && (a.details += ` Assembly ID: ${o.assembly_id}`), a
@@ -19861,9 +19891,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             return r.json()
         })
     }
-    n(wP, "_fetchJSON2");
+    n(SP, "_fetchJSON2");
 
-    function Gl(i) {
+    function nd(i) {
         if (i == null) throw new Error("Transloadit: The `params` option is required.");
         if (typeof i == "string") try {
             i = JSON.parse(i)
@@ -19874,9 +19904,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         if (!i.auth || !i.auth.key) throw new Error("Transloadit: The `params.auth.key` option is required. You can find your Transloadit API key at https://transloadit.com/c/template-credentials")
     }
-    n(Gl, "validateParams");
+    n(nd, "validateParams");
 
-    function SP(i) {
+    function _P(i) {
         let e = Object.create(null);
         for (let {
             fileIDs: t,
@@ -19899,18 +19929,21 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }
         })
     }
-    n(SP, "dedupe");
-    async function lv(i, e) {
+    n(_P, "dedupe");
+    async function uv(i, e) {
         let t = typeof e.assemblyOptions == "function" ? await e.assemblyOptions(i, e) : e.assemblyOptions;
-        return Gl(t.params), t
+        return nd(t.params), t
     }
-    n(lv, "getAssemblyOptions");
+    n(uv, "getAssemblyOptions");
 
-    function _P(i, e) {
-        return Array.isArray(e.fields) ? Object.fromEntries(e.fields.map(t => [t, i.meta[t]])) : {}
+    function PP(i, e) {
+        let {
+            fields: t
+        } = e;
+        return t == null ? {} : Array.isArray(t) ? Object.fromEntries(t.map(r => [r, i.meta[r]])) : t
     }
-    n(_P, "getFields");
-    var Kl = class {
+    n(PP, "getFields");
+    var Gl = class {
         constructor(e, t) {
             this.files = e, this.opts = t
         }
@@ -19918,14 +19951,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             let e = this.opts;
             if (this.files.length > 0) return Promise.all(this.files.map(async t => {
                 if (t == null) return;
-                let r = await lv(t, e);
-                if (t != null) return r.fields = _P(t, r), {
+                let r = await uv(t, e);
+                if (t != null) return r.fields = PP(t, r), {
                     fileIDs: [t.id],
                     options: r
                 }
-            })).then(SP);
+            })).then(_P);
             if (e.alwaysRunAssembly) {
-                let t = await lv(null, e);
+                let t = await uv(null, e);
                 return [{
                     fileIDs: this.files.map(r => r.id),
                     options: t
@@ -19934,51 +19967,51 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             return []
         }
     };
-    n(Kl, "AssemblyOptions");
-    var uv = Kl;
-    var hv = oe(qc(), 1);
+    n(Gl, "AssemblyOptions");
+    var hv = Gl;
+    var cv = oe(qc(), 1);
 
     function X(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
     n(X, "_classPrivateFieldLooseBase");
-    var PP = 0;
+    var xP = 0;
 
     function Pt(i) {
-        return "__private_" + PP++ + "_" + i
+        return "__private_" + xP++ + "_" + i
     }
     n(Pt, "_classPrivateFieldLooseKey");
     var sa = Pt("assemblyIDs"),
-        nd = Pt("reject"),
-        Ss = Pt("remaining"),
+        ad = Pt("reject"),
+        _s = Pt("remaining"),
         oa = Pt("resolve"),
         he = Pt("uppy"),
         tr = Pt("watching"),
         na = Pt("onAssemblyComplete"),
         aa = Pt("onAssemblyCancel"),
-        _s = Pt("onAssemblyError"),
+        Ps = Pt("onAssemblyError"),
         la = Pt("onImportError"),
-        ws = Pt("checkAllComplete"),
-        ld = Pt("removeListeners"),
-        ad = Pt("addListeners"),
-        Xl = class extends hv.default {
+        Ss = Pt("checkAllComplete"),
+        ud = Pt("removeListeners"),
+        ld = Pt("addListeners"),
+        Xl = class extends cv.default {
             constructor(e, t) {
-                super(), Object.defineProperty(this, ad, {
+                super(), Object.defineProperty(this, ld, {
+                    value: RP
+                }), Object.defineProperty(this, ud, {
                     value: OP
-                }), Object.defineProperty(this, ld, {
+                }), Object.defineProperty(this, Ss, {
                     value: EP
-                }), Object.defineProperty(this, ws, {
-                    value: FP
                 }), Object.defineProperty(this, tr, {
-                    value: xP
+                    value: FP
                 }), Object.defineProperty(this, sa, {
                     writable: !0,
                     value: void 0
-                }), Object.defineProperty(this, nd, {
+                }), Object.defineProperty(this, ad, {
                     writable: !0,
                     value: void 0
-                }), Object.defineProperty(this, Ss, {
+                }), Object.defineProperty(this, _s, {
                     writable: !0,
                     value: void 0
                 }), Object.defineProperty(this, oa, {
@@ -19990,51 +20023,51 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 }), Object.defineProperty(this, na, {
                     writable: !0,
                     value: r => {
-                        !X(this, tr)[tr](r.assembly_id) || (X(this, he)[he].log(`[Transloadit] AssemblyWatcher: Got Assembly finish ${r.assembly_id}`), this.emit("assembly-complete", r.assembly_id), X(this, ws)[ws]())
+                        !X(this, tr)[tr](r.assembly_id) || (X(this, he)[he].log(`[Transloadit] AssemblyWatcher: Got Assembly finish ${r.assembly_id}`), this.emit("assembly-complete", r.assembly_id), X(this, Ss)[Ss]())
                     }
                 }), Object.defineProperty(this, aa, {
                     writable: !0,
                     value: r => {
-                        !X(this, tr)[tr](r.assembly_id) || X(this, ws)[ws]()
+                        !X(this, tr)[tr](r.assembly_id) || X(this, Ss)[Ss]()
                     }
-                }), Object.defineProperty(this, _s, {
+                }), Object.defineProperty(this, Ps, {
                     writable: !0,
                     value: (r, s) => {
-                        !X(this, tr)[tr](r.assembly_id) || (X(this, he)[he].log(`[Transloadit] AssemblyWatcher: Got Assembly error ${r.assembly_id}`), X(this, he)[he].log(s), this.emit("assembly-error", r.assembly_id, s), X(this, ws)[ws]())
+                        !X(this, tr)[tr](r.assembly_id) || (X(this, he)[he].log(`[Transloadit] AssemblyWatcher: Got Assembly error ${r.assembly_id}`), X(this, he)[he].log(s), this.emit("assembly-error", r.assembly_id, s), X(this, Ss)[Ss]())
                     }
                 }), Object.defineProperty(this, la, {
                     writable: !0,
                     value: (r, s, o) => {
-                        !X(this, tr)[tr](r.assembly_id) || X(this, _s)[_s](r, o)
+                        !X(this, tr)[tr](r.assembly_id) || X(this, Ps)[Ps](r, o)
                     }
-                }), X(this, he)[he] = e, X(this, sa)[sa] = t, X(this, Ss)[Ss] = t.length, this.promise = new Promise((r, s) => {
-                    X(this, oa)[oa] = r, X(this, nd)[nd] = s
-                }), X(this, ad)[ad]()
+                }), X(this, he)[he] = e, X(this, sa)[sa] = t, X(this, _s)[_s] = t.length, this.promise = new Promise((r, s) => {
+                    X(this, oa)[oa] = r, X(this, ad)[ad] = s
+                }), X(this, ld)[ld]()
             }
         };
     n(Xl, "TransloaditAssemblyWatcher");
 
-    function xP(i) {
+    function FP(i) {
         return X(this, sa)[sa].indexOf(i) !== -1
     }
-    n(xP, "_watching2");
-
-    function FP() {
-        X(this, Ss)[Ss] -= 1, X(this, Ss)[Ss] === 0 && (X(this, ld)[ld](), X(this, oa)[oa]())
-    }
-    n(FP, "_checkAllComplete2");
+    n(FP, "_watching2");
 
     function EP() {
-        X(this, he)[he].off("transloadit:complete", X(this, na)[na]), X(this, he)[he].off("transloadit:assembly-cancel", X(this, aa)[aa]), X(this, he)[he].off("transloadit:assembly-error", X(this, _s)[_s]), X(this, he)[he].off("transloadit:import-error", X(this, la)[la])
+        X(this, _s)[_s] -= 1, X(this, _s)[_s] === 0 && (X(this, ud)[ud](), X(this, oa)[oa]())
     }
-    n(EP, "_removeListeners2");
+    n(EP, "_checkAllComplete2");
 
     function OP() {
-        X(this, he)[he].on("transloadit:complete", X(this, na)[na]), X(this, he)[he].on("transloadit:assembly-cancel", X(this, aa)[aa]), X(this, he)[he].on("transloadit:assembly-error", X(this, _s)[_s]), X(this, he)[he].on("transloadit:import-error", X(this, la)[la])
+        X(this, he)[he].off("transloadit:complete", X(this, na)[na]), X(this, he)[he].off("transloadit:assembly-cancel", X(this, aa)[aa]), X(this, he)[he].off("transloadit:assembly-error", X(this, Ps)[Ps]), X(this, he)[he].off("transloadit:import-error", X(this, la)[la])
     }
-    n(OP, "_addListeners2");
-    var cv = Xl;
-    var dv = {
+    n(OP, "_removeListeners2");
+
+    function RP() {
+        X(this, he)[he].on("transloadit:complete", X(this, na)[na]), X(this, he)[he].on("transloadit:assembly-cancel", X(this, aa)[aa]), X(this, he)[he].on("transloadit:assembly-error", X(this, Ps)[Ps]), X(this, he)[he].on("transloadit:import-error", X(this, la)[la])
+    }
+    n(RP, "_addListeners2");
+    var dv = Xl;
+    var pv = {
         strings: {
             creatingAssembly: "Preparing upload...",
             creatingAssemblyFailed: "Transloadit: Could not create Assembly",
@@ -20047,299 +20080,290 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         return i
     }
     n(J, "_classPrivateFieldLooseBase");
-    var RP = 0;
+    var CP = 0;
 
     function ye(i) {
-        return "__private_" + RP++ + "_" + i
+        return "__private_" + CP++ + "_" + i
     }
     n(ye, "_classPrivateFieldLooseKey");
-    var CP = {
-        version: "3.1.0"
-    };
-
-    function TP(i, e) {
-        return {
-            params: e.params,
-            signature: e.signature,
-            fields: e.fields
-        }
-    }
-    n(TP, "defaultGetAssemblyOptions");
-    var pv = n(i => e => {
+    var TP = {
+            version: "3.1.1"
+        },
+        fv = n(i => e => {
             let t = new Zt("Failed to send error to the client", {
                 cause: e
             });
             console.error(t, i)
         }, "sendErrorToConsole"),
-        wd = "https://api2.transloadit.com/companion",
-        Sd = /\.transloadit\.com$/,
+        Sd = "https://api2.transloadit.com/companion",
+        _d = /\.transloadit\.com$/,
         kP = /https?:\/\/api2(?:-\w+)?\.transloadit\.com\/companion/,
-        qt = ye("rateLimitedQueue"),
-        ud = ye("getClientVersion"),
-        yd = ye("attachAssemblyMetadata"),
-        hd = ye("createAssembly"),
+        Vt = ye("rateLimitedQueue"),
+        hd = ye("getClientVersion"),
+        vd = ye("attachAssemblyMetadata"),
+        cd = ye("createAssembly"),
         ua = ye("createAssemblyWatcher"),
-        cd = ye("shouldWaitAfterUpload"),
-        dd = ye("reserveFiles"),
+        dd = ye("shouldWaitAfterUpload"),
+        pd = ye("reserveFiles"),
         ha = ye("onFileUploadURLAvailable"),
         ga = ye("findFile"),
-        vd = ye("onFileUploadComplete"),
-        bd = ye("onResult"),
+        bd = ye("onFileUploadComplete"),
+        wd = ye("onResult"),
         ma = ye("onAssemblyFinished"),
         ya = ye("cancelAssembly"),
-        pd = ye("onCancelAll"),
-        fd = ye("getPersistentData"),
-        md = ye("onRestored"),
+        fd = ye("onCancelAll"),
+        md = ye("getPersistentData"),
+        gd = ye("onRestored"),
         ca = ye("connectAssembly"),
         da = ye("prepareUpload"),
-        Ps = ye("afterUpload"),
+        xs = ye("afterUpload"),
         pa = ye("closeAssemblyIfExists"),
         fa = ye("onError"),
-        gd = ye("onTusError"),
-        Ut = class extends ae {
+        yd = ye("onTusError"),
+        Dt = class extends ae {
             constructor(e, t) {
-                var r, s;
+                var r, s, o, a;
                 super(e, t), r = this, Object.defineProperty(this, ca, {
                     value: $P
                 }), Object.defineProperty(this, ya, {
                     value: HP
                 }), Object.defineProperty(this, ma, {
                     value: jP
-                }), Object.defineProperty(this, bd, {
+                }), Object.defineProperty(this, wd, {
                     value: zP
-                }), Object.defineProperty(this, vd, {
+                }), Object.defineProperty(this, bd, {
                     value: MP
                 }), Object.defineProperty(this, ga, {
                     value: LP
-                }), Object.defineProperty(this, dd, {
+                }), Object.defineProperty(this, pd, {
                     value: IP
-                }), Object.defineProperty(this, cd, {
+                }), Object.defineProperty(this, dd, {
                     value: BP
                 }), Object.defineProperty(this, ua, {
                     value: NP
-                }), Object.defineProperty(this, hd, {
+                }), Object.defineProperty(this, cd, {
                     value: DP
-                }), Object.defineProperty(this, yd, {
+                }), Object.defineProperty(this, vd, {
                     value: UP
-                }), Object.defineProperty(this, ud, {
+                }), Object.defineProperty(this, hd, {
                     value: AP
-                }), Object.defineProperty(this, qt, {
+                }), Object.defineProperty(this, Vt, {
                     writable: !0,
                     value: void 0
                 }), Object.defineProperty(this, ha, {
                     writable: !0,
-                    value: l => {
-                        var h;
-                        let c = this.uppy.getFile(l.id);
-                        if (!(c != null && (h = c.transloadit) != null && h.assembly)) return;
+                    value: h => {
+                        var c;
+                        let d = this.uppy.getFile(h.id);
+                        if (!(d != null && (c = d.transloadit) != null && c.assembly)) return;
                         let {
-                            assemblies: d
-                        } = this.getPluginState(), f = d[c.transloadit.assembly];
-                        this.client.addFile(f, c).catch(y => {
-                            this.uppy.log(y), this.uppy.emit("transloadit:import-error", f, c.id, y)
+                            assemblies: f
+                        } = this.getPluginState(), y = f[d.transloadit.assembly];
+                        this.client.addFile(y, d).catch(w => {
+                            this.uppy.log(w), this.uppy.emit("transloadit:import-error", y, d.id, w)
                         })
-                    }
-                }), Object.defineProperty(this, pd, {
-                    writable: !0,
-                    value: async function(l) {
-                        let {
-                            reason: h
-                        } = l === void 0 ? {} : l;
-                        try {
-                            if (h !== "user") return;
-                            let {
-                                uploadsAssemblies: c
-                            } = r.getPluginState(), f = Object.values(c).flat(1).map(y => r.getAssembly(y));
-                            await Promise.all(f.map(y => J(r, ya)[ya](y)))
-                        } catch (c) {
-                            r.uppy.log(c)
-                        }
                     }
                 }), Object.defineProperty(this, fd, {
                     writable: !0,
-                    value: l => {
+                    value: async function(h) {
                         let {
-                            assemblies: h,
-                            uploadsAssemblies: c
-                        } = this.getPluginState();
-                        l({
-                            [this.id]: {
-                                assemblies: h,
-                                uploadsAssemblies: c
-                            }
-                        })
+                            reason: c
+                        } = h === void 0 ? {} : h;
+                        try {
+                            if (c !== "user") return;
+                            let {
+                                uploadsAssemblies: d
+                            } = r.getPluginState(), y = Object.values(d).flat(1).map(w => r.getAssembly(w));
+                            await Promise.all(y.map(w => J(r, ya)[ya](w)))
+                        } catch (d) {
+                            r.uppy.log(d)
+                        }
                     }
                 }), Object.defineProperty(this, md, {
                     writable: !0,
-                    value: l => {
-                        let h = l && l[this.id] ? l[this.id] : {},
-                            c = h.assemblies || {},
-                            d = h.uploadsAssemblies || {};
-                        if (Object.keys(d).length === 0) return;
-                        let f = n(w => {
-                                let R = {},
-                                    x = [];
-                                for (let [E, N] of Object.entries(w)) {
-                                    N.uploads.forEach($ => {
-                                        let K = J(this, ga)[ga]($);
-                                        R[$.id] = {
-                                            id: K.id,
-                                            assembly: E,
-                                            uploadedFile: $
+                    value: h => {
+                        let {
+                            assemblies: c,
+                            uploadsAssemblies: d
+                        } = this.getPluginState();
+                        h({
+                            [this.id]: {
+                                assemblies: c,
+                                uploadsAssemblies: d
+                            }
+                        })
+                    }
+                }), Object.defineProperty(this, gd, {
+                    writable: !0,
+                    value: h => {
+                        let c = h && h[this.id] ? h[this.id] : {},
+                            d = c.assemblies || {},
+                            f = c.uploadsAssemblies || {};
+                        if (Object.keys(f).length === 0) return;
+                        let y = n(R => {
+                                let x = {},
+                                    F = [];
+                                for (let [N, H] of Object.entries(R)) {
+                                    H.uploads.forEach(K => {
+                                        let k = J(this, ga)[ga](K);
+                                        x[K.id] = {
+                                            id: k.id,
+                                            assembly: N,
+                                            uploadedFile: K
                                         }
                                     });
-                                    let V = this.getPluginState();
-                                    Object.keys(N.results).forEach($ => {
-                                        for (let K of N.results[$]) {
-                                            let U = V.files[K.original_id];
-                                            K.localId = U ? U.id : null, x.push({
-                                                id: K.id,
-                                                result: K,
-                                                stepName: $,
-                                                assembly: E
+                                    let q = this.getPluginState();
+                                    Object.keys(H.results).forEach(K => {
+                                        for (let k of H.results[K]) {
+                                            let B = q.files[k.original_id];
+                                            k.localId = B ? B.id : null, F.push({
+                                                id: k.id,
+                                                result: k,
+                                                stepName: K,
+                                                assembly: N
                                             })
                                         }
                                     })
                                 }
                                 this.setPluginState({
-                                    assemblies: w,
-                                    files: R,
-                                    results: x,
-                                    uploadsAssemblies: d
+                                    assemblies: R,
+                                    files: x,
+                                    results: F,
+                                    uploadsAssemblies: f
                                 })
                             }, "restoreState"),
-                            y = n(() => {
+                            w = n(() => {
                                 let {
-                                    assemblies: w,
-                                    uploadsAssemblies: R
+                                    assemblies: R,
+                                    uploadsAssemblies: x
                                 } = this.getPluginState();
-                                Object.keys(R).forEach(E => {
-                                    let N = R[E];
-                                    J(this, ua)[ua](N, E)
-                                }), Object.keys(w).forEach(E => {
-                                    let N = new od(w[E], J(this, qt)[qt]);
-                                    J(this, ca)[ca](N)
+                                Object.keys(x).forEach(N => {
+                                    let H = x[N];
+                                    J(this, ua)[ua](H, N)
+                                }), Object.keys(R).forEach(N => {
+                                    let H = new od(R[N], J(this, Vt)[Vt]);
+                                    J(this, ca)[ca](H)
                                 })
                             }, "restoreAssemblies"),
                             S = n(() => {
                                 let {
-                                    assemblies: w
+                                    assemblies: R
                                 } = this.getPluginState();
-                                return Promise.all(Object.keys(w).map(R => this.activeAssemblies[R].update()))
+                                return Promise.all(Object.keys(R).map(x => this.activeAssemblies[x].update()))
                             }, "updateAssemblies");
-                        this.restored = Promise.resolve().then(() => (f(c), y(), S())), this.restored.then(() => {
+                        this.restored = Promise.resolve().then(() => (y(d), w(), S())), this.restored.then(() => {
                             this.restored = null
                         })
                     }
                 }), Object.defineProperty(this, da, {
                     writable: !0,
-                    value: (l, h) => {
-                        let d = l.map(w => this.uppy.getFile(w)).filter(w => w.error ? !1 : (this.uppy.emit("preprocess-progress", w, {
+                    value: (h, c) => {
+                        let f = h.map(R => this.uppy.getFile(R)).filter(R => R.error ? !1 : (this.uppy.emit("preprocess-progress", R, {
                                 mode: "indeterminate",
                                 message: this.i18n("creatingAssembly")
                             }), !0)),
-                            f = n(async w => {
+                            y = n(async R => {
                                 let {
-                                    fileIDs: R,
-                                    options: x
-                                } = w;
+                                    fileIDs: x,
+                                    options: F
+                                } = R;
                                 try {
-                                    let E = await J(this, hd)[hd](R, h, x);
-                                    return this.opts.importFromUploadURLs && await J(this, dd)[dd](E, R), R.forEach(N => {
-                                        let V = this.uppy.getFile(N);
-                                        this.uppy.emit("preprocess-complete", V)
-                                    }), E
-                                } catch (E) {
-                                    throw R.forEach(N => {
-                                        let V = this.uppy.getFile(N);
-                                        this.uppy.emit("preprocess-complete", V), this.uppy.emit("upload-error", V, E)
-                                    }), E
+                                    let N = await J(this, cd)[cd](x, c, F);
+                                    return this.opts.importFromUploadURLs && await J(this, pd)[pd](N, x), x.forEach(H => {
+                                        let q = this.uppy.getFile(H);
+                                        this.uppy.emit("preprocess-complete", q)
+                                    }), N
+                                } catch (N) {
+                                    throw x.forEach(H => {
+                                        let q = this.uppy.getFile(H);
+                                        this.uppy.emit("preprocess-complete", q), this.uppy.emit("upload-error", q, N)
+                                    }), N
                                 }
                             }, "createAssembly"),
                             {
-                                uploadsAssemblies: y
+                                uploadsAssemblies: w
                             } = this.getPluginState();
                         return this.setPluginState({
-                            uploadsAssemblies: { ...y,
-                                [h]: []
+                            uploadsAssemblies: { ...w,
+                                [c]: []
                             }
-                        }), new uv(d, this.opts).build().then(w => Promise.all(w.map(f))).then(w => {
-                            let R = w.filter(Boolean),
-                                x = R.map(E => E.status.assembly_id);
-                            return J(this, ua)[ua](x, h), Promise.all(R.map(E => J(this, ca)[ca](E)))
-                        }).catch(w => {
-                            throw d.forEach(R => {
-                                this.uppy.emit("preprocess-complete", R), this.uppy.emit("upload-error", R, w)
-                            }), w
+                        }), new hv(f, this.opts).build().then(R => Promise.all(R.map(y))).then(R => {
+                            let x = R.filter(Boolean),
+                                F = x.map(N => N.status.assembly_id);
+                            return J(this, ua)[ua](F, c), Promise.all(x.map(N => J(this, ca)[ca](N)))
+                        }).catch(R => {
+                            throw f.forEach(x => {
+                                this.uppy.emit("preprocess-complete", x), this.uppy.emit("upload-error", x, R)
+                            }), R
                         })
                     }
-                }), Object.defineProperty(this, Ps, {
+                }), Object.defineProperty(this, xs, {
                     writable: !0,
-                    value: (l, h) => {
-                        let c = l.map(x => this.uppy.getFile(x)),
-                            d = c.filter(x => !x.error).map(x => x.id),
-                            f = this.getPluginState();
-                        if (this.restored) return this.restored.then(() => J(this, Ps)[Ps](d, h));
-                        let y = f.uploadsAssemblies[h],
+                    value: (h, c) => {
+                        let d = h.map(F => this.uppy.getFile(F)),
+                            f = d.filter(F => !F.error).map(F => F.id),
+                            y = this.getPluginState();
+                        if (this.restored) return this.restored.then(() => J(this, xs)[xs](f, c));
+                        let w = y.uploadsAssemblies[c],
                             S = n(() => {
-                                y.forEach(x => {
-                                    this.activeAssemblies[x].close(), delete this.activeAssemblies[x]
+                                w.forEach(F => {
+                                    this.activeAssemblies[F].close(), delete this.activeAssemblies[F]
                                 })
                             }, "closeSocketConnections");
-                        if (!J(this, cd)[cd]()) {
+                        if (!J(this, dd)[dd]()) {
                             S();
-                            let x = y.map(E => this.getAssembly(E));
-                            return this.uppy.addResultData(h, {
-                                transloadit: x
+                            let F = w.map(N => this.getAssembly(N));
+                            return this.uppy.addResultData(c, {
+                                transloadit: F
                             }), Promise.resolve()
                         }
-                        return y.length === 0 ? (this.uppy.addResultData(h, {
+                        return w.length === 0 ? (this.uppy.addResultData(c, {
                             transloadit: []
-                        }), Promise.resolve()) : (c.filter(x => !qe(this.completedFiles, x.id)).forEach(x => {
-                            this.uppy.emit("postprocess-progress", x, {
+                        }), Promise.resolve()) : (d.filter(F => !qe(this.completedFiles, F.id)).forEach(F => {
+                            this.uppy.emit("postprocess-progress", F, {
                                 mode: "indeterminate",
                                 message: this.i18n("encoding")
                             })
-                        }), this.assemblyWatchers[h].promise.then(() => {
+                        }), this.assemblyWatchers[c].promise.then(() => {
                             S();
-                            let x = y.map(N => this.getAssembly(N)),
-                                E = { ...this.getPluginState().uploadsAssemblies
+                            let F = w.map(H => this.getAssembly(H)),
+                                N = { ...this.getPluginState().uploadsAssemblies
                                 };
-                            delete E[h], this.setPluginState({
-                                uploadsAssemblies: E
-                            }), this.uppy.addResultData(h, {
-                                transloadit: x
+                            delete N[c], this.setPluginState({
+                                uploadsAssemblies: N
+                            }), this.uppy.addResultData(c, {
+                                transloadit: F
                             })
                         }))
                     }
                 }), Object.defineProperty(this, pa, {
                     writable: !0,
-                    value: l => {
-                        var h;
-                        (h = this.activeAssemblies[l]) == null || h.close()
+                    value: h => {
+                        var c;
+                        (c = this.activeAssemblies[h]) == null || c.close()
                     }
                 }), Object.defineProperty(this, fa, {
                     writable: !0,
-                    value: function(l, h) {
-                        l === void 0 && (l = null);
-                        let d = r.getPluginState().uploadsAssemblies[h];
-                        d ?.forEach(J(r, pa)[pa]), r.client.submitError(l).catch(pv(l))
+                    value: function(h, c) {
+                        h === void 0 && (h = null);
+                        let f = r.getPluginState().uploadsAssemblies[c];
+                        f ?.forEach(J(r, pa)[pa]), r.client.submitError(h).catch(fv(h))
                     }
-                }), Object.defineProperty(this, gd, {
+                }), Object.defineProperty(this, yd, {
                     writable: !0,
-                    value: (l, h) => {
-                        var c, d;
-                        if (J(this, pa)[pa](l == null || (c = l.transloadit) == null ? void 0 : c.assembly), h != null && (d = h.message) != null && d.startsWith("tus: ")) {
-                            var f, y;
-                            let S = (f = h.originalRequest) == null || (y = f.getUnderlyingObject()) == null ? void 0 : y.responseURL;
-                            this.client.submitError(h, {
+                    value: (h, c) => {
+                        var d, f;
+                        if (J(this, pa)[pa](h == null || (d = h.transloadit) == null ? void 0 : d.assembly), c != null && (f = c.message) != null && f.startsWith("tus: ")) {
+                            var y, w;
+                            let S = (y = c.originalRequest) == null || (w = y.getUnderlyingObject()) == null ? void 0 : w.responseURL;
+                            this.client.submitError(c, {
                                 endpoint: S,
                                 type: "TUS_ERROR"
-                            }).catch(pv(h))
+                            }).catch(fv(c))
                         }
                     }
-                }), this.type = "uploader", this.id = this.opts.id || "Transloadit", this.title = "Transloadit", this.defaultLocale = dv;
-                let o = {
+                }), this.type = "uploader", this.id = this.opts.id || "Transloadit", this.title = "Transloadit", this.defaultLocale = pv;
+                let l = {
                     service: "https://api2.transloadit.com",
                     errorReporting: !0,
                     waitForEncoding: !1,
@@ -20348,31 +20372,33 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     importFromUploadURLs: !1,
                     signature: null,
                     params: null,
-                    fields: {},
-                    getAssemblyOptions: TP,
+                    fields: null,
+                    getAssemblyOptions: null,
                     limit: 20,
                     retryDelays: [7e3, 1e4, 15e3, 2e4]
                 };
-                this.opts = { ...o,
+                this.opts = { ...l,
                     ...t
-                }, this.opts.assemblyOptions = (s = t.assemblyOptions) != null ? s : this.opts.getAssemblyOptions, J(this, qt)[qt] = new Je(this.opts.limit), this.i18nInit();
-                let a = this.opts.assemblyOptions !== o.assemblyOptions;
-                this.opts.params ? Gl(this.opts.params) : a || Gl(null), this.client = new co({
+                }, (o = (s = this.opts).assemblyOptions) != null || (s.assemblyOptions = (a = this.opts.getAssemblyOptions) != null ? a : {
+                    params: this.opts.params,
+                    signature: this.opts.signature,
+                    fields: this.opts.fields
+                }), t ?.params != null && t.getAssemblyOptions == null && t.assemblyOptions == null && nd(this.opts.assemblyOptions.params), J(this, Vt)[Vt] = new Je(this.opts.limit), this.i18nInit(), this.client = new co({
                     service: this.opts.service,
-                    client: J(this, ud)[ud](),
+                    client: J(this, hd)[hd](),
                     errorReporting: this.opts.errorReporting,
-                    rateLimitedQueue: J(this, qt)[qt]
+                    rateLimitedQueue: J(this, Vt)[Vt]
                 }), this.activeAssemblies = {}, this.assemblyWatchers = {}, this.completedFiles = Object.create(null)
             }
             install() {
-                this.uppy.addPreProcessor(J(this, da)[da]), this.uppy.addPostProcessor(J(this, Ps)[Ps]), this.uppy.on("error", J(this, fa)[fa]), this.uppy.on("cancel-all", J(this, pd)[pd]), this.uppy.on("upload-error", J(this, gd)[gd]), this.opts.importFromUploadURLs ? this.uppy.on("upload-success", J(this, ha)[ha]) : this.uppy.use(wi, {
+                this.uppy.addPreProcessor(J(this, da)[da]), this.uppy.addPostProcessor(J(this, xs)[xs]), this.uppy.on("error", J(this, fa)[fa]), this.uppy.on("cancel-all", J(this, fd)[fd]), this.uppy.on("upload-error", J(this, yd)[yd]), this.opts.importFromUploadURLs ? this.uppy.on("upload-success", J(this, ha)[ha]) : this.uppy.use(wi, {
                     storeFingerprintForResuming: !1,
                     useFastRemoteRetry: !1,
                     allowedMetaFields: ["assembly_url", "filename", "fieldname"],
                     limit: this.opts.limit,
-                    rateLimitedQueue: J(this, qt)[qt],
+                    rateLimitedQueue: J(this, Vt)[Vt],
                     retryDelays: this.opts.retryDelays
-                }), this.uppy.on("restore:get-data", J(this, fd)[fd]), this.uppy.on("restored", J(this, md)[md]), this.setPluginState({
+                }), this.uppy.on("restore:get-data", J(this, md)[md]), this.uppy.on("restored", J(this, gd)[gd]), this.setPluginState({
                     assemblies: {},
                     uploadsAssemblies: {},
                     files: {},
@@ -20388,7 +20414,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 })
             }
             uninstall() {
-                this.uppy.removePreProcessor(J(this, da)[da]), this.uppy.removePostProcessor(J(this, Ps)[Ps]), this.uppy.off("error", J(this, fa)[fa]), this.opts.importFromUploadURLs && this.uppy.off("upload-success", J(this, ha)[ha]);
+                this.uppy.removePreProcessor(J(this, da)[da]), this.uppy.removePostProcessor(J(this, xs)[xs]), this.uppy.off("error", J(this, fa)[fa]), this.opts.importFromUploadURLs && this.uppy.off("upload-success", J(this, ha)[ha]);
                 let {
                     capabilities: e
                 } = this.uppy.getState();
@@ -20411,7 +20437,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 })
             }
         };
-    n(Ut, "Transloadit");
+    n(Dt, "Transloadit");
 
     function AP() {
         let i = [`uppy-core:${this.uppy.constructor.VERSION}`, `uppy-transloadit:${this.constructor.VERSION}`, `uppy-tus:${wi.VERSION}`],
@@ -20466,15 +20492,15 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }).then(async r => {
             let s = this.uppy.getFiles().filter(y => {
                 let {
-                    id: S
+                    id: w
                 } = y;
-                return i.includes(S)
+                return i.includes(w)
             });
             if (s.length !== i.length) {
                 if (s.length === 0) return await this.client.cancelAssembly(r), null;
                 await this.client.updateNumberOfFilesInAssembly(r, s.length)
             }
-            let o = new od(r, J(this, qt)[qt]),
+            let o = new od(r, J(this, Vt)[Vt]),
                 {
                     status: a
                 } = o,
@@ -20493,18 +20519,18 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             });
             let d = {};
             s.forEach(y => {
-                d[y.id] = J(this, yd)[yd](y, a)
+                d[y.id] = J(this, vd)[vd](y, a)
             }), this.uppy.setState({
                 files: { ...this.uppy.getState().files,
                     ...d
                 }
             });
-            let f = n((y, S) => {
-                if (S === "cancel-all") o.close(), this.uppy.off(f);
+            let f = n((y, w) => {
+                if (w === "cancel-all") o.close(), this.uppy.off(f);
                 else if (y.id in d) {
                     delete d[y.id];
-                    let w = Object.keys(d).length;
-                    w === 0 ? (o.close(), J(this, ya)[ya](r).catch(() => {}), this.uppy.off(f)) : this.client.updateNumberOfFilesInAssembly(r, w).catch(() => {})
+                    let S = Object.keys(d).length;
+                    S === 0 ? (o.close(), J(this, ya)[ya](r).catch(() => {}), this.uppy.off(f)) : this.client.updateNumberOfFilesInAssembly(r, S).catch(() => {})
                 }
             }, "fileRemovedHandler");
             return this.uppy.on("file-removed", f), this.uppy.emit("transloadit:assembly-created", a, i), this.uppy.log(`[Transloadit] Created Assembly ${l}`), o
@@ -20518,7 +20544,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     n(DP, "_createAssembly2");
 
     function NP(i, e) {
-        let t = new cv(this.uppy, i);
+        let t = new dv(this.uppy, i);
         t.on("assembly-complete", r => {
             this.getAssemblyFiles(r).forEach(o => {
                 this.completedFiles[o.id] = !0, this.uppy.emit("postprocess-complete", o)
@@ -20620,13 +20646,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 }
             })
         }), i.on("upload", r => {
-            J(this, vd)[vd](t, r)
+            J(this, bd)[bd](t, r)
         }), i.on("error", r => {
             r.assembly = i.status, this.uppy.emit("transloadit:assembly-error", i.status, r)
         }), i.on("executing", () => {
             this.uppy.emit("transloadit:assembly-executing", i.status)
         }), this.opts.waitForEncoding && i.on("result", (r, s) => {
-            J(this, bd)[bd](t, r, s)
+            J(this, wd)[wd](t, r, s)
         }), this.opts.waitForEncoding ? i.on("finished", () => {
             J(this, ma)[ma](i.status)
         }) : this.opts.waitForMetadata && i.on("metadata", () => {
@@ -20634,50 +20660,50 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }), i.ok === "ASSEMBLY_COMPLETE" || i.connect(), i
     }
     n($P, "_connectAssembly2");
-    Ut.VERSION = CP.version;
-    Ut.COMPANION = wd;
-    Ut.COMPANION_PATTERN = Sd;
-    var fv = {
+    Dt.VERSION = TP.version;
+    Dt.COMPANION = Sd;
+    Dt.COMPANION_PATTERN = _d;
+    var mv = {
         strings: {
-            timedOut: "Upload stalled for %{seconds} seconds, aborting."
+            uploadStalled: "Upload has not made any progress for %{seconds} seconds. You may want to retry it."
         }
     };
 
-    function _d(i, e) {
+    function Pd(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
-    n(_d, "_classPrivateFieldLooseBase");
+    n(Pd, "_classPrivateFieldLooseBase");
     var qP = 0;
 
-    function yv(i) {
+    function vv(i) {
         return "__private_" + qP++ + "_" + i
     }
-    n(yv, "_classPrivateFieldLooseKey");
+    n(vv, "_classPrivateFieldLooseKey");
     var VP = {
-        version: "3.0.4"
+        version: "3.1.0"
     };
 
-    function mv(i, e) {
+    function gv(i, e) {
         let t = e;
         return t || (t = new Error("Upload error")), typeof t == "string" && (t = new Error(t)), t instanceof Error || (t = Object.assign(new Error("Upload error"), {
             data: t
-        })), is(i) ? (t = new Lt(t, i), t) : (t.request = i, t)
+        })), rs(i) ? (t = new Mt(t, i), t) : (t.request = i, t)
     }
-    n(mv, "buildResponseError");
+    n(gv, "buildResponseError");
 
-    function gv(i) {
+    function yv(i) {
         return i.data.slice(0, i.data.size, i.meta.type)
     }
-    n(gv, "setTypeInBlob");
-    var va = yv("queueRequestSocketToken"),
-        Pd = yv("requestSocketToken"),
-        xs = class extends ae {
+    n(yv, "setTypeInBlob");
+    var va = vv("queueRequestSocketToken"),
+        xd = vv("requestSocketToken"),
+        Fs = class extends ae {
             constructor(e, t) {
                 super(e, t), Object.defineProperty(this, va, {
                     writable: !0,
                     value: void 0
-                }), Object.defineProperty(this, Pd, {
+                }), Object.defineProperty(this, xd, {
                     writable: !0,
                     value: async s => {
                         let o = this.getOptions(s),
@@ -20695,7 +20721,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             headers: o.headers
                         })).token
                     }
-                }), this.type = "uploader", this.id = this.opts.id || "XHRUpload", this.title = "XHRUpload", this.defaultLocale = fv;
+                }), this.type = "uploader", this.id = this.opts.id || "XHRUpload", this.title = "XHRUpload", this.defaultLocale = mv;
                 let r = {
                     formData: !0,
                     fieldName: t.bundle ? "files[]" : "file",
@@ -20719,7 +20745,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     },
                     getResponseError(s, o) {
                         let a = new Error("Upload error");
-                        return is(o) && (a = new Lt(a, o)), a
+                        return rs(o) && (a = new Mt(a, o)), a
                     },
                     validateStatus(s) {
                         return s >= 200 && s < 300
@@ -20727,9 +20753,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 };
                 if (this.opts = { ...r,
                     ...t
-                }, this.i18nInit(), this.handleUpload = this.handleUpload.bind(this), br in this.opts ? this.requests = this.opts[br] : this.requests = new Je(this.opts.limit), this.opts.bundle && !this.opts.formData) throw new Error("`opts.formData` must be true when `opts.bundle` is enabled.");
+                }, this.i18nInit(), this.handleUpload = this.handleUpload.bind(this), wr in this.opts ? this.requests = this.opts[wr] : this.requests = new Je(this.opts.limit), this.opts.bundle && !this.opts.formData) throw new Error("`opts.formData` must be true when `opts.bundle` is enabled.");
                 if (t ?.allowedMetaFields === void 0 && "metaFields" in this.opts) throw new Error("The `metaFields` option has been renamed to `allowedMetaFields`.");
-                this.uploaderEvents = Object.create(null), _d(this, va)[va] = this.requests.wrapPromiseFunction(_d(this, Pd)[Pd], {
+                this.uploaderEvents = Object.create(null), Pd(this, va)[va] = this.requests.wrapPromiseFunction(Pd(this, xd)[xd], {
                     priority: -1
                 })
             }
@@ -20753,7 +20779,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             createFormDataUpload(e, t) {
                 let r = new FormData;
                 this.addMetadata(r, e.meta, t);
-                let s = gv(e);
+                let s = yv(e);
                 return e.name ? r.append(t.fieldName, s, e.meta.name) : r.append(t.fieldName, s), r
             }
             createBundledUpload(e, t) {
@@ -20763,7 +20789,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     } = this.uppy.getState();
                 return this.addMetadata(r, s, t), e.forEach(o => {
                     let a = this.getOptions(o),
-                        l = gv(o);
+                        l = yv(o);
                     o.name ? r.append(a.fieldName, l, o.name) : r.append(a.fieldName, l)
                 }), r
             }
@@ -20775,11 +20801,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         h = new XMLHttpRequest;
                     this.uploaderEvents[e.id] = new $e(this.uppy);
                     let c, d = new wn(s.timeout, () => {
-                            h.abort(), c.done();
-                            let y = new Error(this.i18n("timedOut", {
+                            let y = new Error(this.i18n("uploadStalled", {
                                 seconds: Math.ceil(s.timeout / 1e3)
                             }));
-                            this.uppy.emit("upload-error", e, y), a(y)
+                            this.uppy.emit("upload-stalled", y, [e])
                         }),
                         f = Ot();
                     h.upload.addEventListener("loadstart", () => {
@@ -20794,29 +20819,29 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         if (this.uppy.log(`[XHRUpload] ${f} finished`), d.done(), c.done(), this.uploaderEvents[e.id] && (this.uploaderEvents[e.id].remove(), this.uploaderEvents[e.id] = null), s.validateStatus(h.status, h.responseText, h)) {
                             let R = s.getResponseData(h.responseText, h),
                                 x = R[s.responseUrlFieldName],
-                                E = {
+                                F = {
                                     status: h.status,
                                     body: R,
                                     uploadURL: x
                                 };
-                            return this.uppy.emit("upload-success", e, E), x && this.uppy.log(`Download ${e.name} from ${x}`), o(e)
+                            return this.uppy.emit("upload-success", e, F), x && this.uppy.log(`Download ${e.name} from ${x}`), o(e)
                         }
                         let y = s.getResponseData(h.responseText, h),
-                            S = mv(h, s.getResponseError(h.responseText, h)),
-                            w = {
+                            w = gv(h, s.getResponseError(h.responseText, h)),
+                            S = {
                                 status: h.status,
                                 body: y
                             };
-                        return this.uppy.emit("upload-error", e, S, w), a(S)
+                        return this.uppy.emit("upload-error", e, w, S), a(w)
                     }), h.addEventListener("error", () => {
                         this.uppy.log(`[XHRUpload] ${f} errored`), d.done(), c.done(), this.uploaderEvents[e.id] && (this.uploaderEvents[e.id].remove(), this.uploaderEvents[e.id] = null);
-                        let y = mv(h, s.getResponseError(h.responseText, h));
+                        let y = gv(h, s.getResponseError(h.responseText, h));
                         return this.uppy.emit("upload-error", e, y), a(y)
                     }), h.open(s.method.toUpperCase(), s.endpoint, !0), h.withCredentials = s.withCredentials, s.responseType !== "" && (h.responseType = s.responseType), c = this.requests.run(() => {
                         this.uppy.emit("upload-started", e);
                         let y = this.getOptions(e);
-                        return Object.keys(y.headers).forEach(S => {
-                            h.setRequestHeader(S, y.headers[S])
+                        return Object.keys(y.headers).forEach(w => {
+                            h.setRequestHeader(w, y.headers[w])
                         }), h.send(l), () => {
                             d.done(), h.abort()
                         }
@@ -20824,16 +20849,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         c.abort(), a(new Error("File removed"))
                     }), this.onCancelAll(e.id, y => {
                         let {
-                            reason: S
+                            reason: w
                         } = y;
-                        S === "user" && c.abort(), a(new Error("Upload cancelled"))
+                        w === "user" && c.abort(), a(new Error("Upload cancelled"))
                     })
                 })
             }
             async uploadRemote(e) {
                 try {
                     if (this.uppy.emit("upload-started", e), e.serverToken) return this.connectToServerSocket(e);
-                    let t = await _d(this, va)[va](e);
+                    let t = await Pd(this, va)[va](e);
                     return this.uppy.getState().files[e.id] ? (this.uppy.setFileState(e.id, {
                         serverToken: t
                     }), this.connectToServerSocket(this.uppy.getFile(e.id))) : void 0
@@ -20849,21 +20874,21 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         l, h = n(() => {
                             l == null && (l = new ot({
                                 target: `${a}/api/${o}`
-                            }), l.on("progress", f => wr(this, f, e)), l.on("success", f => {
+                            }), l.on("progress", f => Sr(this, f, e)), l.on("success", f => {
                                 let y = s.getResponseData(f.response.responseText, f.response),
-                                    S = y[s.responseUrlFieldName],
-                                    w = {
+                                    w = y[s.responseUrlFieldName],
+                                    S = {
                                         status: f.response.status,
                                         body: y,
-                                        uploadURL: S
+                                        uploadURL: w
                                     };
-                                return this.uppy.emit("upload-success", e, w), c.done(), l.close(), this.uploaderEvents[e.id] && (this.uploaderEvents[e.id].remove(), this.uploaderEvents[e.id] = null), t()
+                                return this.uppy.emit("upload-success", e, S), c.done(), l.close(), this.uploaderEvents[e.id] && (this.uploaderEvents[e.id].remove(), this.uploaderEvents[e.id] = null), t()
                             }), l.on("error", f => {
                                 let y = f.response,
-                                    S = y ? s.getResponseError(y.responseText, y) : Object.assign(new Error(f.error.message), {
+                                    w = y ? s.getResponseError(y.responseText, y) : Object.assign(new Error(f.error.message), {
                                         cause: f.error
                                     });
-                                this.uppy.emit("upload-error", e, S), c.done(), this.uploaderEvents[e.id] && (this.uploaderEvents[e.id].remove(), this.uploaderEvents[e.id] = null), r(S)
+                                this.uppy.emit("upload-error", e, w), c.done(), this.uploaderEvents[e.id] && (this.uploaderEvents[e.id].remove(), this.uploaderEvents[e.id] = null), r(w)
                             }))
                         }, "createSocket");
                     this.uploaderEvents[e.id] = new $e(this.uppy);
@@ -20882,8 +20907,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             reason: y
                         } = f === void 0 ? {} : f;
                         if (y === "user") {
-                            var S;
-                            (S = l) == null || S.send("cancel", {}), c.abort()
+                            var w;
+                            (w = l) == null || w.send("cancel", {}), c.abort()
                         }
                         t(`upload ${e.id} was canceled`)
                     });
@@ -20906,11 +20931,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                             this.uppy.emit("upload-error", y, f)
                         })
                     }, "emitError"), d = new wn(this.opts.timeout, () => {
-                        h.abort();
-                        let f = new Error(this.i18n("timedOut", {
+                        let f = new Error(this.i18n("uploadStalled", {
                             seconds: Math.ceil(this.opts.timeout / 1e3)
                         }));
-                        c(f), r(f)
+                        this.uppy.emit("upload-stalled", f, e)
                     });
                     h.upload.addEventListener("loadstart", () => {
                         this.uppy.log("[XHRUpload] started uploading bundle"), d.progress()
@@ -20924,13 +20948,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         })
                     }), h.addEventListener("load", f => {
                         if (d.done(), this.opts.validateStatus(f.target.status, h.responseText, h)) {
-                            let S = this.opts.getResponseData(h.responseText, h),
-                                w = {
+                            let w = this.opts.getResponseData(h.responseText, h),
+                                S = {
                                     status: f.target.status,
-                                    body: S
+                                    body: w
                                 };
                             return e.forEach(R => {
-                                this.uppy.emit("upload-success", R, w)
+                                this.uppy.emit("upload-success", R, S)
                             }), t()
                         }
                         let y = this.opts.getResponseError(h.responseText, h) || new Error("Upload error");
@@ -20982,7 +21006,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }
             handleUpload(e) {
                 if (e.length === 0) return this.uppy.log("[XHRUpload] No files to upload!"), Promise.resolve();
-                this.opts.limit === 0 && !this.opts[br] && this.uppy.log("[XHRUpload] When uploading multiple files at once, consider setting the `limit` option (to `10` for example), to limit the number of concurrent uploads, which helps prevent memory and network issues: https://uppy.io/docs/xhr-upload/#limit-0", "warning"), this.uppy.log("[XHRUpload] Uploading...");
+                this.opts.limit === 0 && !this.opts[wr] && this.uppy.log("[XHRUpload] When uploading multiple files at once, consider setting the `limit` option (to `10` for example), to limit the number of concurrent uploads, which helps prevent memory and network issues: https://uppy.io/docs/xhr-upload/#limit-0", "warning"), this.uppy.log("[XHRUpload] Uploading...");
                 let t = e.map(r => this.uppy.getFile(r));
                 if (this.opts.bundle) {
                     if (t.some(s => s.isRemote)) throw new Error("Can\u2019t upload remote files when the `bundle: true` option is set");
@@ -21018,22 +21042,22 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 this.uppy.removeUploader(this.handleUpload)
             }
         };
-    n(xs, "XHRUpload");
-    xs.VERSION = VP.version;
-    var Fd = oe(Ca(), 1),
-        Cv = oe(Ev(), 1);
-    var Ov = {
+    n(Fs, "XHRUpload");
+    Fs.VERSION = VP.version;
+    var Ed = oe(Ca(), 1),
+        Tv = oe(Ov(), 1);
+    var Rv = {
         strings: {
             compressingImages: "Compressing images...",
             compressedX: "Saved %{size} by compressing images"
         }
     };
 
-    function Rv(i, e) {
+    function Cv(i, e) {
         if (!Object.prototype.hasOwnProperty.call(i, e)) throw new TypeError("attempted to use private field on non-instance");
         return i
     }
-    n(Rv, "_classPrivateFieldLooseBase");
+    n(Cv, "_classPrivateFieldLooseBase");
     var dx = 0;
 
     function px(i) {
@@ -21046,18 +21070,18 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 super(e, t), Object.defineProperty(this, wa, {
                     writable: !0,
                     value: void 0
-                }), this.id = this.opts.id || "Compressor", this.type = "modifier", this.defaultLocale = Ov;
+                }), this.id = this.opts.id || "Compressor", this.type = "modifier", this.defaultLocale = Rv;
                 let r = {
                     quality: .6,
                     limit: 10
                 };
                 this.opts = { ...r,
                     ...t
-                }, Rv(this, wa)[wa] = new Je(this.opts.limit), this.i18nInit(), this.prepareUpload = this.prepareUpload.bind(this), this.compress = this.compress.bind(this)
+                }, Cv(this, wa)[wa] = new Je(this.opts.limit), this.i18nInit(), this.prepareUpload = this.prepareUpload.bind(this), this.compress = this.compress.bind(this)
             }
             compress(e) {
                 return new Promise((t, r) => {
-                    new Cv.default(e, { ...this.opts,
+                    new Tv.default(e, { ...this.opts,
                         success: t,
                         error: r
                     })
@@ -21066,11 +21090,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             async prepareUpload(e) {
                 let t = 0,
                     r = [],
-                    s = Rv(this, wa)[wa].wrapPromiseFunction(async a => {
+                    s = Cv(this, wa)[wa].wrapPromiseFunction(async a => {
                         try {
                             let l = await this.compress(a.data),
                                 h = a.data.size - l.size;
-                            this.uppy.log(`[Image Compressor] Image ${a.id} compressed by ${(0,Fd.default)(h)}`), t += h;
+                            this.uppy.log(`[Image Compressor] Image ${a.id} compressed by ${(0,Ed.default)(h)}`), t += h;
                             let {
                                 name: c,
                                 type: d,
@@ -21104,7 +21128,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         }), l.isRemote || (l.data.type || (l.data = l.data.slice(0, l.data.size, l.type)), !l.type.startsWith("image/")) ? Promise.resolve() : s(l)
                     });
                 await Promise.all(o), this.uppy.emit("compressor:complete", r), t > 1024 && this.uppy.info(this.i18n("compressedX", {
-                    size: (0, Fd.default)(t)
+                    size: (0, Ed.default)(t)
                 }), "info");
                 for (let a of e) {
                     let l = this.uppy.getFile(a);
@@ -21147,7 +21171,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         },
         yx = /^\s+|\s+$/g,
         vx = Array.prototype.slice,
-        Tv = Object.prototype.toString;
+        kv = Object.prototype.toString;
 
     function eu(i, e) {
         if (!i) throw new Error("A form is required by getFormData, was given form=" + i);
@@ -21161,34 +21185,34 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         for (var c = 0, d = s.length; c < d; c++) {
             r = s[c];
-            var f = Av(i, r, e);
+            var f = Uv(i, r, e);
             f != null && (t[r] = f)
         }
         return t
     }
     n(eu, "getFormData");
 
-    function Av(i, e, t) {
+    function Uv(i, e, t) {
         if (!i) throw new Error("A form is required by getFieldData, was given form=" + i);
-        if (!e && Tv.call(e) !== "[object String]") throw new Error("A field name is required by getFieldData, was given fieldName=" + e);
+        if (!e && kv.call(e) !== "[object String]") throw new Error("A field name is required by getFieldData, was given fieldName=" + e);
         t = Zl({
             includeDisabled: !1,
             trim: !1
         }, t);
         var r = i.elements[e];
         if (!r || r.disabled && !t.includeDisabled) return null;
-        if (!fx[Tv.call(r)]) return kv(r, t.trim);
+        if (!fx[kv.call(r)]) return Av(r, t.trim);
         for (var s = [], o = !0, a = 0, l = r.length; a < l; a++)
             if (!(r[a].disabled && !t.includeDisabled)) {
                 o && r[a].type !== "radio" && (o = !1);
-                var h = kv(r[a], t.trim);
+                var h = Av(r[a], t.trim);
                 h != null && (s = s.concat(h))
             }
         return o && s.length === 1 ? s[0] : s.length > 0 ? s : null
     }
-    n(Av, "getFieldData");
+    n(Uv, "getFieldData");
 
-    function kv(i, e) {
+    function Av(i, e) {
         var t = null,
             r = i.type;
         if (r === "select-one") return i.options.length && (t = i.options[i.selectedIndex].value), t;
@@ -21199,12 +21223,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         return r === "file" && "files" in i ? (i.multiple ? (t = vx.call(i.files), t.length === 0 && (t = null)) : t = i.files[0], t) : (gx[r] ? i.checked && (r === "checkbox" && !i.hasAttribute("value") ? t = !0 : t = i.value) : t = e ? i.value.replace(yx, "") : i.value, t)
     }
-    n(kv, "getFormElementValue");
-    eu.getFieldData = Av;
+    n(Av, "getFormElementValue");
+    eu.getFieldData = Uv;
     var bx = {
             version: "3.0.1"
         },
-        Es = class extends ae {
+        Os = class extends ae {
             constructor(e, t) {
                 super(e, t), this.type = "acquirer", this.id = this.opts.id || "Form", this.title = "Form";
                 let r = {
@@ -21271,14 +21295,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 this.form.removeEventListener("submit", this.handleFormSubmit), this.uppy.off("upload", this.handleUploadStart), this.uppy.off("complete", this.handleSuccess)
             }
         };
-    n(Es, "Form");
-    Es.VERSION = bx.version;
-    var $v = oe(bo(), 1);
-    var Uv = typeof navigator < "u" && "serviceWorker" in navigator;
+    n(Os, "Form");
+    Os.VERSION = bx.version;
+    var qv = oe(bo(), 1);
+    var Dv = typeof navigator < "u" && "serviceWorker" in navigator;
 
     function wx() {
         return new Promise((i, e) => {
-            Uv ? navigator.serviceWorker.controller ? i() : navigator.serviceWorker.addEventListener("controllerchange", () => {
+            Dv ? navigator.serviceWorker.controller ? i() : navigator.serviceWorker.addEventListener("controllerchange", () => {
                 i()
             }) : e(new Error("Unsupported"))
         })
@@ -21329,13 +21353,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
     };
     n(Sa, "ServiceWorkerStore");
-    Sa.isSupported = Uv;
-    var Dv = Sa;
-    var Lv = typeof window < "u" && (window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB),
-        Sx = !!Lv,
-        Nv = "uppy-blobs",
+    Sa.isSupported = Dv;
+    var Nv = Sa;
+    var Mv = typeof window < "u" && (window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB),
+        Sx = !!Mv,
+        Bv = "uppy-blobs",
         ct = "files",
-        Mv = 24 * 60 * 60 * 1e3,
+        zv = 24 * 60 * 60 * 1e3,
         _x = 3;
 
     function Px(i) {
@@ -21344,13 +21368,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             let r = t.target.result;
             if (!r) return;
             let s = r.value;
-            s.expires = Date.now() + Mv, r.update(s)
+            s.expires = Date.now() + zv, r.update(s)
         }
     }
     n(Px, "migrateExpiration");
 
-    function Bv(i) {
-        let e = Lv.open(i, _x);
+    function Iv(i) {
+        let e = Mv.open(i, _x);
         return new Promise((t, r) => {
             e.onupgradeneeded = s => {
                 let o = s.target.result,
@@ -21375,7 +21399,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }, e.onerror = r
         })
     }
-    n(Bv, "connect");
+    n(Iv, "connect");
 
     function tu(i) {
         return new Promise((e, t) => {
@@ -21385,19 +21409,19 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         })
     }
     n(tu, "waitForRequest");
-    var Iv = !1,
-        Os = class {
+    var Lv = !1,
+        Rs = class {
             constructor(e) {
                 this.opts = {
-                    dbName: Nv,
+                    dbName: Bv,
                     storeName: "default",
-                    expires: Mv,
+                    expires: zv,
                     maxFileSize: 10 * 1024 * 1024,
                     maxTotalSize: 300 * 1024 * 1024,
                     ...e
                 }, this.name = this.opts.storeName;
-                let t = n(() => Bv(this.opts.dbName), "createConnection");
-                Iv ? this.ready = t() : (Iv = !0, this.ready = Os.cleanup().then(t, t))
+                let t = n(() => Iv(this.opts.dbName), "createConnection");
+                Lv ? this.ready = t() : (Lv = !0, this.ready = Rs.cleanup().then(t, t))
             }
             key(e) {
                 return `${this.name}!${e}`
@@ -21455,7 +21479,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 })
             }
             static cleanup() {
-                return Bv(Nv).then(e => {
+                return Iv(Bv).then(e => {
                     let s = e.transaction([ct], "readwrite").objectStore(ct).index("expires").openCursor(IDBKeyRange.upperBound(Date.now()));
                     return new Promise((o, a) => {
                         s.onsuccess = l => {
@@ -21468,9 +21492,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 })
             }
         };
-    n(Os, "IndexedDBStore");
-    Os.isSupported = Sx;
-    var zv = Os;
+    n(Rs, "IndexedDBStore");
+    Rs.isSupported = Sx;
+    var jv = Rs;
 
     function xx() {
         let i = [];
@@ -21482,26 +21506,26 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(xx, "findUppyInstances");
 
-    function jv(i) {
+    function Hv(i) {
         try {
             return JSON.parse(i)
         } catch {
             return null
         }
     }
-    n(jv, "maybeParse");
-    var Hv = !1,
-        Vt = class {
+    n(Hv, "maybeParse");
+    var $v = !1,
+        Wt = class {
             constructor(e) {
                 this.opts = {
                     expires: 24 * 60 * 60 * 1e3,
                     ...e
-                }, this.name = `uppyState:${e.storeName}`, Hv || (Hv = !0, Vt.cleanup())
+                }, this.name = `uppyState:${e.storeName}`, $v || ($v = !0, Wt.cleanup())
             }
             load() {
                 let e = localStorage.getItem(this.name);
                 if (!e) return null;
-                let t = jv(e);
+                let t = Hv(e);
                 return t ? t.metadata ? t.metadata : (this.save(t), t) : null
             }
             save(e) {
@@ -21522,16 +21546,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 t.forEach(s => {
                     let o = localStorage.getItem(`uppyState:${s}`);
                     if (!o) return;
-                    let a = jv(o);
+                    let a = Hv(o);
                     !a || a.expires && a.expires < r && localStorage.removeItem(`uppyState:${s}`)
                 })
             }
         };
-    n(Vt, "MetaDataStore");
+    n(Wt, "MetaDataStore");
     var Fx = {
             version: "3.0.2"
         },
-        Rs = class extends ae {
+        Cs = class extends ae {
             constructor(e, t) {
                 super(e, t), this.addBlobToStores = s => {
                     s.isRemote || (this.ServiceWorkerStore && this.ServiceWorkerStore.put(s).catch(o => {
@@ -21566,7 +21590,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         this.uppy.log(`[GoldenRetriever] Could not remove ${s.length} files`, "warning"), this.uppy.log(o)
                     }), this.uppy.cancelAll(), this.uppy.setState({
                         recoveredState: null
-                    }), Vt.cleanup(this.uppy.opts.id)
+                    }), Wt.cleanup(this.uppy.opts.id)
                 }, this.handleComplete = s => {
                     let {
                         successful: o
@@ -21577,7 +21601,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         this.uppy.log(`[GoldenRetriever] Could not remove ${o.length} files that finished uploading`, "warning"), this.uppy.log(l)
                     }), this.uppy.setState({
                         recoveredState: null
-                    }), Vt.cleanup(this.uppy.opts.id)
+                    }), Wt.cleanup(this.uppy.opts.id)
                 }, this.restoreBlobs = () => {
                     this.uppy.getFiles().length > 0 ? Promise.all([this.loadFileBlobsFromServiceWorker(), this.loadFileBlobsFromIndexedDB()]).then(s => {
                         let o = { ...s[0],
@@ -21592,16 +21616,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 };
                 this.opts = { ...r,
                     ...t
-                }, this.MetaDataStore = new Vt({
+                }, this.MetaDataStore = new Wt({
                     expires: this.opts.expires,
                     storeName: e.getID()
-                }), this.ServiceWorkerStore = null, this.opts.serviceWorker && (this.ServiceWorkerStore = new Dv({
+                }), this.ServiceWorkerStore = null, this.opts.serviceWorker && (this.ServiceWorkerStore = new Nv({
                     storeName: e.getID()
-                })), this.IndexedDBStore = new zv({
+                })), this.IndexedDBStore = new jv({
                     expires: this.opts.expires,
                     ...this.opts.indexedDB || {},
                     storeName: e.getID()
-                }), this.saveFilesStateToLocalStorage = (0, $v.default)(this.saveFilesStateToLocalStorage.bind(this), 500, {
+                }), this.saveFilesStateToLocalStorage = (0, qv.default)(this.saveFilesStateToLocalStorage.bind(this), 500, {
                     leading: !0,
                     trailing: !0
                 }), this.restoreState = this.restoreState.bind(this), this.loadFileBlobsFromServiceWorker = this.loadFileBlobsFromServiceWorker.bind(this), this.loadFileBlobsFromIndexedDB = this.loadFileBlobsFromIndexedDB.bind(this), this.onBlobsLoaded = this.onBlobsLoaded.bind(this)
@@ -21638,7 +21662,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 if (Object.keys(e).length === 0) {
                     this.uppy.getState().recoveredState !== null && this.uppy.setState({
                         recoveredState: null
-                    }), Vt.cleanup(this.uppy.opts.id);
+                    }), Wt.cleanup(this.uppy.opts.id);
                     return
                 }
                 let t = {};
@@ -21719,12 +21743,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 this.uppy.off("file-added", this.addBlobToStores), this.uppy.off("file-editor:complete", this.replaceBlobInStores), this.uppy.off("file-removed", this.removeBlobFromStores), this.uppy.off("state-update", this.saveFilesStateToLocalStorage), this.uppy.off("restore-confirmed", this.handleRestoreConfirmed), this.uppy.off("restore-canceled", this.abortRestore), this.uppy.off("complete", this.handleComplete)
             }
         };
-    n(Rs, "GoldenRetriever");
-    Rs.VERSION = Fx.version;
+    n(Cs, "GoldenRetriever");
+    Cs.VERSION = Fx.version;
     var Ex = {
             version: "3.0.1"
         },
-        Cs = class extends q {
+        Ts = class extends V {
             constructor(e, t) {
                 super(e, t), this.type = "debugger", this.id = this.opts.id || "ReduxDevTools", this.title = "Redux DevTools";
                 let r = {};
@@ -21768,8 +21792,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 this.withDevTools && (this.devToolsUnsubscribe(), this.uppy.off("state-update", this.handleStateUpdate))
             }
         };
-    n(Cs, "ReduxDevTools");
-    Cs.VERSION = Ex.version;
+    n(Ts, "ReduxDevTools");
+    Ts.VERSION = Ex.version;
 
     function Ox() {
         throw new Error("Core has been renamed to Uppy")
@@ -21778,9 +21802,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     var Rx = {
         ProviderView: Ru
     };
-    Ut.COMPANION_URL = wd;
-    Ut.COMPANION_ALLOWED_HOSTS = Sd;
+    Dt.COMPANION_URL = Sd;
+    Dt.COMPANION_ALLOWED_HOSTS = _d;
     var Cx = {};
-    globalThis.Uppy = Ed;
+    globalThis.Uppy = Od;
 })();
 //# sourceMappingURL=uppy.min.js.map
