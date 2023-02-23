@@ -16767,6 +16767,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             onError: null,
             _onUploadUrlAvailable: null,
             overridePatchMethod: !1,
+            overrideDeleteMethod: !1,
             headers: {},
             addRequestId: !1,
             onBeforeRequest: null,
@@ -17105,7 +17106,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }, {
                 key: "_openRequest",
                 value: n(function(t, r) {
-                    var s = ay(t, r, this.options);
+                    var s = openRequest(t, r, this.options);
                     return this._req = s, s
                 }, "_openRequest")
             }, {
@@ -17139,15 +17140,22 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             }], [{
                 key: "terminate",
                 value: n(function(t) {
-                    var r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {},
-                        s = ay("DELETE", t, r);
-                    return ly(s, null, r).then(function(o) {
-                        if (o.getStatus() !== 204) throw new oo("tus: unexpected response while terminating upload", null, s, o)
+                    var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+                    var req;
+                    if (options.overrideDeleteMethod) {
+                        req = openRequest("POST", t, options);
+                        req.setHeader("X-HTTP-Method-Override", "DELETE");
+                    } else {
+                        req = openRequest("DELETE", t, options);
+                    }
+
+                    return ly(req, null, options).then(function(o) {
+                        if (o.getStatus() !== 204) throw new oo("tus: unexpected response while terminating upload", null, req, o)
                     }).catch(function(o) {
-                        if (o instanceof oo || (o = new oo("tus: failed to terminate upload", o, s, null)), !uy(o, 0, r)) throw o;
-                        var a = r.retryDelays[0],
-                            l = r.retryDelays.slice(1),
-                            h = no(no({}, r), {}, {
+                        if (o instanceof oo || (o = new oo("tus: failed to terminate upload", o, req, null)), !uy(o, 0, options)) throw o;
+                        var a = options.retryDelays[0],
+                            l = options.retryDelays.slice(1),
+                            h = no(no({}, options), {}, {
                                 retryDelays: l
                             });
                         return new Promise(function(c) {
@@ -17175,7 +17183,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
     n(ao, "inStatusCategory");
 
-    function ay(i, e, t) {
+    function openRequest(i, e, t) {
         var r = t.httpStack.createRequest(i, e);
         r.setHeader("Tus-Resumable", "1.0.0");
         var s = t.headers || {};
@@ -17190,7 +17198,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }
         return r
     }
-    n(ay, "openRequest");
+    n(openRequest, "openRequest");
 
     function ly(i, e, t) {
         var r = typeof t.onBeforeRequest == "function" ? Promise.resolve(t.onBeforeRequest(i)) : Promise.resolve();
@@ -17898,6 +17906,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             onSuccess: null,
             onError: null,
             overridePatchMethod: !1,
+            overrideDeleteMethod: !1,
             headers: {},
             addRequestId: !1,
             chunkSize: 1 / 0,
