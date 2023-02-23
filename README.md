@@ -6,7 +6,8 @@ https://uppy.io/ is good enough Javascript file uploader.
 It has `overridePatchMethod` option which transform patch method to post, but doesn't have the same one for delete method.  
 Since some of my clients blocked **DELETE** request for security reason and I want uppy to work perfectly on those environments too, I decided to add the option. 
 
-It's all the same as Uppy v3.3.1 but only has overridePatchMethod option.
+Currently following Uppy v3.5.0 + chrome crash resolved commit(8673335)
+all the same but only has overridePatchMethod option.
 
 ## What
 if you turn on overridePatchMethod option
@@ -36,5 +37,5 @@ about 900 KB, which is still minified version but prettyfied to see what's happe
 ### 📄 uppy.min.js 
 about 500kb which is much smaller. recommened to use
 
-if you want to implement your own one on newer versions, just check the commit log and add what you need.  
+if you want to implement your own one on newer versions, just check the [commit log](https://github.com/ShanePark/uppy-override-delete/commit/6174ba56ce07663e446a7ee43b90def2fe2a91f8) and add what you need.  
 Or Any Pull Reqeust for newer versions are always welcomed. Thanks

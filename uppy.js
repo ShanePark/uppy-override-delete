@@ -8775,19 +8775,17 @@ this.ifd0Offset: ${this.ifd0Offset}, file.byteLength: ${e.byteLength}`), e.tiff 
     }
     n(Mf, "createPromiseToAddFileOrParseDirectory");
     async function* Xu(i, e) {
-        let t = await Promise.all(Array.from(i.items, async r => {
-            var s;
-            let o = r.getAsFile(),
-                a = (s = await (r.getAsFileSystemHandle == null ? void 0 : r.getAsFileSystemHandle())) != null ? s : Lf(r.webkitGetAsEntry(), e);
-            return {
-                lastResortFile: o,
-                entry: a
-            }
+        let entries = await Promise.all(Array.from(i.items, async item => {
+            let lastResortFile = item.getAsFile();
+            let entry;
+            if (window.isSecureContext && item.getAsFileSystemHandle != null) entry = await item.getAsFileSystemHandle()
+            entry ??= getAsFileSystemHandleFromEntry(item.webkitGetAsEntry(), logDropError)
+            return {lastResortFile: lastResortFile, entry: entry}
         }));
         for (let {
             lastResortFile: r,
             entry: s
-        } of t)
+        } of entries)
             if (s != null) try {
                 yield* Mf(s, "", r)
             } catch (o) {
